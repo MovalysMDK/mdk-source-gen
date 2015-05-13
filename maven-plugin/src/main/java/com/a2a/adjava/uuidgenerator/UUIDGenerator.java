@@ -24,6 +24,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -35,8 +36,6 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 /** 
  * Generates UUID and replaces a list of tags with them <BR>
@@ -155,7 +154,7 @@ public class UUIDGenerator extends AbstractMojo {
 	 * @return an array containing the list of File founds
 	 */
 	@SuppressWarnings("unchecked")
-	private Object[] discoverFiles(String p_sRootDirectory, FileFilter p_oFilter) {
+	private File[] discoverFiles(String p_sRootDirectory, FileFilter p_oFilter) {
 		List<File> r_listFiles = new ArrayList<File>();
 		
 		File oRootDir = new File(p_sRootDirectory);
@@ -170,7 +169,7 @@ public class UUIDGenerator extends AbstractMojo {
 			}
 		}
 		
-		return r_listFiles.toArray();
+		return (File[]) r_listFiles.toArray();
 	}
 	
 	/**
