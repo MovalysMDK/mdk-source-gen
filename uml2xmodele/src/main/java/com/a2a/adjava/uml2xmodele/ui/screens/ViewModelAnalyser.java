@@ -204,26 +204,6 @@ public class ViewModelAnalyser {
 				sMasterPackageName = oSubView.getPackage().getParent().getFullName();
 				MPackage oMasterPackage = oDomain.getDictionnary().getPackage(sMasterPackageName);
 
-				ActionFactory.getInstance().addAction(
-						oDomain,
-						false,
-						p_oPage,
-						oAdapter,
-						new StringBuilder().append("DoAfter").append(oSubView.getMasterInterface().getName())
-								.append(ActionConstants.PREFIX_ACTION_DELETE).toString(), oMasterPackage,
-						MActionType.COMPUTE,
-						oDomain.getDictionnary().getViewModelCreator().getFullName());
-
-				ActionFactory.getInstance().addAction(
-						oDomain,
-						false,
-						p_oPage,
-						oAdapter,
-						new StringBuilder().append("DoBefore")
-								.append(oSubView.getMasterInterface().getName()).append("Add").toString(),
-						oMasterPackage, MActionType.COMPUTE,
-						oDomain.getDictionnary().getViewModelCreator().getFullName());
-
 				String sModelComponentName = oSubView.getParameterValue("baseName");
 				String sFixedListComponentName = p_sPath + '_' + sModelComponentName;
 				// Les FIXED LIST non modifiable finissent par __value et non par __edit

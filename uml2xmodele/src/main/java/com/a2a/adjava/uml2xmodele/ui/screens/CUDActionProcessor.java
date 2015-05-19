@@ -144,7 +144,7 @@ public class CUDActionProcessor  implements ICUDActionProcessor {
 							"button_create_" + oTargetPage.getUmlName().toLowerCase(),
 							"create " + oTargetPage.getUmlName(), oNav);
 					
-					addNavButton(oNavButton, oOperation, oTargetPage);
+					addNavButton(oNavButton, oOperation, p_oPage);
 				}
 				else {
 					MessageHandler.getInstance().addError(
