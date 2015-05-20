@@ -424,7 +424,7 @@ public class MIOSFixedListDelegate {
 			String sNewName = sUmlLinkName + IOSVMNamingHelper.FIXED_LIST_VIEW_MODEL_LIST_SUFFIX;
 
 			p_oVisualField.setName(p_oVisualField.getName().replaceAll(sOldFieldName, WordUtils.uncapitalize(sNewName)));
-			p_oVisualField.getLabel().getValue().replaceAll(sOldFieldName, sNewName);
+			p_oVisualField.getLabel().setValue( p_oVisualField.getLabel().getValue().replaceAll(sOldFieldName, sNewName) );
 			p_oVisualField.setLabel( p_oVisualField.getLabel());
 		}
 	}
@@ -449,7 +449,7 @@ public class MIOSFixedListDelegate {
 		if (oFixedListView!= null){
 			p_oFieldView.setCustomClass("MFFixedList");
 			p_oFieldView.setCellType("MFCell1ComponentHorizontal");
-			p_oFieldView.addOption("dataDelegateName", p_oFieldView.toString());
+			p_oFieldView.addOption("dataDelegateName", oFixedListView.toString());
 			//p_oFieldView.setCustomClass(oFixedListView.toString());
 			//p_oFieldView.setCellType(p_oVisualField.getComponent());
 		} else {

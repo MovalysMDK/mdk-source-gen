@@ -580,9 +580,10 @@ public final class VMAttributeHelper {
 
 					oVisualField.setViewModelProperty(sPropertyName);
 					oVisualField.setViewModelName(p_oViewModel.getName());
-					
-					p_oViewModel.addVisualField(oVisualField);
-					
+					// !! suppress on merge 6.4 and 6.5
+					// the visual field is already added in view model via FixedList attribute
+					// p_oViewModel.addVisualField(oVisualField);
+					// this is normal, we use parent view model in case of a combo in a fixed list
 					p_oViewModel.getParent().addVisualField(oVisualField);
 				}
 
