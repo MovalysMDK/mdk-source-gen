@@ -12,7 +12,7 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
     GNU Lesser General Public License for more details.
     You should have received a copy of the GNU Lesser General Public License
-    along with Movalys MDK. If not, see <http://www.gnu.org/licenses />.
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -21,7 +21,7 @@
 	<artifactId>adjava</artifactId>
 	<packaging>pom</packaging>
 	<name>Adjava</name>
-	<version>6.6.0-SNAPSHOT</version>
+	<version>6.6.0-alpha1</version>
 	<inceptionYear>2009</inceptionYear>
 	<description>Générateur de code Adjava</description>
 
@@ -38,9 +38,9 @@
 	</licenses>
 	
 	<scm>
-		<connection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/branches/6.6/</connection>
-		<developerConnection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/branches/6.6/</developerConnection>
-		<url>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/</url>
+		<connection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/tags/6.6.0-alpha1</connection>
+		<developerConnection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/tags/6.6.0-alpha1</developerConnection>
+		<url>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/tags/6.6.0-alpha1</url>
 	</scm>
 	<modules>
 		<module>commons</module>
