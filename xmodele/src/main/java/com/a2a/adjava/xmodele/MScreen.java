@@ -51,12 +51,12 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 	/**
 	 * Panel list
 	 */
-	private List<MPage> pages ;
+	private List<MPage> pages = new ArrayList<MPage>();
 	
 	/**
 	 * Panel map. 
 	 */
-	private Map<String,MPage> pagesMap ;
+	private Map<String,MPage> pagesMap = new HashMap<String, MPage>();
 	
 	/**
 	 * Menu map
@@ -92,6 +92,11 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 	 * True if screen is a search screen.
 	 */
 	private boolean searchScreen = false;
+	
+	/**
+	 * True if comment in the screen
+	 */
+	private boolean comment = false;
 
 	/**
 	 * Contructor.
@@ -101,8 +106,6 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 	 */
 	protected MScreen(String p_sUmlName, String p_sName, MPackage p_oPackage) {
 		super("screen", p_sUmlName, p_sName, p_oPackage);
-		this.pages = new ArrayList<MPage>();
-		this.pagesMap = new HashMap<String, MPage>();
 	}
 	
 	/**
@@ -119,6 +122,22 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 	 */
 	public void setWorkspace(boolean p_oWorkspace) {
 		this.workspace = p_oWorkspace;
+	}
+
+	/**
+	 * Return the object <em>comment</em>.
+	 * @return Objet comment
+	 */
+	public boolean isComment() {
+		return this.comment;
+	}
+
+	/**
+	 * Set the object <em>comment</em>.
+	 * @param p_oComment Objet comment
+	 */
+	public void setComment(boolean p_oComment) {
+		this.comment = p_oComment;
 	}
 
 	/**
@@ -363,6 +382,7 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 		} else {
 			p_xElement.addElement("workspace").setText("false");
 		}
+		p_xElement.addElement("comment").setText(Boolean.toString(this.comment));
 		if (this.isMultiPanel()){
 			p_xElement.addElement("multi-panel").setText("true");
 		} else {

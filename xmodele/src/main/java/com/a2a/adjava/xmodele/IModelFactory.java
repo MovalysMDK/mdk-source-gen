@@ -129,6 +129,14 @@ public interface IModelFactory {
 			MPackage p_oScreenPackage);
 
 	/**
+	 * Create a comment
+	 * @param p_sUmlName uml name
+	 * @param p_sName name comment name
+	 * @return MComment
+	 */
+	public MComment createComment(String p_sUmlName, String p_sName);
+
+	/**
 	 * Create a navigation
 	 * @param p_sNavigationName navigation name
 	 * @param p_oNavigationType navigation type

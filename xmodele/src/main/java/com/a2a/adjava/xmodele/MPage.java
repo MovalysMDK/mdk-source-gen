@@ -180,6 +180,12 @@ public class MPage extends SClass<MViewModelInterface,MMethodSignature> {
 
 		this.externalAdapters = new TreeMap<String, MAdapter>();
 		this.titled = p_bTitled;
+
+		// Stereotype conversion
+		for (UmlStereotype oUmlStereotype : p_oUmlPage.getStereotypes()) {
+			this.addStereotype(new MStereotype(oUmlStereotype.getName(), oUmlStereotype
+					.getDocumentation()));
+		}
 	}
 	
 	/**
@@ -396,6 +402,11 @@ public class MPage extends SClass<MViewModelInterface,MMethodSignature> {
 		p_xElement.addElement("layout-pagename").setText(this.layout.getName());
 		p_xElement.add(this.layout.toXml());
 		p_xElement.addElement("screenname").setText(this.layout.getName());
+		
+		Element xStereotype = p_xElement.addElement("stereotypes");
+		for( MStereotype oStereotype : this.getStereotypes() ) {
+			xStereotype.add(oStereotype.toXml());
+		}
 		
 		this.toXmlParentScreen(p_xElement);
 		

@@ -133,9 +133,11 @@ public class MIOSMultiPanelDelegate extends AbstractMIOSContainerDelegate {
 		this.containerMainController.setControllerType(MIOSControllerType.MULTIPANEL);
 		this.delegator.addControllerTitleLabel(this.containerMainController.getControllerType(), p_oScreen.getUmlName(), p_oScreen.getUmlName());
 
+		// Comment for Screen
+		this.containerMainController.setIsInCommentScreen(p_oScreen.isComment());
+		
 		// register the WorkspaceViewController
-		this.delegator.getDomain().getDictionnary()
-		.registerIOSController(this.containerMainController);
+		this.delegator.getDomain().getDictionnary().registerIOSController(this.containerMainController);
 
 		r_oScreenScene.setController(this.containerMainController);
 

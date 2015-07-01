@@ -24,7 +24,6 @@ import java.util.TreeMap;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.a2a.adjava.AdjavaRuntimeException;
 import com.a2a.adjava.types.ITypeDescription;
 import com.a2a.adjava.xmodele.ui.menu.MMenuDef;
 import com.a2a.adjava.xmodele.ui.navigation.MNavigation;
@@ -140,6 +139,11 @@ public class ModelDictionary implements IModelDictionary {
 	 * Map for dialogs 
 	 */
 	private Map<String,MDialog> dialogs = new HashMap<>();
+	
+	/**
+	 * Map for comments 
+	 */
+	private Map<String,MComment> comments = new HashMap<>();
 	
 	/**
 	 * Viewmodel controller 
@@ -267,6 +271,15 @@ public class ModelDictionary implements IModelDictionary {
 	@Override
 	public void registerScreen( MScreen p_oScreen) {
 		this.screens.put( p_oScreen.getUmlName(), p_oScreen);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModeleDictionnary#registerComment(com.a2a.adjava.xmodele.MComment)
+	 */
+	@Override
+	public void registerComment( MComment p_oComment) {
+		this.comments.put( p_oComment.getName(), p_oComment);
 	}
 	
 	/**
@@ -535,6 +548,15 @@ public class ModelDictionary implements IModelDictionary {
 	@Override
 	public Collection<MDialog> getAllDialogs() {
 		return this.dialogs.values();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModeleDictionnary#getAllComments()
+	 */
+	@Override
+	public Collection<MComment> getAllComments() {
+		return this.comments.values();
 	}
 	
 	/**

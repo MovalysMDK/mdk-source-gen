@@ -107,6 +107,12 @@ public interface IModelDictionary {
 	public void registerScreen(MScreen p_oScreen);
 
 	/**
+	 * Register a comment
+	 * @param p_oComment comment
+	 */
+	public void registerComment(MComment p_oComment);
+
+	/**
 	 * Return main screen of application
 	 * @return main screen of application
 	 */
@@ -289,6 +295,12 @@ public interface IModelDictionary {
 	 * @return all dialogs
 	 */
 	public Collection<MDialog> getAllDialogs();
+
+	/**
+	 * Return all comments
+	 * @return all comments
+	 */
+	public Collection<MComment> getAllComments();
 
 	/**
 	 * Return screen by name

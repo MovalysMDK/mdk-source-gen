@@ -16,6 +16,7 @@
 package com.a2a.adjava.languages.android.xmodele;
 
 import com.a2a.adjava.xmodele.XDomain;
+import com.a2a.adjava.xmodele.XProject;
 
 /**
  * Android domain
@@ -25,4 +26,9 @@ import com.a2a.adjava.xmodele.XDomain;
  */
 public class MAndroidDomain<D extends MAndroidDictionnary, MF extends MAndroidModeleFactory> extends XDomain<D, MF> {
 
+	@Override
+	protected XProject createProject() {
+		return new MAndroidProject<MAndroidDomain<? extends MAndroidDictionnary,? extends MAndroidModeleFactory>>();
+	}
+	
 }

@@ -29,6 +29,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *
  */
 public class MIOSEditableView extends MIOSView {
+	
+	/**
+	 * A constant value that equals to the margin  (expressed as points) 
+	 * between a component and its associated cell.
+	 */
+	private int COMPONENT_CELL_MARGIN = 10;
 
 	/**
 	 * Constructor
@@ -68,6 +74,12 @@ public class MIOSEditableView extends MIOSView {
 	 */
 	@XmlElement
 	private String cellType ;
+	
+	/**
+	 * Cell Height
+	 */
+	@XmlElement
+	private int cellHeight;
 
 	/**
 	 * Linked type for the detail 
@@ -313,6 +325,13 @@ public class MIOSEditableView extends MIOSView {
 			r_iHeight+=this.labelViewHeight;
 		}
 		return r_iHeight;
+	}
+
+	/**
+	 * Computes the Cell height asscoiated to this editable view.
+	 */
+	public void computeCellHeight() {
+		this.cellHeight = 2 * COMPONENT_CELL_MARGIN + getTotalHeight();
 	}
 
 }

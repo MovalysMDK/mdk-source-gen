@@ -91,6 +91,7 @@ public class XMI24Reader implements XMIReader {
 		
 		List<Element> listAssociationToRead = new ArrayList<Element>();
 		List<Element> listUsageToRead = new ArrayList<Element>();
+		List<Element> listCommentToRead = new ArrayList<Element>();
 		
 		UmlModel r_oModele = new UmlModel();
 		UmlDictionary oDictionnary = r_oModele.getDictionnary();
@@ -108,12 +109,18 @@ public class XMI24Reader implements XMIReader {
 		XMI24EnumReader.getInstance().readEnums(xModel, oDictionnary);
 
 		// Read packages
-		XMI24PackageReader.getInstance().processChildren(xModel, null, oDictionnary, r_oModele, listAssociationToRead, listUsageToRead);
+		XMI24PackageReader.getInstance().processChildren(xModel, null, oDictionnary, r_oModele, listAssociationToRead, listUsageToRead, listCommentToRead);
 
 		// Add associationEnd to classes
 		for( Element xAssociation : listAssociationToRead ) {
 			XMI24AssociationReader.getInstance().readAssociation(
 					xAssociation, oDictionnary);
+		}
+		
+		// Add comment to classes
+		for( Element xComment : listCommentToRead ) {
+			XMI24CommentReader.getInstance().readComment(
+					xComment, oDictionnary);
 		}
 		
 		// Read usages

@@ -30,10 +30,15 @@ import com.a2a.adjava.utils.StrUtils;
  */
 public class SPackagedElement extends SGeneratedElement {
 
-	/** the package of generated element, could be null */
+	/** 
+	 * the package of generated element, could be null
+	 */
 	private MPackage mPackage = null;
-	/** linked import */
-	private List<String> importList = null;
+	
+	/**
+	 * linked import 
+	 */
+	private List<String> importList = new ArrayList<String>();
 	
 	/**
 	 * Construct a new MUmlElement
@@ -49,7 +54,6 @@ public class SPackagedElement extends SGeneratedElement {
 			this.setFullName(p_oPackage.getFullName() + StrUtils.DOT + this.getName());
 		}
 		p_oPackage.add(this);
-		this.importList = new ArrayList<String>();
 	}
 	
 	/**

@@ -87,7 +87,7 @@ public final class XMI24PackageReader {
 	 */
 	protected UmlPackage readPackage(Element p_xPackage, UmlPackage p_oParent,
 			UmlDictionary p_oModelDictonary, UmlModel p_oUmlModel, 
-			List<Element> p_listAssociationToRead, List<Element> p_listUsageToRead) throws Exception {
+			List<Element> p_listAssociationToRead, List<Element> p_listUsageToRead, List<Element> p_listCommentToRead) throws Exception {
 
 		// Xmi example
 		// <packagedElement xmi:type='uml:Package'
@@ -104,7 +104,7 @@ public final class XMI24PackageReader {
 			p_oUmlModel.addPackage(r_oPackage);
 		}
 		
-		this.processChildren(p_xPackage, r_oPackage, p_oModelDictonary, p_oUmlModel, p_listAssociationToRead, p_listUsageToRead );
+		this.processChildren(p_xPackage, r_oPackage, p_oModelDictonary, p_oUmlModel, p_listAssociationToRead, p_listUsageToRead, p_listCommentToRead );
 
 		return r_oPackage;
 	}
@@ -121,7 +121,7 @@ public final class XMI24PackageReader {
 	 */
 	@SuppressWarnings("unchecked")
 	protected void processChildren(Element p_xParent, UmlPackage p_oParent, UmlDictionary p_oModelDictonary,
-			UmlModel p_oUmlModel, List<Element> p_listAssociationToRead, List<Element> p_listUsageToRead ) throws Exception {
+			UmlModel p_oUmlModel, List<Element> p_listAssociationToRead, List<Element> p_listUsageToRead, List<Element> p_listCommentToRead ) throws Exception {
 		
 		boolean bRoot = p_oParent == null ;
 		
@@ -133,8 +133,13 @@ public final class XMI24PackageReader {
 			
 			// Sub package
 			if (sXmiType.equals(PACKAGEELEMENT_TYPE_PACKAGE)) {
+				// Read comments of package
+				for (Element xComment : (List<Element>) xPackagedElement.elements(XMI24Constants.OWNEDCOMMENT_NODE)) {
+					p_listCommentToRead.add(xComment);
+				}
+				
 				UmlPackage oPackage = this.readPackage(xPackagedElement, p_oParent, p_oModelDictonary,
-							p_oUmlModel, p_listAssociationToRead, p_listUsageToRead);
+							p_oUmlModel, p_listAssociationToRead, p_listUsageToRead, p_listCommentToRead);
 					p_oModelDictonary.registerPackage(oPackage);
 			}
 			

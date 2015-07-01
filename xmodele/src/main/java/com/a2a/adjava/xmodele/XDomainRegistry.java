@@ -308,9 +308,11 @@ public class XDomainRegistry implements InitializingBean {
 					BeanUtils.setIfNotNull( oProject, "baseDir", p_oDomain.getStrSubstitutor().replace(xProject.attributeValue("base-dir")));
 					BeanUtils.setIfNotNull( oProject, "sourceDir", xProject.elementText("source-dir"));
 					BeanUtils.setIfNotNull( oProject, "assetsDir", xProject.elementText("assets-dir"));
-					BeanUtils.setIfNotNull( oProject,"stringDir", xProject.elementText("string-dir"));
+					BeanUtils.setIfNotNull( oProject," stringDir", xProject.elementText("string-dir"));
 					BeanUtils.setIfNotNull( oProject, "ddlDir", xProject.elementText("ddl-dir"));
 					BeanUtils.setIfNotNull( oProject, "layoutDir", xProject.elementText("layout-dir"));
+					BeanUtils.setIfNotNull( oProject, "resDir", xProject.elementText("res-dir"));
+					BeanUtils.setIfNotNull( oProject, "androidManifestFile", xProject.elementText("android-manifest-file"));
 					this.readGenerators(xProject, oProject);
 				}
 				else {

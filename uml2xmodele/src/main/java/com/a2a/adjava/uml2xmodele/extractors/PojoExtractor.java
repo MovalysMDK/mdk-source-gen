@@ -92,13 +92,6 @@ public class PojoExtractor extends AbstractExtractor<IDomain<IModelDictionary,IM
 	/** Association option setters */
 	private List<OptionSetter<Object>> assoOptionSetters = new ArrayList<OptionSetter<Object>>();
 
-	/**
-	 * {@inheritDoc}
-	 * @throws ClassNotFoundException 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @see com.a2a.adjava.uml2xmodele.extractors.MExtractor#initialize()
-	 */
 	@Override
 	public void initialize(Element p_xConfig) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		
@@ -225,7 +218,7 @@ public class PojoExtractor extends AbstractExtractor<IDomain<IModelDictionary,IM
 
 	/**
 	 * {@inheritDoc}
-	 * @see com.a2a.adjava.uml2xmodele.extractors.MExtractor#extract(com.a2a.adjava.uml.UmlModel)
+	 * @see com.a2a.adjava.extractors.MExtractor#extract(com.a2a.adjava.uml.UmlModel)
 	 */
 	@Override
 	public void extract(UmlModel p_oModele) throws Exception {

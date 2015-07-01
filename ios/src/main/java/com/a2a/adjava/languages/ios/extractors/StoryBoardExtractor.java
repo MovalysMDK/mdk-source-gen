@@ -17,7 +17,6 @@ package com.a2a.adjava.languages.ios.extractors;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Element;
@@ -46,7 +45,6 @@ import com.a2a.adjava.languages.ios.xmodele.views.MIOSXibType;
 import com.a2a.adjava.uml.UmlModel;
 import com.a2a.adjava.uml2xmodele.extractors.AbstractExtractor;
 import com.a2a.adjava.uml2xmodele.extractors.ScreenExtractor;
-import com.a2a.adjava.uml2xmodele.ui.screens.CUDActionProcessor;
 import com.a2a.adjava.xmodele.MAction;
 import com.a2a.adjava.xmodele.MActionType;
 import com.a2a.adjava.xmodele.MDialog;
@@ -311,6 +309,9 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 				oRootViewController.setViewModel(p_oScreen.getViewModel().getName());
 			}
 
+			// Comment for Screen
+			oRootViewController.setIsInCommentScreen(p_oScreen.isComment());
+			
 			this.getDomain().getDictionnary().registerIOSController(oRootViewController);
 
 			if(bShouldRegisterPages) {
@@ -445,6 +446,8 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 				this.getDomain().getDictionnary().registerIOSController(oSearchViewController);
 				MIOSScene r_oScreenScene = oModelFactory.createScene(oSearchPanel.getName(), oSearchViewController);
 				p_oStoryboard.addScene(r_oScreenScene);
+				
+				this.comboDelegate.createSectionAndControllerForCombo(oSearchPanel, p_oStoryboard);
 				this.computeSection(p_oStoryboard, oSearchViewController, oSearchPanel, oSearchPanel.getViewModelImpl(), false);
 
 			}

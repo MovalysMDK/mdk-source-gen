@@ -171,6 +171,7 @@ public class MIOS2DListViewController extends MIOSListViewController {
 		r_oViewController.setName(this.getName());
 		r_oViewController.setCustomClass(this.getCustomClass());
 		r_oViewController.setControllerType(this.getControllerType());
+		r_oViewController.setIsInCommentScreen(this.getIsInCommentScreen());
 		r_oViewController.setConnections((this.getConnections() != null) ? new ArrayList<MIOSConnection>(this.getConnections()) : null);
 		return r_oViewController;
 	}

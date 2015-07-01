@@ -19,19 +19,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.a2a.adjava.uml2xmodele.ui.actions.ActionConstants;
-import com.a2a.adjava.uml2xmodele.ui.actions.ActionFactory;
 import com.a2a.adjava.utils.VersionHandler;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
-import com.a2a.adjava.xmodele.MActionType;
 import com.a2a.adjava.xmodele.MAdapter;
 import com.a2a.adjava.xmodele.MDialog;
 import com.a2a.adjava.xmodele.MLabel;
 import com.a2a.adjava.xmodele.MLayout;
 import com.a2a.adjava.xmodele.MLayoutFactory;
-import com.a2a.adjava.xmodele.MPackage;
 import com.a2a.adjava.xmodele.MPage;
 import com.a2a.adjava.xmodele.MViewModelImpl;
 import com.a2a.adjava.xmodele.MVisualField;
@@ -105,21 +101,21 @@ public class ViewModelAnalyser {
 			}
 			else
 			if ( p_bList ) {
-				r_oLayout = MLayoutFactory.getInstance().createListLayoutForScreen(p_oPage.getUmlName(), p_oVm.getType());
+				r_oLayout = MLayoutFactory.getInstance().createListLayoutForScreen(p_oPage, p_oVm.getType());
 				sLayoutIdForAdapter = "list";
 			}
 			else 
 			if ( p_oVm.getType().equals(ViewModelType.LISTITEM_1 )) {
-				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage.getUmlName(), p_oVm);
+				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage, p_oVm);
 				sLayoutIdForAdapter = "listitem1";
 			}
 			else 
 			if ( p_oVm.getType().equals(ViewModelType.LISTITEM_2 )) {
-				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage.getUmlName(), p_oVm);
+				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage, p_oVm);
 				sLayoutIdForAdapter = "listitem2";
 			}
 			else if ( p_oVm.getType().equals(ViewModelType.LISTITEM_3 )) {
-				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage.getUmlName(), p_oVm);
+				r_oLayout = MLayoutFactory.getInstance().createItemLayoutForList(p_oPage, p_oVm);
 				sLayoutIdForAdapter = "listitem3";
 			}
 
@@ -167,8 +163,6 @@ public class ViewModelAnalyser {
 
 		MAdapter oAdapter = null;
 
-		String sMasterPackageName = null;
-
 		// seule les attributs de types listes on un intérêt
 		for (MViewModelImpl oSubView : p_oVm.getSubViewModels()) {
 			log.debug("  subviewmodel : " + oSubView.getName());
@@ -200,9 +194,6 @@ public class ViewModelAnalyser {
 
 				oDomain.getAnalyserAndProcessorFactory().createAdditionalLayoutProcessor().addAdditionalLayouts(oSubView, p_sPath, oAdapter,
 						p_oPage, oDomain);
-
-				sMasterPackageName = oSubView.getPackage().getParent().getFullName();
-				MPackage oMasterPackage = oDomain.getDictionnary().getPackage(sMasterPackageName);
 
 				String sModelComponentName = oSubView.getParameterValue("baseName");
 				String sFixedListComponentName = p_sPath + '_' + sModelComponentName;

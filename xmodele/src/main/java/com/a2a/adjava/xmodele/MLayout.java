@@ -75,13 +75,20 @@ public class MLayout extends SGeneratedElement {
 	 */
 	private WeakReference<MScreen> screen = null;
 	
-	
 	/**
-	 * Liste des adapteurs utilisés par les listes déroulantes
+	 * list of adapters used by combos
 	 */
 	private List<WeakReference<MAdapter>> externalAdapters = new ArrayList<WeakReference<MAdapter>>();
 	
+	/**
+	 * adapter
+	 */
 	private WeakReference<MAdapter> adapter = null;
+	
+	/**
+	 * Stereotypes
+	 */
+	private List<MStereotype> stereotypes = new ArrayList<>();
 	
 	/**
 	 * {@link MLayout} constructor
@@ -110,7 +117,7 @@ public class MLayout extends SGeneratedElement {
 	}
 	
 	/**
-	 * Construit une nouveau Layout
+	 * {@link MLayout} constructor
 	 */
 	private MLayout(){
 		this.fields = new ArrayList<MVisualField>();
@@ -119,7 +126,8 @@ public class MLayout extends SGeneratedElement {
 	}
 	
 	/**
-	 * @param p_oActionButton
+	 * Adds a button to the layout
+	 * @param p_oAbstractButton the button to add
 	 */
 	public void addButton( MAbstractButton p_oAbstractButton ) {
 		this.buttons.add(p_oAbstractButton);
@@ -146,7 +154,6 @@ public class MLayout extends SGeneratedElement {
 	 * @return true if it is a workspace
 	 */
 	public boolean isWorkspace() {
-		//
 		for (MVisualField oField : fields) {
 			
 			if ( oField.getComponent().equals(
@@ -193,6 +200,14 @@ public class MLayout extends SGeneratedElement {
 	}
 
 	/**
+	 * Sets the stereotypes from the page on the layout
+	 * @param p_oStereotypes the {@link MStereotype} list to set
+	 */
+	public void setStereotypes(List<MStereotype> p_oStereotypes) {
+		this.stereotypes = p_oStereotypes;
+	}
+	
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -201,6 +216,11 @@ public class MLayout extends SGeneratedElement {
 		p_xElement.addElement("prefix").setText(prefix);
 		p_xElement.addElement("shortname").setText(shortName);
 		
+		Element xStereotype = p_xElement.addElement("stereotypes");
+		for( MStereotype oStereotype : this.stereotypes ) {
+			xStereotype.add(oStereotype.toXml());
+		}
+
 		if (title != null) {
 			p_xElement.addElement("title").setText(title);
 		}

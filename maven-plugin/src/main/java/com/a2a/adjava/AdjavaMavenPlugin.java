@@ -114,6 +114,13 @@ public class AdjavaMavenPlugin extends AbstractMojo {
 	private String[] configFiles;
 
 	/**
+	 * umlExclude
+	 * 
+	 * @parameter
+	 */
+	private String[] umlExcludes;
+
+	/**
 	 * xmiFile
 	 * 
 	 * @parameter
@@ -310,6 +317,14 @@ public class AdjavaMavenPlugin extends AbstractMojo {
 		Element xXmi = r_xRootConf.addElement("xmi");
 		xXmi.addElement("xmi-file").setText(this.xmiFile.getAbsolutePath());
 
+		// Add UmlExcludes
+		if (this.umlExcludes != null) {
+			Element xUmlExcludes = r_xRootConf.addElement("umlExcludes");
+			for (String sUmlExclude : this.umlExcludes) {
+				xUmlExcludes.addElement(sUmlExclude);
+			}
+		}
+		
 		if (this.properties != null) {
 			Element xProperties = r_xRootConf.addElement("properties");
 			for (Entry<String, String> oEntry : this.properties.entrySet()) {

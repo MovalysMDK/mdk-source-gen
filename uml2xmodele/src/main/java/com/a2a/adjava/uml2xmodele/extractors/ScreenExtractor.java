@@ -31,7 +31,6 @@ import com.a2a.adjava.uml.UmlClass;
 import com.a2a.adjava.uml.UmlDictionary;
 import com.a2a.adjava.uml.UmlModel;
 import com.a2a.adjava.uml.UmlUsage;
-import com.a2a.adjava.uml2xmodele.ui.screens.CUDActionProcessor;
 import com.a2a.adjava.uml2xmodele.ui.screens.ScreenAggregationPanelProcessor;
 import com.a2a.adjava.uml2xmodele.ui.screens.ScreenContext;
 import com.a2a.adjava.uml2xmodele.ui.screens.ScreenDependencyProcessor;
@@ -40,7 +39,6 @@ import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
 import com.a2a.adjava.xmodele.MPackage;
 import com.a2a.adjava.xmodele.MScreen;
-import com.a2a.adjava.xmodele.MStereotype;
 
 /**
  * <p>
@@ -76,13 +74,24 @@ public class ScreenExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 	 */
 	@Override
 	public void initialize(Element p_xConfig) throws Exception {
-		String sStereotypes = this.getParameters().getValue("stereotypes");
-		List<String> listScreenStereotypes = new ArrayList<String>();
+		List<String> listScreenStereotypes = getStereotypes("stereotypes");
+		this.screenContext = new ScreenContext(listScreenStereotypes, 
+				this.getParameters().getValue("stereotype-title"), getParameters(), getDomain());
+	}
+
+	/**
+	 * Return stereotypes for object type
+	 * @param p_sObjectType object type
+	 * @return
+	 */
+	private List<String> getStereotypes( String p_sObjectType ) {
+		String sStereotypes = this.getParameters().getValue(p_sObjectType);
+		List<String> listScreenStereotypes = new ArrayList<>();
 		for (String sStereotype : StringUtils.split(sStereotypes, ',')) {
 			sStereotype = sStereotype.trim();
 			listScreenStereotypes.add(sStereotype);
 		}
-		this.screenContext = new ScreenContext(listScreenStereotypes, this.getParameters().getValue("stereotype-title"), getParameters(), getDomain());
+		return listScreenStereotypes;
 	}
 
 	/**
@@ -185,7 +194,7 @@ public class ScreenExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 		MScreen r_oScreen = this.getDomain().getXModeleFactory().createScreen(
 			p_oScreenUmlClass.getName(), p_oScreenUmlClass.getName(), oScreenPackage);			
 		
-		// si l'écran est page ppale de l'application on lui définie une
+		// si l'écran est une page principale de l'application on lui définie une
 		// action d'affichage
 		r_oScreen.setMain(this.screenContext.isScreenRoot(p_oScreenUmlClass));
 					
@@ -193,6 +202,8 @@ public class ScreenExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 		r_oScreen.setWorkspace(this.screenContext.isWorkspaceScreen(p_oScreenUmlClass));
 		
 		r_oScreen.setSearchScreen(this.screenContext.isSearchScreen(p_oScreenUmlClass));
+		
+		r_oScreen.setComment(this.screenContext.isCommentScreen(p_oScreenUmlClass));
 		
 		r_oScreen.setDocumentation(p_oScreenUmlClass.getDocumentation());
 		return r_oScreen ;

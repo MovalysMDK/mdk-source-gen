@@ -806,6 +806,7 @@
 					<property name="stereotype-usage-navigation" value="Mm_navigation" />
 					<property name="stereotype-usage-navigation-detail" value="Mm_navigationdetail" />
 				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.CommentExtractor" />
 				<extractor class="com.a2a.adjava.uml2xmodele.extractors.MenuExtractor">
 					<property name="stereotypes" value="Mm_menu" />
 					<property name="stereotype-usage-navigation-menu" value="Mm_navigationmenu" />
@@ -860,6 +861,8 @@
 					<assets-dir>assets</assets-dir>
 					<layout-dir>res/layout</layout-dir>
 					<string-dir>res/values</string-dir>
+					<res-dir>res</res-dir>
+					<android-manifest-file>AndroidManifest.xml</android-manifest-file>
 					<resource-generators>
 						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ScreenGenerator" />

@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSButtonView;
+import com.a2a.adjava.languages.ios.xmodele.views.MIOSEditableView;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSView;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSXibType;
-import com.a2a.adjava.xmodele.ui.view.MVFLocalization;
 /**
  * IOS Xib components description
  * @author spacreau
@@ -180,7 +180,8 @@ public class MIOSXibContainer {
 			oView.setPosY( lastYPosition );
 			//oView.setWidth(this.frameWidth - ( 2 * this.cellMargin) );
 			//oView.setHeight( this.cellHeight );
-			lastYPosition = lastYPosition + oView.getTotalHeight() + this.cellMargin ;  
+			lastYPosition = lastYPosition + oView.getTotalHeight() + this.cellMargin ;
+			((MIOSEditableView)oView).computeCellHeight();
 		}
 		this.frameHeight = lastYPosition;//  + this.cellMargin;
 	}

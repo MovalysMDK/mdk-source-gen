@@ -233,6 +233,9 @@ public class MIOSWorkspaceDelegate extends AbstractMIOSContainerDelegate {
 		this.containerMainController.setControllerType(MIOSControllerType.WORKSPACE);
 		this.delegator.addControllerTitleLabel(this.containerMainController.getControllerType(), p_oScreen.getUmlName(), p_oScreen.getUmlName());
 
+		// Comment for Screen
+		this.containerMainController.setIsInCommentScreen(p_oScreen.isComment());
+		
 		// register the WorkspaceViewController
 		this.delegator.getDomain().getDictionnary().registerIOSController(this.containerMainController);
 

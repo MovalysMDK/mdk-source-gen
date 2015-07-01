@@ -20,6 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOS2DListViewController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSSectionType;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSSection;
+import com.a2a.adjava.xmodele.MDialog;
 import com.a2a.adjava.xmodele.MPage;
 import com.a2a.adjava.xmodele.MViewModelImpl;
 
@@ -96,7 +97,12 @@ public class IOSVMNamingHelper {
 	public String computeItemViewModelNameOfCombo(MPage p_oPage , MViewModelImpl p_oViewModel){
 		String r_sName = null ;	
 		if ( p_oViewModel != null && p_oPage != null  ){
-			r_sName = StringUtils.join(  p_oPage.getUmlName(), p_oViewModel.getUmlName(), "Item" ); 
+			if(p_oPage instanceof MDialog) {
+				r_sName = StringUtils.join(  p_oPage.getViewModelImpl().getUmlName(), p_oViewModel.getUmlName(), "Item" ); 
+			}
+			else {
+				r_sName = StringUtils.join(  p_oPage.getUmlName(), p_oViewModel.getUmlName(), "Item" ); 
+			} 
 		}
 		return r_sName;
 	}

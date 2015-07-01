@@ -107,6 +107,12 @@ public class UmlDictionary {
 	private Map<String,UmlStereotypedObject> stereotypeObjects = new HashMap<String,UmlStereotypedObject>();
 	
 	/**
+	 * Comments 
+	 */
+	@XmlTransient
+	private List<UmlComment> comments = new ArrayList<UmlComment>();
+	
+	/**
 	 * Protected constructor
 	 */
 	protected UmlDictionary() {
@@ -143,6 +149,14 @@ public class UmlDictionary {
 	 */
 	public Collection<UmlClass> getAllClasses() {
 		return this.classes.values();
+	}
+	
+	/**
+	 * Return all uml associationEnd
+	 * @return all uml associationEnd
+	 */
+	public Collection<UmlAssociationEnd> getAllAssociationEnds() {
+		return this.associationEnds.values() ;
 	}
 	
 	/**
@@ -363,6 +377,24 @@ public class UmlDictionary {
 	public void registerUsage(String p_sId, UmlUsage p_oUsage) {
 		this.usages.add(p_oUsage);
 		this.stereotypeObjects.put(p_sId, p_oUsage);
+	}
+
+	/**
+	 * Return uml comments
+	 * @return uml comments
+	 */
+	public List<UmlComment> getComments() {
+		return this.comments;
+	}
+	
+	/**
+	 * Register a uml comment
+	 * @param p_sId comment id
+	 * @param p_oComment comment
+	 */
+	public void registerComment(String p_sId, UmlComment p_oComment) {
+		this.comments.add(p_oComment);
+		this.stereotypeObjects.put(p_sId, p_oComment);
 	}
 	
 	/**

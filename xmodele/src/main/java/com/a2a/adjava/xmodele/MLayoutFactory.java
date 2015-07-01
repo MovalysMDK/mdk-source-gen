@@ -196,7 +196,11 @@ public final class MLayoutFactory {
 			sPanelTitle = StringUtils.join(LAYOUT_PREFIX, p_oMPage.getUmlName().toLowerCase(Locale.getDefault()), SEPARATOR,
 					SCREENDETAIL_SUBPREFIX, SEPARATOR, TITLE_SUBPREFIX, MASTER_LAYOUT_SUFFIX);
 		}
-		return new MLayout(sLayoutName, p_oMPage.getUmlName(), p_oMPage.getUmlName(), sPanelTitle);
+		
+		MLayout r_oLayout = new MLayout(sLayoutName, p_oMPage.getUmlName(), p_oMPage.getUmlName(), sPanelTitle);
+		r_oLayout.setStereotypes(p_oMPage.getStereotypes());
+		
+		return r_oLayout;
 	}
 	
 	/**
@@ -224,16 +228,19 @@ public final class MLayoutFactory {
 	
 	/**
 	 * Create a layout for a list screen.
-	 * @param p_sPanelName panel name
+	 * @param p_oPage panel 
 	 * @param p_oVmType vm type
 	 * @return layout for list screen
 	 */
-	public MLayout createListLayoutForScreen(String p_sPanelName, ViewModelType p_oVmType) {
+	public MLayout createListLayoutForScreen(MPage p_oPage, ViewModelType p_oVmType) {
 
-		String sLayoutName = StringUtils.join(LAYOUT_PREFIX, p_sPanelName.toLowerCase(Locale.getDefault()), SEPARATOR,
+		String sLayoutName = StringUtils.join(LAYOUT_PREFIX, p_oPage.getUmlName().toLowerCase(Locale.getDefault()), SEPARATOR,
 				getLayoutSubPrefixForList(p_oVmType), MASTER_LAYOUT_SUFFIX);
 		
-		return new MLayout(sLayoutName, p_sPanelName, p_sPanelName);
+		MLayout r_oLayout = new MLayout(sLayoutName, p_oPage.getUmlName(), p_oPage.getUmlName());
+		r_oLayout.setStereotypes(p_oPage.getStereotypes());
+		
+		return r_oLayout;
 	}
 
 	/**
@@ -251,11 +258,11 @@ public final class MLayoutFactory {
 
 	/**
 	 * Create a layout for a list item of a list(n).
-	 * @param p_sPanelName panel name
+	 * @param p_oPage panel 
 	 * @param p_oViewModel viewmodel of list item
 	 * @return layout
 	 */
-	public MLayout createItemLayoutForList(String p_sPanelName, MViewModelImpl p_oViewModel) {
+	public MLayout createItemLayoutForList(MPage p_oPage, MViewModelImpl p_oViewModel) {
 		
 		String sSubPrefix = null;
 		if (ViewModelType.LISTITEM_1.equals(p_oViewModel.getType())) {
@@ -269,11 +276,12 @@ public final class MLayoutFactory {
 					+ " is not a list(n) item viewmodel");
 		}
 
-		String sLayoutName = StringUtils.join(LAYOUT_PREFIX, p_sPanelName.toLowerCase(Locale.getDefault()),
+		String sLayoutName = StringUtils.join(LAYOUT_PREFIX, p_oPage.getUmlName().toLowerCase(Locale.getDefault()),
 				SEPARATOR, sSubPrefix, MASTER_LAYOUT_SUFFIX);
 		
-		MLayout r_oLayout = new MLayout(sLayoutName, p_sPanelName, p_sPanelName);
+		MLayout r_oLayout = new MLayout(sLayoutName, p_oPage.getUmlName(), p_oPage.getUmlName());
 		r_oLayout.addParameter("vmtype-itemlayoutforlist", p_oViewModel.getType().toString());
+		r_oLayout.setStereotypes(p_oPage.getStereotypes());
 		return r_oLayout ;
 	}
 
@@ -292,6 +300,7 @@ public final class MLayoutFactory {
 		String sListItemShortName = "lst".concat(p_oViewModelImpl.getMasterInterface().getName());
 		MLayout r_oLayout = new MLayout(sLayoutName, sListItemShortName, sListItemShortName) ;
 		r_oLayout.addParameter("vmtype-itemlayoutforinnerlist", p_oViewModelImpl.getType().toString());
+		r_oLayout.setStereotypes(p_oPage.getStereotypes());
 		return r_oLayout;
 	}
 
@@ -310,6 +319,7 @@ public final class MLayoutFactory {
 		String sListItemShortName = "sel".concat(p_oViewModelImpl.getMasterInterface().getName());
 		MLayout r_oLayout = new MLayout(sLayoutName, sListItemShortName, sListItemShortName);
 		r_oLayout.addParameter("vmtype-selecteditemlayoutforinnerlist", p_oViewModelImpl.getType().toString());
+		r_oLayout.setStereotypes(p_oPage.getStereotypes());
 		return r_oLayout;
 	}
 

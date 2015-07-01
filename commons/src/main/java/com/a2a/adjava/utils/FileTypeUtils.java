@@ -52,6 +52,11 @@ public class FileTypeUtils {
 	public static final String SQL = "sql";
 	
 	/**
+	 * Html file extension
+	 */
+	public static final String HTML = "html";
+	
+	/**
 	 * Properties file extension
 	 */
 	public static final String PROPERTIES = "properties";
@@ -520,6 +525,17 @@ public class FileTypeUtils {
 	 */
 	public static String computeFilenameForSql(String p_sPackage, String p_sBaseName, String p_sSourceDir) {
 		String sFilePath = StringUtils.join( p_sPackage.replace(DOT, PATH_SEPARATOR_C), PATH_SEPARATOR_S, p_sBaseName, EXTENSION_SEPARATOR, SQL ); 
+		return new File(p_sSourceDir, sFilePath).getPath();
+	}
+
+	/**
+	 * Compute File for html file
+	 * @param p_sSourceDir source dir
+	 * @param p_sHtmlName html full name
+	 * @return file name
+	 */
+	public static String computeFilenameForHtmlClass(String p_sSourceDir, String p_sHtmlName) {
+		String sFilePath = StringUtils.join( p_sHtmlName.replace(DOT, PATH_SEPARATOR_C), EXTENSION_SEPARATOR, HTML ); 
 		return new File(p_sSourceDir, sFilePath).getPath();
 	}
 }

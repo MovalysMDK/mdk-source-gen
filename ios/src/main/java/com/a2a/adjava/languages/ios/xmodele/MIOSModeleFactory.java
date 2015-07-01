@@ -18,8 +18,6 @@ package com.a2a.adjava.languages.ios.xmodele;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.languages.ios.extractors.IOSVMNamingHelper;
 import com.a2a.adjava.languages.ios.project.IOSUITypeDescription;
@@ -33,8 +31,8 @@ import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSFixedListViewControl
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSFormViewController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSListViewController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSNavigationController;
-import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSViewController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSSearchViewController;
+import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSViewController;
 import com.a2a.adjava.languages.ios.xmodele.relationship.MIOSActionRelationShip;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSButtonView;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSSection;
@@ -213,6 +211,18 @@ public class MIOSModeleFactory extends XModeleFactory {
 		r_oMIOSController.setName(p_sName);
 		r_oMIOSController.setViewId(this.genereId(VIEWID_PREFIX, p_sName));
 		r_oMIOSController.setNavigationItemId(this.genereId(NAVIGATIONITEM_PREFIX, p_sName));
+		return r_oMIOSController ;
+	}
+
+	/**
+	 * Create a view controller
+	 * @param p_sName name
+	 * @param p_sFormName form name
+	 * @return view controller
+	 */
+	public MIOSViewController createViewController(String p_sName, String p_sFormName) {
+		MIOSViewController r_oMIOSController = this.createViewController(p_sName);
+		r_oMIOSController.setFormName(p_sFormName);
 		return r_oMIOSController ;
 	}
 

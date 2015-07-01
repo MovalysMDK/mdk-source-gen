@@ -712,6 +712,7 @@ public class MAttribute implements MIdentifierElem, SAnnotable {
 		p_xAttr.addAttribute("visualdisplay", Boolean.toString(this.visualDisplay));
 		p_xAttr.addAttribute("type-name", this.typeDesc.getName());
 		p_xAttr.addAttribute("type-short-name", this.typeDesc.getShortName());
+		p_xAttr.addAttribute("type-short-name-capitalized", StringUtils.capitalize(this.typeDesc.getShortName()));
 		p_xAttr.addAttribute("init", this.initialisation );
 		p_xAttr.addAttribute("nullable", Boolean.toString(!this.mandatory));
 		

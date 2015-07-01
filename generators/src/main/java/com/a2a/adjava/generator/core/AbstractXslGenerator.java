@@ -272,6 +272,5 @@ public abstract class AbstractXslGenerator<D extends IDomain<? extends IModelDic
 				p_oTransformer.setOutputProperty(oProperty.getKey(), oProperty.getValue());
 			}
 		}
-		//log.debug("LBR ENCODING " + p_oProject.getDomain().getFileEncoding());
 	}
 }

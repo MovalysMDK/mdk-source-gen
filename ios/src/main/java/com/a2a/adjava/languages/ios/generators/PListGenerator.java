@@ -18,8 +18,6 @@ package com.a2a.adjava.languages.ios.generators;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.Vector;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -38,14 +36,8 @@ import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSDomain;
 import com.a2a.adjava.languages.ios.xmodele.MIOSModeleFactory;
 import com.a2a.adjava.languages.ios.xmodele.MIOSStoryBoard;
-import com.a2a.adjava.languages.ios.xmodele.controllers.MIOS2DListViewController;
-import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSComboViewController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSControllerType;
-import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSViewController;
-import com.a2a.adjava.languages.ios.xmodele.views.MIOSSection;
-import com.a2a.adjava.languages.ios.xmodele.views.MIOSView;
-import com.a2a.adjava.languages.ios.xmodele.views.MIOSEditableView;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.JaxbUtils;
 import com.a2a.adjava.utils.StrUtils;
@@ -86,169 +78,10 @@ public class PListGenerator extends AbstractXmlMergeGenerator<MIOSDomain<MIOSDic
 
 		Chrono oChrono = new Chrono(true);
 
-		this.genFormPList(p_oMProject, p_oGeneratorContext);
 		this.genFrameworkPList(p_oMProject, p_oGeneratorContext);
-		this.genSectionPList(p_oMProject, p_oGeneratorContext);
 		this.genWorkspacePList(p_oMProject, p_oGeneratorContext);
 
 		log.debug("< PListGenerator.genere: {}", oChrono.stopAndDisplay());
-	}
-
-	/**
-	 * Generate form plist files
-	 * @param p_oMProject project
-	 * @param p_oGeneratorContext generator context
-	 * @throws Exception exception
-	 */
-	private void genFormPList(
-			XProject<MIOSDomain<MIOSDictionnary, MIOSModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oGeneratorContext) throws Exception {
-
-		for (MIOSController oMIOSController : p_oMProject.getDomain().getDictionnary().getAllIOSControllers()) {
-			if ( oMIOSController.getControllerType().equals(MIOSControllerType.FORMVIEW) 
-				|| oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW) 
-				|| oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW2D) 
-				|| oMIOSController.getControllerType().equals(MIOSControllerType.FIXEDLISTVIEW) 
-				|| oMIOSController.getControllerType().equals(MIOSControllerType.SEARCHVIEW)) {
-				MIOSViewController oFormViewController = (MIOSViewController) oMIOSController ;
-				Document xDoc = JaxbUtils.marshalToDocument(oMIOSController);
-				String sPlistFileName = StringUtils.join("form-", oFormViewController.getFormName(), StrUtils.DOT_S, PLIST_EXTENSION);
-				File oPListFile = new File("resources/plist/forms", sPlistFileName);
-				log.debug("  generate: {}", oPListFile.getAbsolutePath());
-
-				if(!oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW2D)) {
-					this.doXmlMergeGeneration(xDoc, XslTemplate.FORM_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-
-				}
-
-				if (oMIOSController.getControllerType().equals(MIOSControllerType.FIXEDLISTVIEW)
-						//Le contrôleur doit être marqué pour la génération
-						//Autrement, on n'a pas besoin de générer le IOS_PLIST du détail (il n'y aura pas de vue)
-						&& oMIOSController.hasCustomClass()  && oMIOSController.getCustomClass().isDoGeneration()) {
-					// il faut générer aussi le detail
-					oMIOSController.setControllerType(MIOSControllerType.FORMVIEW) ;
-					xDoc = JaxbUtils.marshalToDocument(oMIOSController);
-					sPlistFileName = StringUtils.join("form-", oFormViewController.getName(), StrUtils.DOT_S, PLIST_EXTENSION);
-					oPListFile = new File("resources/plist/forms", sPlistFileName);
-					log.debug("  generate: {}", oPListFile.getAbsolutePath());
-
-					this.doXmlMergeGeneration(xDoc, XslTemplate.FORM_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-					oMIOSController.setControllerType(MIOSControllerType.FIXEDLISTVIEW) ;
-				}
-				else if(oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW2D)) {		
-					//On récupère le 2DListViewcontroller créé qui contient toutes les données nécessaires.
-					MIOS2DListViewController oList2DViewcontroller = (MIOS2DListViewController)oFormViewController; 
-//					String sOriginalName = o2DListViewcontroller.getName();
-					List<MIOSSection> oSectionList = new ArrayList<MIOSSection>(oList2DViewcontroller.getSections());
-					
-					//Pour chaque section, on modifie le contrôleur courant avec des données spécifiques afin de
-					// générer autant de fichiers IOS_PLIST (form et section) que nécessaire.
-					int iIndex = oSectionList.size() -1;
-					for(MIOSSection oSection : oSectionList) {
-						oList2DViewcontroller.removeAllSections();
-						oList2DViewcontroller.addSection(oSection);
-						oList2DViewcontroller.setCellClassName(oList2DViewcontroller.getTypeNames()[iIndex]);
-						xDoc = JaxbUtils.marshalToDocument(oMIOSController);
-						sPlistFileName = StringUtils.join("form-", oList2DViewcontroller.getFormsTitles()[iIndex], StrUtils.DOT_S, PLIST_EXTENSION);
-						oPListFile = new File("resources/plist/forms", sPlistFileName);
-						log.debug("  generate: {}", oPListFile.getAbsolutePath());
-						this.doXmlMergeGeneration(xDoc, XslTemplate.FORM_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-						
-						iIndex--;
-					}
-					
-					//On restaure les données de base du ViewController
-					oList2DViewcontroller.setSections(oSectionList);
-				}
-			}
-		}
-	}
-
-	/**
-	 * Generate section plist files
-	 * @param p_oMProject project to use
-	 * @param p_oGeneratorContext generator context
-	 * @throws Exception
-	 */
-	private void genSectionPList( XProject<MIOSDomain<MIOSDictionnary, MIOSModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oGeneratorContext) throws Exception {
-
-		for (MIOSController oMIOSController : p_oMProject.getDomain().getDictionnary().getAllIOSControllers()) {
-			if ( oMIOSController.getControllerType().equals(MIOSControllerType.FORMVIEW) 
-					|| oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW)
-					|| oMIOSController.getControllerType().equals(MIOSControllerType.LISTVIEW2D)
-					|| oMIOSController.getControllerType().equals(MIOSControllerType.FIXEDLISTVIEW)
-					|| oMIOSController.getControllerType().equals(MIOSControllerType.COMBOVIEW)
-					|| oMIOSController.getControllerType().equals(MIOSControllerType.SEARCHVIEW)) {
-
-				MIOSViewController oViewController = (MIOSViewController) oMIOSController;
-				log.debug("genSectionPList: " + oMIOSController.getName());
-				//Le IOS_PLIST de section n'est généré que si le contréleur associé est généré
-				if (oViewController.hasCustomClass() && oViewController.getCustomClass().isDoGeneration()) {
-
-					List<MIOSSection> oSectionList = new ArrayList<MIOSSection>(oViewController.getSections());
-					for (MIOSSection oMIOSSection : oSectionList) {
-
-						String sPlistFileName = StringUtils.join("section-", oMIOSSection.getName(), StrUtils.DOT_S, PLIST_EXTENSION);
-						File oPListFile = new File("resources/plist/sections", sPlistFileName);
-
-						if ( oMIOSSection.getController().getControllerType().equals(MIOSControllerType.FORMVIEW)
-								|| oMIOSSection.getController().getControllerType().equals(MIOSControllerType.SEARCHVIEW)) {
-							Document xDoc = JaxbUtils.marshalToDocument(oMIOSSection);
-							this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-						}
-						else if ( oMIOSController.getControllerType().equals(MIOSControllerType.FIXEDLISTVIEW)) {
-							for(MIOSView  oSubview : oMIOSSection.getSubViews())
-							{
-								if(oSubview instanceof MIOSEditableView && 
-										"MFCellComponentPickerList".equals(((MIOSEditableView)oSubview).getCellType()))
-								{
-									((MIOSEditableView) oSubview).setCustomParameterName("parentViewModel.parentViewModel." + ((MIOSEditableView) oSubview).getCustomParameterName());
-								}							
-							}
-
-							Document xDoc = JaxbUtils.marshalToDocument(oMIOSSection);
-							this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-						}
-						else if ( oMIOSSection.getController().getControllerType() == MIOSControllerType.LISTVIEW ) {
-							// list view has only one section, and we need some information on the controller to generate it
-							Document xDoc = JaxbUtils.marshalToDocument(oMIOSController);
-							this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_FOR_LISTITEM_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-						}
-						else if ( oMIOSSection.getController().getControllerType() == MIOSControllerType.LISTVIEW2D ) {
-							MIOS2DListViewController oTemporaryViewController = (MIOS2DListViewController) oViewController.clone();
-							oTemporaryViewController.removeAllSections();
-							oTemporaryViewController.addSection(oMIOSSection);
-							Document xDoc = JaxbUtils.marshalToDocument(oTemporaryViewController);
-							this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_FOR_LISTITEM_PLIST_TEMPLATE, oPListFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-						}
-					}
-					oViewController.setSections(oSectionList);
-				}
-			}
-			if ( oMIOSController.getControllerType().equals(MIOSControllerType.COMBOVIEW))
-			{
-				MIOSComboViewController oFormViewController = (MIOSComboViewController) oMIOSController ;
-				Document xDoc = JaxbUtils.marshalToDocument(oMIOSController);
-				
-				if(oFormViewController.isSelectedItem())
-				{
-					String sPlistComboSelectedItemFileName = StringUtils.join("form-", oFormViewController.getSelectedItemCellClassName(), StrUtils.DOT_S, PLIST_EXTENSION);
-					File oPlistComboSelectedItemFile = new File("resources/plist/forms", sPlistComboSelectedItemFileName);
-					log.debug("  generate: {}", oPlistComboSelectedItemFile.getAbsolutePath());
-					
-					this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_FOR_COMBO_SELECTED_ITEM_PLIST_TEMPLATE, oPlistComboSelectedItemFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-				}
-				else
-				{
-					String sPListComboItemFileName = StringUtils.join("form-", oFormViewController.getItemCellClassName(), StrUtils.DOT_S, PLIST_EXTENSION);
-					File oPListComboItemFile = new File("resources/plist/forms", sPListComboItemFileName);
-					log.debug("  generate: {}", oPListComboItemFile.getAbsolutePath());
-					
-					this.doXmlMergeGeneration(xDoc, XslTemplate.SECTION_FOR_COMBO_ITEM_PLIST_TEMPLATE, oPListComboItemFile, p_oMProject, p_oGeneratorContext,XaConfFile.IOS_PLIST);
-				}
-			}
-		}
 	}
 	
 	/**

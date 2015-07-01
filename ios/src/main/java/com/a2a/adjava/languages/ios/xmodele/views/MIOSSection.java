@@ -373,7 +373,8 @@ public class MIOSSection {
 			}
 			oView.setPosX( this.cellMargin );
 			oView.setPosY( this.cellMargin + iLastHeight );
-			iLastHeight = iLastHeight + oView.getTotalHeight() + this.cellMargin;  
+			iLastHeight = iLastHeight + oView.getTotalHeight() + this.cellMargin;
+			((MIOSEditableView)oView).computeCellHeight();
 		}
 		this.frameHeight = iLastHeight + this.cellMargin ;
 		if (getController() instanceof MIOSViewController) {
@@ -401,7 +402,8 @@ public class MIOSSection {
 					}
 					oView.setPosX( this.cellMargin );
 					oView.setPosY( this.cellMargin + lastHeight );
-					lastHeight = lastHeight + oView.getTotalHeight() + this.cellMargin;  
+					lastHeight = lastHeight + oView.getTotalHeight() + this.cellMargin;
+					((MIOSEditableView)oView).computeCellHeight();
 				}
 				this.frameHeight = lastHeight + this.cellMargin ;
 			}

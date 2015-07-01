@@ -49,5 +49,10 @@ public enum MNavigationType {
 	/**
 	 * Navigation for workspace, same screen but change panel
 	 */
-	NAVIGATION_WKS_SWITCHPANEL ;
+	NAVIGATION_WKS_SWITCHPANEL,
+	
+	/**
+	 * Navigation from Info Screen
+	 */
+	NAVIGATION_INFO;
 }

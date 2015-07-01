@@ -119,6 +119,15 @@ public class XModeleFactory implements IModelFactory {
 
 	/**
 	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModelFactory#createScreen(java.lang.String, java.lang.String, com.a2a.adjava.xmodele.MPackage)
+	 */
+	@Override
+	public MComment createComment(String p_sUmlName, String p_sName) {
+		return new MComment( p_sUmlName, p_sName);
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * @see com.a2a.adjava.xmodele.IModelFactory#createNavigation(java.lang.String, com.a2a.adjava.xmodele.ui.navigation.MNavigationType, com.a2a.adjava.xmodele.MScreen, com.a2a.adjava.xmodele.MScreen)
 	 */
 	@Override

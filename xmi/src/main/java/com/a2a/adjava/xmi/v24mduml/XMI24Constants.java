@@ -254,6 +254,11 @@ public final class XMI24Constants {
 	public static final QName OWNEDCOMMENT_BODY_ATTR = new QName("body", Namespace.NO_NAMESPACE);	
 	
 	/**
+	 * annotatedElement node
+	 */
+	public static final QName ANNOTATEDELEMENT_NODE = new QName("annotatedElement", Namespace.NO_NAMESPACE);
+	
+	/**
 	 * Documentation node
 	 */
 	public static final QName DOCUMENTATION_NODE = new QName("Documentation", XMI20110701_NAMESPACE);

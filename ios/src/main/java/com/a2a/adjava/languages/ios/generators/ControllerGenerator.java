@@ -140,6 +140,7 @@ public class ControllerGenerator extends AbstractIncrementalGenerator<MIOSDomain
 		Document xDoc = JaxbUtils.marshalToDocument(p_oMIOSController);
 		Element rootElement = (Element) xDoc.getFirstChild();
 		rootElement.setAttribute("main-project", p_oMProject.getDomain().getGlobalParameters().get("mainProject"));
+		rootElement.setAttribute("comment", "true");
 		
 		MIOSImportDelegate oMIOSImportDelegate = p_oMProject.getDomain().getXModeleFactory().createImportDelegate(this);
 		this.computeImportForControllerImpl(oMIOSImportDelegate, p_oMIOSController, p_oMProject, p_oContext);

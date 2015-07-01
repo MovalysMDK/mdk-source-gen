@@ -15,24 +15,33 @@
  */
 package com.a2a.adjava.xmi;
 
-import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.AdjavaException;
 import com.a2a.adjava.commons.init.InitializingBean;
 import com.a2a.adjava.messages.MessageHandler;
+import com.a2a.adjava.uml.UmlAssociation;
+import com.a2a.adjava.uml.UmlAssociationClass;
+import com.a2a.adjava.uml.UmlAssociationEnd;
+import com.a2a.adjava.uml.UmlClass;
+import com.a2a.adjava.uml.UmlComment;
+import com.a2a.adjava.uml.UmlDictionary;
+import com.a2a.adjava.uml.UmlEnum;
 import com.a2a.adjava.uml.UmlModel;
+import com.a2a.adjava.uml.UmlPackage;
+import com.a2a.adjava.uml.UmlUsage;
 import com.a2a.adjava.umlupdater.UmlUpdater;
-import com.a2a.adjava.utils.JaxbUtils;
 
 /**
  * 
@@ -82,6 +91,11 @@ public final class XMIFactory implements InitializingBean {
 	private String xmiFile;
 
 	/**
+	 * umlExclude
+	 */
+	private List<String> listUmlExcludes = new ArrayList<String>();
+
+	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.a2a.adjava.project.InitializingBean#initialize(org.dom4j.Element)
@@ -98,6 +112,14 @@ public final class XMIFactory implements InitializingBean {
 			Element xInlineDoc = xXmi.element("inline-doc");
 			if (xInlineDoc != null) {
 				this.inlineDocLng = xInlineDoc.elementText("lng");
+			}
+		}
+		
+		// Read umlExcludes
+		Element xUmlExcludes = p_xRoot.element("umlExcludes");
+		if ( xUmlExcludes != null ) {
+			for( Element xUmlExclude: (List<Element>) xUmlExcludes.elements()) {
+				this.listUmlExcludes.add(xUmlExclude.getName());
 			}
 		}
 		
@@ -238,9 +260,13 @@ public final class XMIFactory implements InitializingBean {
 		// Find a reader to read the xmi file
 		XMIReader oXMIReader = getXMIReader(xDoc);
 
+		// Generate UmlModel
 		UmlModel r_oModele = oXMIReader.read(xDoc);
 
 		//To Debug: JaxbUtils.marshal(r_oModele, new File("/tmp/mduml-mesnotesendirect.xml"));
+		
+		// Filter umlExclude on UmlModel
+		r_oModele = filterModel(r_oModele);
 		
 		// UmlUpdater execution
 		MessageHandler oMessageHandler = MessageHandler.getInstance();
@@ -256,6 +282,184 @@ public final class XMIFactory implements InitializingBean {
 		}
 
 		return r_oModele;
+	}
+	
+	/**
+	 * Filter UmlModel
+	 * 
+	 * @param p_oModele
+	 * @return p_oModele
+	 * @throws Exception
+	 */
+	private UmlModel filterModel(UmlModel p_oModele) throws Exception {
+
+		// New Dictionnary for Duplicate Model
+		UmlModel r_oModele = p_oModele.copy();
+		UmlDictionary oDictionary = r_oModele.getDictionnary();
+		
+		// Filter Class
+		Collection<UmlClass> oClasses = oDictionary.getAllClasses();
+		Iterator<UmlClass> iterCl = oClasses.iterator();
+		while (iterCl.hasNext()) {
+			UmlClass oClass = (UmlClass) iterCl.next();
+		
+			if (isExcludePackage(oClass.getPackage())) {
+                // Remove Class				
+				iterCl.remove();
+			}
+		}
+		
+		// Filter AssociationClass
+		Collection<UmlAssociationClass> oAssociationClasses = oDictionary.getAssociationClasses();
+		Iterator<UmlAssociationClass> iterAC = oAssociationClasses.iterator();
+		while (iterAC.hasNext()) {
+			UmlAssociationClass oAssociationClass = (UmlAssociationClass) iterAC.next();
+		
+			if (isExcludePackage(oAssociationClass.getPackage())) {
+				// Remove AssociationClass		
+				iterAC.remove();
+			}
+		}
+		
+		// Filter Association
+		Collection<UmlAssociation> oAssociations = oDictionary.getAssociations();
+		Iterator<UmlAssociation> iterA = oAssociations.iterator();
+		while (iterA.hasNext()) {
+			UmlAssociation oAssociation = (UmlAssociation) iterA.next();
+		
+			if (isExcludePackage(oAssociation.getAssociationEnd1().getRefClass().getPackage()) 
+					|| isExcludePackage(oAssociation.getAssociationEnd2().getRefClass().getPackage())) {
+				// Remove Association
+				iterA.remove();
+			}
+		}
+
+		// Filter AssociationEnd
+		Collection<UmlAssociationEnd> oAssociationEnds = oDictionary.getAllAssociationEnds();
+		Iterator<UmlAssociationEnd> iterAE = oAssociationEnds.iterator();
+		while (iterAE.hasNext()) {
+			UmlAssociationEnd oAssociationEnd = (UmlAssociationEnd) iterAE.next();
+		
+			if (oAssociationEnd.getRefClass() != null && oAssociationEnd.getRefClass().getPackage() != null) {
+				if (isExcludePackage(oAssociationEnd.getRefClass().getPackage())) {
+					// Remove AssociationEnd
+					iterAE.remove();
+				}
+			}
+			
+			if (oAssociationEnd.getRefClass() == null) {
+				// Remove AssociationEnd
+				iterAE.remove();
+			}
+		}
+		
+		// Filter Enum
+		Collection<UmlEnum> oEnumerations = oDictionary.getAllEnumerations();
+		Iterator<UmlEnum> iterE = oEnumerations.iterator();
+		while (iterE.hasNext()) {
+			UmlEnum oEnum = (UmlEnum) iterE.next();
+		
+			if (isExcludePackage(oEnum.getUmlPackage())) {
+				// Remove Enumeration
+				iterE.remove();
+			}
+		}
+	
+		// Filter Usage
+		Collection<UmlUsage> oUsages = oDictionary.getUsages();
+		Iterator<UmlUsage> iterU = oUsages.iterator();
+		while (iterU.hasNext()) {
+			UmlUsage oUsage = (UmlUsage) iterU.next();
+
+			if ((oUsage.getClient() != null && oUsage.getClient().getPackage() != null)
+					&& (oUsage.getSupplier() != null && oUsage.getSupplier().getPackage() != null)) {
+				if (isExcludePackage(oUsage.getClient().getPackage()) 
+						|| isExcludePackage(oUsage.getSupplier().getPackage())) {
+					// Remove Usage
+					iterU.remove();
+			
+					// Remove Usage for Class
+					UmlClass oClient = oUsage.getClient();
+					oClient.removeUsage(oUsage);
+
+					// Remove Usage for Class
+					UmlClass oSupplier = oUsage.getSupplier();
+					oSupplier.removeUsage(oUsage);
+				}
+			}
+			
+			if (oUsage.getClient() == null || oUsage.getSupplier() == null) {
+				// Remove Usage
+				iterU.remove();
+			}
+		}
+		
+		// Filter Package
+		Collection<UmlPackage> oPackages = oDictionary.getAllPackages();
+		Iterator<UmlPackage> iterP = oPackages.iterator();
+		while (iterP.hasNext()) {
+			UmlPackage oPackage = (UmlPackage) iterP.next();
+
+			if (isExcludePackage(oPackage)) {
+				// Remove Package
+				iterP.remove();
+			}
+		}
+		
+		// Filter Comments
+		List<UmlComment> oComments = oDictionary.getComments();
+		Iterator<UmlComment> iterC = oComments.iterator();
+		while (iterC.hasNext()) {
+			UmlComment oComment = (UmlComment) iterC.next();
+
+			if (!isCommentInClass(oDictionary, oComment)) {
+				// Remove Comment
+				iterC.remove();
+			}
+		}
+
+		return r_oModele;
+	}
+	
+	/**
+	 * Is Exclude Package
+	 * 
+	 * @param p_oModele
+	 * @return p_oModele
+	 * @throws Exception
+	 */
+	private boolean isExcludePackage(UmlPackage p_oPackage) throws Exception {
+
+		for (String sUmlExclude : listUmlExcludes) {
+			if ((sUmlExclude.equals(p_oPackage.getFullName()) && sUmlExclude.length() == p_oPackage.getFullName().length())
+					|| (p_oPackage.getFullName().startsWith(sUmlExclude) && p_oPackage.getFullName().length() > sUmlExclude.length()))
+				return true;
+		}
+		return (false);
+	}
+	
+	/**
+	 * Is Comment In Class
+	 * 
+	 * @param p_oModele
+	 * @return p_oModele
+	 * @throws Exception
+	 */
+	private boolean isCommentInClass(UmlDictionary p_oDictionary, UmlComment p_oComment) throws Exception {
+
+		boolean r_bCommentInClass = false;
+	
+		// Find Comment in to Class
+		Collection<UmlClass> oClasses = p_oDictionary.getAllClasses();
+		Iterator<UmlClass> iterCl = oClasses.iterator();
+		while (iterCl.hasNext()) {
+			UmlClass oClass = (UmlClass) iterCl.next();
+		
+			if (oClass.getComment() != null && oClass.getComment().equals(p_oComment)) {
+				r_bCommentInClass = true;
+				}
+			}
+		return (r_bCommentInClass);
 	}
 
 	/**

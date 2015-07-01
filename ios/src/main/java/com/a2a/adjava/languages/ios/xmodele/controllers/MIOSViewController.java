@@ -16,7 +16,6 @@
 package com.a2a.adjava.languages.ios.xmodele.controllers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -73,6 +72,12 @@ public class MIOSViewController extends MIOSController implements Cloneable{
 	 */
 	@XmlElement
 	private MIOSFormType formType;
+
+	/**
+	 * Is Comment in screen
+	 */
+	@XmlElement
+	private boolean isInCommentScreen  = false;
 
 	/**
 	 * Sections
@@ -286,6 +291,22 @@ public class MIOSViewController extends MIOSController implements Cloneable{
 	}
 
 	/**
+	 * Returns wether the comment is in a screen
+	 * @return wether the comment is in a screen
+	 */
+	public boolean getIsInCommentScreen() {
+		return this.isInCommentScreen;
+	}
+
+	/**
+	 * Sets wether the comment is in a screen
+	 * @param p_bIsInCommentScreen wether the comment is in a screen
+	 */
+	public void setIsInCommentScreen(boolean p_bIsInCommentScreen) {
+		this.isInCommentScreen = p_bIsInCommentScreen;
+	}
+
+	/**
 	 * Compute the sections Y position. This method is called from the sections themselves
 	 */
 	public void computeSectionsPositions() {
@@ -344,6 +365,7 @@ public class MIOSViewController extends MIOSController implements Cloneable{
 		r_oViewController.setCustomClass(this.getCustomClass());
 		r_oViewController.setControllerType(this.getControllerType());
 		r_oViewController.setConnections((this.getConnections() != null) ? new ArrayList<MIOSConnection>(this.getConnections()) : null);
+		r_oViewController.setIsInCommentScreen(this.getIsInCommentScreen());
 		return r_oViewController;
 	}
 

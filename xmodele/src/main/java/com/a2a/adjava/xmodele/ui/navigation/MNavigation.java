@@ -21,7 +21,6 @@ import org.dom4j.Element;
 import com.a2a.adjava.utils.ToXmlUtils;
 import com.a2a.adjava.xmodele.MPage;
 import com.a2a.adjava.xmodele.MScreen;
-import com.a2a.adjava.xmodele.ui.viewmodel.ViewModelType;
 
 /**
  * Navigation between two screen
@@ -136,7 +135,12 @@ public class MNavigation {
 		Element r_xElem = DocumentHelper.createElement("navigation");
 		r_xElem.addAttribute("type", this.navigationType.name());
 		r_xElem.addAttribute("name", this.name);
-		r_xElem.addAttribute("internal", Boolean.toString(this.target.equals(this.source)));
+		
+		if (this.target != null) {
+			r_xElem.addAttribute("internal", Boolean.toString(this.target.equals(this.source)));
+		} else {
+			r_xElem.addAttribute("internal", Boolean.toString(false));
+		}
 		
 		Element xSource = r_xElem.addElement("source");
 		xSource.addElement("name").setText(this.getSource().getName());
@@ -145,14 +149,16 @@ public class MNavigation {
 		ToXmlUtils.addImplements(xSource, this.getSource().getMasterInterface());
 		
 		Element xTarget = r_xElem.addElement("target");
-		xTarget.addElement("name").setText(this.getTarget().getName());
-		xTarget.addElement("name-lc").setText(this.getTarget().getName().toLowerCase());
-		xTarget.addElement("full-name").setText(this.getTarget().getFullName());
-
-		if ( this.targetPageIdx != -1 ) {
-			xTarget.addElement("page-idx").setText(Integer.toString(this.targetPageIdx));	
+		if (this.target != null) {
+			xTarget.addElement("name").setText(this.getTarget().getName());
+			xTarget.addElement("name-lc").setText(this.getTarget().getName().toLowerCase());
+			xTarget.addElement("full-name").setText(this.getTarget().getFullName());
+	
+			if ( this.targetPageIdx != -1 ) {
+				xTarget.addElement("page-idx").setText(Integer.toString(this.targetPageIdx));	
+			}
+			ToXmlUtils.addImplements(xTarget, this.getTarget().getMasterInterface());
 		}
-		ToXmlUtils.addImplements(xTarget, this.getTarget().getMasterInterface());
 		
 		return r_xElem;
 	}

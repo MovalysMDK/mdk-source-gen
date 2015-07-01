@@ -86,6 +86,12 @@ public class UmlClass extends UmlStereotypedObject {
 	private List<UmlUsage> usages ;
 	
 	/**
+	 * Notes
+	 */
+	@XmlElement(name="comment")
+	private UmlComment comment ;
+	
+	/**
 	 * Inherit
 	 */
 	private UmlInherit inherit ;
@@ -118,7 +124,23 @@ public class UmlClass extends UmlStereotypedObject {
 		this.associations = new ArrayList<UmlAssociationEnd>();
 		this.operations = new ArrayList<UmlOperation>();
 		this.documentation = StringUtils.EMPTY;
-		this.usages = new ArrayList<UmlUsage>();
+		this.usages = new ArrayList<>();
+		this.comment = null;
+	}
+
+	/**
+	 * @return Commmentaire
+	 */
+	public UmlComment getComment() {
+		return this.comment;
+	}
+	
+	/**
+	 * Set Commentaire
+	 * @param p_oComment
+	 */
+	public void setComment(UmlComment p_oComment) {
+		this.comment = p_oComment;
 	}
 
 	/**
@@ -296,6 +318,20 @@ public class UmlClass extends UmlStereotypedObject {
 	 */
 	public void removeAttributes(List<UmlAttribute> p_listAttributes) {
 		this.attributes.removeAll(p_listAttributes);
+	}
+
+	/**
+	 * @param p_oUmlUsage
+	 */
+	public void removeUsage(UmlUsage p_oUmlUsage) {
+		this.usages.remove(p_oUmlUsage);
+	}
+	
+	/**
+	 * @param p_listUsages
+	 */
+	public void removeUsages(List<UmlUsage> p_listUsages) {
+		this.usages.removeAll(p_listUsages);
 	}
 
 	/**

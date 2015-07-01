@@ -30,6 +30,7 @@ import com.a2a.adjava.uml.UmlAssociationEnd.AggregateType;
 import com.a2a.adjava.uml.UmlClass;
 import com.a2a.adjava.uml.UmlDictionary;
 import com.a2a.adjava.uml.UmlUsage;
+import com.a2a.adjava.uml2xmodele.extractors.ViewModelExtractor;
 import com.a2a.adjava.uml2xmodele.extractors.viewmodel.VMNamingHelper;
 import com.a2a.adjava.utils.StrUtils;
 import com.a2a.adjava.xmodele.IDomain;
@@ -69,7 +70,7 @@ public class ScreenContext {
 	/**
 	 * Stereotype list indicating that a UmlClass is a screen of the domain.
 	 */
-	private List<String> screenOrPageStereotypes = new ArrayList<String>();
+	private List<String> screenStereotypes = new ArrayList<String>();
 
 	/**
 	 * 
@@ -83,7 +84,7 @@ public class ScreenContext {
 			IDomain<IModelDictionary, IModelFactory> p_oDomain) {
 		this.domain = p_oDomain;
 		this.extractorParams = p_oExtractorParams;
-		this.screenOrPageStereotypes = p_listScreenStereotypes;
+		this.screenStereotypes = p_listScreenStereotypes;
 		this.titleStereotype = p_sTitleStereotype;
 	}
 
@@ -95,7 +96,7 @@ public class ScreenContext {
 	 * @return l aliste de classe qui sont des écran de l'application.
 	 */
 	public List<UmlClass> getScreenUmlClasses(UmlDictionary p_oDict) {
-		List<UmlClass> listScreens = new ArrayList<UmlClass>();
+		List<UmlClass> listScreens = new ArrayList<>();
 		for (UmlClass oUmlClass : p_oDict.getAllClasses()) {
 			if (isScreen(oUmlClass)) {
 				listScreens.add(oUmlClass);
@@ -112,7 +113,7 @@ public class ScreenContext {
 	 * @return l aliste de classe qui sont des écran de l'application.
 	 */
 	public List<UmlClass> getPageUmlClasses(UmlDictionary p_oDict) {
-		List<UmlClass> listPages = new ArrayList<UmlClass>();
+		List<UmlClass> listPages = new ArrayList<>();
 		for (UmlClass oUmlClass : p_oDict.getAllClasses()) {
 			if (isPage(oUmlClass)) {
 				listPages.add(oUmlClass);
@@ -246,7 +247,7 @@ public class ScreenContext {
 	 * @return true si la classe correspond à un écran. false sinon.
 	 */
 	public boolean isScreen(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.screenOrPageStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(this.screenStereotypes) ;
 	}
 	
 	/**
@@ -257,7 +258,7 @@ public class ScreenContext {
 	 * @return true si la classe correspond à un écran. false sinon.
 	 */
 	public boolean isPage(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.screenOrPageStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(getDomain().getExtractor(ViewModelExtractor.class).getListStereotypes()) ;
 	}
 	
 	/**
@@ -364,6 +365,17 @@ public class ScreenContext {
 			}
 		}
 		return r_bResult;
+	}
+	
+	/**
+	 * Méthode pour savoir si la classe envoyée en paramètre détient un objet Comment.
+	 * 
+	 * @param p_oScreenUmlClass a tester
+	 *            
+	 * @return true si un objet comment est non vide, false sinon.
+	 */
+	public boolean isCommentScreen(UmlClass p_oScreenUmlClass) {
+		return (p_oScreenUmlClass.getComment() != null);
 	}
 	
 	/**
@@ -549,7 +561,7 @@ public class ScreenContext {
 	 * @return screen stereotypes
 	 */
 	public List<String> getScreenStereotypes() {
-		return this.screenOrPageStereotypes;
+		return this.screenStereotypes;
 	}
 
 	/**
