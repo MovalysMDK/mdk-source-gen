@@ -138,7 +138,7 @@ public class MH5Attribute {
 	 * 
 	 * @return the xml element of the attribute
 	 */
-	public Element toXml() {		
+	public Element toXml() {
 		Element r_xChildAttribute = DocumentHelper.createElement("HTML-attribute");
 
 		r_xChildAttribute.addElement("field-name").setText(this.attributeFieldName);

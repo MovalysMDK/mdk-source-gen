@@ -91,7 +91,7 @@ public class MViewModelFactory {
 		MViewModelImpl r_oNew = p_oDomain.getXModeleFactory().createViewModel(
 				VMNamingHelper.getInstance().computeViewModelImplName(p_sBaseName, false, p_oDomain.getLanguageConf()),
 				p_sUmlName, p_oPackage, p_oViewModelType, p_oEntityToUpdate, p_sPathToModel, p_bCustomizable);
-		//r_oNew.setCurrentItemKeyName(CURRENT_ITEM_OF + StringUtils.capitalize(p_sUmlName));
+		r_oNew.setCurrentItemKeyName(CURRENT_ITEM_OF + StringUtils.capitalize(p_sUmlName));
 
 		// Add super interface on the view model interface.
 		this.createViewModelInterface(p_sBaseName, r_oNew, p_oDomain);
@@ -156,7 +156,7 @@ public class MViewModelFactory {
 		// create list viewmodel
 		MViewModelImpl r_oListViewModel =  p_oDomain.getXModeleFactory().createViewModel(
 				sViewModelImplName, p_oUmlClass.getName(), p_oPackageBaseViewModel, oViewModelType, p_oEntityToUpdate, null, false);
-		//r_oListViewModel.setCurrentItemKeyName(CURRENT_ITEM_OF + StringUtils.capitalize(p_oUmlClass.getName()));
+		r_oListViewModel.setCurrentItemKeyName(CURRENT_ITEM_OF + StringUtils.capitalize(p_oUmlClass.getName()));
 		
 		// create list viewmodel interface
 		MViewModelFactory.getInstance().createListViewModelInterface(r_oListViewModel, p_oMasterVmi, p_oDomain);

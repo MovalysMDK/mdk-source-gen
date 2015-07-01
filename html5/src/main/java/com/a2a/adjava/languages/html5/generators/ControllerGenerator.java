@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.generator.core.incremental.AbstractIncrementalGenerator;
 import com.a2a.adjava.generators.DomainGeneratorContext;
+import com.a2a.adjava.languages.html5.xmodele.MH5Attribute;
 import com.a2a.adjava.languages.html5.xmodele.MH5Dictionary;
 import com.a2a.adjava.languages.html5.xmodele.MH5ImportDelegate;
 import com.a2a.adjava.languages.html5.xmodele.MH5ListPanelView;
@@ -33,6 +34,7 @@ import com.a2a.adjava.languages.html5.xmodele.MH5View;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
 import com.a2a.adjava.xmodele.IDomain;
+import com.a2a.adjava.xmodele.MLinkedInterface;
 import com.a2a.adjava.xmodele.XProject;
 
 /**
@@ -121,7 +123,10 @@ public class ControllerGenerator extends AbstractIncrementalGenerator<IDomain<MH
 				p_oMH5ImportDelegate.addImport("MFListScopeBuilder");
 			}
 			p_oMH5ImportDelegate.addImport(((MH5ListPanelView)p_oMH5View).getPanelListName()+"Factory");
-			p_oMH5ImportDelegate.addImport(p_oMH5View.getName()+"DataLoader");
+			
+			if (((MH5ListPanelView)p_oMH5View).isAttachedToEntity()) {
+				p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+			}
 		} 
 		else{
 			MH5PanelView oPanelView = (MH5PanelView) p_oMH5View;
@@ -129,7 +134,10 @@ public class ControllerGenerator extends AbstractIncrementalGenerator<IDomain<MH
 				p_oMH5ImportDelegate.addImport("MFWorkspaceDetailScopeBuilder");
 			} else {
 				p_oMH5ImportDelegate.addImport("MFFormScopeBuilder");
-				p_oMH5ImportDelegate.addImport(p_oMH5View.getName()+"DataLoader");
+				
+				if (oPanelView.isAttachedToEntity()) {
+					p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+				}
 			}
 			p_oMH5ImportDelegate.addImport(p_oMH5View.getName()+"VMFactory");
 			if ( oPanelView.getSaveActionName() != null ) {

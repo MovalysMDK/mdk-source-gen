@@ -20,6 +20,11 @@ import java.util.List;
 
 import org.dom4j.Element;
 
+import com.a2a.adjava.xmodele.MDialog;
+import com.a2a.adjava.xmodele.MLinkedInterface;
+import com.a2a.adjava.xmodele.MPage;
+import com.a2a.adjava.xmodele.ui.panel.MPanelOperation;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -74,6 +79,12 @@ public class MH5PanelView extends MH5View{
 	 */
 	@XmlAttribute
 	private boolean isPanelOfWorkspace;
+	
+	/**
+	 * true if this panel is attached to one entity at least
+	 */
+	@XmlAttribute
+	private boolean isAttachedToEntity;
 	
 
 	/**
@@ -176,6 +187,22 @@ public class MH5PanelView extends MH5View{
 	public void setPanelOfWorkspace(boolean pIsPanelOfWorkspace) {
 		this.isPanelOfWorkspace = pIsPanelOfWorkspace;
 	}
+	
+	/**
+	 * @return isAttachedToEntityModel
+	 * return true if the panel is attached to one entity model at least
+	 */
+	public boolean isAttachedToEntity() {
+		return isAttachedToEntity;
+	}
+
+	/**
+	 * Define if the panel is attached to one entity model at least
+	 * @param isAttachedToEntityModel
+	 */
+	public void setAttachedToEntity(boolean isAttachedToEntity) {
+		this.isAttachedToEntity = isAttachedToEntity;
+	}
 
 	/**
 	 * @return the isList
@@ -247,6 +274,13 @@ public class MH5PanelView extends MH5View{
 			r_xView.addAttribute("isPanelOfWorkspace", "false");
 
 		}
+		
+		if (this.isAttachedToEntity()){
+			r_xView.addAttribute("isAttachedToEntityModel", "true");
+		}else{
+			r_xView.addAttribute("isAttachedToEntityModel", "false");
+		}
+		
 		r_xView.addAttribute("type", this.type);
 		r_xView.addAttribute("screen-name", this.screenName);
 		

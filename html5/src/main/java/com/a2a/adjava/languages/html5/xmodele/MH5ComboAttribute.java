@@ -83,6 +83,12 @@ public class MH5ComboAttribute extends MH5Attribute {
 	public Element toXml() {
 		Element r_xAttribute = super.toXml();
 		
+		// do this correctly
+		String sComboName = this.getAttributeFieldName();
+		String sFirstLetter = sComboName.substring(0, 1);
+		sComboName = sFirstLetter.toLowerCase() + sComboName.substring(1);
+		r_xAttribute.element("field-name").setText(sComboName);
+		
 		r_xAttribute.addElement("value-attribute").setText(this.valueAttribute);
 		
 		Element xSelectionAttributes = r_xAttribute.addElement("displayed-attributes-in-selection");

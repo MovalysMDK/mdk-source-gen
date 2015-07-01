@@ -344,6 +344,15 @@ public class ScreenDependencyProcessor {
 
 					if (oScreenEnd.getPageCount() == 1) {
 
+							// recopy current item key name to
+							// screen target
+							oScreenEnd
+									.getMasterPage()
+									.getViewModelImpl()
+									.setCurrentItemKeyName(
+											p_oScreen.getMasterPage().getViewModelImpl()
+													.getCurrentItemKeyName());
+
 							// il faut que le detail de la liste
 							// oScreenEnd possède toutes les
 							// cascades de l'affichage de la liste

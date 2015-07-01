@@ -187,6 +187,10 @@ public class VMListPathProcessor {
 
 			r_oViewModel.setMandatory(p_bMandatory);
 
+			r_oViewModel.setCurrentItemKeyName(MViewModelFactory.CURRENT_ITEM_OF
+					+ StringUtils.capitalize(sAssociationEndName) + "From"
+					+ StringUtils.capitalize(oMasterVM.getUmlName()));
+
 			VMAttributeHelper.getInstance().addIdFieldToClass(r_oViewModel, p_oTargetEntity,
 					p_oVMPathContext.getCurrentPath(), p_oDomain);
 
@@ -349,11 +353,14 @@ public class VMListPathProcessor {
 							MVFLabelKind.WITH_LABEL,
 							r_oViewModel.getEntityToUpdate() != null ? r_oViewModel.getEntityToUpdate().getMasterInterface().getFullName() : null, false);
 					
-					r_oViewModel.addParameter("baseName", "lst" + StringUtils.capitalize(sTheoVmItfName));
+					r_oViewModel.addParameter("baseName", sFixedListName);
 							
 					oNewMVisualField.addParameter("fixedList", "true");
 					oNewMVisualField.addParameter("fixedListVm", r_oViewModel.getFullName());
+					oNewMVisualField.addParameter("fixedListVmShortName", r_oViewModel.getName());
+					oNewMVisualField.addParameter("fixedListVmPropertyName", sFixedListName);
 
+					// oNewMVisualField.setViewModelProperty(sFixedListName);
 					oNewMVisualField.setViewModelProperty(sFixedListComponentName);
 					oNewMVisualField.setViewModelName(r_oViewModel.getName());
 					

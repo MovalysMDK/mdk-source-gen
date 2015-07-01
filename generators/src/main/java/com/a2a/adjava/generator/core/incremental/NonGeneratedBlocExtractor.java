@@ -78,7 +78,7 @@ public class NonGeneratedBlocExtractor {
 			
 			Pattern oPattern = Pattern.compile(sXmlNonGenStart);
 			Matcher oMatcher = oPattern.matcher(sTrimLine);
-			if ( !bKeepLine && oMatcher.find()) {
+			if ( !bKeepLine && oMatcher.find() && oMatcher.groupCount() > 0) {
 				sBlocId = oMatcher.group(1);
 				bKeepLine = true ;
 				oNonGeneratedBloc = new NonGeneratedBloc(sBlocId);

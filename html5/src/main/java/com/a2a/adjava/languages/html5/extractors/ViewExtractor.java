@@ -226,6 +226,13 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 		r_oNewView.setScreenName(p_oPage.getParent().getName());
 		//TODO : add screen 
 		
+		if(p_oPage.getViewModelImpl().getEntityToUpdate() != null)
+		{	
+			r_oNewView.setAttachedToEntity(true);
+		}else{
+			r_oNewView.setAttachedToEntity(false);
+		}
+		
 		this.computeViewAttributes(p_oPage, r_oNewView);
 		
 		this.getDomain().getDictionnary().registerMH5View(r_oNewView);

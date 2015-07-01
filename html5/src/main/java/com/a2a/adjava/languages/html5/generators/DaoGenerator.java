@@ -81,6 +81,9 @@ public class DaoGenerator extends AbstractIncrementalGenerator<IDomain<MH5Dictio
 		for (MDaoImpl oClass : oDictionnary.getAllDaos()) {			
 			
 			String sNameBefore = oClass.getName();
+			//set the first letter of the class in uppercase.
+			sNameBefore = sNameBefore.substring(0,1).toUpperCase() + sNameBefore.substring(1);
+			
 			oClass.setName(sNameBefore+docSuffixMapping);
 			
 			createDaoMapping(oClass, p_oMProject, p_oGeneratorContext);

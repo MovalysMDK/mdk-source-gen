@@ -143,6 +143,12 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	private boolean mandatory = false;
 
 	/**
+	 * Cache key name for selected item
+	 * Used 
+	 */
+	private String currentItemKeyName ;
+
+	/**
 	 * Customizable VM
 	 */
 	private boolean customizable = false;
@@ -161,12 +167,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	 * multiInstance view model
 	 */
 	private boolean multiInstance = false;
-
-	/**
-	 * javadoc on object
-	 */
-	private String documentation = "";
-
+	
 	/**
 	 * Page 
 	 */
@@ -649,6 +650,22 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	}
 
 	/**
+	 * Return cache key name for selected item
+	 * @return cache key name for selected item
+	 */
+	public String getCurrentItemKeyName() {
+		return this.currentItemKeyName;
+	}
+	
+	/**
+	 * Define cache key name for selected item
+	 * @param p_sCurrentItemKeyName cache key name for selected item
+	 */
+	public void setCurrentItemKeyName(String p_sCurrentItemKeyName) {
+		this.currentItemKeyName = p_sCurrentItemKeyName;
+	}
+
+	/**
 	 * Return true if viewmodel is mandatory
 	 * @return true if viewmodel is mandatory
 	 */
@@ -733,6 +750,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 		p_oViewModelImpl.setIdentifier(this.getIdentifier());
 		p_oViewModelImpl.setAttributes(this.getAttributes());
 		p_oViewModelImpl.setImportCascades(this.importCascades);
+		p_oViewModelImpl.setCurrentItemKeyName(this.currentItemKeyName);
 		p_oViewModelImpl.setMandatory(this.mandatory);
 	}
 	
@@ -823,6 +841,10 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 			xCascade.addAttribute("assoName", oSaveCascade.getAssoName());
 		}
 		
+		if ( this.currentItemKeyName != null ) {
+			oElement.addElement("current-item-key-name").setText(this.currentItemKeyName);
+		}
+		
 		if (this.pathToModel!=null && this.pathToModel.contains(StrUtils.DOT_S)) {
 			String[] t_sPaths = pathToModel.split("\\.");
 			Element oPaths = oElement.addElement("data-path");
@@ -876,23 +898,6 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * sets the javadoc on the view model
-	 * @param p_sDocumentation the javadoc to set
-	 */
-	public void setDocumentation(String p_sDocumentation) {
-		super.setDocumentation(p_sDocumentation);
-		this.documentation = p_sDocumentation;
-	}
-	
-	/**
-	 * gets the javadoc on the view model
-	 * @return the javadoc on the view model
-	 */
-	public String getDocumentation() {
-		return this.documentation;
 	}
 
 	public WeakReference<MPage> getPage() {
