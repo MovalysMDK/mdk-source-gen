@@ -179,6 +179,11 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	private boolean screenViewModel = false;
 	
 	/**
+	 * javadoc on object
+	 */
+	private String documentation = "";
+	
+	/**
 	 * Create a new view model.
 	 * @param p_sName viewmodel name (including prefix/suffix)
 	 * @param p_sUmlName uml name
@@ -914,5 +919,22 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 
 	public void setScreenViewModel(boolean screenViewModel) {
 		this.screenViewModel = screenViewModel;
+	}
+	
+	/**
+	 * sets the javadoc on the view model
+	 * @param p_sDocumentation the javadoc to set
+	 */
+	public void setDocumentation(String p_sDocumentation) {
+		super.setDocumentation(p_sDocumentation);
+		this.documentation = p_sDocumentation;
+	}
+	
+	/**
+	 * gets the javadoc on the view model
+	 * @return the javadoc on the view model
+	 */
+	public String getDocumentation() {
+		return this.documentation;
 	}
 }
