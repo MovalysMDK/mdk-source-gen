@@ -268,7 +268,9 @@ public class DaoGenerator extends AbstractIncrementalGenerator<IDomain<MH5Dictio
 			p_oMH5ImportDelegate.addImport(p_oClass.getMasterInterface().getName()+"Mapping");
 			
 			for(MAssociation assos : p_oClass.getMEntityImpl().getAssociations()){
-				if(!assos.isTransient()){
+				if(!assos.isTransient() &&
+					assos.getRefClass()!=null &&
+					assos.getRefClass().getDao()!=null){
 					p_oMH5ImportDelegate.addImport(assos.getRefClass().getDao().getName() + "Proxy");
 				}
 			}	
