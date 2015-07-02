@@ -63,12 +63,12 @@ public class ViewModelExtractor extends AbstractExtractor<IDomain<IModelDictiona
 	/**
 	 * Stereotype list indicating that a UmlClass is a view model of the domain.
 	 */
-	private List<String> listStereotypes = new ArrayList<String>();
+	private List<String> listStereotypes = new ArrayList<>();
 	
 	/**
 	 * Stereotype list indicating the link between viewmodel and model.
 	 */
-	private List<String> listStereotypesUsageViewModel2Model = new ArrayList<String>();
+	private List<String> listStereotypesUsageViewModel2Model = new ArrayList<>();
 
 	/**
 	 * Stereotype list indicating that a Viewmodel is customizable

@@ -38,7 +38,7 @@ public class SPackagedElement extends SGeneratedElement {
 	/**
 	 * linked import 
 	 */
-	private List<String> importList = new ArrayList<String>();
+	private List<String> importList = new ArrayList<>();
 	
 	/**
 	 * Construct a new MUmlElement

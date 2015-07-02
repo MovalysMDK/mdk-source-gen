@@ -340,8 +340,11 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 		else if ( !p_oScreen.hasMasterPage()) {
 			String sBaseName = p_oScreen.getUmlName();
 			String sControllerName = this.computeControllerName(sBaseName);
-			MIOSViewController oRootViewController = oModelFactory.createViewController(sControllerName);
+			MIOSViewController oRootViewController = oModelFactory.createViewController(sControllerName, p_oScreen.getUmlName());
 			this.addControllerTitleLabel(oRootViewController.getControllerType(), sControllerName, sBaseName);
+
+			// Comment for Screen
+			oRootViewController.setIsInCommentScreen(p_oScreen.isComment());
 
 			this.getDomain().getDictionnary().registerIOSController(oRootViewController);
 

@@ -866,6 +866,7 @@
 					<resource-generators>
 						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ScreenGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.CommentGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.AdapterGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ActionGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ActionInterfaceGenerator" />
@@ -876,6 +877,7 @@
 				<project name="test" base-dir="mbandroid/test">
 					<source-dir>src/main/java</source-dir>
 					<assets-dir>assets</assets-dir>
+					<res-dir>res</res-dir>
 					<resource-generators>
 						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
 					</resource-generators>
