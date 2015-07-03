@@ -62,6 +62,6 @@ public class MDialog extends MPage {
 		xCreator.addElement("name").setText(this.viewModelCreator.getName());
 		xCreator.addElement("full-name").setText(this.viewModelCreator.getFullName());
 		
-		p_xElement.add(this.getLayout().toXml());
+		//p_xElement.add(this.getLayout().toXml());
 	}
 }
