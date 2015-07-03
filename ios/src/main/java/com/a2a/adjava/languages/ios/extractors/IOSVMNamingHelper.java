@@ -320,10 +320,10 @@ public class IOSVMNamingHelper {
 	 * @param p_oViewModel view model of the combo
 	 * @return  the XIB container name of the item combo
 	 */
-	public String computeMultiXibNameForCombo( MViewModelImpl p_oViewModel){
+	public String computeDelegateNameForCombo( MViewModelImpl p_oViewModel){
 		String r_sName = null ;	
 		if ( p_oViewModel != null ){
-			r_sName = StringUtils.join(p_oViewModel.getFirstParent().getUmlName(),COMBO_DELEGATE_SUFFIX);
+			r_sName = StringUtils.join(p_oViewModel.getFirstParent().getUmlName(), p_oViewModel.getUmlName(), COMBO_DELEGATE_SUFFIX);
 		}
 		return r_sName;
 	}

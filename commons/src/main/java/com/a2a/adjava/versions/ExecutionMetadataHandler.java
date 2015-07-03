@@ -51,7 +51,7 @@ public class ExecutionMetadataHandler {
 	 */
 	private static RuntimeDependency getMf4mddDependency(ExecutionMetadata oExecutionMetadata) {
 		for(RuntimeDependency oDependency : oExecutionMetadata.getRuntimeDependencys()) {
-			if(oDependency.getArtifactId().equalsIgnoreCase("mf4mdd")) {
+			if(oDependency.getArtifactId().contains("mf4mdd")) {
 				return oDependency;
 			}
 		}

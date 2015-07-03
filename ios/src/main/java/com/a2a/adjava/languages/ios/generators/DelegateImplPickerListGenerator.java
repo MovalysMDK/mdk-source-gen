@@ -93,7 +93,7 @@ public class DelegateImplPickerListGenerator extends AbstractIncrementalGenerato
 	 * @return viewmodel filename
 	 */
 	protected String getDelegatePickerListFilename( MIOSMultiXibContainer p_oMultiXibContainer, XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject) {
-		return FilenameUtils.normalize(FileTypeUtils.computeFilenameForIOSInterface(
+		return FilenameUtils.normalize(FileTypeUtils.computeFilenameForIOSImpl(
 				"delegate", IOSVMNamingHelper.getInstance().computeDelegateNameOfPickerList(p_oMultiXibContainer), p_oProject.getSourceDir()));
 	}
 

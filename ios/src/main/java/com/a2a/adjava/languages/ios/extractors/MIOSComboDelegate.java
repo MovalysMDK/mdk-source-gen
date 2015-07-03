@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,6 +84,16 @@ public class MIOSComboDelegate {
 	 * Starting position in a visual field name of the related uml link
 	 */
 	public static final String KEY_TO_SEARCH_PARAMETER_NAME = "search";
+	
+	/**
+	 * Starting position in a visual field name of the related uml link
+	 */
+	public static final String KEY_TO_DATA_DELEGATE_CLASS_PARAMETER_NAME = "dataDelegateName";
+
+	/**
+	 * Starting position in a visual field name of the related uml link
+	 */
+	public static final String KEY_TO_PICKER_VALUES_KEY_PARAMETER_NAME = "pickerValuesKey";
 
 	/**
 	 * Logger
@@ -115,7 +126,7 @@ public class MIOSComboDelegate {
 		return this.getDelegator().getDomain() ;
 	}
 	/**
-	 * Update the position of a combo in the xib container for define the width and the height
+	 * Update the position of a combo in the xib container to define the width and the height
 	 */
 	public void updatePositionOfCombo(){
 
@@ -281,7 +292,7 @@ public class MIOSComboDelegate {
 		MIOSMultiXibContainer oMultiXibContainer = new MIOSMultiXibContainer();
 		oMultiXibContainer.addXib(oXibItemContainer);
 		oMultiXibContainer.addXib(oXibSelectedContainer);
-		oMultiXibContainer.setName(IOSVMNamingHelper.getInstance().computeMultiXibNameForCombo(p_oViewModel));
+		oMultiXibContainer.setName(IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(p_oViewModel));
 		
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibSelectedContainer);
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibItemContainer);
@@ -361,8 +372,6 @@ public class MIOSComboDelegate {
 				IOSVMNamingHelper.getInstance().computeViewNameOfCombo(oVm));
 		p_oVisualField.addVisualParameter(KEY_TO_CELL_ITEM_NAME, 
 				IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(oVm));
-		p_oVisualField.addVisualParameter(KEY_TO_CELL_SELECTED_ITEM_NAME, 
-				IOSVMNamingHelper.getInstance().computeXibNameOfSelectedItemForCombo(oVm));
 
 		p_oFieldView.setCustomClass("MFPickerList");
 		p_oFieldView.setCellType("MFCell1ComponentHorizontal"); 
@@ -375,17 +384,11 @@ public class MIOSComboDelegate {
 			oFieldOptions = new HashMap<>();
 		}
 		oFieldOptions.put(KEY_TO_SEARCH_PARAMETER_NAME, hasSearch ? "true" : "false");
+		oFieldOptions.put(KEY_TO_DATA_DELEGATE_CLASS_PARAMETER_NAME, IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(oVm));
+		oFieldOptions.put(KEY_TO_PICKER_VALUES_KEY_PARAMETER_NAME, StringUtils.join("lst", oVm.getName()));
+		
 		p_oFieldView.setViewOptions(oFieldOptions);
 
-		Object oSelectedItemCellView = p_oVisualField.getVisualParameter(KEY_TO_CELL_SELECTED_ITEM_NAME) ;
-		if (oSelectedItemCellView!= null){
-			p_oFieldView.setCellType(p_oVisualField.getComponent());
-		}
-		Object oItemCellView = p_oVisualField.getVisualParameter(KEY_TO_CELL_ITEM_NAME) ;
-		if (oItemCellView!= null){
-			p_oFieldView.setLinkedType(oItemCellView.toString());
-		}
-		p_oFieldView.addOption(KEY_TO_CELL_SELECTED_ITEM_NAME, oSelectedItemCellView.toString());
 		p_oFieldView.setCustomParameterName(IOSVMNamingHelper.getInstance().computeCustomParameterNameForCombo(oVm, p_sParentBindingPath));		
 	}
 
