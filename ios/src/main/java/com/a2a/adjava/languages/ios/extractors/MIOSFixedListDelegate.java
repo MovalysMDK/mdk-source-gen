@@ -59,7 +59,12 @@ public class MIOSFixedListDelegate {
 	/**
 	 * Key to save the name of the detail view controller 
 	 */
-	public static final String FIXED_LIST_DETAIL_VIEW_CONTROLLER_NAME = "fixedListDetailViewControllerName" ;
+	public static final String FIXED_LIST_DETAIL_VIEW_CONTROLLER_NAME = "screenDetailViewControllerName" ;
+
+	/**
+	 * Key to save the name of the detail view controller 
+	 */
+	public static final String FIXED_LIST_DETAIL_STORYBOARD_NAME = "screenDetailStoryboardName" ;
 	
 	/**
 	 * Key to save the name of the controller configuration property
@@ -167,6 +172,9 @@ public class MIOSFixedListDelegate {
 			}
 			if(MIOSControllerType.FIXEDLISTVIEW.equals(oSection.getController().getControllerType())) {			
 				oSection.computeSubviewsPositionForLocalization(MVFLocalization.LIST);
+				for(MIOSView oSubView : oSection.getSubViews()) {
+					((MIOSEditableView)oSubView).computeCellHeight();
+				}
 			}
 			else {
 				oSection.computeSubviewsPosition();
@@ -285,6 +293,10 @@ public class MIOSFixedListDelegate {
 		if (!this.bCellXibNoGeneration) {
 			oXibContainer = (MIOSXibFixedListContainer) this.getDomain().getXModeleFactory().createXibContainer(p_oPage, p_oViewModel, p_oIOSSection.getController());
 			oXibContainer.setXibType(MIOSXibType.FIXEDLISTITEM);
+			
+			oXibContainer.setDetailScreenStoryBoardName(p_oViewModel.getParameterValue(FIXED_LIST_DETAIL_STORYBOARD_NAME));
+			oXibContainer.setDetailScreenViewControllerName(p_oViewModel.getParameterValue(FIXED_LIST_DETAIL_VIEW_CONTROLLER_NAME));
+			oXibContainer.setViewModelItemName(p_oViewModel.getSubViewModels().get(0).getName());
 		}
 
 		//Néécessaire pour géénéérer la propriéétéé "field" du PLIST de la cellule de la fixed list,
@@ -296,6 +308,7 @@ public class MIOSFixedListDelegate {
 			if (p_oViewModel.getConfigName().equals(PHOTO_FIXED_LIST_CONFIGURATION_NAME)) {
 				oVisualField.setCreateLabel(false);
 				oVisualField.setReadOnly(true);
+				oVisualField.addVisualParameter(PHOTO_FIXED_LIST_CONFIGURATION_NAME, "true");
 			}
 			this.delegator.computeField(oVisualField, oVisualField.isReadOnly(), p_sParentBindingPath, p_oIOSSection,oXibContainer);
 		}
@@ -354,7 +367,7 @@ public class MIOSFixedListDelegate {
 		if (!p_bNoDetailController) {
 			p_oViewModel.addParameter(FIXED_LIST_DETAIL_VIEW_CONTROLLER_NAME, oNewViewController.getName());
 		}
-		p_oViewModel.addParameter("screen", p_oPage.getParent().getName() );
+		p_oViewModel.addParameter(FIXED_LIST_DETAIL_STORYBOARD_NAME, p_oPage.getParent().getName() );
 		p_oViewModel.addImport(oNewViewController.getName()) ;
 
 		MViewModelImpl oItemVm = p_oViewModel.getMasterSubViewModel();
@@ -450,6 +463,15 @@ public class MIOSFixedListDelegate {
 			p_oFieldView.setCustomClass("MFFixedList");
 			p_oFieldView.setCellType("MFCell1ComponentHorizontal");
 			p_oFieldView.addOption("dataDelegateName", oFixedListView.toString());
+			p_oFieldView.addOption("canAddItem", "YES");
+			p_oFieldView.addOption("canEditItem", "YES");
+			p_oFieldView.addOption("canDeleteItem", "YES");
+			p_oFieldView.addOption("editMode", "0");
+			String sVmName = p_oVisualField.getParameterValue("fixedListVm");
+			MViewModelImpl oVm = this.delegator.getDomain().getDictionnary().getViewModel(sVmName);
+			if (oVm.getConfigName().equals(PHOTO_FIXED_LIST_CONFIGURATION_NAME)) {
+				p_oFieldView.addOption("isPhotoFixedList", "YES");
+			}
 			//p_oFieldView.setCustomClass(oFixedListView.toString());
 			//p_oFieldView.setCellType(p_oVisualField.getComponent());
 		} else {

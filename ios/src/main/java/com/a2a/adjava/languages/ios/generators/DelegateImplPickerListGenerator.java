@@ -16,9 +16,7 @@
 package com.a2a.adjava.languages.ios.generators;
 
 import org.apache.commons.io.FilenameUtils;
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
+import org.dom4j.io.DOMReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,15 +24,15 @@ import com.a2a.adjava.generator.core.incremental.AbstractIncrementalGenerator;
 import com.a2a.adjava.generator.core.incremental.NonGeneratedBlocExtractor;
 import com.a2a.adjava.generators.DomainGeneratorContext;
 import com.a2a.adjava.languages.ios.extractors.IOSVMNamingHelper;
-import com.a2a.adjava.uml2xmodele.extractors.viewmodel.VMNamingHelper;
+import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
+import com.a2a.adjava.languages.ios.xmodele.MIOSMultiXibContainer;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
+import com.a2a.adjava.utils.JaxbUtils;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
-import com.a2a.adjava.xmodele.MViewModelImpl;
 import com.a2a.adjava.xmodele.XProject;
-import com.a2a.adjava.xmodele.ui.viewmodel.ViewModelType;
 
 /**
  * Viewmodel generator
@@ -45,62 +43,48 @@ import com.a2a.adjava.xmodele.ui.viewmodel.ViewModelType;
  * @author lmichenaud
  * @since MF-Annapurna
  */
-public class ViewInterfaceFixedListGenerator extends AbstractIncrementalGenerator<IDomain<IModelDictionary,IModelFactory>> {
+public class DelegateImplPickerListGenerator extends AbstractIncrementalGenerator<IDomain<IModelDictionary,IModelFactory>> {
 
 	/**
 	 * Logger
 	 */
-	private static final Logger log = LoggerFactory.getLogger(ViewInterfaceFixedListGenerator.class);
+	private static final Logger log = LoggerFactory.getLogger(DelegateInterfacePickerListGenerator.class);
 	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void genere(XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject, DomainGeneratorContext p_oContext) throws Exception {
-		log.debug("> ViewInterfaceFixedListGenerator.genere");
+		log.debug("> DelegateInterfacePickerListGenerator.genere");
 		Chrono oChrono = new Chrono(true);
 		NonGeneratedBlocExtractor oNonGeneratedBlocExtractor = new NonGeneratedBlocExtractor();
-		for(MViewModelImpl oViewModel : p_oProject.getDomain().getDictionnary().getAllViewModels()) {
-			if (oViewModel.getType() == ViewModelType.FIXED_LIST) {
-				this.createViewFixedList(oViewModel, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
-			}
+		for(MIOSMultiXibContainer oMultiXibContainer : ((MIOSDictionnary)p_oProject.getDomain().getDictionnary()).getAllIOSMultiXibContainers()) {
+				this.createDelegatePickerList(oMultiXibContainer, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
 		}
-		log.debug("< ViewInterfaceFixedListGenerator.genere: {}", oChrono.stopAndDisplay());
+		log.debug("< DelegateInterfacePickerListGenerator.genere: {}", oChrono.stopAndDisplay());
 	}
 	
 	/**
-	 * Generate implementation of viewmodel
-	 * @param p_oMViewModel viewmodel
+	 * Generate implementation of delegate
+	 * @param p_oMultiXibContainer multi-xi container
 	 * @param p_oNonGeneratedBlocExtractor non-generated bloc extractor
 	 * @param p_oMProject project
 	 * @param p_mapSession session
 	 * @throws Exception exception
 	 */
-	private void createViewFixedList(MViewModelImpl p_oMViewModel, NonGeneratedBlocExtractor p_oNonGeneratedBlocExtractor,
+	private void createDelegatePickerList(MIOSMultiXibContainer p_oMultiXibContainer, NonGeneratedBlocExtractor p_oNonGeneratedBlocExtractor,
 			XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject, DomainGeneratorContext p_oContext) throws Exception {
 
-		Document xViewModelDoc = createDocument(p_oMViewModel, p_oProject);
+		org.w3c.dom.Document xViewModelDoc = JaxbUtils.marshalToDocument(p_oMultiXibContainer);
+		org.dom4j.io.DOMReader reader = new DOMReader();
+		org.dom4j.Document document = reader.read(xViewModelDoc);
 		
-		String sViewModelFile = this.getViewFixedListFilename(p_oMViewModel, p_oProject);
+		String sViewModelFile = this.getDelegatePickerListFilename(p_oMultiXibContainer, p_oProject);
 		
 		log.debug("  generation du fichier: {}", sViewModelFile);
-		this.doIncrementalTransform("delegate-fixedlist-interface.xsl", sViewModelFile, xViewModelDoc, p_oProject, p_oContext);
+		this.doIncrementalTransform("delegate-pickerlist-impl.xsl", sViewModelFile, document, p_oProject, p_oContext);
 	}
 
-	/**
-	 * Create document
-	 * @param p_oMViewModel viewmodel
-	 * @param p_oProject project
-	 * @return xml of viewmodel implementation
-	 */
-	protected Document createDocument(MViewModelImpl p_oMViewModel,
-			XProject<IDomain<IModelDictionary, IModelFactory>> p_oProject) {
-		Element r_xViewModelFile = p_oMViewModel.toXml();
-		r_xViewModelFile.addElement("master-package").setText(p_oProject.getDomain().getRootPackage());
-		r_xViewModelFile.addElement("view-fixedlist-name").setText(IOSVMNamingHelper.getInstance().computeViewNameOfFixedList(p_oMViewModel));
-		
-		return DocumentHelper.createDocument(r_xViewModelFile);
-	}
 	
 	/**
 	 * Compute viewmodel filename
@@ -108,9 +92,9 @@ public class ViewInterfaceFixedListGenerator extends AbstractIncrementalGenerato
 	 * @param p_oProject project
 	 * @return viewmodel filename
 	 */
-	protected String getViewFixedListFilename( MViewModelImpl p_oMViewModel, XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject) {
+	protected String getDelegatePickerListFilename( MIOSMultiXibContainer p_oMultiXibContainer, XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject) {
 		return FilenameUtils.normalize(FileTypeUtils.computeFilenameForIOSInterface(
-				"delegate", IOSVMNamingHelper.getInstance().computeViewNameOfFixedList(p_oMViewModel), p_oProject.getSourceDir()));
+				"delegate", IOSVMNamingHelper.getInstance().computeDelegateNameOfPickerList(p_oMultiXibContainer), p_oProject.getSourceDir()));
 	}
 
 }

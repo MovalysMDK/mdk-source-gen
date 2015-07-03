@@ -26,8 +26,8 @@ import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSModeleFactory;
+import com.a2a.adjava.languages.ios.xmodele.MIOSMultiXibContainer;
 import com.a2a.adjava.languages.ios.xmodele.MIOSStoryBoard;
-import com.a2a.adjava.languages.ios.xmodele.MIOSVisualField;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibComboContainer;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibContainer;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSComboViewController;
@@ -255,9 +255,8 @@ public class MIOSComboDelegate {
 		}
 
 		MIOSXibComboContainer oXibItemContainer = oXibSelectedContainer.clone();
-		oXibItemContainer.setName(IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(p_oViewModel ));
+		oXibItemContainer.setName(IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(p_oViewModel));
 		oXibItemContainer.setIsSelectedItem(false);
-
 
 		ListIterator<MIOSView> oLitr = oXibItemContainer.getComponents().listIterator();
 		while(oLitr.hasNext()) {
@@ -279,8 +278,16 @@ public class MIOSComboDelegate {
 		oXibItemContainer.computeComponentsPosition();
 		oXibSelectedContainer.computeComponentsPosition();
 
+		MIOSMultiXibContainer oMultiXibContainer = new MIOSMultiXibContainer();
+		oMultiXibContainer.addXib(oXibItemContainer);
+		oMultiXibContainer.addXib(oXibSelectedContainer);
+		oMultiXibContainer.setName(IOSVMNamingHelper.getInstance().computeMultiXibNameForCombo(p_oViewModel));
+		
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibSelectedContainer);
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibItemContainer);
+		this.getDomain().getDictionnary().registerIOSMultiXibContainer(oMultiXibContainer);
+		
+		
 	}
 
 	/**

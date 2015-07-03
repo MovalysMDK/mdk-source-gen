@@ -33,24 +33,24 @@ public class SElement {
 	 * The type of element : first tag in xml
 	 */
 	private String type = null;
-	
+
 	/**
 	 * The name of umlElement, if null then element is not defined in Uml
 	 */
 	protected String umlName = null;
-	
+
 	/**
 	 * Parameter map
 	 */
 	private Map<String, String> parameters = null;
-	
+
 	/**
 	 * Empty constructor for jaxb
 	 */
 	protected SElement() {
 		// Empty constructor for jaxb
 	}
-	
+
 	/**
 	 * Construct a new MUmlElement
 	 * @param p_sType the type of element, the fisrt tag of xml
@@ -61,7 +61,7 @@ public class SElement {
 		this.type = p_sType;
 		this.parameters = new TreeMap<String, String>();
 	}
-	
+
 	/**
 	 * Return uml name
 	 * @return the uml name
@@ -86,7 +86,7 @@ public class SElement {
 	public String getParameterValue( String p_sParameterName ) {
 		return this.parameters.get(p_sParameterName);
 	}
-	
+
 	/**
 	 * Add a parameter
 	 * @param p_sKey parameter name
@@ -95,7 +95,7 @@ public class SElement {
 	public final void addParameter(String p_sKey, String p_sValue) {
 		this.parameters.put(p_sKey, p_sValue);
 	}
-	
+
 	/** 
 	 * Converted the element to xml
 	 * @return the xml representation of element
@@ -108,10 +108,12 @@ public class SElement {
 		}
 		Element xParams = r_x.addElement("parameters");
 		Element xParam = null;
-		for(Entry<String, String> oEntry : parameters.entrySet()) {
-			xParam = xParams.addElement("parameter");
-			xParam.setText(oEntry.getValue());
-			xParam.addAttribute("name", oEntry.getKey());
+		if(parameters !=null) {
+			for(Entry<String, String> oEntry : parameters.entrySet()) {
+				xParam = xParams.addElement("parameter");
+				xParam.setText(oEntry.getValue());
+				xParam.addAttribute("name", oEntry.getKey());
+			}
 		}
 		return r_x;
 	}

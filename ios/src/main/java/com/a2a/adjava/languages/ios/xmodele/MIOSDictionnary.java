@@ -57,6 +57,11 @@ public class MIOSDictionnary extends ModelDictionary {
 	private Map<String,MIOSXibContainer> xibContainers = new HashMap<String,MIOSXibContainer>();
 	
 	/**
+	 * MultiXIBContainers
+	 */
+	private Map<String,MIOSMultiXibContainer> multiXibContainers = new HashMap<String,MIOSMultiXibContainer>();
+	
+	/**
 	 * Register a story board
 	 * @param p_oMIOSStoryBoard story board
 	 * @param p_oScreen corresponding screen
@@ -133,11 +138,26 @@ public class MIOSDictionnary extends ModelDictionary {
 	}
 	
 	/**
+	 * Register a Multi-XIB container with its name
+	 * @param p_oMIOSXibContainer XIB container
+	 */
+	public void registerIOSMultiXibContainer( MIOSMultiXibContainer p_oMIOSMultiXibContainer ) {
+		this.multiXibContainers.put(p_oMIOSMultiXibContainer.getName(), p_oMIOSMultiXibContainer);
+	}
+	/**
 	 * Return all XIB container 
 	 * @return all XIB container
 	 */
 	public Collection<MIOSXibContainer> getAllIOSXibContainers() {
 		return this.xibContainers.values();
+	}
+	
+	/**
+	 * Return all Multi-XIB container 
+	 * @return all Multi-XIB container
+	 */
+	public Collection<MIOSMultiXibContainer> getAllIOSMultiXibContainers() {
+		return this.multiXibContainers.values();
 	}
 	
 	/**

@@ -17,16 +17,17 @@ package com.a2a.adjava.languages.ios.extractors;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.a2a.adjava.languages.ios.xmodele.MIOSMultiXibContainer;
+import com.a2a.adjava.languages.ios.xmodele.MIOSXibFixedListContainer;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOS2DListViewController;
+import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSController;
 import com.a2a.adjava.languages.ios.xmodele.controllers.MIOSSectionType;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSSection;
+import com.a2a.adjava.uml2xmodele.extractors.viewmodel.VMNamingHelper;
 import com.a2a.adjava.xmodele.MDialog;
 import com.a2a.adjava.xmodele.MPage;
 import com.a2a.adjava.xmodele.MViewModelImpl;
 
-/**
- * View model naming helper for ios
- */
 public class IOSVMNamingHelper {
 
 	/**
@@ -47,6 +48,11 @@ public class IOSVMNamingHelper {
 	 * Define the suffix of the name of the combo item
 	 */
 	public static final String COMBO_ITEM_SUFFIX = "Item" ;
+	
+	/**
+	 * Define the suffix of the name of the combo item
+	 */
+	public static final String COMBO_DELEGATE_SUFFIX = "Delegate" ;
 	
 	/**
 	 * Define the prefix of the name of list combo items
@@ -102,7 +108,7 @@ public class IOSVMNamingHelper {
 			}
 			else {
 				r_sName = StringUtils.join(  p_oPage.getUmlName(), p_oViewModel.getUmlName(), "Item" ); 
-			} 
+			}
 		}
 		return r_sName;
 	}
@@ -145,6 +151,32 @@ public class IOSVMNamingHelper {
 		}
 		return r_sName;
 	}
+	/**
+	 * Define the component name of the fixed list
+	 * @param p_oXibContainer the xib container of the fixed list
+	 * @return the component name of the fixed list
+	 */
+	public String computeViewNameOfFixedList(MIOSXibFixedListContainer p_oXibContainer){
+		String r_sName = null ;	
+		if ( p_oXibContainer != null ){
+			r_sName = p_oXibContainer.getViewFixedListName();
+		}
+		return r_sName;
+	}
+	
+	/**
+	 * Define the delegate name of the Picker list
+	 * @param p_oMultiXibContainer the multi-xib container of the picker list
+	 * @return the delegate name of the picker list
+	 */
+	public String computeDelegateNameOfPickerList(MIOSMultiXibContainer p_oMultiXibContainer){
+		String r_sName = null ;	
+		if ( p_oMultiXibContainer != null ){
+			r_sName = p_oMultiXibContainer.getName();
+		}
+		return r_sName;
+	}
+	
 	/**
 	 * Define the component name of the fixed list
 	 * @param p_oViewModel view model of the fixed list
@@ -282,6 +314,20 @@ public class IOSVMNamingHelper {
 		}
 		return r_sName;
 	}
+	/**
+	 * Define the XIB container name of the item combo (picker list)
+	 * @param p_oPage page containing the combo
+	 * @param p_oViewModel view model of the combo
+	 * @return  the XIB container name of the item combo
+	 */
+	public String computeMultiXibNameForCombo( MViewModelImpl p_oViewModel){
+		String r_sName = null ;	
+		if ( p_oViewModel != null ){
+			r_sName = StringUtils.join(p_oViewModel.getFirstParent().getUmlName(),COMBO_DELEGATE_SUFFIX);
+		}
+		return r_sName;
+	}
+	
 	
 	/**
 	 * Define the detail controller name to see the complete item in a picker list
