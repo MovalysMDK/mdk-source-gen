@@ -107,12 +107,6 @@ public class MIOSEditableView extends MIOSView {
 	@XmlAttribute
 	private int maxLength = -1;
 	
-	/**
-	 * Name of the enum class used
-	 */
-	@XmlElement
-	private String enumClassName ;
-	
 	/** 
 	 * Property list
 	 */
@@ -252,24 +246,6 @@ public class MIOSEditableView extends MIOSView {
 	public void setCustomParameterName(String p_sCustomParameterName) {
 		this.customParameterName = p_sCustomParameterName;
 	}
-	
-	
-	
-	/**
-	 * Return name of the enum class
-	 * @return name of the enum class
-	 */
-	public String getEnumClassName() {
-		return enumClassName;
-	}
-
-	/**
-	 * Set name of the enum class
-	 * @param p_sEnumClassName the name of the enum class
-	 */
-	public void setEnumClassName(String p_sEnumClassName) {
-		this.enumClassName = p_sEnumClassName;
-	}
 
 	/**
 	 * Copy data of argument in a new object
@@ -282,7 +258,6 @@ public class MIOSEditableView extends MIOSView {
 			this.labelView.copyTo(oLabelView);
 			p_oNewView.setLabelView(oLabelView) ;
 		}
-		p_oNewView.setEnumClassName(this.enumClassName);
 		//p_oNewView.setLabelViewHeight(this.labelViewHeight);
 		p_oNewView.setReadOnly(this.readOnly);
 		p_oNewView.setLinkedType(this.linkedType) ;

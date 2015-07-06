@@ -658,7 +658,7 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 
 		String sEnumClassName = p_oVisualField.getParameterValue("enum");
 		if(sEnumClassName != null) {
-			r_oFieldView.setEnumClassName(sEnumClassName);
+			r_oFieldView.addOption("enumClassName", sEnumClassName);
 		}
 
 		//Ajout des options spécifiques à ce type de vue
