@@ -632,6 +632,30 @@
 				</type>
 
 				<type>
+					<uml-type>Date</uml-type>
+					<language-type>java.sql.Date</language-type>
+					<init-format>new Date(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<data-type>BINARY</data-type>
+					<type-conversions>
+					    <type-conversion to="long">
+							<formula>VALUE.getTime()</formula>
+						</type-conversion>
+						<type-conversion to="Long">
+							<formula>VALUE.getTime()</formula>
+						</type-conversion>
+						<type-conversion to="Timestamp">
+							<formula>new Timestamp(VALUE.getTime())</formula>
+							<import>java.sql.Timestamp</import>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				<type>
 					<uml-type>Timestamp</uml-type>
 					<language-type>java.sql.Timestamp</language-type>
 					<init-format>new Timestamp(?)</init-format>
@@ -651,6 +675,10 @@
 					<type-conversions>
 						<type-conversion to="Long">
 							<formula>DateUtils.getTime(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
+						</type-conversion>
+						<type-conversion to="Date">
+							<formula>DateUtils.getDate(VALUE)</formula>
 							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
 						</type-conversion>
 					</type-conversions>
