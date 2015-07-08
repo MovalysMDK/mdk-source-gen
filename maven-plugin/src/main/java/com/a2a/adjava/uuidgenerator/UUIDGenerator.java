@@ -24,7 +24,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -131,10 +130,10 @@ public class UUIDGenerator extends AbstractMojo {
 		
 		initializeMap();
 		
-		Object[] oFilesList = discoverFiles(rootDirectory.getAbsolutePath(), filter);
+		List<File> oFilesList = discoverFiles(rootDirectory.getAbsolutePath(), filter);
 		
-		for (Object oFile : oFilesList) {
-			processFile(((File)oFile).getAbsolutePath(), StandardCharsets.UTF_8, propertiesReplacement);
+		for (File oFile : oFilesList) {
+			processFile(oFile.getAbsolutePath(), StandardCharsets.UTF_8, propertiesReplacement);
 		}
 	}
 	
@@ -153,8 +152,7 @@ public class UUIDGenerator extends AbstractMojo {
 	 * @param p_oFilter the FileFilter to apply to look for the files 
 	 * @return an array containing the list of File founds
 	 */
-	@SuppressWarnings("unchecked")
-	private File[] discoverFiles(String p_sRootDirectory, FileFilter p_oFilter) {
+	private List<File> discoverFiles(String p_sRootDirectory, FileFilter p_oFilter) {
 		List<File> r_listFiles = new ArrayList<File>();
 		
 		File oRootDir = new File(p_sRootDirectory);
@@ -162,14 +160,14 @@ public class UUIDGenerator extends AbstractMojo {
 		if (oRootDir.isDirectory()) {
 			for (File file : oRootDir.listFiles(p_oFilter)) {
 				if (file.isDirectory()) {
-					r_listFiles.addAll(Arrays.asList(discoverFiles(file.getAbsolutePath(), p_oFilter)));
+					r_listFiles.addAll(discoverFiles(file.getAbsolutePath(), p_oFilter));
 				} else {
 					r_listFiles.add(file);
 				}
 			}
 		}
 		
-		return (File[]) r_listFiles.toArray();
+		return r_listFiles;
 	}
 	
 	/**
