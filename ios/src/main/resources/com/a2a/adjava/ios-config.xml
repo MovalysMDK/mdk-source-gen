@@ -200,16 +200,14 @@
 					<uml-type>char</uml-type>
 					<language-type>NSString</language-type>
 					<init-format>@"?"</init-format>
-					<default-value>nil</default-value>
+					<default-value></default-value>
 					<variable-prefix></variable-prefix>
 					<parameter-prefix></parameter-prefix>
 					<return-prefix></return-prefix>
 					<get-accessor-prefix></get-accessor-prefix>
 					<set-accessor-prefix></set-accessor-prefix>
-					<wrapper>Integer</wrapper>
-					<unsaved-value>@-1</unsaved-value>
+					<wrapper>String</wrapper>
 					<data-type>ALPHANUMERIC</data-type>
-					<edit-type>text</edit-type>
 					<default-ui-type>Text</default-ui-type>
 					<default-options>_L1</default-options>
 					<coredata-type>String</coredata-type>
@@ -219,7 +217,7 @@
 					<uml-type>byte</uml-type>
 					<language-type>NSNumber</language-type>
 					<init-format>@?</init-format>
-					<default-value>nil</default-value>
+					<default-value>0</default-value>
 					<variable-prefix></variable-prefix>
 					<parameter-prefix></parameter-prefix>
 					<return-prefix></return-prefix>
@@ -238,7 +236,7 @@
 					<uml-type>short</uml-type>
 					<language-type>NSNumber</language-type>
 					<init-format>@?</init-format>
-					<default-value>@0</default-value>
+					<default-value>0</default-value>
 					<variable-prefix></variable-prefix>
 					<parameter-prefix></parameter-prefix>
 					<return-prefix></return-prefix>
