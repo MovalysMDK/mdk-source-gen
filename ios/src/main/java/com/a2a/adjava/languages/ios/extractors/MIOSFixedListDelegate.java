@@ -311,6 +311,8 @@ public class MIOSFixedListDelegate {
 				oVisualField.addVisualParameter(PHOTO_FIXED_LIST_CONFIGURATION_NAME, "true");
 			}
 			this.delegator.computeField(oVisualField, oVisualField.isReadOnly(), p_sParentBindingPath, p_oIOSSection,oXibContainer);
+			
+
 		}
 
 		//Si le XIB de cellule de la fixed list doit éétre géénééréé

@@ -17,6 +17,7 @@ package com.a2a.adjava.languages.ios.xmodele.views;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -266,6 +267,9 @@ public class MIOSEditableView extends MIOSView {
 		p_oNewView.setMandatory(this.isMandatory()) ;
 		p_oNewView.setVisibleLabel(this.isVisibleLabel());
 		p_oNewView.setMaxLength(this.maxLength);
+		for(Entry<String, String> option : this.options.entrySet()) {
+			p_oNewView.addOption(option.getKey(), option.getValue());
+		}
 	}
 	
 	/**

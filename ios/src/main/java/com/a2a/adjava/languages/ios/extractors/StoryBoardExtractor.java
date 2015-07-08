@@ -577,6 +577,11 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 			oFieldView.setHeight(158);
 		}
 
+		String sEnumClassName = p_oVisualField.getParameterValue("enum");
+		if(sEnumClassName != null) {
+			oFieldView.addOption("enumClassName", sEnumClassName);
+		}
+		
 		if ( p_oXibContainer != null ) {
 			if(oFieldView instanceof MIOSEditableView && 
 					p_oXibContainer instanceof MIOSXibComboContainer)
@@ -589,7 +594,9 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 			oFieldView.copyTo(oEditable);
 			p_oXibContainer.addComponent( oEditable );
 		}
+		
 
+		
 		if(p_oXibContainer == null || !p_oXibContainer.getXibType().equals(MIOSXibType.EXPANDABLELISTSECTION)) {
 			p_oIOSSection.addSubView(oFieldView);
 		}

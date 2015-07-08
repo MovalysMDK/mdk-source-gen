@@ -90,7 +90,7 @@
 				<sub-package-name>action</sub-package-name>
 			</action-interface>
 			
-			<types>
+			<types>				
 				<type>
 					<uml-type>int</uml-type>
 					<language-type>NSNumber</language-type>
@@ -195,6 +195,63 @@
 					<default-ui-type>Text</default-ui-type>
 					<coredata-type>String</coredata-type>
 				</type>
+				
+			    <type>
+					<uml-type>char</uml-type>
+					<language-type>NSString</language-type>
+					<init-format>@"?"</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>ALPHANUMERIC</data-type>
+					<edit-type>text</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<default-options>_L1</default-options>
+					<coredata-type>String</coredata-type>
+				</type>
+				
+			    <type>
+					<uml-type>byte</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>@1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<default-options>_P1_S0</default-options>
+					<coredata-type>Integer 16</coredata-type>
+				</type>
+				
+			    <type>
+					<uml-type>short</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>@0</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<coredata-type>Integer 16</coredata-type>
+				</type>
+				
 				<type>
 					<uml-type>double</uml-type>
 					<language-type>NSNumber</language-type>
@@ -216,7 +273,7 @@
 						</type-conversion>
 					</type-conversions>
 				</type>
-
+				
 				<type>
 					<uml-type>Double</uml-type>
 					<language-type>NSNumber</language-type>
