@@ -15,12 +15,15 @@
  */
 package com.a2a.adjava.languages.html5.generators;
 
+import java.io.File;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.a2a.adjava.generator.core.append.AbstractAppendGenerator;
 import com.a2a.adjava.generator.core.incremental.AbstractIncrementalGenerator;
 import com.a2a.adjava.generators.DomainGeneratorContext;
 import com.a2a.adjava.languages.html5.xmodele.MH5Attribute;
@@ -34,12 +37,12 @@ import com.a2a.adjava.utils.FileTypeUtils;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.XProject;
 
+
 /**
  * <p>génération d'une nouvel partial view en HTML.</p>
  *
  */
-public class PartialsGenerator extends AbstractIncrementalGenerator<IDomain<MH5Dictionary,MH5ModeleFactory>> {
-
+public class PartialsGenerator extends AbstractAppendGenerator<IDomain<MH5Dictionary,MH5ModeleFactory>> {
 	/** Logger pour la classe courante */
 	private static final Logger log = LoggerFactory.getLogger(PartialsGenerator.class);
 	
@@ -88,11 +91,13 @@ public class PartialsGenerator extends AbstractIncrementalGenerator<IDomain<MH5D
 		Document xDoc = DocumentHelper.createDocument(r_xFile);
 
 		String sFile = FileTypeUtils.computeFilenameForHTML(docControllerPath, p_oMH5View.getName());
-		
+		File oTargetFile = new File(p_oMProject.getLayoutDir(), sFile);
+
 		String sModele = "partials/partials.xsl";
 
 		log.debug("  generation du fichier: {}", sFile);
-		this.doIncrementalTransform(sModele, sFile, xDoc, p_oMProject, p_oContext);
+		this.doAppendGeneration(xDoc, sModele, oTargetFile, p_oMProject, p_oContext);
+
 	}
 	
 	/**
@@ -113,11 +118,14 @@ public class PartialsGenerator extends AbstractIncrementalGenerator<IDomain<MH5D
 		String sVmPropertyName = p_oAttr.getVisualFieldAttribute().getParameterValue("fixedListVmPropertyName");
 		
 		String sFile = appPath + p_oAttr.getDetailPartial();
-		
+
 		Element r_xFile = p_oPanelView.toXml();
 		r_xFile.addElement("fixedList").setText(sVmPropertyName);
-		Document xDoc = DocumentHelper.createDocument(r_xFile);
+		File oTargetFile = new File(p_oMProject.getLayoutDir(), sFile);
+
 		
-		this.doIncrementalTransform("partials/partials-fixedlist.xsl", sFile, xDoc, p_oMProject, p_oContext);
+		Document xDoc = DocumentHelper.createDocument(r_xFile);
+		this.doAppendGeneration(xDoc, "partials/partials-fixedlist.xsl", oTargetFile, p_oMProject, p_oContext);
+
 	}
 }

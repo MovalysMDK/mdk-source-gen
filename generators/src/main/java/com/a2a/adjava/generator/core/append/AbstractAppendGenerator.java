@@ -181,6 +181,8 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 			this.commentJavaSource(p_sContent, p_sOutput);
 		} else if (FileTypeUtils.isXmlFile(p_oFile)) {
 			this.commentXmlSource(p_sContent, p_sOutput);
+		} else if (FileTypeUtils.isHtmlFile(p_oFile)) {
+			this.commentHtmlSource(p_sContent, p_sOutput);
 		} else if (FileTypeUtils.isPropertiesFile(p_oFile)) {
 			commentPropertiesSource(p_sContent, p_sOutput);
 		} else if (FileTypeUtils.isSqlFile(p_oFile)) {
@@ -220,6 +222,7 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 	private void commentXmlSource(String p_sContent, StringBuilder p_sNewContent) throws Exception {
 		
 		DocumentBuilderFactory oDbf = DocumentBuilderFactory.newInstance();
+		
 		DocumentBuilder oDocBuilder = oDbf.newDocumentBuilder();
 		StringReader oStringReader = new StringReader(p_sContent);
 		try {
@@ -243,6 +246,16 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 	}
 
 	/**
+	 * Comment html source code
+	 * @param p_sContent source code to comment
+	 * @param p_sNewContent append commented source code into p_sNewContent
+	 * @throws Exception 
+	 */
+	private void commentHtmlSource(String p_sContent, StringBuilder p_sNewContent) throws Exception {
+		p_sNewContent.append(p_sContent.replaceAll("-->", "-> ").replaceAll(">", ">\n "));
+	}
+	
+	/**
 	 * Comment java source code
 	 * @param p_sContent
 	 * @param p_sNewContent
@@ -261,7 +274,7 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 		String r_sStartTag = null;
 		if (FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)) {
 			r_sStartTag = "//commented-generation-start";
-		} else if (FileTypeUtils.isXmlFile(p_oFile)) {
+		} else if (FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {
 			r_sStartTag = "<!--commented-generation-start";
 		} else if (FileTypeUtils.isPropertiesFile(p_oFile)) {
 			r_sStartTag = "#commented-generation-start";
@@ -278,9 +291,9 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 	 */
 	private String getStartCommentTagRegEx(File p_oFile) {
 		String r_sStartTag = null;
-		if (FileTypeUtils.isJavaFile(p_oFile)) {
+		if (FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)) {
 			r_sStartTag = "([\\S\\s]*)//\\s*commented-generation-start";
-		} else if (FileTypeUtils.isXmlFile(p_oFile)) {
+		} else if (FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile) ) {
 			r_sStartTag = "([\\S\\s]*)<!--\\s*commented-generation-start";
 		} else if (FileTypeUtils.isPropertiesFile(p_oFile)) {
 			r_sStartTag = "([\\S\\s]*)#\\s*commented-generation-start";
@@ -299,7 +312,7 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 		String r_sStartTag = null;		
 		if (FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)) {
 			r_sStartTag = "//commented-generation-end";
-		} else if (FileTypeUtils.isXmlFile(p_oFile)) {
+		} else if (FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {
 			r_sStartTag = "commented-generation-start-->";
 		} else if (FileTypeUtils.isPropertiesFile(p_oFile)) {
 			r_sStartTag = "#commented-generation-end";
