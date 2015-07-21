@@ -526,8 +526,8 @@
 			<null-value>null</null-value>
 			
 			<non-generated>
-				<start-marker>//@non-generated-start</start-marker>
-				<end-marker>//@non-generated-end</end-marker>
+				<start-marker>//\s*@non-generated-start\s*\[([^\]]*)\](.*)</start-marker>
+				<end-marker>//\s*@non-generated-end</end-marker>
 			</non-generated>
 		</language>
 	</languages>
