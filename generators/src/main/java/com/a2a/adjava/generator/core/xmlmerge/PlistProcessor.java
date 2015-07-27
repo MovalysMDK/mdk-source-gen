@@ -159,15 +159,14 @@ public abstract class PlistProcessor {
 								}
 								break;
 							}
-						}
-						if("rootDict".equals(nodeNameValue) && "artificialGroupingForXmlMerge".equals(dictNode.getParentNode().getNodeName())) {
-							Node parentDictNode = dictNode.getParentNode();
-							if(parentDictNode instanceof Element) {
-								Element parentDictElement = (Element)parentDictNode;
-								nodeNameValue = parentDictElement.getAttribute("key");
-
-							}
-						}
+						}							
+					}
+				}
+				if("rootDict".equals(nodeNameValue) && "artificialGroupingForXmlMerge".equals(dictNode.getParentNode().getNodeName())) {
+					Node parentDictNode = dictNode.getParentNode();
+					if(parentDictNode instanceof Element) {
+						Element parentDictElement = (Element)parentDictNode;
+						nodeNameValue = parentDictElement.getAttribute("key");
 					}
 				}
 				dictNode.setAttribute("key", nodeNameValue);
