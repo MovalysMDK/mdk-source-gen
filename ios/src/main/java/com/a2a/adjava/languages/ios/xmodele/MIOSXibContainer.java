@@ -25,6 +25,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.apache.commons.lang3.StringUtils;
+
+import com.a2a.adjava.languages.ios.extractors.IOSVMNamingHelper;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSButtonView;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSEditableView;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSView;
@@ -37,7 +40,16 @@ import com.a2a.adjava.languages.ios.xmodele.views.MIOSXibType;
 @XmlRootElement(name="xib-container")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MIOSXibContainer {
+	/**
+	 * The name of the Xib 
+	 */
 	private String name ;
+
+	/**
+	 * The name to the associated delegate
+	 */
+	private String delegateName ;
+
 	/**
 	 * List of the components contained in the Xib description of the view
 	 */
@@ -59,7 +71,7 @@ public class MIOSXibContainer {
 	 */
 	@XmlAttribute
 	private int cellMargin = 10 ;
-	
+
 	@XmlElement
 	private MIOSXibType xibType;
 
@@ -69,9 +81,9 @@ public class MIOSXibContainer {
 	public MIOSXibContainer() {
 
 	}
-	
+
 	public MIOSXibContainer(String p_sName) {
-		this.name = p_sName ;
+		this.setName(p_sName);
 		this.components = new ArrayList<MIOSView>() ;
 		this.frameWidth = 600 ;
 	}
@@ -89,7 +101,7 @@ public class MIOSXibContainer {
 	public void setComponents(List<MIOSView> p_oListComponents) {
 		this.components = p_oListComponents;
 	}
-	
+
 	/**
 	 * Return the List of subview contained in the the xib by adding the view 
 	 * @param  view added to the liste of subviews
@@ -119,6 +131,22 @@ public class MIOSXibContainer {
 	public void setName(String p_sName) {
 		this.name = p_sName;
 	}
+	
+	/**
+	 * Sets the delegate name
+	 * @param delegateName the delegate name
+	 */
+	public void setDelegateName(String delegateName) {
+		this.delegateName = delegateName;
+	}
+	
+	/**
+	 * Returns the delegate name associated to this Xib container
+	 */
+	public String getDelegateName() {
+		return delegateName;
+	}
+	
 	/**
 	 * Return the height of the main view in the xib 
 	 * @return the height of the main view in the xib
@@ -140,7 +168,7 @@ public class MIOSXibContainer {
 	public int getCellMargin() {
 		return cellMargin;
 	}
-	
+
 	/**
 	 * Returns the Xib type for this XIB container
 	 * @return The xib type
@@ -156,8 +184,8 @@ public class MIOSXibContainer {
 	public void setXibType(MIOSXibType xibType) {
 		this.xibType = xibType;
 	}
-	
-	
+
+
 	/**
 	 * Compute the positions of the subview in the XIB and the height of the view
 	 */

@@ -26,9 +26,14 @@ import javax.xml.bind.annotation.XmlEnum;
 public enum MIOSXibType {
 
 	/**
-	 * Fixed List item 
+	 * Combo View Selected item 
 	 */
-	COMBOVIEWITEM,
+	COMBOVIEWSELECTEDITEM,
+	
+	/**
+	 * Combo View List item 
+	 */
+	COMBOVIEWLISTITEM,
 	
 	/**
 	 * Fixed List item 

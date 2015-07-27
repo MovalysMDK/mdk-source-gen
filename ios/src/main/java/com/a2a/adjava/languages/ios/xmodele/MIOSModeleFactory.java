@@ -324,7 +324,7 @@ public class MIOSModeleFactory extends XModeleFactory {
 		r_oMIOSController.setViewId(this.genereId(VIEWID_PREFIX, p_sName));
 		r_oMIOSController.setNavigationItemId(this.genereId(NAVIGATIONITEM_PREFIX, p_sName));
 		r_oMIOSController.setSelectedItemCellClassName(p_sFormName + "SelectedItem");
-		r_oMIOSController.setItemCellClassName(p_sFormName + "Item");
+		r_oMIOSController.setItemCellClassName(p_sFormName + "ListItem");
 		return r_oMIOSController ;
 	}
 	
@@ -535,7 +535,7 @@ public class MIOSModeleFactory extends XModeleFactory {
 		else if(p_oController.getControllerType().equals(MIOSControllerType.COMBOVIEW)) {
 			MIOSXibComboContainer r_oMIOSXibContainer = new MIOSXibComboContainer( 
 					IOSVMNamingHelper.getInstance().computeXibNameOfSelectedItemForCombo(p_oVm ), true);
-			r_oMIOSXibContainer.setPickerItemName(IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(p_oVm ));
+			r_oMIOSXibContainer.setPickerItemName(IOSVMNamingHelper.getInstance().computeXibNameOfListItemForCombo(p_oVm ));
 			r_oMIOSXibContainer.setPickerSelectedItemName(IOSVMNamingHelper.getInstance().computeXibNameOfSelectedItemForCombo(p_oVm));
 
 			return r_oMIOSXibContainer;

@@ -88,7 +88,13 @@ public class MIOSComboDelegate {
 	/**
 	 * Starting position in a visual field name of the related uml link
 	 */
-	public static final String KEY_TO_DATA_DELEGATE_CLASS_PARAMETER_NAME = "dataDelegateName";
+	public static final String KEY_TO_LIST_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME = "listItemBindingDelegate";
+	
+	/**
+	 * Starting position in a visual field name of the related uml link
+	 */
+	public static final String KEY_TO_SELECTED_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME = "selectedItemBindingDelegate";
+	
 
 	/**
 	 * Starting position in a visual field name of the related uml link
@@ -259,15 +265,19 @@ public class MIOSComboDelegate {
 	public void computeFieldsOfCombo( MPage p_oPage, MViewModelImpl p_oViewModel, MIOSSection p_oIOSSection , String p_sParentBindingPath) {
 
 		MIOSXibComboContainer oXibSelectedContainer = (MIOSXibComboContainer) this.getDomain().getXModeleFactory().createXibContainer(p_oPage, p_oViewModel, p_oIOSSection.getController());
-		oXibSelectedContainer.setXibType(MIOSXibType.COMBOVIEWITEM);
-
+		oXibSelectedContainer.setXibType(MIOSXibType.COMBOVIEWSELECTEDITEM);
+		oXibSelectedContainer.setDelegateName(IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(p_oViewModel, false));
+		
 		for( MVisualField oVisualField : p_oViewModel.getVisualFields()) {
 			this.delegator.computeFieldForCombo(oVisualField, oVisualField.isReadOnly(), p_sParentBindingPath, p_oIOSSection,oXibSelectedContainer);
 		}
 
 		MIOSXibComboContainer oXibItemContainer = oXibSelectedContainer.clone();
-		oXibItemContainer.setName(IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(p_oViewModel));
 		oXibItemContainer.setIsSelectedItem(false);
+		oXibItemContainer.setXibType(MIOSXibType.COMBOVIEWLISTITEM);
+		oXibItemContainer.setName(IOSVMNamingHelper.getInstance().computeXibNameOfListItemForCombo(p_oViewModel));
+		oXibItemContainer.setDelegateName(IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(p_oViewModel, true));
+
 
 		ListIterator<MIOSView> oLitr = oXibItemContainer.getComponents().listIterator();
 		while(oLitr.hasNext()) {
@@ -289,14 +299,9 @@ public class MIOSComboDelegate {
 		oXibItemContainer.computeComponentsPosition();
 		oXibSelectedContainer.computeComponentsPosition();
 
-		MIOSMultiXibContainer oMultiXibContainer = new MIOSMultiXibContainer();
-		oMultiXibContainer.addXib(oXibItemContainer);
-		oMultiXibContainer.addXib(oXibSelectedContainer);
-		oMultiXibContainer.setName(IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(p_oViewModel));
 		
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibSelectedContainer);
 		this.getDomain().getDictionnary().registerIOSXibContainer(oXibItemContainer);
-		this.getDomain().getDictionnary().registerIOSMultiXibContainer(oMultiXibContainer);
 		
 		
 	}
@@ -371,7 +376,7 @@ public class MIOSComboDelegate {
 		p_oVisualField.addVisualParameter(KEY_TO_COMBO_VIEW_NAME, 
 				IOSVMNamingHelper.getInstance().computeViewNameOfCombo(oVm));
 		p_oVisualField.addVisualParameter(KEY_TO_CELL_ITEM_NAME, 
-				IOSVMNamingHelper.getInstance().computeXibNameOfItemForCombo(oVm));
+				IOSVMNamingHelper.getInstance().computeXibNameOfListItemForCombo(oVm));
 
 		p_oFieldView.setCustomClass("MFPickerList");
 		p_oFieldView.setCellType("MFCell1ComponentHorizontal"); 
@@ -384,7 +389,9 @@ public class MIOSComboDelegate {
 			oFieldOptions = new HashMap<>();
 		}
 		oFieldOptions.put(KEY_TO_SEARCH_PARAMETER_NAME, hasSearch ? "true" : "false");
-		oFieldOptions.put(KEY_TO_DATA_DELEGATE_CLASS_PARAMETER_NAME, IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(oVm));
+		oFieldOptions.put(KEY_TO_LIST_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME, IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(oVm, true));
+		oFieldOptions.put(KEY_TO_SELECTED_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME, IOSVMNamingHelper.getInstance().computeDelegateNameForCombo(oVm, false));
+
 		oFieldOptions.put(KEY_TO_PICKER_VALUES_KEY_PARAMETER_NAME, StringUtils.join("lst", oVm.getName()));
 		
 		p_oFieldView.setViewOptions(oFieldOptions);

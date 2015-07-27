@@ -436,7 +436,7 @@ public class MIOSFixedListDelegate {
 			String sOldFieldName = this.delegator.extractBindingPathFromFieldName(p_oVisualField.getName(), null, null, null);
 
 			String sUmlLinkName = Introspector.decapitalize(sOldFieldName.substring(UML_LINK_STARTING_POSITION));
-			String sNewName = sUmlLinkName + IOSVMNamingHelper.FIXED_LIST_VIEW_MODEL_LIST_SUFFIX;
+			String sNewName = sUmlLinkName + IOSVMNamingHelper.LIST_SUFFIX;
 
 			p_oVisualField.setName(p_oVisualField.getName().replaceAll(sOldFieldName, WordUtils.uncapitalize(sNewName)));
 			p_oVisualField.getLabel().setValue( p_oVisualField.getLabel().getValue().replaceAll(sOldFieldName, sNewName) );

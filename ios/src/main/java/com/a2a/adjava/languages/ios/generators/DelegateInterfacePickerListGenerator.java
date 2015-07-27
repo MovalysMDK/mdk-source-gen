@@ -26,6 +26,8 @@ import com.a2a.adjava.generators.DomainGeneratorContext;
 import com.a2a.adjava.languages.ios.extractors.IOSVMNamingHelper;
 import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSMultiXibContainer;
+import com.a2a.adjava.languages.ios.xmodele.MIOSXibContainer;
+import com.a2a.adjava.languages.ios.xmodele.views.MIOSXibType;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
 import com.a2a.adjava.utils.JaxbUtils;
@@ -58,8 +60,10 @@ public class DelegateInterfacePickerListGenerator extends AbstractIncrementalGen
 		log.debug("> DelegateInterfacePickerListGenerator.genere");
 		Chrono oChrono = new Chrono(true);
 		NonGeneratedBlocExtractor oNonGeneratedBlocExtractor = new NonGeneratedBlocExtractor();
-		for(MIOSMultiXibContainer oMultiXibContainer : ((MIOSDictionnary)p_oProject.getDomain().getDictionnary()).getAllIOSMultiXibContainers()) {
-				this.createDelegatePickerList(oMultiXibContainer, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
+		for(MIOSXibContainer oXibContainer : ((MIOSDictionnary)p_oProject.getDomain().getDictionnary()).getAllIOSXibContainers()) {
+			if(oXibContainer.getXibType().equals(MIOSXibType.COMBOVIEWLISTITEM) || oXibContainer.getXibType().equals(MIOSXibType.COMBOVIEWSELECTEDITEM)) {
+				this.createDelegatePickerList(oXibContainer, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
+			}
 		}
 		log.debug("< DelegateInterfacePickerListGenerator.genere: {}", oChrono.stopAndDisplay());
 	}
@@ -72,17 +76,22 @@ public class DelegateInterfacePickerListGenerator extends AbstractIncrementalGen
 	 * @param p_mapSession session
 	 * @throws Exception exception
 	 */
-	private void createDelegatePickerList(MIOSMultiXibContainer p_oMultiXibContainer, NonGeneratedBlocExtractor p_oNonGeneratedBlocExtractor,
+	private void createDelegatePickerList(MIOSXibContainer p_oXibContainer, NonGeneratedBlocExtractor p_oNonGeneratedBlocExtractor,
 			XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject, DomainGeneratorContext p_oContext) throws Exception {
 
-		org.w3c.dom.Document xViewModelDoc = JaxbUtils.marshalToDocument(p_oMultiXibContainer);
+		org.w3c.dom.Document xViewModelDoc = JaxbUtils.marshalToDocument(p_oXibContainer);
 		org.dom4j.io.DOMReader reader = new DOMReader();
 		org.dom4j.Document document = reader.read(xViewModelDoc);
 		
-		String sViewModelFile = this.getDelegatePickerListFilename(p_oMultiXibContainer, p_oProject);
+		String sViewModelFile = this.getDelegatePickerListFilename(p_oXibContainer, p_oProject);
 		
 		log.debug("  generation du fichier: {}", sViewModelFile);
-		this.doIncrementalTransform("delegate-pickerlist-interface.xsl", sViewModelFile, document, p_oProject, p_oContext);
+		if(p_oXibContainer.getXibType().equals(MIOSXibType.COMBOVIEWLISTITEM)) {
+			this.doIncrementalTransform("delegate-pickerlist-interface.xsl", sViewModelFile, document, p_oProject, p_oContext);
+		}
+		else {
+			this.doIncrementalTransform("delegate-pickeritem-interface.xsl", sViewModelFile, document, p_oProject, p_oContext);
+		}
 	}
 	
 	/**
@@ -91,9 +100,9 @@ public class DelegateInterfacePickerListGenerator extends AbstractIncrementalGen
 	 * @param p_oProject project
 	 * @return viewmodel filename
 	 */
-	protected String getDelegatePickerListFilename( MIOSMultiXibContainer p_oMultiXibContainer, XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject) {
+	protected String getDelegatePickerListFilename( MIOSXibContainer p_oXibContainer, XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject) {
 		return FilenameUtils.normalize(FileTypeUtils.computeFilenameForIOSInterface(
-				"delegate", IOSVMNamingHelper.getInstance().computeDelegateNameOfPickerList(p_oMultiXibContainer), p_oProject.getSourceDir()));
+				"delegate", p_oXibContainer.getDelegateName(), p_oProject.getSourceDir()));
 	}
 
 }
