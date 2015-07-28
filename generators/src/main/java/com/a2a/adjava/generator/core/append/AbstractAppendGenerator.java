@@ -128,39 +128,55 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 		String sForceOverwrite = p_oProject.getDomain().getGlobalParameters().get(AdjavaProperty.APPEND_GENERATOR_FORCE_OVERWRITE.getName());
 		
 		if (!oFile.exists() || (sForceOverwrite != null && sForceOverwrite.equalsIgnoreCase("true"))) {
+
 			this.doTransformToFile(p_oSource, p_sTemplatePath, p_oOutputFile, p_oProject, p_oGeneratorContext,false);
+			
 		} else {
 			
-			StringBuilder sNewContent = new StringBuilder();
-			
-			String sExistingContent = FileUtils.readFileToString(oFile, p_oProject.getDomain()
-					.getFileEncoding());
+			//BEL : les commentaires ne sont pas autorisés en json.
+			//ici on vient généré un nouveau fichier et l'utilisateur devra faire le merge manuellement.
+			// TODO : trouver une solution pour faire un merge intelligent.
+			if (FileTypeUtils.isJsonFile(oFile)) {
+				StringBuilder sNewFileName = new StringBuilder();
+				sNewFileName.append(p_oOutputFile.getFile().getAbsolutePath());
+				sNewFileName.delete(sNewFileName.length() - 5, sNewFileName.length());
+				sNewFileName.append("_new.json");
+				File p_newFile = new File(sNewFileName.toString());
+				GeneratedFile p_oNewOutputFile = new GeneratedFile(p_newFile);
+				this.doTransformToFile(p_oSource, p_sTemplatePath,p_oNewOutputFile, p_oProject, p_oGeneratorContext, false);
 
-			// Delete old commented generation if exist
-			String sStartTagRegEx = this.getStartCommentTagRegEx(oFile);
-			
-			Pattern oPattern = Pattern.compile(sStartTagRegEx);
-			Matcher oMatcher = oPattern.matcher(sExistingContent);
+			} else {
+				StringBuilder sNewContent = new StringBuilder();
 
-			if (oMatcher.find()) {
-				sExistingContent = oMatcher.group(1);
-			}
-			sNewContent.append(sExistingContent);
-			
-			// Execute xsl transformation
-			String sContent = this.doTransformToString(p_oSource, p_sTemplatePath, p_oOutputFile.getXslProperties(), p_oProject);
+				String sExistingContent = FileUtils.readFileToString(oFile,
+						p_oProject.getDomain().getFileEncoding());
 
-			// Comment source result of xsl transformation
-			this.commentSource(sContent, sNewContent, oFile);
-			
-			// Write new  file
-			FileUtils.writeStringToFile(oFile, sNewContent.toString(), p_oProject.getDomain()
-					.getFileEncoding());
-			
-			this.addGeneratedFileToSession(p_oOutputFile, p_oGeneratorContext);
-			
-			if (isDebug()) {
-				GeneratorUtils.writeXmlDebugFile(p_oSource, p_oOutputFile.getFile().getPath(), p_oProject);
+				// Delete old commented generation if exist
+				String sStartTagRegEx = this.getStartCommentTagRegEx(oFile);
+
+				Pattern oPattern = Pattern.compile(sStartTagRegEx);
+				Matcher oMatcher = oPattern.matcher(sExistingContent);
+
+				if (oMatcher.find()) {
+					sExistingContent = oMatcher.group(1);
+				}
+				sNewContent.append(sExistingContent);
+
+				// Execute xsl transformation
+				String sContent = this.doTransformToString(p_oSource, p_sTemplatePath, p_oOutputFile.getXslProperties(), p_oProject);
+
+				// Comment source result of xsl transformation
+				this.commentSource(sContent, sNewContent, oFile);
+
+				// Write new file
+				FileUtils.writeStringToFile(oFile, sNewContent.toString(),
+						p_oProject.getDomain().getFileEncoding());
+
+				this.addGeneratedFileToSession(p_oOutputFile, p_oGeneratorContext);
+
+				if (isDebug()) {
+					GeneratorUtils.writeXmlDebugFile(p_oSource, p_oOutputFile.getFile().getPath(), p_oProject);
+				}
 			}
 		}
 	}
