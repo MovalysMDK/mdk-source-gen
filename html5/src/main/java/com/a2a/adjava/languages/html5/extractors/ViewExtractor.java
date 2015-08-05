@@ -315,7 +315,7 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 		}
 			
 		// Create label for visual field
-		if (p_oVisualField.getLabel() != null ) {
+		if (p_oVisualField.getLabel() != null && p_oVisualField.isCreateLabel() ) {
 			getDomain().getDictionnary().addLabel(p_oVisualField.getLabel());
 		}
 		
