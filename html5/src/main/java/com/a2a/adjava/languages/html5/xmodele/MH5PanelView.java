@@ -86,6 +86,10 @@ public class MH5PanelView extends MH5View{
 	@XmlAttribute
 	private boolean isAttachedToEntity;
 	
+	/**
+	 * true if this panel is attached to one entity with the stereotype Mm_applicationScope
+	 */
+	private String applicationScopeEntityAttached;
 
 	/**
 	 * Name of the save action
@@ -203,6 +207,25 @@ public class MH5PanelView extends MH5View{
 	public void setAttachedToEntity(boolean isAttachedToEntity) {
 		this.isAttachedToEntity = isAttachedToEntity;
 	}
+	
+	/**
+	 * @return applicationScopeEntityAttached
+	 * return the name of the Entity attached to the PanelView if this entity
+	 * has the stereotype Mm_ApplicationScope. Otherwise, it returns an empty string.
+	 */
+	public String getApplicationScopeEntityAttached() {
+		return applicationScopeEntityAttached;
+	}
+
+	/**
+	 * Set the name of the Entity attached to the PanelView when this entity
+	 * has the stereotype Mm_ApplicationScope.
+	 * @param applicationScopeEntityAttached
+	 */
+	public void setApplicationScopeEntityAttached(
+			String applicationScopeEntityAttached) {
+		this.applicationScopeEntityAttached = applicationScopeEntityAttached;
+	}
 
 	/**
 	 * @return the isList
@@ -279,6 +302,12 @@ public class MH5PanelView extends MH5View{
 			r_xView.addAttribute("isAttachedToEntityModel", "true");
 		}else{
 			r_xView.addAttribute("isAttachedToEntityModel", "false");
+		}
+		
+		if (this.getApplicationScopeEntityAttached() != null){
+			r_xView.addAttribute("applicationScopeEntityAttached", this.getApplicationScopeEntityAttached());
+		}else{
+			r_xView.addAttribute("applicationScopeEntityAttached", "");
 		}
 		
 		r_xView.addAttribute("type", this.type);

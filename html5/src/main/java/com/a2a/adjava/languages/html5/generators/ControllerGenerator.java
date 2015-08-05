@@ -125,7 +125,11 @@ public class ControllerGenerator extends AbstractIncrementalGenerator<IDomain<MH
 			p_oMH5ImportDelegate.addImport(((MH5ListPanelView)p_oMH5View).getPanelListName()+"Factory");
 			
 			if (((MH5ListPanelView)p_oMH5View).isAttachedToEntity()) {
-				p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+				if(((MH5ListPanelView)p_oMH5View).getApplicationScopeEntityAttached() != null){
+					p_oMH5ImportDelegate.addImport(((MH5ListPanelView) p_oMH5View).getApplicationScopeEntityAttached() + "DataLoader");
+				} else{
+					p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+				}	
 			}
 		} 
 		else{
@@ -136,7 +140,11 @@ public class ControllerGenerator extends AbstractIncrementalGenerator<IDomain<MH
 				p_oMH5ImportDelegate.addImport("MFFormScopeBuilder");
 				
 				if (oPanelView.isAttachedToEntity()) {
-					p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+					if(oPanelView.getApplicationScopeEntityAttached() != null){
+						p_oMH5ImportDelegate.addImport(oPanelView.getApplicationScopeEntityAttached() + "DataLoader");
+					} else{
+						p_oMH5ImportDelegate.addImport(p_oMH5View.getName() + "DataLoader");
+					}	
 				}
 			}
 			p_oMH5ImportDelegate.addImport(p_oMH5View.getName()+"VMFactory");

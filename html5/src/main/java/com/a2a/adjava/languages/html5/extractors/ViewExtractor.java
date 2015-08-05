@@ -40,6 +40,7 @@ import com.a2a.adjava.uml2xmodele.extractors.AbstractExtractor;
 import com.a2a.adjava.xmodele.MActionType;
 import com.a2a.adjava.xmodele.MPage;
 import com.a2a.adjava.xmodele.MScreen;
+import com.a2a.adjava.xmodele.MStereotype;
 import com.a2a.adjava.xmodele.MViewModelImpl;
 import com.a2a.adjava.xmodele.MVisualField;
 import com.a2a.adjava.xmodele.ui.viewmodel.ViewModelType;
@@ -229,9 +230,19 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 		if(p_oPage.getViewModelImpl().getEntityToUpdate() != null)
 		{	
 			r_oNewView.setAttachedToEntity(true);
+			for(MStereotype p_oStereotype : p_oPage.getViewModelImpl().getEntityToUpdate().getStereotypes()){
+				if(p_oStereotype.getName().equalsIgnoreCase("Mm_applicationScope")){
+					r_oNewView.setApplicationScopeEntityAttached(p_oPage.getViewModelImpl().getEntityToUpdate().getName());
+					break;
+				}else{
+					r_oNewView.setApplicationScopeEntityAttached(null);
+				}
+			}
+			
 		}else{
 			r_oNewView.setAttachedToEntity(false);
 		}
+		
 		
 		this.computeViewAttributes(p_oPage, r_oNewView);
 		
