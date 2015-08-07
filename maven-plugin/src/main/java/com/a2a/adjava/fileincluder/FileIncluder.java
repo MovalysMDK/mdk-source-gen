@@ -72,8 +72,8 @@ public class FileIncluder extends AbstractMojo {
 	private List<String> csprojPath;
 	
 	private static Map<File, List<File>> fileMap = new HashMap<File, List<File>>();
-	
-	private static List<String> excludeExtension = new ArrayList<String>();
+
+    private static List<String> excludeExtension = new ArrayList<String>();
 	
 	@Override
 	public void execute() throws MojoExecutionException, MojoFailureException {
@@ -106,6 +106,10 @@ public class FileIncluder extends AbstractMojo {
 				}
 		        for(File file : dicEntry.getValue())
 		        {
+                    if (file.getAbsolutePath().contains("bin\\") || file.getAbsolutePath().contains("obj\\")) {
+                        continue;
+                    }
+
 		        	String absolutepath = file.getPath().replace(GetPathWithoutFileName(dicEntry.getKey()), "");
 					if(FileTypeUtils.XAML.equals(FilenameUtils.getExtension(file.getName()))){
 		
