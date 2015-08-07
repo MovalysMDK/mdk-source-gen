@@ -27,7 +27,6 @@ import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSModeleFactory;
-import com.a2a.adjava.languages.ios.xmodele.MIOSMultiXibContainer;
 import com.a2a.adjava.languages.ios.xmodele.MIOSStoryBoard;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibComboContainer;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibContainer;
@@ -135,18 +134,17 @@ public class MIOSComboDelegate {
 	 * Update the position of a combo in the xib container to define the width and the height
 	 */
 	public void updatePositionOfCombo(){
-
 		ViewModelTypeConfiguration oVmTypeConf = ViewModelType.LIST_1__ONE_SELECTED.getParametersByConfigName("default", VersionHandler.getGenerationVersion().getStringVersion());
 
 		// Met à jour les hauteurs de chaque sous vue  de section contenant une combo
 		for (MIOSSection oSection : this.getDomain().getDictionnary().getAllIOSSections() ){
 			for ( MIOSView oSubview : oSection.getSubViews() ) {
 				if ((oSubview != null) && oSubview instanceof MIOSEditableView 
-						&& (null != ((MIOSEditableView)oSubview).getCellType()) 
-						&& ((MIOSEditableView)oSubview).getCellType().equalsIgnoreCase(oVmTypeConf.getVisualComponentName() )) {
+						&& (null != ((MIOSEditableView)oSubview).getCellType()) && oSubview.getCustomClass().equalsIgnoreCase("MFPickerList")) {
 
 					// j'ai une vue de type combo
-					MIOSXibContainer oContainer = this.getDomain().getDictionnary().getIOSXibContainersByName( ((MIOSEditableView)oSubview).getOptions().get(MIOSComboDelegate.KEY_TO_CELL_SELECTED_ITEM_NAME));
+					String sSelectedItemXibContainerName = ((MIOSEditableView)oSubview).getOptions().get(MIOSComboDelegate.KEY_TO_SELECTED_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME).replaceAll(IOSVMNamingHelper.COMBO_DELEGATE_SUFFIX, "");
+					MIOSXibContainer oContainer = this.getDomain().getDictionnary().getIOSXibContainersByName(sSelectedItemXibContainerName);
 					if ( oContainer != null ) {
 						oSubview.setHeight(oContainer.getFrameHeight());
 						oSubview.setWidth(oContainer.getFrameWidth());
