@@ -18,6 +18,7 @@ package com.a2a.adjava.languages.html5.xmodele;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import com.a2a.adjava.xmodele.ModelDictionary;
 
@@ -41,7 +42,8 @@ public class MH5Dictionary extends ModelDictionary {
 	 * @return all XIB container
 	 */
 	public Collection<MH5View> getAllMH5Views() {
-		return this.views.values();
+		Map<String, MH5View> treeMapViews = new TreeMap<String, MH5View>(this.views);
+		return treeMapViews.values();
 	}
 	
 	/**
