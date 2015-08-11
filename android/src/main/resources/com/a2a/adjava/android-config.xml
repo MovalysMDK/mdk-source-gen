@@ -115,7 +115,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>
@@ -148,7 +148,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>VALUE == null ? null : String.valueOf(VALUE)</formula>
@@ -345,7 +345,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>
@@ -371,7 +371,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>
@@ -399,7 +399,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="Long">
 							<formula>Long.valueOf(VALUE)</formula>
@@ -436,7 +436,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIInteger</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>
@@ -523,7 +523,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIDouble</default-ui-type>
 					<type-conversions>
 						<type-conversion to="Double">
 							<formula>Double.valueOf(VALUE)</formula>
@@ -559,7 +559,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIDouble</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>VALUE == null ? null : VALUE.toString()</formula>
@@ -596,7 +596,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIDouble</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>
@@ -623,7 +623,7 @@
 					<sql-compare>=</sql-compare>
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
-					<default-ui-type>Text</default-ui-type>
+					<default-ui-type>UIDouble</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>String.valueOf(VALUE)</formula>

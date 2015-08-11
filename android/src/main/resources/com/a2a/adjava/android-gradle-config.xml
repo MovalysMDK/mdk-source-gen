@@ -40,7 +40,7 @@
 
 						<generator class="com.a2a.adjava.generator.impl.DaoInterfaceGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.DaoGenerator" />
-																														
+
 						<generator class="com.a2a.adjava.generator.impl.ViewModelGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ViewModelInterfaceGenerator" />
 						<generator class="com.a2a.adjava.generator.impl.ViewModelCreatorGenerator" />
