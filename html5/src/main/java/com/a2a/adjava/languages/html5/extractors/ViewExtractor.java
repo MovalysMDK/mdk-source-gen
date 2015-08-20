@@ -15,6 +15,8 @@
  */
 package com.a2a.adjava.languages.html5.extractors;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.dom4j.Element;
@@ -156,7 +158,10 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 		
 		//Creation of all the panel views
 		boolean markedFirst = false;
-		for( MPage oPage : p_oScreen.getPages()) {
+
+		List<MPage> pages = p_oScreen.getPages();
+		Collections.sort(pages, new PageComparatorForView());
+		for( MPage oPage : pages) {
 			boolean isFirstDetail = false;
 			if (p_oScreen.isWorkspace() && !markedFirst && oPage.getViewModelImpl().getType().equals(ViewModelType.MASTER)) {
 				isFirstDetail = true;
@@ -181,11 +186,11 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 		MPage r_oPage = null;
 		for (MPage oPage : p_oScreen.getPages()) {
 			if (
-				(oPage.getViewModelImpl().getType().equals(ViewModelType.MASTER) 
-				|| oPage.getViewModelImpl().getType().equals(ViewModelType.DEFAULT))
-				&& oPage.getActionOfType(MActionType.SAVEDETAIL) != null) {
-					r_oPage = oPage;
-					break;
+					(oPage.getViewModelImpl().getType().equals(ViewModelType.MASTER) 
+					|| oPage.getViewModelImpl().getType().equals(ViewModelType.DEFAULT))
+					&& oPage.getActionOfType(MActionType.SAVEDETAIL) != null) {
+						r_oPage = oPage;
+						break;
 			}
 		}
 		return r_oPage;
@@ -347,5 +352,34 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
 	 */
 	private boolean isMasterList(MVisualField p_oVisualField) {
 		return p_oVisualField.getName().endsWith("__list__value");
+	}
+
+	private static class PageComparatorForView implements Comparator<MPage> {
+
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+		 */
+		@Override
+		public int compare(MPage p_oPage1, MPage p_oPage2) {
+			Integer page1pos;
+			Integer page2pos;
+			try {
+				page1pos = Integer.valueOf(p_oPage1
+						.getParameterValue("grid-section-parameter"));
+			} catch (NumberFormatException e) {
+				return -1;
+			}
+			try {
+				page2pos = Integer.valueOf(p_oPage2
+						.getParameterValue("grid-section-parameter"));
+			} catch (NumberFormatException e) {
+				return 1;
+			}
+
+			return page1pos - page2pos;
+		}
+
 	}
 }
