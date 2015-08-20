@@ -343,6 +343,9 @@ public class ScreenAggregationPanelProcessor {
 			oPage.addParameter( MWorkspaceConfig.PANELTYPE_PARAMETER, MWorkspaceConfig.MASTER_PANELTYPE );
 			oPage.addParameter( MWorkspaceConfig.OPTIONS_PARAMETER,   p_oPanelAggregation.getOptions() );
 		} else {
+			oPage.addParameter(
+					MMultiPanelConfig.OPTIONS_PARAMETER,
+					p_oPanelAggregation.getOptions());
 			p_oScreen.add(oPage);
 		}
 	}
