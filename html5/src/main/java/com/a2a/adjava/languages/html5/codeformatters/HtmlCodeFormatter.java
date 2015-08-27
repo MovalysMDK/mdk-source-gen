@@ -28,7 +28,7 @@ public class HtmlCodeFormatter extends AbstractJSBeautifyCodeFormatter {
             "-r",
             "-q",
             "-s",
-            "2"
+            "4"
         };
     }
 
