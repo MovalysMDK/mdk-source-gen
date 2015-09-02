@@ -247,6 +247,11 @@ public class ViewModelFactoryGenerator extends com.a2a.adjava.generator.impl.Vie
 			if(oAttr.getTypeDesc().getShortName().equals("MFPhotoViewModel")){
 				hasPhoto = true;
 			}
+			if(oAttr.isEnum()){
+//				if(oAttr.getTypeDesc().getDefaultUiType().equals("RadioGroup")){
+					p_oMH5ImportDelegate.addImport(oAttr.getTypeDesc().getShortName()+"Converter");
+//				}
+			}
 		}
 		if(hasAddressLocation)
 		{
