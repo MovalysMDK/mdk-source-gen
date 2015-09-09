@@ -32,42 +32,44 @@ public class PojoContext {
 	/**
 	 * Domain
 	 */
-	private IDomain<IModelDictionary, IModelFactory> domain ;
-	
+	private IDomain<IModelDictionary, IModelFactory> domain;
+
 	/**
 	 * Stereotype list indicating that a UmlClass is a screen of the domain.
 	 */
-	private List<String> entityStereotypes ;
-	
+	private List<String> entityStereotypes;
+
 	/**
 	 * Stereotypes
 	 */
-	private List<String> listTranscientStereotypes ;
-	
+	private List<String> listTranscientStereotypes;
+
 	/**
 	 * Stereotypes
 	 */
-	private List<String> listApplicationScopeStereotypes ;
+	private List<String> listApplicationScopeStereotypes;
 
 	/**
 	 * Stereotypes for customizable stereotypes
 	 */
 	private List<String> customizableStereotypes;
-	
+
 	/**
+	 *
 	 * @param p_listEntityStereotypes
-	 * @param listTranscientStereotypes2
-	 * @param listApplicationScopeStereotypes2
-	 * @param domain2
+	 * @param p_listTranscientStereotypes
+	 * @param p_listApplicationScopeStereotypes
+	 * @param p_listCustomizableStereotypes
+	 * @param p_oDomain
 	 */
 	public PojoContext(List<String> p_listEntityStereotypes, List<String> p_listTranscientStereotypes,
-			List<String> p_listApplicationScopeStereotypes, List<String> p_listCustomizableStereotypes,
-			IDomain<IModelDictionary, IModelFactory> p_oDomain) {
-		this.entityStereotypes = p_listEntityStereotypes ;
+	                   List<String> p_listApplicationScopeStereotypes, List<String> p_listCustomizableStereotypes,
+	                   IDomain<IModelDictionary, IModelFactory> p_oDomain) {
+		this.entityStereotypes = p_listEntityStereotypes;
 		this.listTranscientStereotypes = p_listTranscientStereotypes;
 		this.listApplicationScopeStereotypes = p_listApplicationScopeStereotypes;
 		this.customizableStereotypes = p_listCustomizableStereotypes;
-		this.domain = p_oDomain ;
+		this.domain = p_oDomain;
 	}
 
 	/**
@@ -90,51 +92,61 @@ public class PojoContext {
 	 * @return true si la classe correspond à un écran. false sinon.
 	 */
 	public boolean isEntity(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.entityStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(this.entityStereotypes);
 	}
-	
+
 	/**
 	 * Return true if uml class is of type Entity
-	 * 
+	 *
 	 * @param p_oUmlClass UmlClass
 	 * @return true if uml class is of type Entity
 	 */
 	public boolean isTransient(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.listTranscientStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(this.listTranscientStereotypes);
 	}
-	
+
 	/**
 	 * Return true if uml class has ApplicationScope stereotype
-	 * 
+	 *
 	 * @param p_oUmlClass UmlClass
 	 * @return true if uml class has ApplicationScope stereotype
 	 */
 	public boolean isApplicationScope(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.listApplicationScopeStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(this.listApplicationScopeStereotypes);
 	}
-	
+
 
 	/**
 	 * Return true if uml class is customizable
-	 * 
+	 *
 	 * @param p_oUmlClass UmlClass
 	 * @return true if uml class is customizable
 	 */
 
 	public boolean isCustomizable(UmlClass p_oUmlClass) {
-		return p_oUmlClass.hasAnyStereotype(this.customizableStereotypes) ;
+		return p_oUmlClass.hasAnyStereotype(this.customizableStereotypes);
+	}
+
+	/**
+	 * Return true if uml class has the Embedded stereotype
+	 *
+	 * @param p_oUmlClass UmlClass
+	 * @return true if uml class has the Embedded stereotype
+	 */
+	public boolean isEmbedded(UmlClass p_oUmlClass) {
+		return p_oUmlClass.hasStereotype(ExpandableTypeProcessor.EMBEDDED_STEREOTYPE);
 	}
 
 	/**
 	 * Return true if uml class is of type Entity
-	 * 
+	 *
 	 * @param p_oUmlClass UmlClass
 	 * @return true if uml class is of type Entity
 	 */
 	public MBeanScope getBeanScope(UmlClass p_oUmlClass) {
-		MBeanScope r_oBeanScope = MBeanScope.REQUEST ;
-		if ( p_oUmlClass.hasAnyStereotype(this.listApplicationScopeStereotypes) ){
-			r_oBeanScope = MBeanScope.APPLICATION ;
+		MBeanScope r_oBeanScope = MBeanScope.REQUEST;
+		if (p_oUmlClass.hasAnyStereotype(this.listApplicationScopeStereotypes)) {
+			r_oBeanScope = MBeanScope.APPLICATION;
 		}
 		return r_oBeanScope;
 	}

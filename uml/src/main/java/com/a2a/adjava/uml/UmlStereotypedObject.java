@@ -40,8 +40,13 @@ public class UmlStereotypedObject {
 	 */
 	@XmlJavaTypeAdapter(MapUmlStereotypeAdapter.class)
 	@XmlAttribute
-	private Map<String, UmlStereotype> stereotypes = new HashMap<String,UmlStereotype>();
-	
+	private Map<String, UmlStereotype> stereotypes = new HashMap<>();
+
+	/**
+	 * Parameters passed to the UML stereotypes
+	 */
+	private Map<String, Object[]> stereotypesParameters = new HashMap<>();
+
 	/**
 	 * Retourne l'objet stereoTypes
 	 * @return o collection of <em>UmlStereotype</em> values
@@ -49,117 +54,132 @@ public class UmlStereotypedObject {
 	public Collection<UmlStereotype> getStereotypes() {
 		return this.stereotypes.values();
 	}
-	
+
 	/**
 	 * Return stereotype names
 	 * @return a collection of String values
 	 */
 	public Collection<String> getStereotypeNames() {
 		return this.stereotypes.keySet();
-	}	
+	}
 
 	/**
 	 * Add a stereotype in the list
 	 * @param p_oStereotype
 	 */
-	public void addStereotype( UmlStereotype p_oStereotype ) {
-		this.stereotypes.put( p_oStereotype.getName(), p_oStereotype );
+	public void addStereotype(UmlStereotype p_oStereotype) {
+		this.stereotypes.put(p_oStereotype.getName(), p_oStereotype);
 	}
-	
+
+	/**
+	 * Add a stereotype in the list, with its corresponding parameters
+	 * @param p_oStereotype Stereotype to add to the class
+	 * @param p_oParameters Stereotype parameters
+	 */
+	public void addStereotype(UmlStereotype p_oStereotype, Object... p_oParameters) {
+
+		this.addStereotype(p_oStereotype);
+		this.stereotypesParameters.put(p_oStereotype.getId(), p_oParameters);
+	}
+
 	/**
 	 * Add a list of stereotypes
-	 * @param p_oStereotype
+	 * @param p_listStereotypes
 	 */
-	public void addStereotypes( Collection<UmlStereotype> p_listStereotypes ) {
-		for( UmlStereotype oStereotype : p_listStereotypes ) {
-			this.stereotypes.put( oStereotype.getName(), oStereotype );
+	public void addStereotypes(Collection<UmlStereotype> p_listStereotypes) {
+		for (UmlStereotype oStereotype : p_listStereotypes) {
+			this.stereotypes.put(oStereotype.getName(), oStereotype);
 		}
 	}
-	
+
 	/**
 	 * Return true if at least one stereotype of p_sLstStrereotype is in current stereotype list
 	 * @param p_sListStereotype the stereotypes list
 	 * @return true or false
 	 */
 	public boolean hasAnyStereotype(List<String> p_sListStereotype) {
-		if (p_sListStereotype!= null){
-			for(String sKey : this.getStereotypeNames() ){
-				for(String sSearchedKey : p_sListStereotype ){
-					if ( sKey !=null && sKey.equalsIgnoreCase(sSearchedKey)){
-						return true ;
+		if (p_sListStereotype != null) {
+			for (String sKey : this.getStereotypeNames()) {
+				for (String sSearchedKey : p_sListStereotype) {
+					if (sKey != null && sKey.equalsIgnoreCase(sSearchedKey)) {
+						return true;
 					}
-				}			
-			} 
+				}
+			}
 		}
-		return false ;
+		return false;
 	}
-	
+
 	/**
 	 * Return true if at least one stereotype of p_sLstStrereotype is in current stereotype list
 	 * @param p_sLstStereotype the stereotypes list
 	 * @return true or false
 	 */
 	public boolean hasAnyStereotype(HashSet<UmlStereotype> p_sLstStereotype) {
-		if (p_sLstStereotype!= null){
-			for(String sKey : this.getStereotypeNames() ){
-				for(UmlStereotype oStereoType : p_sLstStereotype ){
-					if ( sKey !=null && sKey.equalsIgnoreCase(oStereoType.getName())){
-						return true ;
+		if (p_sLstStereotype != null) {
+			for (String sKey : this.getStereotypeNames()) {
+				for (UmlStereotype oStereoType : p_sLstStereotype) {
+					if (sKey != null && sKey.equalsIgnoreCase(oStereoType.getName())) {
+						return true;
 					}
-				}			
+				}
 			}
 		}
-		return false ;
+		return false;
 	}
-	
+
 	/**
 	 * Return true if at least one stereotype of p_sLstStrereotype is in current stereotype list
 	 * @param p_listStereotypes the stereotypes list
 	 * @return true or false
 	 */
-	public boolean hasAnyStereotype(String... p_listStereotypes ) {
-		for(String sKey : this.getStereotypeNames() ){
-			for(String sSearchedKey : p_listStereotypes ){
-				if ( sKey !=null && sKey.equalsIgnoreCase(sSearchedKey)){
-					return true ;
+	public boolean hasAnyStereotype(String... p_listStereotypes) {
+		for (String sKey : this.getStereotypeNames()) {
+			for (String sSearchedKey : p_listStereotypes) {
+				if (sKey != null && sKey.equalsIgnoreCase(sSearchedKey)) {
+					return true;
 				}
-			}			
+			}
 		}
-		return false ;
+		return false;
 	}
-	
+
 	/**
 	 * Return true if the stereotype list contains the object that is linked to the specified name as parameter.
 	 * @param p_sName the name of the stereotype
 	 * @return true if the stereotype is present, false otherwise
 	 */
-	public boolean hasStereotype(String p_sName){		
-		for(String sKey : this.getStereotypeNames() ){
-			if ( sKey !=null && sKey.equalsIgnoreCase(p_sName)){
-				return true ;
+	public boolean hasStereotype(String p_sName) {
+		for (String sKey : this.getStereotypeNames()) {
+			if (sKey != null && sKey.equalsIgnoreCase(p_sName)) {
+				return true;
 			}
 		}
-		return false ;		
+		return false;
 	}
-	
+
 	/**
 	 * Return true if the object has all stereotypes.
 	 * @param p_listStereotypes stereotypes name
 	 * @return true if the object has all stereotypes.
 	 */
-	public boolean hasAllStereotypes(String... p_listStereotypes){
-		for(String sSearchedKey : p_listStereotypes ){
-			boolean bFound  = false ;
-			for(String sKey : this.getStereotypeNames()) { 
-				if ( sKey != null && sKey.equalsIgnoreCase(sSearchedKey)){
-					bFound = true ;
-					break ;
+	public boolean hasAllStereotypes(String... p_listStereotypes) {
+		for (String sSearchedKey : p_listStereotypes) {
+			boolean bFound = false;
+			for (String sKey : this.getStereotypeNames()) {
+				if (sKey != null && sKey.equalsIgnoreCase(sSearchedKey)) {
+					bFound = true;
+					break;
 				}
 			}
-			if ( !bFound ){
-				return false ;
-			}			
+			if (!bFound) {
+				return false;
+			}
 		}
-		return true ;
+		return true;
+	}
+
+	public Object[] getStereotypeParameters(String p_sStereotypeId) {
+		return this.stereotypesParameters.get(p_sStereotypeId);
 	}
 }

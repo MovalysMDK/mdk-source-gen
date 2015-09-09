@@ -172,6 +172,8 @@ public class SchemaExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 		this.sortTables( oSchema.getTables());
 
 		getDomain().setSchema(oSchema);
+
+		handleEmbeddedEntities();
 	}
 
 	/**
@@ -779,5 +781,29 @@ public class SchemaExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 		}
 		
 		return r_bHasNonTreatedDep;
+	}
+
+	/**
+	 * Embedded entities does not have corresponding tables, but have corresponding fields into their parent entity.
+	 * This method allows to output the fields names so that each platform can handle the data binding correctly.
+	 */
+	private void handleEmbeddedEntities() {
+
+		DbNamingStrategy oDbNamingStrategy = this.schemaConfig.getDbNamingStrategyClass();
+		SchemaFactory oSchemaFactory = this.schemaConfig.getSchemaFactory();
+
+		// For each entity that is an embedded one, create fields to their attributes
+		for (MEntityImpl entity : this.getDomain().getDictionnary().getAllEntities()) {
+			if (entity.isEmbedded()) {
+				String originClassName = entity.getEmbeddedParentClassName();
+				for (MAttribute oAttr : entity.getAttributes()) {
+					String sFieldName = oDbNamingStrategy.getColumnName(originClassName,
+							entity.getEmbeddedAttributeNameInParent() + "_" + oAttr.getName());
+					// Type and mandatory parameters unused
+					Field oField = oSchemaFactory.createField(sFieldName, "", false, oAttr);
+					oAttr.setField(oField);
+				}
+			}
+		}
 	}
 }
