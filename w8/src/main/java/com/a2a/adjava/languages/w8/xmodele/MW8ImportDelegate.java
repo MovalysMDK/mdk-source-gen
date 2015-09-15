@@ -37,7 +37,7 @@ public class MW8ImportDelegate {
 	/**
 	 * Imports for objective c
 	 */
-	private Map<String,SortedSet<String>> objcImports = new TreeMap<String,SortedSet<String>>();	
+	private Map<String,SortedSet<String>> imports = new TreeMap<String,SortedSet<String>>();
 
 	/**
 	 * Delegator
@@ -68,7 +68,7 @@ public class MW8ImportDelegate {
 	public void addImport(String p_sCategory, String p_sImport) {
 		if ( StringUtils.isNotBlank(p_sImport)) {
 			String sImport = p_sImport;
-			SortedSet<String> listImports = this.objcImports.get(p_sCategory);
+			SortedSet<String> listImports = this.imports.get(p_sCategory);
 			if (!listImports.contains( sImport )) {
 				listImports.add(sImport);
 			}
@@ -80,7 +80,7 @@ public class MW8ImportDelegate {
 	 * @param p_sName category name
 	 */
 	public void addCategory( String p_sName ) {
-		this.objcImports.put(p_sName, new TreeSet<String>());
+		this.imports.put(p_sName, new TreeSet<String>());
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class MW8ImportDelegate {
 	 * @return category name
 	 */
 	public SortedSet<String> getImportsForCategory( String p_sCategoryName ) {
-		return this.objcImports.get(p_sCategoryName);
+		return this.imports.get(p_sCategoryName);
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class MW8ImportDelegate {
 	 * @return xml for imports
 	 */
 	public Element toXml() {
-		Element r_xObjcImports = DocumentHelper.createElement("objc-imports");
+		Element r_xObjcImports = DocumentHelper.createElement("imports");
 		this.genereXml(r_xObjcImports);		
 		return r_xObjcImports;
 	}
@@ -125,7 +125,7 @@ public class MW8ImportDelegate {
 	 */
 	protected void toXml( Element p_xParent, String p_sCat, Collection<String> p_listImports ) {
 		for( String sImport: p_listImports ) {
-			Element xImport = p_xParent.addElement("objc-import");
+			Element xImport = p_xParent.addElement("import");
 			xImport.addAttribute("category", p_sCat);
 			xImport.addAttribute("class", sImport);
 		}

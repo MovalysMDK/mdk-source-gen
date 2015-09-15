@@ -144,7 +144,7 @@ public class ScreenDependencyProcessor {
 
 			// Manage layout
 			if (oScreen.getPageCount() == 1 && !oScreen.isMultiPanel()) {
-				oScreen.setLayout(oScreen.getMasterPage().getLayout());
+				setLayoutForSinglePageScreen(oScreen);
 			} else if (oScreen.isMultiPanel()) {
 
 				// If many pages, screen viewmodel is a view model which
@@ -160,6 +160,14 @@ public class ScreenDependencyProcessor {
 				// Nothing to do
 			}
 		}
+	}
+
+	/**
+	 * In the case of a single page screen, insert the layout of the panel in the screen layout.
+	 * @param p_oScreen
+	 */
+	protected void setLayoutForSinglePageScreen(MScreen p_oScreen) {
+		p_oScreen.setLayout(p_oScreen.getMasterPage().getLayout());
 	}
 	
 	/**

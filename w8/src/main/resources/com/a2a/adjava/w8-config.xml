@@ -410,6 +410,11 @@
 				<start-marker>//\s*@non-generated-start\s*\[([^\]]*)\](.*)</start-marker>
 				<end-marker>//\s*@non-generated-end</end-marker>
 			</non-generated>
+
+			<include>
+				<start-marker>using </start-marker>
+				<end-marker>;</end-marker>
+			</include>
 		</language>
 	</languages>
 	<domains>

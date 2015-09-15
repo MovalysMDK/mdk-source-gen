@@ -390,7 +390,11 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 		}
 		p_xElement.addElement("search-screen").setText(Boolean.toString(this.searchScreen));
 		p_xElement.addElement("name-lowercase").setText(this.getName().toLowerCase());
-		p_xElement.addElement("screenname").setText(this.layout.getName());
+
+		if (this.layout != null) {
+			p_xElement.addElement("screenname").setText(this.layout.getName());
+		}
+
 		if (this.viewModel!=null) {
 			p_xElement.add(this.viewModel.toXml());
 			if (this.viewModel.getMasterInterface()!=null) {
