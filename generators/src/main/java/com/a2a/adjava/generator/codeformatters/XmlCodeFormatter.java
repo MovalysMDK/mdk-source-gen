@@ -104,7 +104,7 @@ public class XmlCodeFormatter implements CodeFormatter {
 	 * @return true if file must be formatted
 	 */
 	public boolean acceptFile( File p_oFile ) {
-		return FileTypeUtils.isXmlFile(p_oFile.getName());
+		return FileTypeUtils.isXmlFile(p_oFile.getName()) || FileTypeUtils.isXamlFile(p_oFile.getName());
 	}
 
 	/**

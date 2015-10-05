@@ -43,6 +43,11 @@ public class MNavigation {
 	 * Screen source
 	 */
 	private MScreen source ;
+
+	/**
+	 * The page that initiated the navigation
+	 */
+	private MPage sourcePage;
 	
 	/**
 	 * Screen target
@@ -50,7 +55,7 @@ public class MNavigation {
 	private MScreen target ;
 
 	/**
-	 * 
+	 * Index of the target page
 	 */
 	private int targetPageIdx = 0;
 	
@@ -161,5 +166,16 @@ public class MNavigation {
 		}
 		
 		return r_xElem;
+	}
+
+	/**
+	 * Index of the source page
+	 */
+	public MPage getSourcePage() {
+		return sourcePage;
+	}
+
+	public void setSourcePage(MPage sourcePage) {
+		this.sourcePage = sourcePage;
 	}
 }

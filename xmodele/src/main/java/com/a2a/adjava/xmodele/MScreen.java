@@ -278,7 +278,21 @@ public class MScreen extends SClass<MViewModelInterface,MMethodSignature> {
 	public List<MPage> getPages(){
 		return this.pages;
 	}
-	
+
+	/**
+	 * Returns the page that has the searched name, or null in the other case
+	 *
+	 * @return the searched page, or null if not found
+	 */
+	public MPage getPageByName(String p_sSearchedPageName){
+		for (MPage oPage : this.pages) {
+			if (oPage.getName().equals(p_sSearchedPageName)) {
+				return oPage;
+			}
+		}
+		return null;
+	}
+
 	/**
 	 * retourne la liste des pages affichées dans l'écran.
 	 * @return une ArrayList d'objets <em>MPage</em>

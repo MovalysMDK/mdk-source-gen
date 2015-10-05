@@ -328,7 +328,7 @@ public class ScreenDependencyProcessor {
 		log.debug("treat navigation detail usage, screen:{}, navigation name: {}", p_oScreen.getName(), p_oNavigationUsage.getName());
 		log.debug("  panel aggregation count: {}", p_listPanelAggregations.size());
 		
-		// une navigation de type détail est lié à un model par son
+		// une navigation de type détail est liée à un model par son
 		// nom indiquant le type de l'élément à afficher
 		// on cherche si le nom du usage est également le nom d'une
 		// relation vers le view model.
@@ -392,6 +392,7 @@ public class ScreenDependencyProcessor {
 							MNavigation oNavDetail =
 								oDomain.getXModeleFactory().createNavigation("navigationdetail", 
 									MNavigationType.NAVIGATION_DETAIL, p_oScreen, oScreenEnd);
+							oNavDetail.setSourcePage(p_oScreen.getPageByName(oPanelAggregation.getPanel().getName()));
 							oDomain.getDictionnary().registerNavigation(oNavDetail);
 							
 							log.debug("  add navigation detail on page: {}", p_oScreen.getMasterPage().getName());
