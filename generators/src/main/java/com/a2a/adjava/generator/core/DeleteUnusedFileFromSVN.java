@@ -111,13 +111,17 @@ public class DeleteUnusedFileFromSVN implements UnusedFileStrategy {
 		SVNStatusClient oClient = clientManager.getStatusClient();
 
 		IsVersionedStatusHandler handler = new IsVersionedStatusHandler();
-		try {
+		try { 
 			oClient.doStatus(file, SVNRevision.UNDEFINED, SVNDepth.EMPTY, false, true, true, false, handler,
 					null);
 			r_bVersioned = handler.isVersioned();
-		} catch (SVNException oSVNException) {
-			final SVNErrorCode errorCode = oSVNException.getErrorMessage().getErrorCode();
-			r_bVersioned = errorCode != SVNErrorCode.WC_NOT_DIRECTORY && errorCode != SVNErrorCode.WC_NOT_FILE ;
+		} catch (SVNException oSVNException) {	
+			final int errorCode = oSVNException.getErrorMessage().getErrorCode().getCode(); 
+			if (errorCode == SVNErrorCode.WC_NOT_DIRECTORY.getCode() 
+					|| errorCode == SVNErrorCode.WC_NOT_FILE.getCode()
+					|| errorCode == SVNErrorCode.WC_UNSUPPORTED_FORMAT.getCode()) { 
+				r_bVersioned = false; 
+			}
 		}
 		return r_bVersioned;
 	}
