@@ -78,13 +78,23 @@ public final class XMI12EnumReader {
 		
 		log.debug(" name : " + r_oEnum.getName());
 		
-		Element xClassifierFeature = p_xEnum.element("Classifier.feature");
-		if ( xClassifierFeature != null ) {
-			for( Element xEnumValue : (List<Element>) xClassifierFeature.elements("Attribute")) {
-				r_oEnum.addEnumValue(xEnumValue.attributeValue("name"));
+		// Value Enum
+		Element xNamespaceOwnedElement = p_xEnum.element("Namespace.ownedElement");
+		if ( xNamespaceOwnedElement != null ) {
+			Element xXmiExtension = xNamespaceOwnedElement.element("XMI.extension");
+			if ( xXmiExtension != null ) {
+				Element xVpumlChildModels = xXmiExtension.element("vpumlChildModels");
+				if ( xVpumlChildModels != null ) {
+					for( Element xVpumlModel : (List<Element>) xVpumlChildModels.elements("vpumlModel")) {
+						for( Element xPropertie : (List<Element>) xVpumlModel.element("properties").elements("property")) {
+							if ("name".equals(xPropertie.attributeValue("name"))) {
+								r_oEnum.addEnumValue(xPropertie.attributeValue("value"));
+							}
+						}
+					}
+				}
 			}
 		}
-		
 		// Lecture des stereotypes de la classe
 		Element xStereoTypeValues = p_xEnum.element("ModelElement.stereotype");
 		if(xStereoTypeValues!=null){

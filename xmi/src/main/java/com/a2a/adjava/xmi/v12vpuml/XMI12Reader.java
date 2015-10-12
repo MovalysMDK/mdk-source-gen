@@ -51,7 +51,7 @@ public class XMI12Reader implements XMIReader {
 	/**
 	 * VP Exporter
 	 */
-	private static final String VP_EXPORTER = "Visual Paradigm for UML";
+	private static final String VP_EXPORTER = "Visual Paradigm";
 
 	/**
 	 * {@inheritDoc}
