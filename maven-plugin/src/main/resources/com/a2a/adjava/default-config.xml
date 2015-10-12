@@ -25,6 +25,7 @@
 		<!-- xmi-file>/home/projets/lmi/workspace-2.5.0/mi-dbgen-2.5.0/xdocs/uml/mi.xmi</xmi-file -->
 		<xmi-readers>
 			<xmi-reader class="com.a2a.adjava.xmi.v12vpuml.XMI12Reader"/>
+			<xmi-reader class="com.a2a.adjava.xmi.v21vpuml.XMI21Reader"/>
 			<xmi-reader class="com.a2a.adjava.xmi.v21mduml.XMI21Reader"/>
 			<xmi-reader class="com.a2a.adjava.xmi.v24mduml.XMI24Reader"/>
 		</xmi-readers>
