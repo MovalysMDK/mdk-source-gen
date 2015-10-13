@@ -25,6 +25,8 @@ import java.util.List;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
+import org.slf4j.helpers.FormattingTuple;
+import org.slf4j.helpers.MessageFormatter;
 
 import com.a2a.adjava.messages.Message.MessageSeverity;
 import com.google.gson.Gson;
@@ -164,8 +166,17 @@ public final class MessageHandler {
 	 * @throws IOException An exception during IO.
 	 */
 	private void writeMessages(List<Message> messages) throws IOException {
+		//Formatting message for JSON file 
+		List<Message> jsonMessage = new ArrayList<>();
+		for(int messageIndex = 0; messageIndex < messages.size() ; messageIndex++) {
+		    FormattingTuple tp = MessageFormatter.arrayFormat(StringUtils.join("[{}] ", messages.get(messageIndex).getMessage()), messages.get(messageIndex).getParameters());
+		    Message newMessage = new Message(tp.getMessage(), messages.get(messageIndex).getSeverity());
+		    jsonMessage.add(newMessage);
+		}
+		
+		//Write Json file
 		Gson messagesAsJson = new Gson();
-		String jsonAsString = messagesAsJson.toJson(messages);
+		String jsonAsString = messagesAsJson.toJson(jsonMessage);
 		File oOutputFile = new File(ADJAVA_MESSAGES_OUTPUT_FILENAME);
 		oOutputFile.createNewFile();
 		FileOutputStream oFileOutputStream = new FileOutputStream(oOutputFile);
