@@ -54,17 +54,19 @@ public class UmlForbiddenPropertiesUpdater extends AbstractUmlUpdater {
 
 					if (sForbiddenName.equals(oAttr.getName())
 						|| oAttr.getName().endsWith("."+sForbiddenName)) {
-						String sMessage = "Attribute '" + sForbiddenName + "' is forbidden. "
-								+ "You should rename it with an non-forbidden name like '" + this.getParametersMap().get(sForbiddenNameKey) + "'";
+						String sMessage = "Attribute {} is forbidden. "
+								+ "You should rename it with an non-forbidden name like {}";
+
 						if(bIsWarning) {
-							sMessage = "Attribute '" + sForbiddenName + "' is forbidden. "
-									+ "The attribute was renamed with : '" + this.getParametersMap().get(sForbiddenNameKey) + "'";
+
+							sMessage = "Attribute {} is forbidden. The attribute was renamed with : {}";
+							
+							MessageHandler.getInstance().addWarning(sMessage,sForbiddenName,this.getParametersMap().get(sForbiddenNameKey));
 							String sNewName = oAttr.getName().replaceAll(sForbiddenName, this.getParametersMap().get(sForbiddenNameKey));
 							oAttr.setName(sNewName, oUmlClass);
-							log.warn(sMessage);
 						}
 						else {
-							MessageHandler.getInstance().addError(sMessage);
+							MessageHandler.getInstance().addError(sMessage,sForbiddenName,this.getParametersMap().get(sForbiddenNameKey));
 						}
 					}
 					else if ( ("@"+sForbiddenName).equals(oAttr.getName())) {
