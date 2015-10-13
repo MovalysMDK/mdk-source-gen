@@ -15,6 +15,10 @@
  */
 package com.a2a.adjava.messages;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +27,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import com.a2a.adjava.messages.Message.MessageSeverity;
+import com.google.gson.Gson;
 
 /**
  * Message handler, used to manage generation log messages (warning, error, info, debug)
@@ -32,27 +37,31 @@ import com.a2a.adjava.messages.Message.MessageSeverity;
 public final class MessageHandler {
 
 	/**
+	 * Nom du fichier de sauvegarde des informations pour l'éxécution
+	 */
+	private static String ADJAVA_MESSAGES_OUTPUT_FILENAME = "adjavaMessages.json";
+	/**
 	 * 
 	 */
 	private static ThreadLocal<MessageHandler> threadLocal = new ThreadLocal<MessageHandler>();
-	
+
 	/**
 	 * Message list
 	 */
 	private List<Message> listMessages = new ArrayList<Message>();
-	
+
 	/**
 	 * True if contains one log with severity error
 	 */
 	private boolean hasErrors = false ;
-	
+
 	/**
 	 * Constructor
 	 */
 	private MessageHandler() {
 		// private because singleton
 	}
-	
+
 	/**
 	 * @return
 	 */
@@ -64,7 +73,7 @@ public final class MessageHandler {
 		}
 		return r_oMessageHandler ;
 	}
-	
+
 	/**
 	 * @param p_sErrorMessage
 	 */
@@ -72,7 +81,7 @@ public final class MessageHandler {
 		this.listMessages.add( new Message( p_sErrorMessage, MessageSeverity.ERROR ));
 		this.hasErrors = true ;
 	}
-	
+
 	/**
 	 * @param p_sErrorMessage
 	 */
@@ -80,21 +89,21 @@ public final class MessageHandler {
 		this.listMessages.add( new Message( p_sErrorMessage, MessageSeverity.ERROR, p_oParameters ));
 		this.hasErrors = true ;
 	}
-	
+
 	/**
 	 * @param p_sErrorMessage
 	 */
 	public void addWarning( String p_sErrorMessage ) {
 		this.listMessages.add( new Message( p_sErrorMessage, MessageSeverity.WARN ));
 	}
-	
+
 	/**
 	 * @param p_sErrorMessage
 	 */
 	public void addWarning( String p_sErrorMessage, Object... p_oParameters ) {
 		this.listMessages.add( new Message( p_sErrorMessage, MessageSeverity.WARN, p_oParameters ));
 	}
-	
+
 	/**
 	 * @param p_sErrorMessage
 	 */
@@ -115,7 +124,7 @@ public final class MessageHandler {
 	public boolean hasErrors() {
 		return this.hasErrors;
 	}	
-	
+
 	/**
 	 * Reset du MessageHandler
 	 */
@@ -123,13 +132,14 @@ public final class MessageHandler {
 		this.hasErrors = false ;
 		this.listMessages.clear();
 	}
-	
+
 	/**
 	 * Log messages
 	 * @param p_oLogger logger to use
 	 */
 	public void logMessages( Logger p_oLogger ) {
-		for (Message oMessage : getListMessages()) {
+		List<Message> messages = getListMessages();
+		for (Message oMessage : messages) {
 			Object[] listParameters = new Object[1];
 			listParameters[0] = oMessage.getSeverity().toString();
 			if ( oMessage.getParameters() != null ) {
@@ -137,8 +147,31 @@ public final class MessageHandler {
 					listParameters = ArrayUtils.add(listParameters, oParam);
 				}
 			}
-			
 			p_oLogger.error( StringUtils.join("[{}] ", oMessage.getMessage()), listParameters);
 		}
+		
+		try {
+			writeMessages(messages);
+		} catch (IOException e) {
+			//TODO
+		}
+
+	}
+
+	/**
+	 * Writes ADJAVA messages to JSon file to be read by mdk-cli
+	 * @param messages The messages to write
+	 * @throws IOException An exception during IO.
+	 */
+	private void writeMessages(List<Message> messages) throws IOException {
+		Gson messagesAsJson = new Gson();
+		String jsonAsString = messagesAsJson.toJson(messages);
+		File oOutputFile = new File(ADJAVA_MESSAGES_OUTPUT_FILENAME);
+		oOutputFile.createNewFile();
+		FileOutputStream oFileOutputStream = new FileOutputStream(oOutputFile);
+		OutputStreamWriter oOutputStreamWriter =new OutputStreamWriter(oFileOutputStream);
+		oOutputStreamWriter.append(jsonAsString);
+		oOutputStreamWriter.close();
+		oFileOutputStream.close();
 	}
 }
