@@ -169,7 +169,7 @@ public final class MessageHandler {
 		//Formatting message for JSON file 
 		List<Message> jsonMessage = new ArrayList<>();
 		for(int messageIndex = 0; messageIndex < messages.size() ; messageIndex++) {
-		    FormattingTuple tp = MessageFormatter.arrayFormat(StringUtils.join("[{}] ", messages.get(messageIndex).getMessage()), messages.get(messageIndex).getParameters());
+		    FormattingTuple tp = MessageFormatter.arrayFormat(messages.get(messageIndex).getMessage(), messages.get(messageIndex).getParameters());
 		    Message newMessage = new Message(tp.getMessage(), messages.get(messageIndex).getSeverity());
 		    jsonMessage.add(newMessage);
 		}
