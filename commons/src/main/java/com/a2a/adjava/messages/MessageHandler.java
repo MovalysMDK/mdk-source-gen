@@ -25,10 +25,10 @@ import java.util.List;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
-import org.slf4j.helpers.FormattingTuple;
-import org.slf4j.helpers.MessageFormatter;
 
 import com.a2a.adjava.messages.Message.MessageSeverity;
+import com.a2a.adjava.messages.slf4j.FormattingTuple;
+import com.a2a.adjava.messages.slf4j.MessageFormatter;
 import com.google.gson.Gson;
 
 /**
