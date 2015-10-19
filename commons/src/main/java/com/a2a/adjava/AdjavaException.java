@@ -15,7 +15,7 @@
  */
 package com.a2a.adjava;
 
-import org.slf4j.helpers.MessageFormatter;
+import com.a2a.adjava.messages.slf4j.MessageFormatter;
 
 /**
  * @author lmichenaud
