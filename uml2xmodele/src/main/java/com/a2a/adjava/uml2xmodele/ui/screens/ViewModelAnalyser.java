@@ -183,8 +183,8 @@ public class ViewModelAnalyser {
 				p_oPage.addImport(oSubView.getEntityToUpdate().getMasterInterface().getFullName());
 				// Création de l'adapter
 				oAdapter = new MAdapter(p_oScreenContext.computeAdapterName(p_oPage.getUmlName()+oSubView.getUmlName()),
-						oSubView.getPackage(), ViewModelType.FIXED_LIST.getParametersByConfigName(ViewModelType.DEFAULT, VersionHandler.getGenerationVersion().getStringVersion()).getAdapterName(),
-						ViewModelType.FIXED_LIST.getParametersByConfigName(ViewModelType.DEFAULT, VersionHandler.getGenerationVersion().getStringVersion()).getAdapterFullName());
+						oSubView.getPackage(), ViewModelType.FIXED_LIST.getParametersByConfigName(oSubView.getConfigName(), VersionHandler.getGenerationVersion().getStringVersion()).getAdapterName(),
+						ViewModelType.FIXED_LIST.getParametersByConfigName(oSubView.getConfigName(), VersionHandler.getGenerationVersion().getStringVersion()).getAdapterFullName());
 
 				oDomain.getDictionnary().registerAdapter(oAdapter);
 				oAdapter.setViewModel(
