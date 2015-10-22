@@ -28,6 +28,7 @@
 			<xmi-reader class="com.a2a.adjava.xmi.v21vpuml.XMI21Reader"/>
 			<xmi-reader class="com.a2a.adjava.xmi.v21mduml.XMI21Reader"/>
 			<xmi-reader class="com.a2a.adjava.xmi.v24mduml.XMI24Reader"/>
+			<xmi-reader class="com.a2a.adjava.xmi.v24md182uml.XMI24Reader"/>
 		</xmi-readers>
 		<xmi-updaters>
 			<!-- xmi-updater class="com.a2a.adjava.xmi.RenamePackageA2aXMIUpdater"/ -->
