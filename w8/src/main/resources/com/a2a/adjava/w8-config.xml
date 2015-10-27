@@ -142,7 +142,6 @@
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
 					<default-ui-type>UIInteger</default-ui-type>
-					<coredata-type>Integer 32</coredata-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>System.Convert.ToString(VALUE)</formula>
@@ -190,7 +189,6 @@
 					<data-type>NUMERIC</data-type>
 					<edit-type>number</edit-type>
 					<default-ui-type>UIInteger</default-ui-type>
-					<coredata-type>Integer 32</coredata-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>System.Convert.ToString(VALUE)</formula>
@@ -203,11 +201,11 @@
 					<language-type>char</language-type>
 					<init-format>'?'</init-format>
 					<default-value>0</default-value>
-					<variable-prefix>c</variable-prefix>
-					<parameter-prefix>p_c</parameter-prefix>
-					<return-prefix>r_c</return-prefix>
-					<get-accessor-prefix>get</get-accessor-prefix>
-					<set-accessor-prefix>set</set-accessor-prefix>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
 					<wrapper>Character</wrapper>
 					<default-options>_L1</default-options>
 					<sql-type>TEXT</sql-type>
@@ -226,17 +224,17 @@
 					<uml-type>String</uml-type>
 					<language-type>String</language-type>
 					<init-format>"?"</init-format>
-					<default-value></default-value>
+					<default-value>null</default-value>	
 					<variable-prefix></variable-prefix>
 					<parameter-prefix></parameter-prefix>
 					<return-prefix></return-prefix>
 					<get-accessor-prefix></get-accessor-prefix>
 					<set-accessor-prefix></set-accessor-prefix>
 					<sql-type>TEXT</sql-type>
+					<default-options>_L255</default-options>	
 					<sql-compare>=</sql-compare>
 					<data-type>ALPHANUMERIC</data-type>
 					<default-ui-type>Text</default-ui-type>
-					<coredata-type>String</coredata-type>
 				</type>
 				<type>
 					<uml-type>double</uml-type>
@@ -254,7 +252,6 @@
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
 					<default-ui-type>UIDouble</default-ui-type>
-					<coredata-type>double</coredata-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>System.Convert.ToString(VALUE)</formula>
@@ -277,7 +274,6 @@
 					<data-type>NUMERIC</data-type>
 					<edit-type>numberDecimal</edit-type>
 					<default-ui-type>UIDouble</default-ui-type>
-					<coredata-type>Double</coredata-type>
 					<type-conversions>
 						<type-conversion to="String">
 							<formula>System.Convert.ToString(VALUE)</formula>
@@ -298,7 +294,6 @@
 					<sql-type>NUMERIC</sql-type>
 					<sql-compare>=</sql-compare>
 					<data-type>DATE</data-type>
-					<coredata-type>Date</coredata-type>
 					<default-ui-type>DateTime</default-ui-type>
 				</type>
 				
@@ -316,8 +311,7 @@
 					<default-options>_P1_S0</default-options>
 					<sql-type>NUMERIC</sql-type>
 					<sql-compare>=</sql-compare>
-					<data-type>NUMERIC</data-type>
-					<coredata-type>Boolean</coredata-type>					
+					<data-type>NUMERIC</data-type>				
 					<default-ui-type>CheckBox</default-ui-type>
 					<type-conversions>
 						<type-conversion to="String">
@@ -363,7 +357,6 @@
 					<sql-type>NUMBER(10,0)</sql-type>
 					<sql-compare>=</sql-compare>
 					<data-type>ALPHANUMERIC</data-type>
-					<coredata-type>Integer 16</coredata-type>
 					<default-ui-type>RadioGroup</default-ui-type>
 				</type>
 				
