@@ -288,10 +288,18 @@ public class XModeleFactory implements IModelFactory {
 			MVFModifier p_bMVFModifier, MVFLabelKind p_oLabelKind, MAttribute p_oAttribute,
 			MVFLocalization p_oLocalisation, IDomain<IModelDictionary, IModelFactory> p_oDomain,
 			String p_sAttributeName, boolean p_bMandatory) {
-		return new MVisualField(p_sPrefix + (p_bMVFModifier == MVFModifier.READONLY ? "__value" : "__edit"), p_oLabel,
+		
+		MVisualField mvf = new MVisualField(p_sPrefix + (p_bMVFModifier == MVFModifier.READONLY ? "__value" : "__edit"), p_oLabel,
 				p_oTypeVisual.getComponentType(p_bMVFModifier), p_oAttribute.getTypeDesc().getEditType(),
 				p_oAttribute.getLength(), p_oAttribute.getPrecision(), p_oAttribute.getScale(),
 				p_oLabelKind, p_oLocalisation, p_sAttributeName, p_bMandatory, p_oAttribute.getMEnumeration(), p_bMVFModifier == MVFModifier.READONLY, p_oTypeVisual.getUmlName());
+		
+		if(p_bMVFModifier == MVFModifier.READONLY){
+			mvf.setReadOnly(true);
+		}
+		
+		return mvf;
+	
 	}
 
 	/**
