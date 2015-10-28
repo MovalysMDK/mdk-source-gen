@@ -272,7 +272,7 @@ public class ScreenDependencyProcessor {
 	 * @param p_oScreen
 	 * @param p_oScreenContext
 	 */
-	private void treatNavigationUsage( UmlUsage p_oNavigationUsage, MScreen p_oScreen, ScreenContext p_oScreenContext ) throws Exception {
+	protected void treatNavigationUsage( UmlUsage p_oNavigationUsage, MScreen p_oScreen, ScreenContext p_oScreenContext ) throws Exception {
 				
 		IDomain<IModelDictionary, IModelFactory> oDomain = p_oScreenContext.getDomain();
 		
@@ -282,7 +282,7 @@ public class ScreenDependencyProcessor {
 	
 		if (p_oScreen.getPageCount() > 1) {
 			// à voir comment le traiter mais pour le momment il
-			// faudrai mettre un bouton de navigation sur chaque
+			// faudrait mettre un bouton de navigation sur chaque
 			// page donc pas top.
 			MessageHandler.getInstance().addError(
 					"Cas non traité : navigation à partir de plusieurs pages, que faire ?");

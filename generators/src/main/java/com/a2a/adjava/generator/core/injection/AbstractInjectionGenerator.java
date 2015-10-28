@@ -202,7 +202,9 @@ public abstract class AbstractInjectionGenerator<D extends IDomain<?, ?>> extend
 	 */
 	protected String getGeneratedXStartTag( String p_sKey, File p_oFile ) throws AdjavaException {
 		String r_sStartTag = null ;
-		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile) || FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isIosStringFile(p_oFile) || FileTypeUtils.isScssFile(p_oFile)) {
+		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)
+				|| FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isIosStringFile(p_oFile) || FileTypeUtils.isScssFile(p_oFile)
+				|| FileTypeUtils.isCSharpFile(p_oFile)) {
 			r_sStartTag = "//@generated-start[" + p_sKey + "][X]";
 		}
 		else if ( FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {

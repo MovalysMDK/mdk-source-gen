@@ -25,7 +25,6 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 
 import com.a2a.adjava.AdjavaProperty;
-import com.a2a.adjava.codeformatter.FormatOptions;
 import com.a2a.adjava.codeformatter.GeneratedFile;
 import com.a2a.adjava.generator.core.AbstractXslGenerator;
 import com.a2a.adjava.generators.DomainGeneratorContext;
@@ -62,7 +61,7 @@ public abstract class AbstractIncrementalGenerator<D extends IDomain<?, ?>> exte
 	 */
 	public void doIncrementalTransform(String p_sTemplatePath, String p_sOutputFile, Document p_xDoc, XProject<D> p_oProject,
 			DomainGeneratorContext p_oGeneratorContext) throws Exception {
-		this.doIncrementalTransform(p_sTemplatePath, new GeneratedFile<FormatOptions>(p_sOutputFile), p_xDoc, p_oProject, p_oGeneratorContext);
+		this.doIncrementalTransform(p_sTemplatePath, new GeneratedFile<>(p_sOutputFile), p_xDoc, p_oProject, p_oGeneratorContext);
 	}
 	
 	/**
@@ -136,13 +135,13 @@ public abstract class AbstractIncrementalGenerator<D extends IDomain<?, ?>> exte
 	 * @throws Exception exception
 	 */
 	protected Collection<String> extractImports( String p_sInputFile, XProject<D> p_oProject ) throws Exception {
-		Collection<String> r_listImports = null ;
+		Collection<String> r_listImports;
 		String sForceOverwrite = p_oProject.getDomain().getGlobalParameters().get(AdjavaProperty.IMPORT_FORCE_OVERWRITE.getName());
 		if (sForceOverwrite == null || !sForceOverwrite.equalsIgnoreCase("true")) {
 			r_listImports = this.importExtractor.extractIncludes(p_sInputFile, p_oProject);
 		}
 		else {
-			r_listImports = new ArrayList<String>();
+			r_listImports = new ArrayList<>();
 		}
 		return r_listImports ;
 	}

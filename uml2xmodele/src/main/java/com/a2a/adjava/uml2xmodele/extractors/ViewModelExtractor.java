@@ -120,7 +120,7 @@ public class ViewModelExtractor extends AbstractExtractor<IDomain<IModelDictiona
 
 		List<UmlUsage> listModelUsages = this.getViewModel2ModelUsages(p_oVMUmlClass);
 		if (listModelUsages.size() > 1) {
-			MessageHandler.getInstance().addError("{} must have only one usage of type Mm_panel",
+			MessageHandler.getInstance().addError("{} must have only one usage of type Mm_model",
 				p_oVMUmlClass.getName());
 		}
 		else {
@@ -159,7 +159,7 @@ public class ViewModelExtractor extends AbstractExtractor<IDomain<IModelDictiona
 				this.updateMasterViewModelForList(oMasterVmi, oListVM);
 			}
 			else {
-				log.debug("Panel '{}' doesnot need a view model list", p_oVMUmlClass.getName());
+				log.debug("Panel '{}' does not need a view model list", p_oVMUmlClass.getName());
 			}
 
 			//la création d'un view model peut engendrer la création de sous view model lors de lecture des attributs

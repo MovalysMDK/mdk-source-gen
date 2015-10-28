@@ -213,7 +213,7 @@ public class FileTypeUtils {
 	 * @return true if java file
 	 */
 	public static boolean isCSharpFile(File p_oFile) {
-		return isJavaFile(p_oFile.getName());
+		return isCSharpFile(p_oFile.getName());
 	}
 	
 	/**

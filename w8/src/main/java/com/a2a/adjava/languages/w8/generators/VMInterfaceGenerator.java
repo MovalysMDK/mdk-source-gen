@@ -49,9 +49,7 @@ public class VMInterfaceGenerator extends ViewModelInterfaceGenerator {
 		log.debug("> ViewModelInterfaceGenerator.genere");
 		Chrono oChrono = new Chrono(true);
 		for(MViewModelImpl oViewModel : p_oProject.getDomain().getDictionnary().getAllViewModels()) {
-			if(!oViewModel.isScreenViewModel()){
-				this.createViewModelInterface(oViewModel, p_oProject, p_oContext);
-			}
+			this.createViewModelInterface(oViewModel, p_oProject, p_oContext);
 		}
 		log.debug("< ViewModelInterfaceGenerator.genere: {}", oChrono.stopAndDisplay());
 	}

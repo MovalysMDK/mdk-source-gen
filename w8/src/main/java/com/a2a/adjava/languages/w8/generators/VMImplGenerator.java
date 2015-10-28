@@ -51,12 +51,7 @@ public class VMImplGenerator extends ViewModelGenerator {
 		NonGeneratedBlocExtractor oNonGeneratedBlocExtractor = new NonGeneratedBlocExtractor();
 		
 		for(MViewModelImpl oViewModel : p_oProject.getDomain().getDictionnary().getAllViewModels()) {
-			
-			if(!oViewModel.isScreenViewModel()) {
-				
-				this.createViewModel(oViewModel, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
-			
-			}
+			this.createViewModel(oViewModel, oNonGeneratedBlocExtractor, p_oProject, p_oContext);
 		}
 		log.debug("< ViewModelGenerator.genere: {}", oChrono.stopAndDisplay());
 	}

@@ -120,6 +120,12 @@ public class MNavigation {
 	}
 
 	/**
+	 * Returns the Target page index in the screen
+	 * @return
+	 */
+	public int getTargetPageIdx() { return this.targetPageIdx; }
+
+	/**
 	 * @return
 	 */
 	public MNavigationType getNavigationType() {
