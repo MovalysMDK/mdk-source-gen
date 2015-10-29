@@ -36,6 +36,7 @@ import com.a2a.adjava.commons.init.AdjavaInitializer;
 import com.a2a.adjava.messages.MessageHandler;
 import com.a2a.adjava.runtime.RuntimeExec;
 import com.a2a.adjava.utils.ItfVersion;
+import com.a2a.adjava.utils.ItfWidget;
 import com.a2a.adjava.utils.VersionHandler;
 import com.a2a.adjava.versions.ExecutionMetadataHandler;
 import com.a2a.adjava.versions.GenerationDescriptor;
@@ -207,6 +208,20 @@ public class AdjavaMavenPlugin extends AbstractMojo {
 	private String generationVersion;
 
 	/**
+	 * widgetClass
+	 * 
+	 * @parameter
+	 */
+	private String widgetClass;
+
+	/**
+	 * widgetVariant
+	 * 
+	 * @parameter
+	 */
+	private String widgetVariant;
+	
+	/**
 	 * executionId Allowed values listed in "AdjavaProperty"
 	 * 
 	 * @parameter
@@ -293,8 +308,8 @@ public class AdjavaMavenPlugin extends AbstractMojo {
 
 		Adjava oAdjava = new Adjava();
 
-		new VersionHandler(this.generationVersion,
-				(Class<ItfVersion>) Class.forName(this.versionClass));
+		new VersionHandler(this.generationVersion, (Class<ItfVersion>) Class.forName(this.versionClass),
+				this.widgetVariant, (Class<ItfWidget>) Class.forName(this.widgetClass));
 
 		AdjavaInitializer oAdjavaInitializer = new AdjavaInitializer();
 		oAdjavaInitializer.addConfiguration(this.configFiles);

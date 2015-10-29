@@ -34,7 +34,13 @@ public class VersionHandler {
 	 */
 	private static String currentMDKGenerationVersion;
 	
-	public VersionHandler(String p_sVersion, Class<ItfVersion> p_oVersionImplementationClass) throws AdjavaException {
+	/**
+	 * Version of the widgets used on the project
+	 */
+	private static ItfWidget widgetVariant;
+	
+	public VersionHandler(String p_sVersion, Class<ItfVersion> p_oVersionImplementationClass,
+			String p_sWidget, Class<ItfWidget> p_oWidgetImplementationClass) throws AdjavaException {
 		
 		for (ItfVersion eVersion : p_oVersionImplementationClass.getEnumConstants()) {
 			
@@ -46,6 +52,18 @@ public class VersionHandler {
 		}
 		if (generationVersion == null) {
 			throw new AdjavaException("no version matches {} in Version implementation {}", p_sVersion, p_oVersionImplementationClass.getName());
+		}
+		
+		for (ItfWidget eWidget : p_oWidgetImplementationClass.getEnumConstants()) {
+			
+			if (eWidget.getStringWidget().equalsIgnoreCase(p_sWidget)) {
+				widgetVariant = eWidget;
+				break;
+			}
+			
+		}
+		if (widgetVariant == null) {
+			throw new AdjavaException("no widget matches {} in Widget implementation {}", p_sWidget, p_oWidgetImplementationClass.getName());
 		}
 	}
 
@@ -89,6 +107,14 @@ public class VersionHandler {
 	public static void setCurrentMDKGenerationVersion(
 			String currentMDKGenerationVersion) {
 		VersionHandler.currentMDKGenerationVersion = currentMDKGenerationVersion;
+	}
+	
+	/**
+	 * Returns the variant of the widgets used on the generated project.
+	 * @return the variant of the widgets
+	 */
+	public static ItfWidget getWidgetVariant() {
+		return widgetVariant;
 	}
 	
 }
