@@ -309,7 +309,7 @@ public class AdjavaMavenPlugin extends AbstractMojo {
 		Adjava oAdjava = new Adjava();
 
 		new VersionHandler(this.generationVersion, (Class<ItfVersion>) Class.forName(this.versionClass),
-				this.widgetVariant, (Class<ItfWidget>) Class.forName(this.widgetClass));
+				this.widgetVariant, this.widgetClass);
 
 		AdjavaInitializer oAdjavaInitializer = new AdjavaInitializer();
 		oAdjavaInitializer.addConfiguration(this.configFiles);

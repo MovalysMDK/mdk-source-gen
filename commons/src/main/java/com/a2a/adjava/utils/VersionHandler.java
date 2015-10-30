@@ -15,10 +15,15 @@
  */
 package com.a2a.adjava.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.a2a.adjava.AdjavaException;
 
 public class VersionHandler {
 
+	private static final Logger log = LoggerFactory.getLogger(VersionHandler.class);
+	
 	/**
 	 * Version of generation
 	 */
@@ -40,7 +45,7 @@ public class VersionHandler {
 	private static ItfWidget widgetVariant;
 	
 	public VersionHandler(String p_sVersion, Class<ItfVersion> p_oVersionImplementationClass,
-			String p_sWidget, Class<ItfWidget> p_oWidgetImplementationClass) throws AdjavaException {
+			String p_sWidget, String p_oWidgetImplementationClass) throws AdjavaException {
 		
 		for (ItfVersion eVersion : p_oVersionImplementationClass.getEnumConstants()) {
 			
@@ -54,16 +59,24 @@ public class VersionHandler {
 			throw new AdjavaException("no version matches {} in Version implementation {}", p_sVersion, p_oVersionImplementationClass.getName());
 		}
 		
-		for (ItfWidget eWidget : p_oWidgetImplementationClass.getEnumConstants()) {
-			
-			if (eWidget.getStringWidget().equalsIgnoreCase(p_sWidget)) {
-				widgetVariant = eWidget;
-				break;
+		if (p_sWidget!= null && p_oWidgetImplementationClass != null) {
+			try {
+				Class<ItfWidget> oWidgetClass = (Class<ItfWidget>) Class.forName(p_oWidgetImplementationClass);
+				
+				for (ItfWidget eWidget : oWidgetClass.getEnumConstants()) {
+					
+					if (eWidget.getStringWidget().equalsIgnoreCase(p_sWidget)) {
+						widgetVariant = eWidget;
+						break;
+					}
+					
+				}
+				if (widgetVariant == null) {
+					throw new AdjavaException("no widget matches {} in Widget implementation {}", p_sWidget, oWidgetClass.getName());
+				}
+			} catch (ClassNotFoundException e) {
+				log.error("Class {} not found", p_oWidgetImplementationClass);
 			}
-			
-		}
-		if (widgetVariant == null) {
-			throw new AdjavaException("no widget matches {} in Widget implementation {}", p_sWidget, p_oWidgetImplementationClass.getName());
 		}
 	}
 

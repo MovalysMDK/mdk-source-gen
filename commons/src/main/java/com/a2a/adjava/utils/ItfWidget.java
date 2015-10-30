@@ -27,11 +27,11 @@ public interface ItfWidget {
 	 */
 	public String getStringWidget();
 	
-	/**
-	 * Get the last widget variant
-	 * 
-	 * @return the last variant
-	 */
-	public ItfWidget getLastWidget();
+//	/**
+//	 * Get the last widget variant
+//	 * 
+//	 * @return the last variant
+//	 */
+//	public ItfWidget getLastWidget();
 	
 }
