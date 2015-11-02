@@ -25,6 +25,7 @@ import com.a2a.adjava.generator.core.incremental.AbstractIncrementalGenerator;
 import com.a2a.adjava.generators.DomainGeneratorContext;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
+import com.a2a.adjava.utils.VersionHandler;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
@@ -69,6 +70,7 @@ public class ScreenGenerator extends AbstractIncrementalGenerator<IDomain<IModel
 
 		Element r_xFile = p_oScreen.toXml();
 		r_xFile.addElement("master-package").setText(p_oMProject.getDomain().getRootPackage());
+		r_xFile.addElement("widget-variant").setText(VersionHandler.getWidgetVariant().getStringWidget());
 		Document xDoc = DocumentHelper.createDocument(r_xFile);
 
 		String sFile = FileTypeUtils.computeFilenameForJavaClass(p_oMProject.getSourceDir(), p_oScreen.getFullName());
