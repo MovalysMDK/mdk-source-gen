@@ -698,7 +698,7 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 	private MIOSLabelView createLabelView(MVisualField p_oVisualField, MIOSXibContainer p_oXibContainer, MIOSSection p_oSection) {
 
 		MIOSLabelView r_oLabelView = new MIOSLabelView();
-		IOSUITypeDescription oUITypeDesc = (IOSUITypeDescription) this.getLngConfiguration().getUiTypeDescriptionByComponentType("MFLabel");
+		IOSUITypeDescription oUITypeDesc = (IOSUITypeDescription) this.getLngConfiguration().getUiTypeDescriptionByComponentType("MDKLabel");
 		if (oUITypeDesc!= null) {
 			if (oUITypeDesc.getRwComponentWidth() > 0 ) {
 				r_oLabelView.setWidth( oUITypeDesc.getRwComponentWidth());
