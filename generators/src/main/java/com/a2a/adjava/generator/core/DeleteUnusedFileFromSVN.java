@@ -84,7 +84,7 @@ public class DeleteUnusedFileFromSVN implements UnusedFileStrategy {
 			if ( isVersioned( oFile )) {
 				log.debug("    versioned file, do svn delete");
 				oWCClient.doDelete( oFile , true , false );	
-				if(oFile.getParentFile().listFiles().length == 0)
+				if((oFile.getParentFile() != null) && (oFile.getParentFile().listFiles() != null) && (oFile.getParentFile().listFiles().length == 0))
 				{
 					oWCClient.doDelete( oFile.getParentFile() , true , false );	
 				}
@@ -94,7 +94,7 @@ public class DeleteUnusedFileFromSVN implements UnusedFileStrategy {
 				
 				oFile.delete();
 				
-				if(oFile.getParentFile().listFiles().length == 0)
+				if((oFile.getParentFile() != null) && (oFile.getParentFile().listFiles() != null) && (oFile.getParentFile().listFiles().length == 0))
 				{
 					oFile.getParentFile().delete();
 				}
