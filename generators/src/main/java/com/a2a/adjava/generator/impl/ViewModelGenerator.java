@@ -26,6 +26,7 @@ import com.a2a.adjava.generator.core.incremental.NonGeneratedBlocExtractor;
 import com.a2a.adjava.generators.DomainGeneratorContext;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
+import com.a2a.adjava.utils.VersionHandler;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
@@ -73,7 +74,7 @@ public class ViewModelGenerator extends AbstractIncrementalGenerator<IDomain<IMo
 	 */
 	protected void createViewModel(MViewModelImpl p_oMViewModel, NonGeneratedBlocExtractor p_oNonGeneratedBlocExtractor,
 			XProject<IDomain<IModelDictionary,IModelFactory>> p_oProject, DomainGeneratorContext p_oContext) throws Exception {
-
+		
 		Document xViewModelDoc = createDocument(p_oMViewModel, p_oProject);
 		Element rootElement = xViewModelDoc.getRootElement();
 		rootElement.addAttribute("main-project", p_oProject.getDomain().getGlobalParameters().get("mainProject"));
@@ -95,6 +96,7 @@ public class ViewModelGenerator extends AbstractIncrementalGenerator<IDomain<IMo
 			XProject<IDomain<IModelDictionary, IModelFactory>> p_oProject) {
 		Element r_xViewModelFile = p_oMViewModel.toXml();
 		r_xViewModelFile.addElement("master-package").setText(p_oProject.getDomain().getRootPackage());
+		r_xViewModelFile.addElement("widget-variant").setText(VersionHandler.getWidgetVariant().getStringWidget());
 		return DocumentHelper.createDocument(r_xViewModelFile);
 	}
 	
