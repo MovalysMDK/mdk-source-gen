@@ -98,7 +98,12 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	/**
 	 * Other viewmodels used by viewmodel (for combo) 
 	 */
-	private List<MViewModelImpl> externalViewModels = new ArrayList<MViewModelImpl>();
+	private List<MViewModelImpl> externalViewModels = new ArrayList<>();
+
+	/**
+	 * Name of the property : it is the UML name capitalized.
+	 */
+	private String propertyName;
 
 	/**
 	 * Base name for accessors
@@ -135,7 +140,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	 * Parent viewmodels
 	 * Used to transfer readonly on parents
 	 */
-	private List<MViewModelImpl> parentReferences = new ArrayList<MViewModelImpl>();
+	private List<MViewModelImpl> parentReferences = new ArrayList<>();
 
 	/**
 	 * Mandatory
@@ -189,7 +194,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	 * @param p_sUmlName uml name
 	 * @param p_oPackage package of viewmodel
 	 * @param p_sType viewmodel type
-	 * @param p_oTypeEntityToUpdate entity to update
+	 * @param p_oEntityToUpdate entity to update
 	 * @param p_sPathToModel path to model
 	 * @param p_bCustomizable customizable
 	 * @param p_oMapping mapping descriptor with entity
@@ -203,6 +208,8 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 			this.addImport(p_oEntityToUpdate.getMasterInterface().getFullName());
 			this.addImport(p_oEntityToUpdate.getFactoryInterface().getFullName());
 		}
+
+		this.propertyName = StringUtils.uncapitalize(this.getName());
 		this.accessorName = p_sName;
 		this.accessorGetName = StringUtils.join(PREFIX_GET_ACCESSOR, p_sUmlName );
 		this.accessorSetName = StringUtils.join(PREFIX_SET_ACCESSOR, p_sUmlName );
@@ -220,6 +227,21 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	 */
 	public String getPathToModel() {
 		return this.pathToModel;
+	}
+
+	/**
+	 * Returns the property name.
+	 * @return Property name
+	 */
+	public String getPropertyName() {
+		return this.propertyName;
+	}
+
+	/**
+	 * Sets the property name.
+	 */
+	public void setPropertyName(String propertyName) {
+		this.propertyName = propertyName;
 	}
 	
 	/**
@@ -316,11 +338,10 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 			}
 		}
 	}
-	
+
 	/**
 	 * Add a save cascade to viewmodel
-	 * @param p_sCascade cascade name
-	 * @param p_sImport needed import
+	 * @param p_oCascade
 	 */
 	public void addSaveCascade(MCascade p_oCascade) {
 		if (!this.saveCascades.contains(p_oCascade)) {
@@ -362,7 +383,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 
 	/**
 	 * Modify type description of entity to update
-	 * @param new type description of entity to update
+	 * @param p_oNewTypeEntityToUpdate new type description of entity to update
 	 */
 	public void setEntityToUpdate(MEntityImpl p_oNewTypeEntityToUpdate) {
 		this.entityToUpdate = p_oNewTypeEntityToUpdate ;
@@ -802,7 +823,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 		
 		oType.addElement("is-list").setText(Boolean.toString(this.type.isList()));
 
-		oElement.addElement("property-name").setText(StringUtils.uncapitalize(this.getName()));
+		oElement.addElement("property-name").setText(this.propertyName);
 		oElement.addElement("accessor-get-name").setText(this.accessorGetName);
 		oElement.addElement("accessor-set-name").setText(this.accessorSetName);
 		oElement.addElement("list-accessor-get-name").setText(this.accessorGetListName);
@@ -893,7 +914,7 @@ public class MViewModelImpl extends SClass<MViewModelInterface,MMethodSignature>
 	
 	/**
 	 * Indicates whether a view model in sTheoVmName name exists.
-	 * @param name sTheoVmName model sought in view (the search is not recursive)
+	 * @param sTheoVmName sTheoVmName model sought in view (the search is not recursive)
 	 * @return true if a sub view model exists with that name
 	 */
 	public boolean existViewModelName(String sTheoVmName) {

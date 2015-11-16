@@ -175,47 +175,6 @@ public class W8VMNamingHelper {
 		return r_sName;
 	}
 
-
-//	/**
-//	 * Define the XIB container name of the item in a fixed list
-//	 * @param p_oViewModel view model of the fixed list
-//	 * @return  the XIB container name of the item in a fixed list
-//	 */
-//	public String computeXibNameOfExpandableListSection(MIOS2DListViewController p_oController){
-//		String r_sName = null ;	
-//		if ( p_oController != null ){
-//			r_sName = StringUtils.join(p_oController.getSectionFormName()); 
-//		}
-//		return r_sName;
-//	}
-
-//	/**
-//	 * Define the component name of the fixed list
-//	 * @param p_oViewModel view model of the fixed list
-//	 * @param p_oSection The section that is used to build the section name
-//	 * @return the component name of the fixed list
-//	 */
-//	public String computeViewNameOfExpandableListSection(MIOS2DListViewController p_oController, MIOSSection p_oSection){
-//		String r_sName = null ;	
-//		if ( p_oController != null){
-//			if(p_oSection.getSectionType().equals(MIOSSectionType.LISTCELL)) {
-//				r_sName = StringUtils.join( p_oController.getFormName(),"Cell");
-//			}
-//			else if(p_oSection.getSectionType().equals(MIOSSectionType.LISTSECTION)) {
-//				r_sName = StringUtils.join( p_oController.getSectionFormName(),"View");
-//			}
-//			else  if(p_oSection.getSectionType().equals(MIOSSectionType.LISTHEADER)) {
-//				r_sName = StringUtils.join( p_oController.getSectionFormName(),"Header");
-//			}
-//			else {
-//				r_sName = StringUtils.join( p_oController.getSectionFormName(),"");
-//			}
-//
-//		}
-//		return r_sName;
-//	}
-	
-
 	/**
 	 * Create the general name of all component for the picker list. Always the same for all component
 	 * @param parentVM ViewModel hosting the picker list 
