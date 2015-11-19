@@ -16,9 +16,18 @@
 package com.a2a.adjava.generator.core.append;
 
 import java.io.File;
+import java.io.FilenameFilter;
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,18 +37,30 @@ import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;
 import org.dom4j.Document;
 import org.dom4j.io.DocumentSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 
+import com.a2a.adjava.AdjavaException;
 import com.a2a.adjava.AdjavaProperty;
+import com.a2a.adjava.codeformatter.CodeFormatter;
 import com.a2a.adjava.codeformatter.FormatOptions;
 import com.a2a.adjava.codeformatter.GeneratedFile;
+import com.a2a.adjava.generator.codeformatters.XmlFormatOptions;
 import com.a2a.adjava.generator.core.AbstractXslGenerator;
 import com.a2a.adjava.generator.core.GeneratorUtils;
+import com.a2a.adjava.generator.core.xmlmerge.AbstractXmlMergeGenerator;
+import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.loader.XmlFileLoader;
+import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.model.XAFiles;
+import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.process.MergeProcessor;
+import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.process.XAProcessor;
 import com.a2a.adjava.generators.DomainGeneratorContext;
+import com.a2a.adjava.messages.MessageHandler;
 import com.a2a.adjava.utils.FileTypeUtils;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.XProject;
@@ -53,7 +74,11 @@ import com.a2a.adjava.xmodele.XProject;
  * 
  */
 public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends AbstractXslGenerator<D> {
-
+	/**
+	 * Logger
+	 */
+	private static final Logger log = LoggerFactory.getLogger(AbstractAppendGenerator.class);
+	
 	/**
 	 * Start append generation
 	 * @param p_xDoc xml document
@@ -132,55 +157,40 @@ public abstract class AbstractAppendGenerator<D extends IDomain<?, ?>> extends A
 			this.doTransformToFile(p_oSource, p_sTemplatePath, p_oOutputFile, p_oProject, p_oGeneratorContext,false);
 			
 		} else {
-			
-			//BEL : les commentaires ne sont pas autorisés en json.
-			//ici on vient généré un nouveau fichier et l'utilisateur devra faire le merge manuellement.
-			// TODO : trouver une solution pour faire un merge intelligent.
-			if (FileTypeUtils.isJsonFile(oFile)) {
-				StringBuilder sNewFileName = new StringBuilder();
-				sNewFileName.append(p_oOutputFile.getFile().getAbsolutePath());
-				sNewFileName.delete(sNewFileName.length() - 5, sNewFileName.length());
-				sNewFileName.append("_new.json");
-				File p_newFile = new File(sNewFileName.toString());
-				GeneratedFile p_oNewOutputFile = new GeneratedFile(p_newFile);
-				this.doTransformToFile(p_oSource, p_sTemplatePath,p_oNewOutputFile, p_oProject, p_oGeneratorContext, false);
+			StringBuilder sNewContent = new StringBuilder();
 
-			} else {
-				StringBuilder sNewContent = new StringBuilder();
+			String sExistingContent = FileUtils.readFileToString(oFile,
+					p_oProject.getDomain().getFileEncoding());
 
-				String sExistingContent = FileUtils.readFileToString(oFile,
-						p_oProject.getDomain().getFileEncoding());
+			// Delete old commented generation if exist
+			String sStartTagRegEx = this.getStartCommentTagRegEx(oFile);
 
-				// Delete old commented generation if exist
-				String sStartTagRegEx = this.getStartCommentTagRegEx(oFile);
+			Pattern oPattern = Pattern.compile(sStartTagRegEx);
+			Matcher oMatcher = oPattern.matcher(sExistingContent);
 
-				Pattern oPattern = Pattern.compile(sStartTagRegEx);
-				Matcher oMatcher = oPattern.matcher(sExistingContent);
+			if (oMatcher.find()) {
+				sExistingContent = oMatcher.group(1);
+			}
+			sNewContent.append(sExistingContent);
 
-				if (oMatcher.find()) {
-					sExistingContent = oMatcher.group(1);
-				}
-				sNewContent.append(sExistingContent);
+			// Execute xsl transformation
+			String sContent = this.doTransformToString(p_oSource, p_sTemplatePath, p_oOutputFile.getXslProperties(), p_oProject);
 
-				// Execute xsl transformation
-				String sContent = this.doTransformToString(p_oSource, p_sTemplatePath, p_oOutputFile.getXslProperties(), p_oProject);
+			// Comment source result of xsl transformation
+			this.commentSource(sContent, sNewContent, oFile);
 
-				// Comment source result of xsl transformation
-				this.commentSource(sContent, sNewContent, oFile);
+			// Write new file
+			FileUtils.writeStringToFile(oFile, sNewContent.toString(),
+					p_oProject.getDomain().getFileEncoding());
 
-				// Write new file
-				FileUtils.writeStringToFile(oFile, sNewContent.toString(),
-						p_oProject.getDomain().getFileEncoding());
+			this.addGeneratedFileToSession(p_oOutputFile, p_oGeneratorContext);
 
-				this.addGeneratedFileToSession(p_oOutputFile, p_oGeneratorContext);
-
-				if (isDebug()) {
-					GeneratorUtils.writeXmlDebugFile(p_oSource, p_oOutputFile.getFile().getPath(), p_oProject);
-				}
+			if (isDebug()) {
+				GeneratorUtils.writeXmlDebugFile(p_oSource, p_oOutputFile.getFile().getPath(), p_oProject);
 			}
 		}
 	}
-
+	
 	/**
 	 * Comment source code and write it to StringBuilder
 	 * @param p_sContent code to comment

@@ -21,8 +21,11 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.nio.file.Paths;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.xml.transform.OutputKeys;
@@ -75,6 +78,22 @@ public abstract class AbstractXslGenerator<D extends IDomain<? extends IModelDic
 	 */
 	private TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
+	/**
+	 * The BackupDirectory file
+	 */
+	private File backupDirFile; 
+
+	/**
+	 * The generate date used to create backup files
+	 */
+	public static final  String generationDate;
+	
+	static {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HH'h'mm'm'ss", Locale.FRENCH);
+		Timestamp oTimestamp = new Timestamp(System.currentTimeMillis());
+		generationDate = sdf.format(oTimestamp);
+	}
+	
 	/**
 	 * Instancie le transformer a partir de son chemin dans le classpath
 	 * 
@@ -272,5 +291,24 @@ public abstract class AbstractXslGenerator<D extends IDomain<? extends IModelDic
 				p_oTransformer.setOutputProperty(oProperty.getKey(), oProperty.getValue());
 			}
 		}
+	}
+	
+	/**
+	 * Return the absolute path of merge backup directory
+	 * @param p_oProject The project
+	 * @return The absolute path of the merge backup directory, as a String
+	 * @throws AdjavaException 
+	 */
+	protected String getMergeBackupAbsolutePath(XProject<D> p_oProject) throws AdjavaException {
+		if(backupDirFile == null){
+			try {
+				backupDirFile = new File(p_oProject.getBackupDir(), "beforeAutoMerge");
+			} catch (AdjavaException e) {
+				log.error(e.getMessage());
+				throw new AdjavaException("[AbstractXslGenerator#getMergeBackupAbsolutePath] Unable to find the merge backup directory : " + backupDirFile.getAbsolutePath());			
+			}
+		}
+
+		return backupDirFile.getAbsolutePath();
 	}
 }

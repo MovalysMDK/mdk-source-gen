@@ -81,11 +81,6 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 	private static final Logger log = LoggerFactory.getLogger(AbstractXmlMergeGenerator.class);
 
 	/**
-	 * The generate date used to create backup files
-	 */
-	public static final  String generationDate;
-
-	/**
 	 * Path to XAConf Files
 	 */
 	public static final String PATH_TO_XACONF_FILES = "/config/xmlMerge";
@@ -94,18 +89,6 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 	 * Default size for a buffer (byte[])
 	 */
 	private static final int BUFFER_SIZE = 1024;
-
-	/**
-	 * The BackupDirectory file
-	 */
-	private File backupDirFile; 
-
-	static {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HH'h'mm'm'ss", Locale.FRENCH);
-		Timestamp oTimestamp = new Timestamp(System.currentTimeMillis());
-		generationDate = sdf.format(oTimestamp);
-	}
-
 
 	@Override
 	public void initialize() throws AdjavaException{
@@ -204,8 +187,6 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 		File srcXmlFile = new File(p_oProject.getBaseDir(), p_oSrcXmlFileContainer.getFile().getPath());
 		p_oSrcXmlFileContainer.setFileFromRoot(srcXmlFile);
 
-
-
 		//-----------------------------------------------------
 		//  *** OLD GENERATED XML ***
 		//   
@@ -248,7 +229,7 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 
 		log.debug("[AbstractXmlMergeGenerator#doXmlMergeGeneration] ------------------ NEW GENERATED XML ------------------");
 
-		Path dirForNewGeneratedXml = Paths.get(this.getMergeBackupAbsolutePath(p_oProject), "generatedFiles", generationDate,srcXmlFile.getParentFile().getPath());
+		Path dirForNewGeneratedXml = Paths.get(this.getMergeBackupAbsolutePath(p_oProject), "generatedFiles", AbstractXslGenerator.generationDate,srcXmlFile.getParentFile().getPath());
 		Files.createDirectories(dirForNewGeneratedXml.toAbsolutePath());
 		Path newGeneratedXmlPath = dirForNewGeneratedXml.resolve(srcXmlFile.getName());
 		File newGeneratedXmlFile = newGeneratedXmlPath.toFile();
@@ -262,6 +243,7 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 			newGeneratedFileContainer.addAllXslProperties(p_oSrcXmlFileContainer.getXslProperties());
 
 			this.doTransformToFile(p_oGeneratedXmlDom, p_sTemplatePath.getFileName(), newGeneratedFileContainer, p_oProject, p_oGeneratorContext,true);
+			
 			// Execute code formatters
 			for (CodeFormatter oCodeFormatter : p_oProject.getDomain().getCodeFormatters()) {
 				List<GeneratedFile> onefileList = new ArrayList<GeneratedFile>();
@@ -314,15 +296,13 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 			}
 		}
 
-		Path backupDirForOldModifiedXml = Paths.get(this.getMergeBackupAbsolutePath(p_oProject), "modifiedFiles", generationDate,srcXmlFile.getParentFile().getPath());
+		Path backupDirForOldModifiedXml = Paths.get(this.getMergeBackupAbsolutePath(p_oProject), "modifiedFiles", AbstractXslGenerator.generationDate,srcXmlFile.getParentFile().getPath());
 		Files.createDirectories(backupDirForOldModifiedXml.toAbsolutePath());
 		Path oldModifiedXmlPath = backupDirForOldModifiedXml.resolve(srcXmlFile.getName());
 		File oldModifiedXmlFile = oldModifiedXmlPath.toFile();
 
 		if ( existOldModifiedXml) {
-			Files.copy(srcXmlFile.toPath(), backupDirForOldModifiedXml.resolve("original-"+srcXmlFile.getName()), StandardCopyOption.REPLACE_EXISTING);
 			Files.move(srcXmlFile.toPath(), oldModifiedXmlPath, StandardCopyOption.REPLACE_EXISTING);
-
 
 			//SMA ... TO CHANGE with pre and post CopyProcessor
 			if(p_oXaConfigurationFile.requiresSiblingKeyGrouping()){		
@@ -405,27 +385,6 @@ public abstract class AbstractXmlMergeGenerator<D extends IDomain<?, ?>> extends
 		log.debug("[AbstractXmlMergeGenerator#doXmlMergeGeneration] XML Merge generation - end");
 
 	}
-
-
-	/**
-	 * Return the absolute path of merge backup directory
-	 * @param p_oProject The project
-	 * @return The absolute path of the merge backup directory, as a String
-	 * @throws AdjavaException 
-	 */
-	private String getMergeBackupAbsolutePath(XProject<D> p_oProject) throws AdjavaException {
-		if(backupDirFile == null){
-			try {
-				backupDirFile = new File(p_oProject.getBackupDir(),"beforeAutoMerge");
-			} catch (AdjavaException e) {
-				log.error(e.getMessage());
-				throw new AdjavaException("[AbstractXmlMergeGenerator#getMergeBackupAbsolutePath] Unable to find the merge backup directory : " + backupDirFile.getAbsolutePath());			
-			}
-		}
-
-		return backupDirFile.getAbsolutePath();
-	}
-
 
 	/**
 	 * Load the Xa configuration files

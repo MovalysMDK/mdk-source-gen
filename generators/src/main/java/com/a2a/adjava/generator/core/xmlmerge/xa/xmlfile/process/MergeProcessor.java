@@ -35,6 +35,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.a2a.adjava.AdjavaException;
+import com.a2a.adjava.generator.core.AbstractXslGenerator;
 import com.a2a.adjava.generator.core.xmlmerge.AbstractXmlMergeGenerator;
 import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.analyse.Change;
 import com.a2a.adjava.generator.core.xmlmerge.xa.xmlfile.analyse.ChangeType;
@@ -305,7 +306,7 @@ public class MergeProcessor {
 		String message="\n\n******************** CONFLICT FOUND *********************";
 		if(p_sMessagePortion!=null) message+= "\n"+p_sMessagePortion;
 		message+= "\n ==> the change between the 2 generations is skipped while the change done by the user is kept.";
-		message+="\n\n\t- Generation time: "+AbstractXmlMergeGenerator.generationDate;
+		message+="\n\n\t- Generation time: "+AbstractXslGenerator.generationDate;
 		message+="\n\t- Type of change: "+p_oConflictChange.getType();
 
 		if(p_oConflictChange.getOldNode()!=null) {
