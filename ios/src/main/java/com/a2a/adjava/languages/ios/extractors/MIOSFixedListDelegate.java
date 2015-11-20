@@ -462,7 +462,7 @@ public class MIOSFixedListDelegate {
 
 		Object oFixedListView = p_oVisualField.getVisualParameter(KEY_TO_FIXED_LIST_VIEW_NAME) ;
 		if (oFixedListView!= null){
-			p_oFieldView.setCustomClass("MFFixedList");
+			p_oFieldView.setCustomClass("MDKFixedList");
 			p_oFieldView.setCellType("MFCell1ComponentHorizontal");
 			p_oFieldView.addOption("dataDelegateName", oFixedListView.toString());
 			p_oFieldView.addOption("canAddItem", "YES");

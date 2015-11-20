@@ -96,7 +96,9 @@ public class ViewModelGenerator extends AbstractIncrementalGenerator<IDomain<IMo
 			XProject<IDomain<IModelDictionary, IModelFactory>> p_oProject) {
 		Element r_xViewModelFile = p_oMViewModel.toXml();
 		r_xViewModelFile.addElement("master-package").setText(p_oProject.getDomain().getRootPackage());
-		r_xViewModelFile.addElement("widget-variant").setText(VersionHandler.getWidgetVariant().getStringWidget());
+		if(VersionHandler.getWidgetVariant() != null) {
+			r_xViewModelFile.addElement("widget-variant").setText(VersionHandler.getWidgetVariant().getStringWidget());
+		}
 		return DocumentHelper.createDocument(r_xViewModelFile);
 	}
 	
