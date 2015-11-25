@@ -465,10 +465,9 @@ public class MIOSFixedListDelegate {
 			p_oFieldView.setCustomClass("MDKFixedList");
 			p_oFieldView.setCellType("MFCell1ComponentHorizontal");
 			p_oFieldView.addOption("dataDelegate", oFixedListView.toString());
-			p_oFieldView.addOption("canAddItem", "YES");
-			p_oFieldView.addOption("canEditItem", "YES");
-			p_oFieldView.addOption("canDeleteItem", "YES");
-			p_oFieldView.addOption("editMode", "0");
+			p_oFieldView.addOption("canAdd", "YES");
+			p_oFieldView.addOption("canEdit", "YES");
+			p_oFieldView.addOption("canDelete", "YES");
 			String sVmName = p_oVisualField.getParameterValue("fixedListVm");
 			MViewModelImpl oVm = this.delegator.getDomain().getDictionnary().getViewModel(sVmName);
 			if (oVm.getConfigName().equals(PHOTO_FIXED_LIST_CONFIGURATION_NAME)) {
