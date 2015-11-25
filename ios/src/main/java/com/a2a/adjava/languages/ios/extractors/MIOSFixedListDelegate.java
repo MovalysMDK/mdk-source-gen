@@ -464,7 +464,7 @@ public class MIOSFixedListDelegate {
 		if (oFixedListView!= null){
 			p_oFieldView.setCustomClass("MDKFixedList");
 			p_oFieldView.setCellType("MFCell1ComponentHorizontal");
-			p_oFieldView.addOption("dataDelegateName", oFixedListView.toString());
+			p_oFieldView.addOption("dataDelegate", oFixedListView.toString());
 			p_oFieldView.addOption("canAddItem", "YES");
 			p_oFieldView.addOption("canEditItem", "YES");
 			p_oFieldView.addOption("canDeleteItem", "YES");
