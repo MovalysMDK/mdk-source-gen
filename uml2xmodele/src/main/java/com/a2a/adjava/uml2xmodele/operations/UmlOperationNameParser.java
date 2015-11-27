@@ -91,7 +91,8 @@ public final class UmlOperationNameParser {
 		if ( oOperationAnalysis.analyse()) {
 			String sNormalizedOperationName = oOperationAnalysis.getNormalizedOperationName();
 			
-			MDaoMethodSignature oMethodSignature = new MDaoMethodSignature(
+			MDaoMethodSignature oMethodSignature = 
+					p_oDomain.getXModeleFactory().createDaoSignature(
 					sNormalizedOperationName, "public", oOperationAnalysis.getType(),
 					oOperationAnalysis.getReturnedType(), oOperationAnalysis.getReturnedProperties(),
 					oOperationAnalysis.getImports(), false );
@@ -109,7 +110,7 @@ public final class UmlOperationNameParser {
 				oOperationAnalysis.analyse();
 				sNormalizedOperationName = oOperationAnalysis.getNormalizedOperationName();
 				
-				oMethodSignature = new MDaoMethodSignature(
+				oMethodSignature = p_oDomain.getXModeleFactory().createDaoSignature(
 						sNormalizedOperationName, "public", oOperationAnalysis.getType(),
 						oOperationAnalysis.getReturnedType(), oOperationAnalysis.getReturnedProperties(),
 						oOperationAnalysis.getImports(), true );

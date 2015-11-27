@@ -303,6 +303,21 @@ public interface IModelFactory {
 			MDaoImpl p_oDao, MEntityImpl p_oClass);
 
 	/**
+	 * 
+	 * @param p_sName
+	 * @param p_sVisibility
+	 * @param p_sType
+	 * @param p_oReturnedType
+	 * @param p_listReturnedProperties
+	 * @param p_listNeedImports
+	 * @param p_bByValue
+	 * @return instance of dao method signature
+	 */
+	public MDaoMethodSignature createDaoSignature(String p_sName, String p_sVisibility, String p_sType,
+			ITypeDescription p_oReturnedType, List<String> p_listReturnedProperties,
+			List<String> p_listNeedImports, boolean p_bByValue );
+	
+	/**
 	 * @param p_oViewModel
 	 * @param p_sPrefix
 	 * @param p_oTypeVisual

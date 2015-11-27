@@ -268,6 +268,19 @@ public class XModeleFactory implements IModelFactory {
 	
 	/**
 	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModelFactory#createDaoSignature(String, String, String, ITypeDescription, List, List, boolean)
+	 */
+	
+	@Override
+	public MDaoMethodSignature createDaoSignature(String p_sName, String p_sVisibility, String p_sType,
+			ITypeDescription p_oReturnedType, List<String> p_listReturnedProperties, List<String> p_listNeedImports,
+			boolean p_bByValue) {
+
+		return new MDaoMethodSignature(p_sName, p_sVisibility, p_sType, p_oReturnedType, p_listReturnedProperties, p_listNeedImports, p_bByValue);
+	}
+	
+	/**
+	 * {@inheritDoc}
 	 * @see com.a2a.adjava.xmodele.IModelFactory#createVisualField(java.lang.String, com.a2a.adjava.types.IUITypeDescription, com.a2a.adjava.xmodele.ui.view.MVFModifier, com.a2a.adjava.xmodele.ui.view.MVFLabelKind, com.a2a.adjava.xmodele.MAttribute, com.a2a.adjava.xmodele.IDomain, java.lang.String, boolean)
 	 */
 	@Override

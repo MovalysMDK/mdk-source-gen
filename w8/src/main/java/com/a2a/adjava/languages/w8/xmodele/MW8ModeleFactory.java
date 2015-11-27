@@ -15,12 +15,21 @@
  */
 package com.a2a.adjava.languages.w8.xmodele;
 
+import java.util.List;
+
+import com.a2a.adjava.types.ITypeDescription;
 import com.a2a.adjava.types.IUITypeDescription;
 import com.a2a.adjava.xmodele.IDomain;
 import com.a2a.adjava.xmodele.IModelDictionary;
 import com.a2a.adjava.xmodele.IModelFactory;
 import com.a2a.adjava.xmodele.MAttribute;
+import com.a2a.adjava.xmodele.MDaoImpl;
+import com.a2a.adjava.xmodele.MDaoInterface;
+import com.a2a.adjava.xmodele.MDaoMethodSignature;
+import com.a2a.adjava.xmodele.MEntityImpl;
+import com.a2a.adjava.xmodele.MEntityInterface;
 import com.a2a.adjava.xmodele.MLabel;
+import com.a2a.adjava.xmodele.MPackage;
 import com.a2a.adjava.xmodele.MVisualField;
 import com.a2a.adjava.xmodele.XModeleFactory;
 import com.a2a.adjava.xmodele.ui.view.MVFLabelKind;
@@ -88,4 +97,18 @@ public class MW8ModeleFactory extends XModeleFactory {
 	public MVisualField createVisualField(String p_sPath, MVisualField p_oField, MLabel p_oLabel) {
 		return new MW8VisualField(p_sPath, p_oField, p_oLabel);
 	}
+		
+	/**
+	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModelFactory#createDaoSignature(String, String, String, ITypeDescription, List, List, boolean)
+	 */
+	
+	@Override
+	public MDaoMethodSignature createDaoSignature(String p_sName, String p_sVisibility, String p_sType,
+			ITypeDescription p_oReturnedType, List<String> p_listReturnedProperties, List<String> p_listNeedImports,
+			boolean p_bByValue) {
+
+		return new MW8DaoMethodSignature(p_sName, p_sVisibility, p_sType, p_oReturnedType, p_listReturnedProperties, p_listNeedImports, p_bByValue);
+	}
+	
 }
