@@ -140,7 +140,7 @@ public class MIOSComboDelegate {
 		for (MIOSSection oSection : this.getDomain().getDictionnary().getAllIOSSections() ){
 			for ( MIOSView oSubview : oSection.getSubViews() ) {
 				if ((oSubview != null) && oSubview instanceof MIOSEditableView 
-						&& (null != ((MIOSEditableView)oSubview).getCellType()) && oSubview.getCustomClass().equalsIgnoreCase("MFPickerList")) {
+						&& (null != ((MIOSEditableView)oSubview).getCellType()) && oSubview.getCustomClass().equalsIgnoreCase("MDKPickerList")) {
 
 					// j'ai une vue de type combo
 					String sSelectedItemXibContainerName = ((MIOSEditableView)oSubview).getOptions().get(MIOSComboDelegate.KEY_TO_SELECTED_ITEM_BINDING_DELEGATE_CLASS_PARAMETER_NAME).replaceAll(IOSVMNamingHelper.COMBO_DELEGATE_SUFFIX, "");
@@ -376,7 +376,7 @@ public class MIOSComboDelegate {
 		p_oVisualField.addVisualParameter(KEY_TO_CELL_ITEM_NAME, 
 				IOSVMNamingHelper.getInstance().computeXibNameOfListItemForCombo(oVm));
 
-		p_oFieldView.setCustomClass("MFPickerList");
+		p_oFieldView.setCustomClass("MDKPickerList");
 		p_oFieldView.setCellType("MFCell1ComponentHorizontal"); 
 		p_oFieldView.setBindingPrefix("selected");
 		p_oFieldView.setBindingSuffix("Item");
