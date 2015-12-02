@@ -31,7 +31,6 @@ import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibContainer;
 import com.a2a.adjava.languages.ios.xmodele.MIOSXibFixedListContainer;
 import com.a2a.adjava.languages.ios.xmodele.views.MIOSXibType;
-import com.a2a.adjava.uml2xmodele.extractors.viewmodel.VMNamingHelper;
 import com.a2a.adjava.utils.Chrono;
 import com.a2a.adjava.utils.FileTypeUtils;
 import com.a2a.adjava.utils.JaxbUtils;

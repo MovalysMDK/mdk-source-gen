@@ -205,15 +205,20 @@ public abstract class AbstractMIOSContainerDelegate {
 		while (p_oNextSections != null && p_oNextSections.hasNext()) {
 			MPage oPage = (MPage) p_oNextSections.next();
 			this.delegator.computeSection(p_oStoryBoard, oRootViewController, oPage, oPage.getViewModelImpl(), this.isViewModelInGlobalViewModelForOtherSection(p_oPage));
+
+			this.delegator.getFixedListDelegate().createSectionAndControllerForFixedList(oPage, p_oStoryBoard);	
+			this.delegator.getComboDelegate().createSectionAndControllerForCombo(oPage, p_oStoryBoard);
+			
 			if(oPage.getActionOfType(MActionType.SAVEDETAIL) != null) {
 				lActions.add(oPage.getActionOfType(MActionType.SAVEDETAIL)
 						.getName());
 			}
+			
 		}
-		
-		
+
 		this.delegator.getFixedListDelegate().createSectionAndControllerForFixedList(p_oPage, p_oStoryBoard);	
 		this.delegator.getComboDelegate().createSectionAndControllerForCombo(p_oPage, p_oStoryBoard);
+		
 		
 		/*************************************************************************
 		 *************************************************************************
