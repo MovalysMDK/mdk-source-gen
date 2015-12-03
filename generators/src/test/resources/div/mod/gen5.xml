@@ -959,7 +959,7 @@
                         </array>
                     </artificialGroupingForXmlMerge>
             </dict>
-                <!--template match="subView[customClass='MFSimplePickerList']"-->
+                <!--template match="subView[customClass='MDKEnumList']"-->
                 <dict key="group-DevicePanel-devicepanel-note-value">
                     <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-note-value">
                         <key>classCSS</key>
@@ -1008,7 +1008,7 @@
                                 </artificialGroupingForXmlMerge>
                         <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-note-value">
                                     <key>typeName</key>
-                                    <string>MFSimplePickerList</string>
+                                    <string>MDKEnumList</string>
                                 </artificialGroupingForXmlMerge>
                         <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-note-value">
                                     <key>name</key>
