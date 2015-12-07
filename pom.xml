@@ -21,7 +21,7 @@
 	<artifactId>adjava</artifactId>
 	<packaging>pom</packaging>
 	<name>Adjava</name>
-	<version>6.6.1</version>
+	<version>6.6.1-SNAPSHOT</version>
 	<inceptionYear>2009</inceptionYear>
 	<description>Générateur de code Adjava</description>
 
