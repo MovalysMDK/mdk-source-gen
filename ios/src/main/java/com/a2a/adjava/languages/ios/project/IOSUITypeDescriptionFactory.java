@@ -59,9 +59,11 @@ public class IOSUITypeDescriptionFactory extends UITypeDescriptionFactory {
 		Element xRo = p_xUiType.element("read-only");
 		if (xRw != null) {
 			r_oTypeDesc.setRwCellType(xRw.elementText("cell-type"));
+			r_oTypeDesc.setRwStoryboardType((xRw.elementText("storyboard-type") != null) ? xRw.elementText("storyboard-type") : "view");
 		}
 		if (xRo != null) {
-			r_oTypeDesc.setRoCellType(xRw.elementText("cell-type"));
+			r_oTypeDesc.setRoCellType(xRo.elementText("cell-type"));
+			r_oTypeDesc.setRoStoryboardType((xRo.elementText("storyboard-type") != null) ? xRo.elementText("storyboard-type") : "view");
 		}
 	}
 	

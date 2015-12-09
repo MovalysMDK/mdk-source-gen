@@ -87,6 +87,13 @@ public class MIOSEditableView extends MIOSView {
 	 */
 	@XmlElement
 	private String linkedType ;
+	
+
+	/**
+	 * Storyboard type for this view
+	 */
+	@XmlAttribute
+	private String storyboardType ;
 
 
 	/**
@@ -248,6 +255,22 @@ public class MIOSEditableView extends MIOSView {
 		this.customParameterName = p_sCustomParameterName;
 	}
 
+	/**
+	 * Return storyboard type for this view
+	 * @return storyboard type for this view
+	 */
+	public String getStoryboardType() {
+		return storyboardType;
+	}
+
+	/**
+	 * Define storyboard type for this view
+	 * @param p_sStoryboardType Storyboard type for this view to set
+	 */
+	public void setStoryboardType(String p_sStoryboardType) {
+		this.storyboardType = p_sStoryboardType;
+	}
+	
 	/**
 	 * Copy data of argument in a new object
 	 * @param p_oNewView new objected  created

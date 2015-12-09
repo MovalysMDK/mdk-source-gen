@@ -44,6 +44,16 @@ public class IOSUITypeDescription extends UITypeDescription implements Cloneable
 	 * Width of readwrite component
 	 */
 	private int rwComponentWidth;
+
+	/**
+	 * Storyboard type for readonly component
+	 */
+	private String roStoryboardType;
+	
+	/**
+	 * Storyboard type for readwrite component
+	 */
+	private String rwStoryboardType;
 	
 	/**
 	 * Cell type for read-only mode
@@ -80,10 +90,45 @@ public class IOSUITypeDescription extends UITypeDescription implements Cloneable
 		oUITypeDescription.setRwComponentHeight(this.rwComponentHeight);
 		oUITypeDescription.setRoComponentWidth(this.roComponentWidth);
 		oUITypeDescription.setRwComponentWidth(this.rwComponentWidth);
+		oUITypeDescription.setRoStoryboardType(this.roStoryboardType);
+		oUITypeDescription.setRwStoryboardType(this.rwStoryboardType);
 		oUITypeDescription.setRoCellType(this.roCellType);
 		oUITypeDescription.setRwCellType(this.rwCellType);
 	}
 
+	/**
+	 * Return storyboard type of ro component
+	 * @return storyboard type of ro component
+	 */
+	public String getRoStoryboardType() {
+		return roStoryboardType;
+	}
+
+	/**
+	 * Define storyboard type of ro component
+	 * @param p_sRoStoryboardType Storyboard type of ro component
+	 */
+	public void setRoStoryboardType(String p_sRoStoryboardType) {
+		this.roStoryboardType = p_sRoStoryboardType;
+	}
+
+	/**
+	 * Return storyboard type of rw component
+	 * @return Storyboard type of rw component
+	 */
+	public String getRwStoryboardType() {
+		return rwStoryboardType;
+	}
+
+	/**
+	 * Define storyboard type of rw component
+	 * @param p_sRwStoryboardType Storyboard type of rw component
+	 */
+	public void setRwStoryboardType(String p_sRwStoryboardType) {
+		this.rwStoryboardType = p_sRwStoryboardType;
+	}
+	
+	
 	/**
 	 * Return height of ro component
 	 * @return height of ro component
@@ -187,4 +232,6 @@ public class IOSUITypeDescription extends UITypeDescription implements Cloneable
 	public void setRwCellType(String p_sRwCellType) {
 		this.rwCellType = p_sRwCellType;
 	}
+
+
 }

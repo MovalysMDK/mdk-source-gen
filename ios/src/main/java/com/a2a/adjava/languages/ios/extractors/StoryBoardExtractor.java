@@ -639,6 +639,7 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 				if (oUITypeDesc.getRoComponentHeight() > 0 ) {
 					r_oFieldView.setHeight(oUITypeDesc.getRoComponentHeight());
 				}
+				r_oFieldView.setStoryboardType(oUITypeDesc.getRoStoryboardType());
 
 			} else {
 
@@ -648,6 +649,7 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 				if (oUITypeDesc.getRwComponentHeight() > 0 ) {
 					r_oFieldView.setHeight(oUITypeDesc.getRwComponentHeight());
 				}
+				r_oFieldView.setStoryboardType(oUITypeDesc.getRwStoryboardType());
 
 			}
 		}

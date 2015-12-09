@@ -160,5 +160,8 @@
 	<!-- 	Ajout en 6.0.0 -->
 	<node name="animations"		identificationType="parent+name"													content="children"      />
 	
+	<!-- Ajout en 6.0.1 -->
+	<node name="textfield" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	
 	
 </configuration>
