@@ -23,6 +23,7 @@ import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.a2a.adjava.languages.ios.project.IOSUITypeDescription;
 import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSModeleFactory;
 import com.a2a.adjava.languages.ios.xmodele.MIOSScene;
@@ -468,6 +469,7 @@ public class MIOSFixedListDelegate {
 			p_oFieldView.addOption("canMove", "NO");
 			p_oFieldView.addOption("canSelect", "YES");
 			p_oFieldView.addOption("canDelete", "YES");
+			p_oFieldView.setStoryboardType("view");
 			String sVmName = p_oVisualField.getParameterValue("fixedListVm");
 			MViewModelImpl oVm = this.delegator.getDomain().getDictionnary().getViewModel(sVmName);
 			if (oVm.getConfigName().equals(PHOTO_FIXED_LIST_CONFIGURATION_NAME)) {

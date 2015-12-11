@@ -25,6 +25,7 @@ import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.a2a.adjava.languages.ios.project.IOSUITypeDescription;
 import com.a2a.adjava.languages.ios.xmodele.MIOSDictionnary;
 import com.a2a.adjava.languages.ios.xmodele.MIOSModeleFactory;
 import com.a2a.adjava.languages.ios.xmodele.MIOSStoryBoard;
@@ -380,6 +381,7 @@ public class MIOSComboDelegate {
 		p_oFieldView.setCellType("MFCell1ComponentHorizontal"); 
 		p_oFieldView.setBindingPrefix("selected");
 		p_oFieldView.setBindingSuffix("Item");
+		p_oFieldView.setStoryboardType("view");
 
 		boolean hasSearch = ViewModelType.FILTER.equals(oVm.getConfigName());
 		Map<String, String> oFieldOptions = p_oFieldView.getOptions();
