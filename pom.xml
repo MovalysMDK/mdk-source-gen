@@ -245,5 +245,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<compileSource>1.7</compileSource>
 		<target>1.7</target>
+		<sonar.projectName>mdk-source-gen</sonar.projectName>
 	</properties>
 </project>
