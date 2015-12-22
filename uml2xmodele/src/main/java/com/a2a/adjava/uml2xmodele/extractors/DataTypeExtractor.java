@@ -104,7 +104,7 @@ public class DataTypeExtractor extends AbstractExtractor {
 			r_oTypeDescription.setPrimitif(bPrimitif);
 
 			if (bPrimitif) {
-				ITypeDescription oWrapper = (ITypeDescription) getLngConfiguration().getTypeDescription(r_oTypeDescription.getWrapperName());
+				ITypeDescription oWrapper = getLngConfiguration().getTypeDescription(r_oTypeDescription.getWrapperName());
 				if (oWrapper != null) {
 					r_oTypeDescription.setWrapper(oWrapper);
 					log.debug("  pour le type primitif: {}, wrapper: {}", r_oTypeDescription.getUmlName(), oWrapper.getName());

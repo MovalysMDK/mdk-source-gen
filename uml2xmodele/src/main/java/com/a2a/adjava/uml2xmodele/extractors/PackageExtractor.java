@@ -94,8 +94,6 @@ public class PackageExtractor extends AbstractExtractor {
 	/**
 	 * @param p_oUmlPackage
 	 * @param p_oPackageParent
-	 * @param p_oModele
-	 * @param p_oModelDictionnary
 	 * @return
 	 */
 	private MPackage convertUmlPackage(UmlPackage p_oUmlPackage, MPackage p_oPackageParent) {

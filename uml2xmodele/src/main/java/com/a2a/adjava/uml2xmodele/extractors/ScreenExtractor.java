@@ -150,9 +150,8 @@ public class ScreenExtractor extends AbstractExtractor<IDomain<IModelDictionary,
 				oTarget = oUsage.getClient();
 			}
 			
-			if (!(this.getScreenContext().isScreen(oTarget) || this.getScreenContext().isScreen(oTarget)
-					|| this.getScreenContext().isSearchScreen(oTarget) || this.getScreenContext().isWorkspaceScreen(oTarget)
-					|| this.getDomain().getExtractor(MenuExtractor.class).isMenu(oTarget))) {
+			if (!(this.getScreenContext().isScreen(oTarget) || this.getScreenContext().isSearchScreen(oTarget)
+					|| this.getScreenContext().isWorkspaceScreen(oTarget) || this.getDomain().getExtractor(MenuExtractor.class).isMenu(oTarget))) {
 				r_bCheck = false;
 				MessageHandler.getInstance().addError("Usage between {}({}) and {}({}) is not allowed.", p_oUmlScreenClass.getFullName(),p_oUmlScreenClass.getStereotypeNames(),oTarget.getFullName(),oTarget.getStereotypeNames());
 			}
