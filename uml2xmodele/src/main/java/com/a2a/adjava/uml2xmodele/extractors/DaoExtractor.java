@@ -96,7 +96,7 @@ public class DaoExtractor extends AbstractExtractor {
 
 		// Extract Dao from association classes
 		for (UmlAssociationClass oUmlClass : p_oModele.getDictionnary().getAssociationClasses()) {
-			MEntityImpl oClass = (MEntityImpl) getDomain().getDictionnary().getMapUmlClassToMClasses().get(oUmlClass.getFullName());
+			MEntityImpl oClass = getDomain().getDictionnary().getMapUmlClassToMClasses().get(oUmlClass.getFullName());
 				
 			if (oClass != null && !oClass.isTransient()) {
 				MDaoImpl oDao = this.extractDaoFromClass(oUmlClass, oClass);
