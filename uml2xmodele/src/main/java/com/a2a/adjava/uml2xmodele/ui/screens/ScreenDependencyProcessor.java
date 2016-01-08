@@ -445,7 +445,7 @@ public class ScreenDependencyProcessor {
 				oMasterVmi.getMasterInterface().setScreenMultiPanel(true);
 			}
 		}
-		
+
 		for (MPage oPage : p_oScreen.getPages()) {
 			oMasterVmi.addSubViewModel(oPage.getViewModelImpl());
 			oMasterVmi.getMasterInterface().addSubViewModel(oPage.getViewModelImpl().getMasterInterface());
