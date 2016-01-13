@@ -21,7 +21,7 @@
 	<artifactId>adjava</artifactId>
 	<packaging>pom</packaging>
 	<name>Adjava</name>
-	<version>6.6.2-RC1</version>
+	<version>6.6.2-SNAPSHOT</version>
 	<inceptionYear>2009</inceptionYear>
 	<description>Générateur de code Adjava</description>
 
@@ -40,7 +40,7 @@
 	<scm>
 		<connection>scm:git:ssh://gitmovalys@git.ptx.fr.sopra/mdk-source-gen.git</connection>
 		<developerConnection>scm:git:ssh://gitmovalys@git.ptx.fr.sopra/mdk-source-gen.git</developerConnection>
-	  <tag>6.6.2-RC1</tag>
+	  <tag>6.6.1</tag>
   </scm>
 	<modules>
 		<module>commons</module>
