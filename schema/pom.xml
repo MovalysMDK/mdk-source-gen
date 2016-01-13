@@ -20,7 +20,7 @@
 	<parent>
 		<groupId>com.adeuza</groupId>
 		<artifactId>adjava</artifactId>
-		<version>6.6.2-SNAPSHOT</version>
+		<version>6.6.2-RC1</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
