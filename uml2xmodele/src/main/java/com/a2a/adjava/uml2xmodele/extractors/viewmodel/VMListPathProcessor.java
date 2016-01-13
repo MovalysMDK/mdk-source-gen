@@ -217,64 +217,6 @@ public class VMListPathProcessor {
 				
 				switch (r_oViewModel.getType()) {
 				case LIST_1__ONE_SELECTED:
-					{
-						oParentVm.addExternalViewModel(r_oViewModel);
-	
-						String sBaseName = StringUtils.capitalize(sTheoVmItfName);
-						
-						// Dans le cas des combo, l'élément sélectionné est stocké
-						// sur le viewmodel parent
-						MMethodSignature oGet = new MMethodSignature("get"
-								+ sBaseName, "public", "get", r_oViewModel.getMasterInterface()
-								.getAssociatedType(p_oDomain));
-						MMethodSignature oSet = new MMethodSignature("set"
-								+ sBaseName, "public", "set", null);
-						oSet.addParameter(new MMethodParameter("p_o" + sBaseName, r_oViewModel
-								.getMasterInterface().getAssociatedType(p_oDomain)));
-						oParentVm.getMasterInterface().addMethodSignature(oGet);
-						oParentVm.getMasterInterface().addMethodSignature(oSet);
-	
-						String sComboName = sBaseName + "__edit";
-						
-						MVFLocalization oLocalization = null;
-						MLabel oComboLabel = null; 
-						
-						if ( oParentVm.getType().equals(ViewModelType.FIXED_LIST)) {
-							oLocalization = MVFLocalization.DETAIL;
-							oComboLabel = p_oDomain.getXModeleFactory().createLabelForAttributeOfFixedList(sBaseName, r_oViewModel.getUmlName(), oLocalization, oParentVm );
-						}
-						else {
-							oLocalization = MVFLocalization.DEFAULT;
-							oComboLabel = p_oDomain.getXModeleFactory().createLabelForCombo(sBaseName, r_oViewModel.getUmlName(), oParentVm );
-						}
-						
-						r_oViewModel.addParameter("baseName", sBaseName);
-	
-						// LBR Modify : MVFLabelKind.NO_LABEL par MVFLabelKind.WITH_LABEL
-						// r_oViewModel.getType().getParametersByConfigName(r_oViewModel.getConfigName()).getVisualComponentNameFull(),
-						MVisualField oMVisualField =  p_oDomain.getXModeleFactory().createVisualField(
-								sComboName,
-								oComboLabel,
-								r_oViewModel.getType().getParametersByConfigName(r_oViewModel.getConfigName(), VersionHandler.getGenerationVersion().getStringVersion()).getVisualComponentNameFull(),
-								MVFLabelKind.WITH_LABEL,
-								oLocalization,
-								r_oViewModel.getEntityToUpdate() != null ? r_oViewModel
-										.getEntityToUpdate().getMasterInterface().getFullName() : null, r_oViewModel.isMandatory());
-						oMVisualField.addParameter("combo", "true");
-						oMVisualField.addParameter("comboVm", r_oViewModel.getFullName());
-						
-						oMVisualField.setViewModelProperty(sBaseName);
-						oMVisualField.setViewModelName(r_oViewModel.getName());
-						
-						// ajout des noms des infos pour la fixed list : utilisés dans le StoryboardExtractor
-						oParentVm.addVisualField(oMVisualField );
-	
-						// Dans le cas des combo, le contenu de la liste déroulante
-						// est toujours portée par le VM de plus haut niveau.
-						oParentVm = oMasterVM;
-					}
-					break;
-					
 				case LIST_1__N_SELECTED:
 					{
 						oParentVm.addExternalViewModel(r_oViewModel);
@@ -294,9 +236,10 @@ public class VMListPathProcessor {
 						oParentVm.getMasterInterface().addMethodSignature(oSet);
 	
 						String sComboName = sBaseName + "__edit";
-						MLabel oComboLabel = null; 
 						
 						MVFLocalization oLocalization = null;
+						MLabel oComboLabel = null; 
+						
 						if ( oParentVm.getType().equals(ViewModelType.FIXED_LIST)) {
 							oLocalization = MVFLocalization.DETAIL;
 							oComboLabel = p_oDomain.getXModeleFactory().createLabelForAttributeOfFixedList(sBaseName, r_oViewModel.getUmlName(), oLocalization, oParentVm );
@@ -320,10 +263,14 @@ public class VMListPathProcessor {
 										.getEntityToUpdate().getMasterInterface().getFullName() : null, r_oViewModel.isMandatory());
 						oMVisualField.addParameter("combo", "true");
 						oMVisualField.addParameter("comboVm", r_oViewModel.getFullName());
-						
-						String sPropertyName = p_oDomain.getXModeleFactory().createPropertyNameForFixedListCombo(r_oViewModel, sComboName);
-						
-						oMVisualField.setViewModelProperty(sPropertyName);
+
+						if (r_oViewModel.getType() == ViewModelType.LIST_1__ONE_SELECTED) {
+							oMVisualField.setViewModelProperty(sBaseName);
+						}
+						else { // r_oViewModel.getType() == ViewModelType.LIST_1__N_SELECTED
+							String sPropertyName = p_oDomain.getXModeleFactory().createPropertyNameForFixedListCombo(r_oViewModel, sComboName);
+							oMVisualField.setViewModelProperty(sPropertyName);
+						}
 						oMVisualField.setViewModelName(r_oViewModel.getName());
 						
 						// ajout des noms des infos pour la fixed list : utilisés dans le StoryboardExtractor
@@ -334,7 +281,7 @@ public class VMListPathProcessor {
 						oParentVm = oMasterVM;
 					}
 					break;
-					
+
 				case FIXED_LIST:
 					
 					oParentVm.addSubViewModel(r_oViewModel);

@@ -38,7 +38,7 @@ public class MViewModelCreator extends SClass<SInterface,MMethodSignature> {
 	 * Screen list
 	 */
 	private List<MScreen> screens ;
-	
+
 	/**
 	 * 
 	 * @param p_sName

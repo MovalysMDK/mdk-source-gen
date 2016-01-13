@@ -349,6 +349,15 @@ public class XModeleFactory implements IModelFactory {
 
 	/**
 	 * {@inheritDoc}
+	 * @see com.a2a.adjava.xmodele.IModelFactory#createViewModelCreator(java.lang.String, com.a2a.adjava.xmodele.MVisualField)
+	 */
+	@Override
+	public MViewModelCreator createViewModelCreator(String p_sName, MPackage p_oPackage) {
+		return new MViewModelCreator(p_sName,p_oPackage);
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * @see com.a2a.adjava.xmodele.IModelFactory#createMultiPanelConfig()
 	 */
 	@Override

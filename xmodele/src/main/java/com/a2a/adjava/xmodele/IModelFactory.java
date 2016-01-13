@@ -192,6 +192,14 @@ public interface IModelFactory {
 			boolean p_bCustomizable);
 
 	/**
+	 * Create the viewmodel creator
+	 * @param p_sName
+	 * @param p_oPackage
+	 * @return viewmodelcreator
+	 */
+	public MViewModelCreator createViewModelCreator(String p_sName, MPackage p_oPackage);
+
+	/**
 	 * Create an action.
 	 * @param p_sName action  name
 	 * @param p_oActionInterface action interface

@@ -15,15 +15,12 @@
  */
 package com.a2a.adjava.uml2xmodele.extractors;
 
+import com.a2a.adjava.uml2xmodele.extractors.viewmodel.MViewModelFactory;
+import com.a2a.adjava.xmodele.*;
 import org.dom4j.Element;
 
 import com.a2a.adjava.uml.UmlModel;
 import com.a2a.adjava.utils.StrUtils;
-import com.a2a.adjava.xmodele.IDomain;
-import com.a2a.adjava.xmodele.IModelDictionary;
-import com.a2a.adjava.xmodele.IModelFactory;
-import com.a2a.adjava.xmodele.MPackage;
-import com.a2a.adjava.xmodele.MViewModelCreator;
 
 /**
  * Viewmodel extractor
@@ -61,7 +58,7 @@ public class ViewModelCreatorExtractor extends AbstractExtractor<IDomain<IModelD
 		MPackage oVMCreatorPackage = this.computeVMCreatorPackage();
 		
 		String sVmcName = this.getParameters().getValue(VMC_NAME_PARAMETER);
-		MViewModelCreator oVmc = new MViewModelCreator(sVmcName, oVMCreatorPackage);
+		MViewModelCreator oVmc = this.getDomain().getXModeleFactory().createViewModelCreator(sVmcName, oVMCreatorPackage);
 		this.getDomain().getDictionnary().registerViewModelCreator(oVmc);
 	}
 	
