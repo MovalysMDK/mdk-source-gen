@@ -109,8 +109,8 @@ public class DataTypeExtractor extends AbstractExtractor {
 					r_oTypeDescription.setWrapper(oWrapper);
 					log.debug("  pour le type primitif: {}, wrapper: {}", r_oTypeDescription.getUmlName(), oWrapper.getName());
 				} else {
-					throw new AdjavaException("Impossible de trouver le wrapper du type '{}', wrapper name = '{}'", r_oTypeDescription.getUmlName()
-							+ r_oTypeDescription.getWrapperName());
+					throw new AdjavaException("Impossible de trouver le wrapper du type '{}', wrapper name = '{}'", r_oTypeDescription.getUmlName(),
+							r_oTypeDescription.getWrapperName());
 				}
 			}
 			
