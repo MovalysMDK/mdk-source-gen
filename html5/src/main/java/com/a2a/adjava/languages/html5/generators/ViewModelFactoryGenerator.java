@@ -201,25 +201,16 @@ public class ViewModelFactoryGenerator extends com.a2a.adjava.generator.impl.Vie
 		
 		// Enum Imports
 		boolean hasEnum = false;
-		boolean hasEnumImage = false;
 
 		for(MAttribute attr : p_oMViewModel.getAttributes()){
 			if(!attr.isTransient() && attr.isEnum()){
 				p_oMH5ImportDelegate.addImport(attr.getTypeDesc().getShortName());
-				if(attr.getTypeDesc().getName().contains("enumimage")){
-					hasEnumImage = true;
-				}
-				else{
-					hasEnum = true;
-				}
+
+				hasEnum = true;
 			}
 		}		
 		if(hasEnum){
 			p_oMH5ImportDelegate.addImport("MFRadioVMFactory");
-		}
-		if(hasEnumImage){
-			p_oMH5ImportDelegate.addImport("MFValueImageVMFactory");
-			p_oMH5ImportDelegate.addImport("MFPictureTypeEnum");
 		}
 					
 		//ComboBox imports

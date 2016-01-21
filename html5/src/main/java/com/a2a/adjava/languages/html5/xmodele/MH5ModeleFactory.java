@@ -199,9 +199,12 @@ public class MH5ModeleFactory extends XModeleFactory {
 	public Map<String,MLabel> createLabelsForEnumeration( MEnumeration p_oEnumeration) {
 		
 		Map<String,MLabel> r_listLabels = new HashMap<>();
-		
+
+		String sKey = createLabelKey("enum", p_oEnumeration.getName(), "FWK_NONE");
+		r_listLabels.put( sKey, new MH5Label(sKey, "No selection"));
+
 		for (String sToken : p_oEnumeration.getEnumValues()) {
-			String sKey = createLabelKey("enum", p_oEnumeration.getName(), sToken);
+			sKey = createLabelKey("enum", p_oEnumeration.getName(), sToken);
 			r_listLabels.put( sKey, new MH5Label(sKey, StringUtils.capitalize(sToken.toLowerCase())));
 		}
 		
