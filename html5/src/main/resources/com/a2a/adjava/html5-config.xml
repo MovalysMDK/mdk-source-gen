@@ -447,14 +447,15 @@
 
 				<type>
 					<uml-type>Boolean</uml-type>
-					<language-type></language-type>
+					<language-type>Boolean</language-type>
 					<init-format>?</init-format>
 					<default-value>null</default-value>
-					<variable-prefix></variable-prefix>
-					<parameter-prefix></parameter-prefix>
-					<return-prefix></return-prefix>
+					<variable-prefix/>
+					<parameter-prefix/>
+					<return-prefix/>
 					<get-accessor-prefix></get-accessor-prefix>
 					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Boolean</wrapper>
 					<default-options>_P1_S0</default-options>
 					<data-type>NUMERIC</data-type>
 					<sql-type>NUMERIC</sql-type>
