@@ -195,6 +195,55 @@
 						</type-conversion>
 					</type-conversions>
 				</type>
+
+                <type>
+                    <uml-type>byte</uml-type>
+                    <language-type>sbyte</language-type>
+                    <init-format>?</init-format>
+                    <default-value>-1</default-value>
+                    <variable-prefix></variable-prefix>
+                    <parameter-prefix></parameter-prefix>
+                    <return-prefix></return-prefix>
+                    <get-accessor-prefix></get-accessor-prefix>
+                    <set-accessor-prefix></set-accessor-prefix>
+                    <wrapper>Byte</wrapper>
+                    <unsaved-value>-1</unsaved-value>
+                    <default-options>_P1_S0</default-options>
+                    <sql-type>INTEGER</sql-type>
+                    <sql-compare>=</sql-compare>
+                    <data-type>NUMERIC</data-type>
+                    <edit-type>number</edit-type>
+                    <default-ui-type>Text</default-ui-type>
+                    <type-conversions>
+                        <type-conversion to="String">
+                            <formula>System.Convert.ToString(VALUE)</formula>
+                        </type-conversion>
+                    </type-conversions>
+                </type>
+
+                <type>
+                    <uml-type>Byte</uml-type>
+                    <language-type>SByte</language-type>
+                    <init-format>?</init-format>
+                    <default-value>null</default-value>
+                    <variable-prefix></variable-prefix>
+                    <parameter-prefix></parameter-prefix>
+                    <return-prefix></return-prefix>
+                    <get-accessor-prefix></get-accessor-prefix>
+                    <set-accessor-prefix></set-accessor-prefix>
+                    <unsaved-value>-1</unsaved-value>
+                    <default-options>_P1_S0</default-options>
+                    <sql-type>INTEGER</sql-type>
+                    <sql-compare>=</sql-compare>
+                    <data-type>NUMERIC</data-type>
+                    <edit-type>number</edit-type>
+                    <default-ui-type>Text</default-ui-type>
+                    <type-conversions>
+                        <type-conversion to="String">
+                            <formula>System.Convert.ToString(VALUE)</formula>
+                        </type-conversion>
+                    </type-conversions>
+                </type>
 				
 				<type>
 					<uml-type>char</uml-type>
@@ -219,6 +268,76 @@
 						</type-conversion>
 					</type-conversions>
 				</type>
+
+				<type>
+					<uml-type>Character</uml-type>
+					<language-type>char</language-type>
+					<init-format>'?'</init-format>
+					<default-value>0</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_L1</default-options>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<edit-type>text</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+                <type>
+                    <uml-type>short</uml-type>
+                    <language-type>short</language-type>
+                    <init-format>?</init-format>
+                    <default-value>0</default-value>
+                    <variable-prefix></variable-prefix>
+                    <parameter-prefix></parameter-prefix>
+                    <return-prefix></return-prefix>
+                    <get-accessor-prefix></get-accessor-prefix>
+                    <set-accessor-prefix></set-accessor-prefix>
+                    <wrapper>Short</wrapper>
+                    <unsaved-value>-1</unsaved-value>
+                    <sql-type>INTEGER</sql-type>
+                    <sql-compare>=</sql-compare>
+                    <data-type>NUMERIC</data-type>
+                    <edit-type>number</edit-type>
+                    <default-ui-type>UIInteger</default-ui-type>
+                    <type-conversions>
+                        <type-conversion to="String">
+                            <formula>System.Convert.ToString(VALUE)</formula>
+                        </type-conversion>
+                    </type-conversions>
+                </type>
+
+                <type>
+                    <uml-type>Short</uml-type>
+                    <language-type>Short</language-type>
+                    <init-format>?</init-format>
+                    <default-value>null</default-value>
+                    <variable-prefix></variable-prefix>
+                    <parameter-prefix></parameter-prefix>
+                    <return-prefix></return-prefix>
+                    <get-accessor-prefix></get-accessor-prefix>
+                    <set-accessor-prefix></set-accessor-prefix>
+                    <unsaved-value>-1</unsaved-value>
+                    <sql-type>INTEGER</sql-type>
+                    <sql-compare>=</sql-compare>
+                    <data-type>NUMERIC</data-type>
+                    <edit-type>number</edit-type>
+                    <default-ui-type>UIInteger</default-ui-type>
+                    <type-conversions>
+                        <type-conversion to="String">
+                            <formula>System.Convert.ToString(VALUE)</formula>
+                        </type-conversion>
+                    </type-conversions>
+                </type>
 
 				<type>
 					<uml-type>String</uml-type>
