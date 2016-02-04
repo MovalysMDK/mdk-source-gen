@@ -356,8 +356,8 @@
 						</type-conversion>
 					</type-conversions>
 				</type>
-				
-					<type>
+					
+				<type>
 					<uml-type>short</uml-type>
 					<language-type>short</language-type>
 					<init-format>?</init-format>
@@ -367,6 +367,7 @@
 					<return-prefix></return-prefix>
 					<get-accessor-prefix></get-accessor-prefix>
 					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P5_S0</default-options>
 					<wrapper>Short</wrapper>
 					<unsaved-value>-1</unsaved-value>
 					<sql-type>INTEGER</sql-type>
@@ -391,6 +392,7 @@
 					<return-prefix></return-prefix>
 					<get-accessor-prefix></get-accessor-prefix>
 					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P5_S0</default-options>
 					<unsaved-value>-1</unsaved-value>
 					<sql-type>INTEGER</sql-type>
 					<sql-compare>=</sql-compare>

@@ -336,6 +336,7 @@
 					<return-prefix>r_i</return-prefix>
 					<get-accessor-prefix>get</get-accessor-prefix>
 					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P5_S0</default-options>
 					<wrapper>Short</wrapper>
 					<unsaved-value>-1</unsaved-value>
 					<jdbc-retrieve>RESULTSET.getShort()</jdbc-retrieve>
@@ -363,6 +364,7 @@
 					<return-prefix>r_i</return-prefix>
 					<get-accessor-prefix>get</get-accessor-prefix>
 					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P5_S0</default-options>
 					<unsaved-value>-1</unsaved-value>
 					<jdbc-retrieve>RESULTSET.getShortObject()</jdbc-retrieve>
 					<jdbc-bind>STATEMENT.bindShort(VALEUR)</jdbc-bind>
