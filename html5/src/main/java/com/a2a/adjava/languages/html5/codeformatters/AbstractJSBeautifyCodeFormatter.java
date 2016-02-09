@@ -88,38 +88,43 @@ public abstract class AbstractJSBeautifyCodeFormatter implements CodeFormatter {
      * @throws Exception indentation failure
      */
     private void indentFiles( List<GeneratedFile> p_listGenFiles ) throws Exception {
-
         if ( !p_listGenFiles.isEmpty()) {
+        	int fileListSize = p_listGenFiles.size();
+        	final int SUBLIST_SIZE = 40; 
         	
-            CommandLine oCmdLine = null;
-            
-            if ( System.getProperty("os.name").startsWith("Windows")) {
-            	oCmdLine = new CommandLine("cmd");
-            	oCmdLine.addArgument("/c");
-            	oCmdLine.addArgument(AbstractJSBeautifyCodeFormatter.jsbeautify);
-            }
-            else {
-            	oCmdLine = new CommandLine(AbstractJSBeautifyCodeFormatter.jsbeautify);
-            }
-            
-            for( String sCmdArgument: this.getArguments()) {
-                oCmdLine.addArgument(sCmdArgument);
-            }
-
-            oCmdLine.addArgument("-f");
-            for( GeneratedFile oGenFile: p_listGenFiles ) {
-                oCmdLine.addArgument(oGenFile.getFileFromRoot().getPath());
-            }
-            
-            DefaultExecuteResultHandler oResultHandler = new DefaultExecuteResultHandler();
-
-            ExecuteWatchdog oWatchdog = new ExecuteWatchdog(WATCHDOG_TIMEOUT);
-            DefaultExecutor oExecutor = new DefaultExecutor();
-            oExecutor.setExitValue(0);
-            oExecutor.setWatchdog(oWatchdog);
-            oExecutor.execute(oCmdLine, EnvironmentUtils.getProcEnvironment(), oResultHandler);
-
-            oResultHandler.waitFor();
+			for (int factor = 0 ; factor*SUBLIST_SIZE < fileListSize ; factor++) {
+        		int endIndex = Math.min(fileListSize, factor * SUBLIST_SIZE + SUBLIST_SIZE);
+        		List<GeneratedFile> sublist = p_listGenFiles.subList(factor * SUBLIST_SIZE, endIndex);
+	            CommandLine oCmdLine = null;
+	            
+	            if ( System.getProperty("os.name").startsWith("Windows")) {
+	            	oCmdLine = new CommandLine("cmd");
+	            	oCmdLine.addArgument("/c");
+	            	oCmdLine.addArgument(AbstractJSBeautifyCodeFormatter.jsbeautify);
+	            }
+	            else {
+	            	oCmdLine = new CommandLine(AbstractJSBeautifyCodeFormatter.jsbeautify);
+	            }
+	            
+	            for( String sCmdArgument: this.getArguments()) {
+	                oCmdLine.addArgument(sCmdArgument);
+	            }
+	
+	            oCmdLine.addArgument("-f");
+	            for( GeneratedFile oGenFile: sublist ) {
+	                oCmdLine.addArgument(oGenFile.getFileFromRoot().getPath());
+	            }
+	            
+	            DefaultExecuteResultHandler oResultHandler = new DefaultExecuteResultHandler();
+	
+	            ExecuteWatchdog oWatchdog = new ExecuteWatchdog(WATCHDOG_TIMEOUT);
+	            DefaultExecutor oExecutor = new DefaultExecutor();
+	            oExecutor.setExitValue(0);
+	            oExecutor.setWatchdog(oWatchdog);
+	            oExecutor.execute(oCmdLine, EnvironmentUtils.getProcEnvironment(), oResultHandler);
+	
+	            oResultHandler.waitFor();
+        	}
         }
     }
 }
