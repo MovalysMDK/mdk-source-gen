@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project>
+
+	<body>
+		<links>
+			<item name="Adeuza"	href="http://www.adeuza.fr/"/>
+			<item name="Movalys"	href="http://www.movalys.com/"/>
+			<item name="Framework Movalys v2"	href="http://intranet.adeuza.fr/projets/fwk-movalys-v2/"/>
+		</links>
+		
+		<menu name="Parent">
+			<item name="Parent" href="../index.html"/>
+		</menu>
+		
+		<menu name="Suivi">
+      		<item name="Liste des changements" href="changes-report.html"/>
+		</menu>
+        <!-- Lien vers le projet global de documentation -->
+        <menu>
+            <item name="Documentation technique" href="http://intranet.adeuza.fr/projets/Movalys/mi-docs/"/>
+        </menu>
+        
+        <menu ref="reports"/>
+        
+        <menu name="Qualité">
+			<item name="Dashbord" href="dashboard-report.html"/>
+			<item name="Dashbord Hudson" 
+			href="${site.deploy.url}/fwk-backend/fwk-sta/${project.artifactId}/dashboard-report.html" />        
+        </menu>
+        
+	</body>
+</project>

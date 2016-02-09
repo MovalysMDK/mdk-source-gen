@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<configuration xmlns="http://www.sopragroup.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.sopragroup.com ../xmlMerge.xsd">
+	<node name="root" identificationType="root" />
+	<node name="testA" identificationType="name+attr" idAttribute="id"/>
+	<node name="testAA" identificationType="name+attr" idAttribute="id"/>
+	<node name="testB" identificationType="name+attr" idAttribute="idB"/>
+	<node name="testC" identificationType="name+attr" idAttribute="idC"/>
+	<node name="testD" identificationType="name+attr" idAttribute="idD"/>
+	<node name="testE" identificationType="name+attr" idAttribute="idE"/>
+	<node name="testF" identificationType="name+attr" idAttribute="idF"/>
+	<node name="testG" identificationType="name+attr" idAttribute="idG"/>
+	<node name="testGG" identificationType="name+attr" idAttribute="id"/>
+	<node name="testH" identificationType="name+attr" idAttribute="id"/>
+	<node name="testH2" identificationType="name+attr" idAttribute="id"/>
+	<node name="testHH" identificationType="name+attr" idAttribute="idH"/>
+	<node name="testZZ" identificationType="parent+name" />
+	<node name="testZZ2" identificationType="parent+name" />
+	<node name="testZZ3" identificationType="parent+name" />
+	<node name="testZZ4" identificationType="parent+name" />
+	<node name="testQ" idAttribute="ref" identificationType="parent+name+attr" />
+</configuration>

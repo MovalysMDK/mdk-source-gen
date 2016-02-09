@@ -1,0 +1,43 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<configuration xmlns="http://www.sopragroup.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.sopragroup.com ../xmlMerge.xsd">
+	<node name="manifest"			identificationType="root" 													content="children"	/>
+	<node name="application"		identificationType="name" 													content="children"	/>
+	<node name="action" 			identificationType="parent+name+attr" 	idAttribute="android:name"			content="none"		/>
+	<node name="activity"			identificationType="name+attr" 			idAttribute="android:name" 			content="children"	/>
+	<node name="activity-alias"		identificationType="name+attr" 			idAttribute="android:name" 			content="children"	/>
+	<node name="category" 			identificationType="parent+name+attr"	idAttribute="android:name"			content="none"		/>
+	<node name="data" 				identificationType="parent+name+attr"	idAttribute="android:scheme|android:host|android:port|android:path|android:pathPattern|android:pathPrefix|android:mimeType"	content="none"/>
+	<node name="grant-uri-permission" identificationType="parent+name"											content="none"		/>
+	<node name="instrumentation" 	identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="intent-filter" 		identificationType="parent+name"											content="children"	/>
+	<node name="meta-data" 			identificationType="parent+name"											content="none"		/>
+	<node name="path-permission"	identificationType="parent+name"											content="none"		/>
+	<node name="permission"			identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="permission-group"	identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="permission-tree"	identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="provider"			identificationType="name+attr"			idAttribute="android:name"			content="children"	/>
+	<node name="receiver"			identificationType="name+attr"			idAttribute="android:name"			content="children"	/>
+	<node name="service"			identificationType="name+attr"			idAttribute="android:name"			content="children"	/>
+	<node name="supports-screens"	identificationType="name"													content="none"		/>
+	<node name="uses-configuration"	identificationType="name"													content="none"		/>
+	<node name="uses-feature"		identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="uses-library"		identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="uses-permission"	identificationType="name+attr"			idAttribute="android:name"			content="none"		/>
+	<node name="uses-sdk"			identificationType="name"													content="none"		/>
+</configuration>

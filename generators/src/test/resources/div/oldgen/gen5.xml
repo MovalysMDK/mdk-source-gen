@@ -1,0 +1,193 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<plist version="1.0">
+    <dict key="DealsPanel">
+        <artificialGroupingForXmlMerge key="classCSS_DealsPanel">
+            <key>classCSS</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="typeName_DealsPanel">
+            <key>typeName</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="configurationName_DealsPanel">
+            <key>configurationName</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="name_DealsPanel">
+            <key>name</key>
+            <string>DealsPanel</string>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="visible_DealsPanel">
+            <key>visible</key>
+            <true/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="groups_DealsPanel">
+            <key>groups</key>
+            <array>
+                <dict key="group-DealsScreenCell">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DealsScreenCell">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DealsScreenCell">
+                        <key>typeName</key>
+                        <string>DealsScreenCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DealsScreenCell">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DealsScreenCell">
+                        <key>name</key>
+                        <string>group-DealsScreenCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DealsScreenCell">
+                        <key>configurationName</key>
+                        <string>configurationDealsScreenCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="fields_group-DealsScreenCell">
+                        <key>fields</key>
+                        <array>
+                            <!--template match="subView[customClass='MFTextField']" mode="fieldForListItem"-->
+                            <!--template name="textFields"-->
+                            <dict key="DealsPanel-image-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DealsPanel-image-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DealsPanel-image-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DealsPanel-image-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DealsPanel-image-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DealsPanel-image-value">
+                                    <key>name</key>
+                                    <string>DealsPanel-image-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DealsPanel-image-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DealsPanel-image-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DealsPanel-image-value">
+                                    <key>bindingKey</key>
+                                    <string>image</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DealsPanel-image-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>imageValue</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <!--template match="subView[customClass='MFTextField']" mode="fieldForListItem"-->
+                            <!--template name="textFields"-->
+                            <dict key="DealsPanel-montantReduction-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DealsPanel-montantReduction-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DealsPanel-montantReduction-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DealsPanel-montantReduction-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DealsPanel-montantReduction-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DealsPanel-montantReduction-value">
+                                    <key>name</key>
+                                    <string>DealsPanel-montantReduction-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DealsPanel-montantReduction-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DealsPanel-montantReduction-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DealsPanel-montantReduction-value">
+                                    <key>bindingKey</key>
+                                    <string>montantReduction</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DealsPanel-montantReduction-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>montantReductionValue</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <!--template match="subView[customClass='MFTextField']" mode="fieldForListItem"-->
+                            <!--template name="textFields"-->
+                            <dict key="DealsPanel-desc-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DealsPanel-desc-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DealsPanel-desc-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DealsPanel-desc-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DealsPanel-desc-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DealsPanel-desc-value">
+                                    <key>name</key>
+                                    <string>DealsPanel-desc-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DealsPanel-desc-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DealsPanel-desc-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DealsPanel-desc-value">
+                                    <key>bindingKey</key>
+                                    <string>desc</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DealsPanel-desc-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>descValue</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+            </array>
+        </artificialGroupingForXmlMerge>
+    </dict>
+</plist>

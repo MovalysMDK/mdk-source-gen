@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<languages>
+		<language name="java">
+			<typedescription-factory>com.a2a.adjava.languages.java.project.JTypeDescriptionFactory</typedescription-factory>
+			<ui-typedescription-factory>com.a2a.adjava.types.UITypeDescriptionFactory</ui-typedescription-factory>
+						
+			<interfaces>
+				<prefix-naming></prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</interfaces>
+
+			<implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Impl</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</implementation>
+
+			<pojo-factory-interfaces>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Factory</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</pojo-factory-interfaces>
+
+			<pojo-factory-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>FactoryImpl</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</pojo-factory-implementation>
+
+			<dao>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Dao</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao>
+
+			<dao-implementation>
+				<prefix-naming>Abstract</prefix-naming>
+				<suffix-naming>DaoImpl</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao-implementation>
+			<types>
+				<type>
+					<uml-type>int</uml-type>
+					<language-type>int</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getInt()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindInt(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Integer</uml-type>
+					<language-type>java.lang.Integer</language-type>
+					<init-format>new Integer(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getInt()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindInt(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>String</uml-type>
+					<language-type>java.lang.String</language-type>
+					<init-format>"?"</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_s</parameter-prefix>
+					<return-prefix>r_s</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<hql-bind>setString($1,$2)</hql-bind>
+					<default-options>_L255</default-options>
+					<jdbc-retrieve>RESULTSET.getString()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindString(VALEUR)</jdbc-bind>
+					<jdbc-type>VARCHAR</jdbc-type>
+					<sql-type>VARCHAR2(? CHAR)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>boolean</uml-type>
+					<language-type>boolean</language-type>
+					<init-format>?</init-format>
+					<default-value>false</default-value>
+					<variable-prefix>b</variable-prefix>
+					<parameter-prefix>p_b</parameter-prefix>
+					<return-prefix>r_b</return-prefix>
+					<get-accessor-prefix>is</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Boolean</wrapper>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getBoolean()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindBoolean(VALEUR)</jdbc-bind>
+					<jdbc-type>BOOLEAN</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Boolean</uml-type>
+					<language-type>java.lang.Boolean</language-type>
+					<init-format>new Boolean(?)</init-format>
+					<default-value>false</default-value>
+					<variable-prefix>b</variable-prefix>
+					<parameter-prefix>p_b</parameter-prefix>
+					<return-prefix>r_b</return-prefix>
+					<get-accessor-prefix>is</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getBoolean()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindBoolean(VALEUR)</jdbc-bind>
+					<jdbc-type>BOOLEAN</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>char</uml-type>
+					<language-type>char</language-type>
+					<init-format>'?'</init-format>
+					<default-value>
+					</default-value>
+					<variable-prefix>c</variable-prefix>
+					<parameter-prefix>p_c</parameter-prefix>
+					<return-prefix>r_c</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Character</wrapper>
+					<default-options>_L1</default-options>
+					<jdbc-retrieve>RESULTSET.getChar()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindString(POSITION, VALEUR)</jdbc-bind>
+					<jdbc-type>CHAR</jdbc-type>
+					<sql-type>VARCHAR2(? CHAR)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Character</uml-type>
+					<language-type>java.lang.Character</language-type>
+					<init-format>new Character('?')</init-format>
+					<default-value>
+					</default-value>
+					<variable-prefix>c</variable-prefix>
+					<parameter-prefix>p_c</parameter-prefix>
+					<return-prefix>r_c</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_L1</default-options>
+					<jdbc-retrieve>RESULTSET.getCharacter()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindChar(VALEUR)</jdbc-bind>
+					<jdbc-type>CHAR</jdbc-type>
+					<sql-type>VARCHAR2(? CHAR)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>short</uml-type>
+					<language-type>short</language-type>
+					<init-format>?</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Short</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<jdbc-retrieve>RESULTSET.getShort()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindShort(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Short</uml-type>
+					<language-type>java.lang.Short</language-type>
+					<init-format>new java.lang.Short(?)</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<jdbc-retrieve>RESULTSET.getShort()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindShort(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>long</uml-type>
+					<language-type>long</language-type>
+					<init-format>?</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>l</variable-prefix>
+					<parameter-prefix>p_l</parameter-prefix>
+					<return-prefix>r_l</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Long</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P20_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getLong()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindLong(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Long</uml-type>
+					<language-type>java.lang.Long</language-type>
+					<init-format>new java.lang.Long(?)</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>l</variable-prefix>
+					<parameter-prefix>p_l</parameter-prefix>
+					<return-prefix>r_l</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1L</unsaved-value>
+					<default-options>_P20_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getLong()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindLong(VALEUR.longValue())</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>byte</uml-type>
+					<language-type>byte</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Byte</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getByte()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindByte(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Byte</uml-type>
+					<language-type>java.lang.Byte</language-type>
+					<init-format>new Byte((byte)?)</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getByte()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindByte(VALEUR.byteValue())</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>double</uml-type>
+					<language-type>double</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>d</variable-prefix>
+					<parameter-prefix>p_d</parameter-prefix>
+					<return-prefix>r_d</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Double</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getDouble()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindDouble(VALEUR)</jdbc-bind>
+					<jdbc-type>DOUBLE</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Double</uml-type>
+					<language-type>java.lang.Double</language-type>
+					<init-format>new Double(?)</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>d</variable-prefix>
+					<parameter-prefix>p_d</parameter-prefix>
+					<return-prefix>r_d</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getDouble()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindDouble(VALEUR)</jdbc-bind>
+					<jdbc-type>DOUBLE</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>float</uml-type>
+					<language-type>float</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>f</variable-prefix>
+					<parameter-prefix>p_f</parameter-prefix>
+					<return-prefix>r_f</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Float</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getFloat()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.setFloat(VALEUR)</jdbc-bind>
+					<jdbc-type>FLOAT</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Float</uml-type>
+					<language-type>java.lang.Float</language-type>
+					<init-format>new Float(?)</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>f</variable-prefix>
+					<parameter-prefix>p_f</parameter-prefix>
+					<return-prefix>r_f</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>>RESULTSET.getFloat()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindFloat(VALEUR)</jdbc-bind>
+					<jdbc-type>FLOAT</jdbc-type>
+					<sql-type>NUMBER(?,?)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Date</uml-type>
+					<language-type>java.sql.Date</language-type>
+					<init-format>null</init-format>
+					<default-value></default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve>RESULTSET.getDate()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindDate(VALEUR)</jdbc-bind>
+					<jdbc-type>DATE</jdbc-type>
+					<sql-type>DATE</sql-type>
+					<sql-compare>LIKE</sql-compare>
+					<data-type>DATE</data-type>
+				</type>
+
+				<type>
+					<uml-type>Timestamp</uml-type>
+					<language-type>java.sql.Timestamp</language-type>
+					<init-format>null</init-format>
+					<default-value></default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve>RESULTSET.getTimestamp()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindTimestamp(VALEUR)</jdbc-bind>
+					<jdbc-type>DATE</jdbc-type>
+					<sql-type>DATE</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>DATE</data-type>
+				</type>
+
+				<type>
+					<uml-type>List</uml-type>
+					<language-type>com.adeuza.movalysfwk.backoffice.mf4bjclassic.core.beans.BOList</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>list</variable-prefix>
+					<parameter-prefix>p_list</parameter-prefix>
+					<return-prefix>r_list</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Set</uml-type>
+					<language-type>java.util.Set</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>list</variable-prefix>
+					<parameter-prefix>p_list</parameter-prefix>
+					<return-prefix>r_list</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Object</uml-type>
+					<language-type>java.lang.Object</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>enumeration</uml-type>
+					<language-type>enumeration</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>enum</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>ENUMERATION.valueOf(Integer.toString(RESULTSET.getInt()))</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindMEnum(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(10,0)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Clob</uml-type>
+					<language-type>java.lang.String</language-type>
+					<init-format>"?"</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options></default-options>
+					<jdbc-retrieve>RESULTSET.getClobAsString()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindClob(VALEUR)</jdbc-bind>
+					<jdbc-type>Clob</jdbc-type>
+					<sql-type>CLOB</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Blob</uml-type>
+					<language-type>byte[]</language-type>
+					<init-format>"?"</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options></default-options>
+					<jdbc-retrieve>RESULTSET.getBlobAsByte()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.setBlob(POSITION,this.createBlob(((ContextImpl) p_oContext).getTransaction().getJDBCConnection(), VALEUR))	</jdbc-bind>
+					<jdbc-type>Blob</jdbc-type>
+					<sql-type>BLOB</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+				</type>
+			</types>
+
+			<include>
+				<start-marker>import </start-marker>
+				<end-marker>;</end-marker>
+			</include>
+
+			<non-generated>
+				<start-marker>//@non-generated-start</start-marker>
+				<end-marker>//@non-generated-end</end-marker>
+			</non-generated>
+		</language>
+	</languages>
+
+</adjava-project>		

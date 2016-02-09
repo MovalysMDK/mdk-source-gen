@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<domains>
+
+		<!-- Back office -->
+		<domain name="bo">
+			<template>/com/adeuza/movalysfwk/mf4mdd/bo/templates</template>
+			<file-encoding>UTF-8</file-encoding>
+			<xmodele-factory>com.a2a.adjava.languages.java.xmodele.JXModeleFactory
+			</xmodele-factory>
+			<language-ref>java</language-ref>
+			<extractors>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.PackageExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.EnumExtractor">
+					<property name="stereotypes" value="Mbo_enum" />
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.DataTypeExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.PojoExtractor">
+					<property name="stereotypes" value="Mbo_model" />
+					<property name="transient-stereotypes" value="Mbo_transcient" />
+					<configuration>
+						<attribute-option-setters>
+							<option-setter
+								class="com.a2a.adjava.optionsetters.DefaultAttrOptionSetter" />
+						</attribute-option-setters>
+
+						<association-option-setters>
+							<option-setter
+								class="com.a2a.adjava.optionsetters.DefaultAssoOptionSetter" />
+						</association-option-setters>
+					</configuration>
+				</extractor>
+				<extractor
+					class="com.a2a.adjava.uml2xmodele.extractors.PojoFactoryExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.DaoExtractor">
+					<property name="transient-stereotypes" value="Mbo_transcient" />
+				</extractor>
+				<extractor class="com.a2a.adjava.xmodele2schema.SchemaExtractor">
+					<configuration>
+						<schema-factory>com.a2a.adjava.languages.java.schema.JSchemaFactory
+						</schema-factory>
+						<db-naming-strategy
+							class="com.a2a.adjava.schema.naming.DbNamingStrategyImpl">
+							<option name="tablePrefix" value="T_" />
+							<option name="sequencePrefix" value="SEQ_" />
+							<option name="indexPrefix" value="I_" />
+							<option name="fkPrefix" value="FK_" />
+							<option name="uniquePrefix" value="U_" />
+							<option name="pkPrefix" value="PK_" />
+							<option name="constraintNameMaxLength" value="25" />
+							<option name="identifiantMaxLength" value="30" />
+							<option name="tableNameMaxLength" value="30" />
+						</db-naming-strategy>
+					</configuration>
+				</extractor>
+			</extractors>
+			<m-updaters>
+				<m-updater
+					class="com.a2a.adjava.languages.java.mupdater.JdbcRetrieveForEnumeration" />
+			</m-updaters>
+			<projects>
+				<project name="model" base-dir="bo/model">
+					<source-dir>src/main/java</source-dir>
+
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.PojoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.PojoImplGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.EnumGenerator"/>
+						<generator class="com.a2a.adjava.generator.impl.FactoryGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.FactoryInterfaceGenerator" />
+					</resource-generators>
+				</project>
+				<project name="dao" base-dir="bo/dao">
+					<source-dir>src/main/java</source-dir>
+					<ddl-dir>sql</ddl-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.SchemaGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DaoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DaoGenerator" />
+					</resource-generators>
+					<!-- 
+		<generator class="com.adeuza.mi.adjava.generator.UpdateNotifierGenerator"/>
+					 -->
+				</project>
+				<project name="daoext" base-dir="bo/daoext">
+					<source-dir>src/main/java</source-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />						
+					</resource-generators>
+				</project>
+			</projects>
+			<code-formatters>
+				<code-formatter class="com.a2a.adjava.languages.java.codeformatters.JavaCodeFormatter" />
+			</code-formatters>
+		</domain>
+
+	</domains>
+
+</adjava-project>

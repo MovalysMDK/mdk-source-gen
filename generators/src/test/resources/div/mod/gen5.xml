@@ -1,0 +1,1348 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<plist version="1.0">
+    <dict key="DevicePanel">
+        <artificialGroupingForXmlMerge key="classCSS_DevicePanel">
+            <key>classCSS</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="typeName_DevicePanel">
+            <key>typeName</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="configurationName_DevicePanel">
+            <key>configurationName</key>
+            <string/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="name_DevicePanel">
+            <key>name</key>
+            <string>DevicePanel</string>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="visible_DevicePanel">
+            <key>visible</key>
+            <true/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="titled_DevicePanel">
+            <key>titled</key>
+            <false/>
+        </artificialGroupingForXmlMerge>
+        <artificialGroupingForXmlMerge key="groups_DevicePanel">
+            <key>groups</key>
+            <array>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-modelLabel-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-modelLabel-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-modelLabel-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-modelLabel-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-modelLabel-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>bindingKey</key>
+                                    <string>modelLabel</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-modelLabel-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-brand-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-brand-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-brand-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-brand-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-brand-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-brand-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-brand-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-brand-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-brand-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-brand-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-brand-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-brand-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-brand-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-brand-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-brand-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-brand-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-brand-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-brand-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-brand-value">
+                                    <key>bindingKey</key>
+                                    <string>brand</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-brand-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-color-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-color-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-color-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-color-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-color-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-color-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-color-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-color-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-color-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-color-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-color-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-color-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-color-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-color-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-color-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-color-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-color-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-color-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-color-value">
+                                    <key>bindingKey</key>
+                                    <string>color</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-color-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="DevicePanel-devicepanel-priceRmUp-value_group">
+                    <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>typeName</key>
+                        <string>MFIntegerTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>name</key>
+                        <string>DevicePanel-devicepanel-priceRmUp-value_group</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_DevicePanel-devicepanel-priceRmUp-value_group">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-priceRmUp-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>typeName</key>
+                                    <string>MFIntegerTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-priceRmUp-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>bindingKey</key>
+                                    <string>priceRmUp</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-priceRmUp-value">
+                                        <artificialGroupingForXmlMerge key="minDigits_parameters_DevicePanel-devicepanel-priceRmUp-value">
+                                            <key>minDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                            <artificialGroupingForXmlMerge key="maxDigits_parameters_DevicePanel-devicepanel-priceRmUp-value">
+                                            <key>maxDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-priceRmUp-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="DevicePanel-devicepanel-price-value_group">
+                    <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-price-value_group">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-price-value_group">
+                        <key>typeName</key>
+                        <string>MFIntegerTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-price-value_group">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_DevicePanel-devicepanel-price-value_group">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-price-value_group">
+                        <key>name</key>
+                        <string>DevicePanel-devicepanel-price-value_group</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-price-value_group">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_DevicePanel-devicepanel-price-value_group">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-price-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-price-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-price-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-price-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-price-value">
+                                    <key>typeName</key>
+                                    <string>MFIntegerTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-price-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-price-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-price-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-price-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-price-value">
+                                    <key>bindingKey</key>
+                                    <string>price</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-price-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-price-value">
+                                        <artificialGroupingForXmlMerge key="minDigits_parameters_DevicePanel-devicepanel-price-value">
+                                            <key>minDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                            <artificialGroupingForXmlMerge key="maxDigits_parameters_DevicePanel-devicepanel-price-value">
+                                            <key>maxDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-price-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-image-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-image-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-image-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-image-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-image-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-image-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-image-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-image-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-image-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-image-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-image-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-image-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-image-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-image-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-image-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-image-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-image-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-image-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-image-value">
+                                    <key>bindingKey</key>
+                                    <string>image</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-image-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-capacity-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-capacity-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-capacity-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-capacity-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-capacity-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-capacity-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-capacity-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-capacity-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-capacity-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-capacity-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-capacity-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-capacity-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-capacity-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-capacity-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-capacity-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-capacity-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-capacity-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-capacity-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-capacity-value">
+                                    <key>bindingKey</key>
+                                    <string>capacity</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-capacity-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="DevicePanel-devicepanel-discount-value_group">
+                    <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-discount-value_group">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-discount-value_group">
+                        <key>typeName</key>
+                        <string>MFIntegerTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-discount-value_group">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_DevicePanel-devicepanel-discount-value_group">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-discount-value_group">
+                        <key>name</key>
+                        <string>DevicePanel-devicepanel-discount-value_group</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-discount-value_group">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_DevicePanel-devicepanel-discount-value_group">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-discount-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-discount-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-discount-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-discount-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-discount-value">
+                                    <key>typeName</key>
+                                    <string>MFIntegerTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-discount-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-discount-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-discount-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-discount-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-discount-value">
+                                    <key>bindingKey</key>
+                                    <string>discount</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-discount-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-discount-value">
+                                        <artificialGroupingForXmlMerge key="minDigits_parameters_DevicePanel-devicepanel-discount-value">
+                                            <key>minDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                            <artificialGroupingForXmlMerge key="maxDigits_parameters_DevicePanel-devicepanel-discount-value">
+                                            <key>maxDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-discount-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>typeName</key>
+                        <string>DevicePanelFeaturesItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>configurationName</key>
+                        <string>configurationDevicePanelFeaturesItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--  used to define the height of this cell => /resources/plist/configuration/conf-[screenName]Cell.plist	  --><artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>noLabel</key>
+                        <false/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>typeName</key>
+                                    <string>MFLabel</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="i18nKey_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>i18nKey</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label">
+                                    <key>cellPropertyBinding</key>
+                                    <string>label</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <dict key="DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>typeName</key>
+                                    <string>MFFixedList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>editable</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="addItemListener_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>addItemListener</key>
+                                    <string>addItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="deleteItemListener_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>deleteItemListener</key>
+                                    <string>deleteItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editItemListener_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>editItemListener</key>
+                                    <string>editItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>bindingKey</key>
+                                    <string>mVMDevicePanelFeaturesList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                        <artificialGroupingForXmlMerge key="title_parameters_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                            <key>title</key>
+                                            <string>DevicePanel-devicepanel-MVMDevicePanelFeaturesList-label</string>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-mVMDevicePanelFeaturesList-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>fixedList</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>typeName</key>
+                        <string>DevicePanelSimilardevicesItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>configurationName</key>
+                        <string>configurationDevicePanelSimilardevicesItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--  used to define the height of this cell => /resources/plist/configuration/conf-[screenName]Cell.plist	  --><artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>noLabel</key>
+                        <false/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>typeName</key>
+                                    <string>MFLabel</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="i18nKey_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>i18nKey</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label">
+                                    <key>cellPropertyBinding</key>
+                                    <string>label</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <dict key="DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>typeName</key>
+                                    <string>MFFixedList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>editable</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="addItemListener_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>addItemListener</key>
+                                    <string>addItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="deleteItemListener_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>deleteItemListener</key>
+                                    <string>deleteItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editItemListener_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>editItemListener</key>
+                                    <string>editItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>bindingKey</key>
+                                    <string>mVMDevicePanelSimilardevicesList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                        <artificialGroupingForXmlMerge key="title_parameters_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                            <key>title</key>
+                                            <string>DevicePanel-devicepanel-MVMDevicePanelSimilardevicesList-label</string>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-mVMDevicePanelSimilardevicesList-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>fixedList</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="DevicePanel-devicepanel-nbAvis-value_group">
+                    <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>typeName</key>
+                        <string>MFIntegerTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>name</key>
+                        <string>DevicePanel-devicepanel-nbAvis-value_group</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_DevicePanel-devicepanel-nbAvis-value_group">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-nbAvis-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>typeName</key>
+                                    <string>MFIntegerTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-nbAvis-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>bindingKey</key>
+                                    <string>nbAvis</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-nbAvis-value">
+                                        <artificialGroupingForXmlMerge key="minDigits_parameters_DevicePanel-devicepanel-nbAvis-value">
+                                            <key>minDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                            <artificialGroupingForXmlMerge key="maxDigits_parameters_DevicePanel-devicepanel-nbAvis-value">
+                                            <key>maxDigits</key>
+                                            <string/>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-nbAvis-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFSimplePickerList']"-->
+                <dict key="group-DevicePanel-devicepanel-note-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-note-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-note-value">
+                        <key>typeName</key>
+                        <string>MFSimplePickerListCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-note-value">
+                        <key>visible</key>
+                        <false/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-note-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-note-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-note-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-note-value">
+                        <key>configurationName</key>
+                        <string>mfbuttoncell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-note-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="simplePickerListFields"-->
+                            <dict key="DevicePanel-devicepanel-note-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-note-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-note-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-note-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-note-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-note-value">
+                                    <key>typeName</key>
+                                    <string>MFSimplePickerList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-note-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-note-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-note-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-note-value">
+                                    <key>bindingKey</key>
+                                    <string>note</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-note-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-note-value">
+                                        <artificialGroupingForXmlMerge key="enumClassName_parameters_DevicePanel-devicepanel-note-value">
+                                            <key>enumClassName</key>
+                                            <string>MNoteGlobale</string>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-note-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>typeName</key>
+                        <string>DevicePanelAvisItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>configurationName</key>
+                        <string>configurationDevicePanelAvisItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--  used to define the height of this cell => /resources/plist/configuration/conf-[screenName]Cell.plist	  --><artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>noLabel</key>
+                        <false/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>typeName</key>
+                                    <string>MFLabel</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelAvisList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="i18nKey_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>i18nKey</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelAvisList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-MVMDevicePanelAvisList-label">
+                                    <key>cellPropertyBinding</key>
+                                    <string>label</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <dict key="DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>typeName</key>
+                                    <string>MFFixedList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-mVMDevicePanelAvisList-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>editable</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="addItemListener_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>addItemListener</key>
+                                    <string>addItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="deleteItemListener_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>deleteItemListener</key>
+                                    <string>deleteItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editItemListener_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>editItemListener</key>
+                                    <string>editItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>bindingKey</key>
+                                    <string>mVMDevicePanelAvisList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                        <artificialGroupingForXmlMerge key="title_parameters_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                            <key>title</key>
+                                            <string>DevicePanel-devicepanel-MVMDevicePanelAvisList-label</string>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-mVMDevicePanelAvisList-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>fixedList</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <dict key="group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>typeName</key>
+                        <string>DevicePanelOffersItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>configurationName</key>
+                        <string>configurationDevicePanelOffersItemCell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--  used to define the height of this cell => /resources/plist/configuration/conf-[screenName]Cell.plist	  --><artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>noLabel</key>
+                        <false/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                        <key>fields</key>
+                        <array>
+                            <dict key="DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>typeName</key>
+                                    <string>MFLabel</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelOffersList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="i18nKey_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>i18nKey</key>
+                                    <string>DevicePanel-devicepanel-MVMDevicePanelOffersList-label</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-MVMDevicePanelOffersList-label">
+                                    <key>cellPropertyBinding</key>
+                                    <string>label</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                            <dict key="DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>typeName</key>
+                                    <string>MFFixedList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-mVMDevicePanelOffersList-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>mandatory</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>editable</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="addItemListener_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>addItemListener</key>
+                                    <string>addItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="deleteItemListener_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>deleteItemListener</key>
+                                    <string>deleteItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editItemListener_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>editItemListener</key>
+                                    <string>editItemMethod</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>bindingKey</key>
+                                    <string>mVMDevicePanelOffersList</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="parameters_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>parameters</key>
+                                    <dict key="parameters_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                        <artificialGroupingForXmlMerge key="title_parameters_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                            <key>title</key>
+                                            <string>DevicePanel-devicepanel-MVMDevicePanelOffersList-label</string>
+                                        </artificialGroupingForXmlMerge>
+                        </dict>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-mVMDevicePanelOffersList-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>fixedList</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+                <!--template match="subView[customClass='MFTextField']"-->
+                <dict key="group-DevicePanel-devicepanel-presentation-value">
+                    <artificialGroupingForXmlMerge key="classCSS_group-DevicePanel-devicepanel-presentation-value">
+                        <key>classCSS</key>
+                        <string/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="typeName_group-DevicePanel-devicepanel-presentation-value">
+                        <key>typeName</key>
+                        <string>MFTextFieldCell</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="visible_group-DevicePanel-devicepanel-presentation-value">
+                        <key>visible</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="noLabel_group-DevicePanel-devicepanel-presentation-value">
+                        <key>noLabel</key>
+                        <true/>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="name_group-DevicePanel-devicepanel-presentation-value">
+                        <key>name</key>
+                        <string>group-DevicePanel-devicepanel-presentation-value</string>
+                    </artificialGroupingForXmlMerge>
+                <artificialGroupingForXmlMerge key="configurationName_group-DevicePanel-devicepanel-presentation-value">
+                        <key>configurationName</key>
+                        <string>mftextcell</string>
+                    </artificialGroupingForXmlMerge>
+                <!--used to define the height of this cell => /resources/plist/configuration/conf-[configurationName].plist --><artificialGroupingForXmlMerge key="fields_group-DevicePanel-devicepanel-presentation-value">
+                        <key>fields</key>
+                        <array>
+                            <!--template name="textFields"-->
+                            <dict key="DevicePanel-devicepanel-presentation-value">
+                                <artificialGroupingForXmlMerge key="classCSS_DevicePanel-devicepanel-presentation-value">
+                                    <key>classCSS</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="visible_DevicePanel-devicepanel-presentation-value">
+                                    <key>visible</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="configurationName_DevicePanel-devicepanel-presentation-value">
+                                    <key>configurationName</key>
+                                    <string/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="typeName_DevicePanel-devicepanel-presentation-value">
+                                    <key>typeName</key>
+                                    <string>MFTextField</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="name_DevicePanel-devicepanel-presentation-value">
+                                    <key>name</key>
+                                    <string>DevicePanel-devicepanel-presentation-value</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="editable_DevicePanel-devicepanel-presentation-value">
+                                    <key>editable</key>
+                                    <false/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="mandatory_DevicePanel-devicepanel-presentation-value">
+                                    <key>mandatory</key>
+                                    <true/>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="bindingKey_DevicePanel-devicepanel-presentation-value">
+                                    <key>bindingKey</key>
+                                    <string>presentation</string>
+                                </artificialGroupingForXmlMerge>
+                        <artificialGroupingForXmlMerge key="cellPropertyBinding_DevicePanel-devicepanel-presentation-value">
+                                    <key>cellPropertyBinding</key>
+                                    <string>componentView</string>
+                                </artificialGroupingForXmlMerge>
+                    </dict>
+                        </array>
+                    </artificialGroupingForXmlMerge>
+            </dict>
+            </array>
+        </artificialGroupingForXmlMerge>
+    </dict>
+</plist>

@@ -1,0 +1,57 @@
+
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<root n="2" add="toto"> 
+  <testA id="1">unMod</testA>  
+  <testA id="3">deuxSupprEtRempl</testA>
+  <testB idB="3" toto="5"> 
+    <testZZ> 
+      <testH id="1">ajouter</testH> 
+    </testZZ>  
+    <testZZ2> 
+      <testZZ3> 
+        <testQ ref="a">vv</testQ>  
+        <testQ ref="b">vv</testQ>  
+        <testQ ref="c">vv</testQ> 
+      </testZZ3>  
+      <testZZ3> 
+        <testQ ref="b">bbbbbbbbMod</testQ>  
+        <testQ ref="c">cccccccc</testQ>  
+        <testQ ref="d">dddddddd</testQ> 
+      </testZZ3> 
+    </testZZ2>  
+    <testZZ4> 
+      <testH2 id="0"> 
+        <testQ ref="a">aaaaaaaa00</testQ>  
+        <testQ ref="b">bbbbbbbb00</testQ>  
+        <testQ ref="d">dddddddd00</testQ> 
+      </testH2>  
+      <testH2 id="1"> 
+        <testQ ref="a">aaaaaaaa</testQ>  
+        <testQ ref="b">bbbbbbbb</testQ>  
+        <testQ ref="d">ddddddddiiiii</testQ> 
+      </testH2>
+      <testH2 id="3">
+        <testQ ref="a">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</testQ>
+        <testQ ref="b">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</testQ>
+        <testQ ref="c">cccccccccccccccccccccccccccccccc</testQ>
+        <testQ ref="d">dddddddddddddddddddddddddddddddd</testQ>
+      </testH2> 
+    </testZZ4> 
+  </testB> 
+</root>

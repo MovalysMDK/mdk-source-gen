@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!-- <document>
+  <properties>
+    <title/>
+    <author email=.. >
+      <name/>
+    </author>
+  </properties>
+  <body>
+    <release version=.. date=.. description=.. >
+      <action dev=.. due-to=.. due-to-email=.. issue=.. type=.. system=.. date=.. >
+        <action/>
+        <fixes issue=.. />
+        <dueto name=.. email=.. />
+      </action>
+    </release>
+  </body>
+</document>-->
+<document>
+	<body>
+		<release version="4.0.14" date="2011-04-08">
+			<action dev="lmichenaud" type="add">Ajout du test de non-dépassement de la longueur max pour le nommage des tables.</action>
+		</release>	
+		<release version="4.0.13" date="2011-04-08">
+			<action dev="lmichenaud" type="add">Ajout d'une contrainte de longueur spécifique au nom des tables</action>
+		</release>	
+		<release version="4.0.12" date="2011-03-24">
+			
+		</release>		
+		<release version="4.0.11" date="2011-03-24">
+			<action dev="lmichenaud" type="update">Gestion de la documentation localisée.</action>
+		</release>	
+		<release version="4.0.9" date="2010-02-05">
+			<action dev="lmichenaud" type="fix">Le formattage des fichiers n'était pas toujours fait à cause de la comparaison de la
+			dernière date de modification(file.lastModified()). La date de dernière modification n'était pas toujours à jour. 
+			Le fonctionnement a été revu : une liste des fichiers à indenter est maintenant alimenté par chacun des générateurs.</action>
+			<action dev="lmichenaud" type="fix">Correction de la détermination de la regénération ou non.</action>
+		</release>
+		<release version="4.0.8" date="2010-02-04">
+			<action dev="lmichenaud" type="update">Refonte de la rééecriture du fichier indenté.</action>
+			<action dev="lmichenaud" type="add">Ajout d'un test d'indentation</action>
+			<action dev="lmichenaud" type="fix">Mise à jour des règles d'indentation</action>
+		</release>	
+		<release version="4.0.6" date="2010-02-03">
+			<action dev="mmadigand" type="fix">
+				Ajout de la non génération si aucun changement.
+			</action>
+		</release>
+		<release version="4.0.5" date="2010-01-19">
+			<action dev="mmadigand" type="fix">
+				Modification des noms des méthodes de type "delete".
+			</action>
+		</release>
+		<release version="4.0.4" date="2010-01-15">
+			<action dev="mmadigand" type="fix">
+				Déplacement de la création des fichiers DEBUG.
+			</action>
+		</release>
+		<release version="4.0.3" date="2010-01-14">
+			<action dev="mmadigand" type="fix">
+				Correction des répertoires vides.
+			</action>
+		</release>
+		<release version="4.0.2" date="2009-10-16">
+			<action dev="lmichenaud" type="fix">Affichage de l'exception avec le logger Maven quand erreur.</action>
+			<action dev="lmichenaud" type="fix">La désactivation de générateurs ne marchaient pas.</action>
+			<action dev="lmichenaud" type="fix">Correction des LoadMethod</action>
+			<action dev="lmichenaud" type="fix">Correction des répertoires générés en trop</action>
+		</release>	
+		<release version="4.0.1" date="2009-10-16">
+			<action dev="lmichenaud" type="fix">Meilleure gestion des erreurs quand template non trouvé</action>
+		</release>
+		<release version="4.0.0" date="2009-10-14">
+			<action dev="lmichenaud" type="add">version initiale</action>
+		</release>
+	</body>
+</document>

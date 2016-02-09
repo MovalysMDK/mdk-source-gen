@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<!-- Mobile -->
+	<domains>
+		<domain name="mbandroid">
+			<projects replace="true">
+				<project name="app" base-dir="app">
+					<source-dir>src/main/java</source-dir>
+					<assets-dir>src/main/assets</assets-dir>
+					<layout-dir>src/main/res/layout</layout-dir>
+					<string-dir>src/main/res/values</string-dir>
+					<res-dir>src/main/res</res-dir>
+					<android-manifest-file>src/main/AndroidManifest.xml</android-manifest-file>
+					
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.PojoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.PojoImplGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.FactoryGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.FactoryInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.EnumGenerator" />
+
+						<generator class="com.a2a.adjava.generator.impl.DaoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DaoGenerator" />
+																														
+						<generator class="com.a2a.adjava.generator.impl.ViewModelGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ViewModelInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ViewModelCreatorGenerator" />
+						
+						<generator class="com.a2a.adjava.generator.impl.ActionGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ActionInterfaceGenerator" />
+
+						<generator class="com.a2a.adjava.generator.impl.ScreenGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.AdapterGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DialogGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ApplicationInitGenerator" />
+
+					</resource-generators>
+				</project>
+			</projects>
+		</domain>
+	</domains>
+
+</adjava-project>

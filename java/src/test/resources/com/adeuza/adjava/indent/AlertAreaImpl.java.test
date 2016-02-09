@@ -1,0 +1,354 @@
+/**
+ * Ce fichier est utilisé par le test d'indentation. Il est
+ * considéré comme une resource et pas comme un fichier Java
+ * qui doit être compilé.
+ */
+
+package com.adeuza.movalys.fwk.alert.core.dbgen.model;
+
+import java.io.Serializable;
+import com.adeuza.movalys.fwk.core.beans.MIListImpl;
+import java.util.List;
+import java.util.Map;
+
+import com.adeuza.movalys.fwk.core.annotations.RelationInverse;
+import com.adeuza.movalys.fwk.core.beans.AbstractEntity;
+import com.adeuza.movalys.fwk.core.beans.CloneSession;
+import com.adeuza.movalys.fwk.core.beans.CascadeSet;
+import com.adeuza.movalys.fwk.core.beans.CloneException;
+import com.adeuza.movalys.fwk.core.beans.MergeException;
+import com.adeuza.movalys.fwk.core.beans.references.Reference;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
+//@non-generated-start[imports]
+//@non-generated-end
+
+/**
+ * 
+ * <p>Classe : AlertAreaImpl</p>
+ *
+ * 
+ *
+ * <p>Copyright (c) 2009</p>
+ * <p>Company: Adeuza</p>
+ *
+ * @author lmichenaud
+ * @author mmadigand
+ *
+ */
+@SuppressWarnings("serial")
+public class AlertAreaImpl extends AbstractEntity<AlertArea> implements AlertArea, Serializable, Cloneable {
+
+	/**
+	 * 
+	 * 	
+	 * Attribute AREAID
+	 *  type=long mandatory=true
+	 */
+	private long areaId;
+
+	/**
+	 * 
+	 * 
+	 * Cascade ALERTAREA
+	 * @ManyToOne targetEntity=Alert mandatory=true relationOwner=true
+	 */
+	@RelationInverse(name = "area")
+	private Alert alertArea;
+
+	//@non-generated-start[attributes]
+	//@non-generated-end
+
+	/**
+	 * Constructor 
+	 */
+	protected AlertAreaImpl() {
+		this.areaId = -1;
+		this.alertArea = null;
+
+		//@non-generated-start[constructor]
+		//@non-generated-end
+	}
+
+	/** 	
+	 * Attribute AREAID
+	 *  type=long mandatory=true
+	 *
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea#getAreaId()
+	 */
+	public long getAreaId() {
+		return this.areaId;
+	}
+
+	/** 	
+	 * Attribute AREAID
+	 *  type=long mandatory=true
+	 *
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea#setAreaId(long)
+	 */
+	public void setAreaId(long p_lAreaId) {
+		this.onSetterAttribute(AlertArea.ATTRIBUTES.AREAID);
+		this.areaId = p_lAreaId;
+
+	}
+
+	/** 
+	 * Cascade ALERTAREA
+	 * @ManyToOne targetEntity=Alert mandatory=true relationOwner=true
+	 *
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea#getAlertArea()
+	 */
+	public Alert getAlertArea() {
+		return this.alertArea;
+	}
+
+	/** 
+	 * Cascade ALERTAREA	
+	 * @ManyToOne targetEntity=Alert mandatory=true relationOwner=true
+	 *
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea#setAlertArea(com.adeuza.movalys.fwk.alert.core.dbgen.model.Alert)
+	 */
+	public void setAlertArea(Alert p_oAlertArea) {
+		this.onSetter(AlertArea.ATTRIBUTES.ALERTAREA, this.alertArea, p_oAlertArea);
+		this.alertArea = p_oAlertArea;
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.core.beans.MIEntity#idToString()
+	 */
+	public String idToString() {
+		StringBuffer r_sId = new StringBuffer();
+		r_sId.append(String.valueOf(this.areaId));
+		r_sId.append('|');
+		r_sId.append(String.valueOf(this.alertArea.getId()));
+		return r_sId.toString();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.a2a.movalys.fwk.core.beans.MIEntity#startRecordChanges(com.a2a.movalys.fwk.core.beans.CascadeSet)
+	 */
+	@Override
+	public void startRecordChanges(CascadeSet p_oCascadeSet) {
+		super.startRecordChanges(p_oCascadeSet);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea#clone(CascadeSet,CloneSession)
+	 */
+	public AlertArea clone(CascadeSet p_oCascadeSet, CloneSession p_oCloneSession) throws CloneException {
+		AlertArea r_oAlertArea = (AlertArea) p_oCloneSession.getFromCache(AlertArea.ENTITY_NAME, this.idToString());
+		if (r_oAlertArea == null) {
+			try {
+				r_oAlertArea = this.getClass().newInstance();
+				p_oCloneSession.addToCache(AlertArea.ENTITY_NAME, this.idToString(), r_oAlertArea);
+				r_oAlertArea.setAreaId(this.areaId);
+
+				if (this.alertArea != null) {
+					if (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL) || p_oCascadeSet.contains(AlertArea.Cascade.ALERTAREA)) {
+						r_oAlertArea.setAlertArea((Alert) this.alertArea.clone(p_oCascadeSet, p_oCloneSession));
+					} else {
+						Alert oAlert = (Alert) p_oCloneSession.getFromCache(Alert.ENTITY_NAME, this.alertArea.idToString());
+						if (oAlert == null) {
+							oAlert = this.alertArea;
+						}
+						r_oAlertArea.setAlertArea(oAlert);
+					}
+				}
+
+				if (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL_REFERENCES) || p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL)
+						|| p_oCascadeSet.contains(AlertArea.Cascade.REFERENCES)) {
+					for (Reference oReference : this.getReferences()) {
+						r_oAlertArea.addReference(oReference.clone());
+					}
+				}
+
+				//@non-generated-start[clone]
+				//@non-generated-end
+			} catch (InstantiationException e) {
+				throw new CloneException(e);
+			} catch (IllegalAccessException e) {
+				throw new CloneException(e);
+			}
+		}
+		((AbstractEntity<AlertArea>) r_oAlertArea).setUpdatedAttributes(this.updatedAttributes);
+		if (this.isRecordChanges()) {
+			r_oAlertArea.startRecordChanges();
+		}
+		return r_oAlertArea;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.core.beans.MIEntity#mergeWith(java.lang.Object)
+	 */
+	@Override
+	public void mergeWith(AlertArea p_oAlertArea, CascadeSet p_oCascadeSet) throws MergeException {
+		if (p_oAlertArea.isAttributeUpdated(AlertArea.ATTRIBUTES.AREAID)) {
+			this.setAreaId(p_oAlertArea.getAreaId());
+		}
+		if (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL_REFERENCES) || p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL)
+				|| p_oCascadeSet.contains(AlertArea.Cascade.REFERENCES)) {
+			for (Reference oReference : p_oAlertArea.getReferences()) {
+				this.addReference(oReference);
+			}
+		}
+
+		// #1 Détection écrasement
+		if (p_oAlertArea.isAttributeUpdated(AlertArea.ATTRIBUTES.ALERTAREA)) {
+			if (this.getAlertArea() != null && p_oAlertArea.getAlertArea() != null && this.getAlertArea().equals(p_oAlertArea.getAlertArea())
+					&& (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL) || p_oCascadeSet.contains(AlertArea.Cascade.ALERTAREA))) {
+				// #1.1 Object identiques (même ID) et Cascade : on remplace par un mergeWith
+				this.getAlertArea().mergeWith(p_oAlertArea.getAlertArea(), p_oCascadeSet);
+			} else if (this.getAlertArea() != null && p_oAlertArea.getAlertArea() != null && this.getAlertArea().equals(p_oAlertArea.getAlertArea())
+					&& !(p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL) || p_oCascadeSet.contains(AlertArea.Cascade.ALERTAREA))) {
+				// #1.2 Object identiques (même ID) et non Cascade : Rien
+			} else {
+				// #1.3 Objets différents
+				this.setAlertArea(p_oAlertArea.getAlertArea());
+			}
+			// #2 mergeWith demandé avec cascades (sur objets non-null)
+		} else {
+			if (this.getAlertArea() != null && p_oAlertArea.getAlertArea() != null && this.getAlertArea().equals(p_oAlertArea.getAlertArea())
+					&& (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL) || p_oCascadeSet.contains(AlertArea.Cascade.ALERTAREA))) {
+				// #2.1 Object identiques (même ID) et Cascade : on remplace par un mergeWith
+				this.getAlertArea().mergeWith(p_oAlertArea.getAlertArea(), p_oCascadeSet);
+			} else if (this.getAlertArea() != null && p_oAlertArea.getAlertArea() != null && !this.getAlertArea().equals(p_oAlertArea.getAlertArea())
+					&& (p_oCascadeSet.contains(CascadeSet.GenericCascade.ALL) || p_oCascadeSet.contains(AlertArea.Cascade.ALERTAREA))) {
+				// #2.2 Object non Identiques (ID différent) et Cascade : MergeException
+				throw new MergeException(
+						"Cas incohérent : vous demandez un merge pour une relation to-one sur des objets d'id différents (cascade AlertArea.Cascade.ALERTAREA) ");
+			} // else #2.3 Non Cascade Rien
+		}
+		//@non-generated-start[mergeWith]
+		//@non-generated-end
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.core.beans.MIEntity#equalsFull(java.lang.Object)
+	 */
+	@Override
+	public boolean equalsFull(Object p_oObject) {
+		boolean r_bEquals = true;
+		if (this != p_oObject) {
+			if (p_oObject instanceof AlertArea) {
+				AlertArea oAlertArea = (AlertArea) p_oObject;
+				EqualsBuilder oEqualsBuilder = new EqualsBuilder();
+				oEqualsBuilder.append(this.areaId, oAlertArea.getAreaId());
+				boolean bAreAssociationsValide = true;
+
+				if (bAreAssociationsValide) {
+					if (this.alertArea != null && oAlertArea.getAlertArea() != null) {
+						oEqualsBuilder.append(this.alertArea.getId(), oAlertArea.getAlertArea().getId());
+					} else {
+						throw new IllegalStateException("L'entité n'est pas valide. L'association 'alertArea' doit être valuée.");
+					}
+				}
+				//@non-generated-start[equals]
+				//@non-generated-end
+				if (bAreAssociationsValide) {
+					r_bEquals = oEqualsBuilder.isEquals();
+				} else {
+					r_bEquals = false;
+				}
+			} else {
+				r_bEquals = false;
+			}
+		}
+		return r_bEquals;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object p_oObject) {
+		boolean r_bEquals = true;
+		if (this != p_oObject) {
+			if (p_oObject instanceof AlertArea) {
+				AlertArea oAlertArea = (AlertArea) p_oObject;
+				EqualsBuilder oEqualsBuilder = new EqualsBuilder();
+				//@non-generated-start[equals-startbuild]
+				//@non-generated-end
+				oEqualsBuilder.append(this.areaId, oAlertArea.getAreaId());
+				if (this.alertArea != null && oAlertArea.getAlertArea() != null) {
+					oEqualsBuilder.append(this.alertArea.getId(), oAlertArea.getAlertArea().getId());
+				} else {
+					throw new IllegalStateException("L'entité n'est pas valide. L'association 'alertArea' doit être valuée.");
+				}
+
+				//@non-generated-start[equals-endbuild]
+				//@non-generated-end				
+				r_bEquals = oEqualsBuilder.isEquals();
+			} else {
+				r_bEquals = false;
+			}
+		}
+		return r_bEquals;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		HashCodeBuilder oHashCodeBuilder = new HashCodeBuilder();
+		oHashCodeBuilder.append(this.areaId);
+		if (this.alertArea != null) {
+			oHashCodeBuilder.append(this.alertArea.getId());
+		} else {
+			oHashCodeBuilder.append(-1);
+		}
+		//@non-generated-start[hashCode]
+		//@non-generated-end
+		return oHashCodeBuilder.toHashCode();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.adeuza.movalys.fwk.core.beans.MIEntity#hashCodeByKey()
+	 */
+	@Override
+	public int hashCodeByKey() {
+		HashCodeBuilder oHashCodeBuilder = new HashCodeBuilder();
+		//@non-generated-start[hashCodeByKey-startbuild]
+		//@non-generated-end
+		oHashCodeBuilder.append(this.areaId);
+		if (this.alertArea != null) {
+			oHashCodeBuilder.append(this.alertArea.getId());
+		} else {
+			oHashCodeBuilder.append(-1);
+		}
+
+		//@non-generated-start[hashCodeByKey-endbuild]
+		//@non-generated-end
+		return oHashCodeBuilder.toHashCode();
+	}
+
+	//@non-generated-start[methods]
+	//@non-generated-end
+}

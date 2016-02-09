@@ -1,0 +1,174 @@
+package com.adeuza.movalys.fwk.alert.core.dbgen.model;
+
+import com.adeuza.movalys.fwk.core.beans.MIEntity ;
+
+
+import com.adeuza.movalys.fwk.core.annotations.Public ;
+import com.adeuza.movalys.fwk.core.beans.ICascade;
+import com.adeuza.movalys.fwk.core.beans.IAttribute;
+import com.adeuza.movalys.fwk.core.beans.CloneSession;
+import com.adeuza.movalys.fwk.core.beans.CloneException;
+import com.adeuza.movalys.fwk.core.beans.CascadeSet;
+import com.adeuza.movalys.fwk.core.beans.MergeException;
+import com.adeuza.movalys.fwk.core.beans.loadmethod.LoadMethod;
+
+
+//@non-generated-start[imports]
+//@non-generated-end
+
+/**
+ * 
+ * <p>Interface : AlertArea</p>
+ *
+ * 
+ * 
+ * 
+ *
+ * <p>Copyright (c) 2010</p>
+ * <p>Company: Adeuza</p>
+ *
+ */
+@Public
+public interface AlertArea extends MIEntity
+//@non-generated-start[class-signature]
+//@non-generated-end
+{
+
+	/**
+	 * Constante indiquant le nom de l'entité
+	 */
+	@Public
+	public static final String ENTITY_NAME = "AlertArea";
+ 
+	/**
+	 * Enumération de la cascade
+	 */
+	@Public
+	public enum Cascade implements ICascade {
+		/**
+		 * Cascade NOT_DYN
+		 */
+		NOT_DYN,
+		/**
+		 * Cascade REFERENCES
+		 */
+		REFERENCES,
+		/**
+		 * <p>Cascade ALERTAREA</p>
+		 * <p>Relation ManyToOne</p><p> targetEntity=Alert mandatory=true relationOwner=true</p>
+		 */
+		ALERTAREA
+	}
+
+	/**
+	 * Enumération des attributs
+	 */
+	@Public
+	public enum ATTRIBUTES implements IAttribute {
+		/**
+		 * <p>Attribute AREAID</p>
+		 * <p> type=long mandatory=true</p>
+		 */
+		AREAID,
+		/**
+		 * Attribute ALERTAREA
+		 * 
+		 */
+		ALERTAREA
+//@non-generated-start[attributes]
+//@non-generated-end
+	}
+
+	
+	/**
+	* 
+	*
+	* <p>Attribute AREAID</p>
+ 	* <p> type=long mandatory=true</p>
+	 *
+	 * @return une entité long correspondant à la valeur de l'attribut areaId
+	 */
+	@Public
+	public long getAreaId() ;
+
+	/**
+	 * 
+	 *
+	 * <p>Attribute AREAID</p>
+ 	 * <p> type=long mandatory=true</p>
+	 *
+	 * @param p_lAreaId la valeur à affecter à l'attribut areaId
+	 *
+	 */
+	@Public
+	public void setAreaId( long p_lAreaId ) ;
+	
+	/**
+	 * <p>Cascade ALERTAREA</p>
+	 * <p>Relation ManyToOne</p><p> targetEntity=Alert mandatory=true relationOwner=true</p>
+	 *
+	 * @return une entité Alert correspondant à la valeur de l'association alertArea
+	 */
+	@Public
+	public Alert getAlertArea() ;
+
+	/**
+	 * <p>Cascade ALERTAREA</p>
+	 * <p>Relation ManyToOne</p><p> targetEntity=Alert mandatory=true relationOwner=true</p>
+	 *
+	 * @param p_oAlertArea la valeur à affecter à l'association alertArea
+	 *
+	 */
+	@Public
+	public void setAlertArea( Alert p_oAlertArea ) ;
+	
+	
+	
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Public	 
+	public com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea clone() throws CloneNotSupportedException ;
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Public	 
+	public com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea clone(CascadeSet p_oCascadeSet) throws CloneException ;
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Public	 
+	public com.adeuza.movalys.fwk.alert.core.dbgen.model.AlertArea clone(CascadeSet p_oCascadeSet, CloneSession p_oCloneSession) throws CloneException;
+	
+	/**
+	 * Merge les modifications sur l'objet passé en paramètre
+	 * 
+	 * @param  p_oAlertArea object avec lequel il faut faire le merge
+	 *
+	 * @throws MergeException déclenchée si une erreur de merge survient
+	 *
+	 * com.adeuza.movalys.fwk.core.beans.MIEntity#privateMergeWith(com.adeuza.movalys.fwk.core.beans.MIEntity)
+	 */
+	public void mergeWith(AlertArea p_oAlertArea) throws MergeException ;
+	
+	/**
+	 * Merge avec l'objet passé en paramètre
+	 *
+	 * @param p_oAlertArea object avec lequel il faut faire le merge
+	 * @param p_oCascadeSet ensemble de Cascades sur les entités
+	 *
+	 * @throws MergeException déclenchée si une erreur de merge survient
+	 */
+	public void mergeWith(AlertArea p_oAlertArea, CascadeSet p_oCascadeSet) throws MergeException ;
+	
+	
+	
+	
+	
+//@non-generated-start[methods]
+//@non-generated-end
+}
+	

@@ -1,0 +1,31 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tests>
+	<testA id="3">testAValue</testA>
+	<testAA id="4">testAAValueMod</testAA>
+	<testB idB="1">testBValueMod</testB>
+	<testF idF="toto">testFValue</testF>
+	<testD idD="3">
+		<testE idE="5" b="c">testEValueAC</testE>
+		<testE idE="6" t="dMod" b="e">testEValueDE</testE>
+		<testE idE="7" t="f">testEValueFG</testE>
+	</testD>
+	<testH id="5">testHValue</testH>
+	<testHH idH="g">testHHValue</testHH>
+	<testGG id="6"><testG idG="titi" z="2">testGValueMod</testG></testGG>
+</tests>

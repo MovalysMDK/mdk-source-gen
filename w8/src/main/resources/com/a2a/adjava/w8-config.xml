@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<languages>
+		<language name="w8">
+			<typedescription-factory>com.a2a.adjava.languages.w8.project.W8TypeDescriptionFactory</typedescription-factory>
+			<ui-typedescription-factory>com.a2a.adjava.languages.w8.project.W8UITypeDescriptionFactory</ui-typedescription-factory>
+
+			<interfaces>
+				<prefix-naming>I</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>Model</sub-package-name>
+			</interfaces>
+
+			<implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>Model</sub-package-name>
+			</implementation>
+			
+			<pojo-factory-interfaces>
+				<prefix-naming>I</prefix-naming>
+				<suffix-naming>Factory</suffix-naming>
+				<sub-package-name></sub-package-name>
+			</pojo-factory-interfaces>
+
+			<pojo-factory-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Factory</suffix-naming>
+				<sub-package-name></sub-package-name>
+			</pojo-factory-implementation>
+			
+			<enum>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Enum</suffix-naming>
+				<sub-package-name>Model</sub-package-name>
+			</enum>
+			
+			<dao>
+				<prefix-naming>I</prefix-naming>
+				<suffix-naming>Dao</suffix-naming>
+				<sub-package-name>Dao</sub-package-name>
+			</dao>
+
+			<dao-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Dao</suffix-naming>
+				<sub-package-name>Dao</sub-package-name>
+			</dao-implementation>
+			
+			<viewmodel-interface>
+				<prefix-naming>IVM</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>ViewModel</sub-package-name>
+			</viewmodel-interface>
+
+			<viewmodel-implementation>
+				<prefix-naming>VM</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>ViewModel</sub-package-name>
+			</viewmodel-implementation>
+
+			<section-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>View</sub-package-name>
+			</section-implementation>
+			
+			<dataloader-name>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Dataloader</suffix-naming>
+				<sub-package-name>View</sub-package-name>
+			</dataloader-name>
+									
+			<action-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Action</suffix-naming>
+				<sub-package-name>Action</sub-package-name>
+			</action-implementation>
+
+			<action-interface>
+				<prefix-naming>I</prefix-naming>
+				<suffix-naming>Action</suffix-naming>
+				<sub-package-name>Action</sub-package-name>
+			</action-interface>
+			
+			<types>
+				<type>
+					<uml-type>int</uml-type>
+					<language-type>int</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Integer</uml-type>
+					<language-type>Int32</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>long</uml-type>
+					<language-type>long</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Long</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Long</uml-type>
+					<language-type>Int64</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				
+				<type>
+					<uml-type>char</uml-type>
+					<language-type>char</language-type>
+					<init-format>'?'</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>c</variable-prefix>
+					<parameter-prefix>p_c</parameter-prefix>
+					<return-prefix>r_c</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Character</wrapper>
+					<default-options>_L1</default-options>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<edit-type>text</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>String</uml-type>
+					<language-type>String</language-type>
+					<init-format>"?"</init-format>
+					<default-value></default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<default-ui-type>Text</default-ui-type>
+					<coredata-type>String</coredata-type>
+				</type>
+				<type>
+					<uml-type>double</uml-type>
+					<language-type>double</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>double</wrapper>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>UIDouble</default-ui-type>
+					<coredata-type>double</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Double</uml-type>
+					<language-type>double</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>UIDouble</default-ui-type>
+					<coredata-type>Double</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				
+				<type>
+					<uml-type>Timestamp</uml-type>
+					<language-type>DateTime</language-type>
+					<init-format>?</init-format>
+					<default-value>DateTime.Now</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>DATE</data-type>
+					<coredata-type>Date</coredata-type>
+					<default-ui-type>DateTime</default-ui-type>
+				</type>
+				
+				<type>
+					<uml-type>boolean</uml-type>
+					<language-type>bool</language-type>
+					<init-format>?</init-format>
+					<default-value>false</default-value>
+					<variable-prefix/>
+					<parameter-prefix/>
+					<return-prefix/>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Boolean</wrapper>
+					<default-options>_P1_S0</default-options>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<coredata-type>Boolean</coredata-type>					
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Boolean</uml-type>
+					<language-type>Boolean</language-type>
+					<init-format>?</init-format>
+					<default-value>false</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P1_S0</default-options>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<coredata-type>Boolean</coredata-type>					
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>System.Convert.ToString(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				
+				<type>
+					<uml-type>enumeration</uml-type>
+					<language-type>enumeration</language-type>
+					<init-format>?</init-format>
+					<default-value>ENUMERATION.FWK_NONE</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P10_S0</default-options>
+					<sql-type>NUMBER(10,0)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<coredata-type>Integer 16</coredata-type>
+					<default-ui-type>RadioGroup</default-ui-type>
+				</type>
+				
+				<type>
+					<uml-type>Object</uml-type>
+					<language-type>Object</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+				
+				<type>
+					<uml-type>List</uml-type>
+					<language-type><![CDATA[ List<__T__> ]]></language-type>
+					<init-format>?</init-format>
+					<default-value><![CDATA[ new List<__T__>(MFConstantes.Capacities.LIST_LOW_CAPACITY) ]]></default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+			</types>
+
+			<null-value>null</null-value>
+			
+			<non-generated>
+				<start-marker>//\s*@non-generated-start\s*\[([^\]]*)\](.*)</start-marker>
+				<end-marker>//\s*@non-generated-end</end-marker>
+			</non-generated>
+		</language>
+	</languages>
+	<domains>
+		<domain name="w8" class="com.adeuza.movalysfwk.mf4mdd.w8.xmodele.MF4WDomain">
+			<template>/com/adeuza/adjava/mb/templates</template>
+			<file-encoding>UTF-8</file-encoding>
+			<xmodele-factory>com.adeuza.movalysfwk.mf4mdd.w8.xmodele.MF4WModelFactory
+			</xmodele-factory>
+			<language-ref>w8</language-ref>
+			<code-formatters>
+				<code-formatter class="com.a2a.adjava.languages.w8.codeformatters.CSharpCodeFormatter" />
+				<code-formatter class="com.a2a.adjava.generator.codeformatters.XmlCodeFormatter">
+					<property name="lineWidth" value="40"/>
+				</code-formatter>
+			</code-formatters>
+		</domain>
+	</domains>
+</adjava-project>

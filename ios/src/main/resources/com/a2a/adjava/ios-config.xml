@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<languages>
+		<language name="ios">
+			<typedescription-factory>com.a2a.adjava.languages.ios.project.IOSTypeDescriptionFactory
+			</typedescription-factory>
+			<ui-typedescription-factory>com.a2a.adjava.languages.ios.project.IOSUITypeDescriptionFactory</ui-typedescription-factory>
+
+			<interfaces>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</interfaces>
+
+			<implementation>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</implementation>
+			
+			<pojo-factory-interfaces>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>+Factory</suffix-naming>
+				<sub-package-name>model.factory</sub-package-name>
+			</pojo-factory-interfaces>
+
+			<pojo-factory-implementation>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>+Factory</suffix-naming>
+				<sub-package-name>model.factory</sub-package-name>
+			</pojo-factory-implementation>			
+			
+			<enum>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</enum>
+			
+			<dao>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>+Dao</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao>
+
+			<dao-implementation>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>+Dao</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao-implementation>
+			
+			<viewmodel-interface>
+				<prefix-naming>MVM</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>viewmodel</sub-package-name>
+			</viewmodel-interface>
+
+			<viewmodel-implementation>
+				<prefix-naming>MVM</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>viewmodel</sub-package-name>
+			</viewmodel-implementation>
+			
+			<action-implementation>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>Action</suffix-naming>
+				<sub-package-name>action</sub-package-name>
+			</action-implementation>
+
+			<action-interface>
+				<prefix-naming>M</prefix-naming>
+				<suffix-naming>Action</suffix-naming>
+				<sub-package-name>action</sub-package-name>
+			</action-interface>
+			
+			<types>
+				<type>
+					<uml-type>int</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Integer</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>long</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Long</wrapper>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Long</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<unsaved-value>@-1</unsaved-value>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>UIInteger</default-ui-type>
+					<coredata-type>Integer 32</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>String</uml-type>
+					<language-type>NSString</language-type>
+					<init-format>@"?"</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<data-type>ALPHANUMERIC</data-type>
+					<default-ui-type>Text</default-ui-type>
+					<coredata-type>String</coredata-type>
+				</type>
+				<type>
+					<uml-type>double</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Double</wrapper>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>UIDouble</default-ui-type>
+					<coredata-type>Double</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Double</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>@?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>UIDouble</default-ui-type>
+					<coredata-type>Double</coredata-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				
+				<type>
+					<uml-type>Timestamp</uml-type>
+					<language-type>NSDate</language-type>
+					<init-format>?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<data-type>DATE</data-type>
+					<coredata-type>Date</coredata-type>
+					<default-ui-type>DateTime</default-ui-type>
+				</type>
+				
+				<type>
+					<uml-type>boolean</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>?</init-format>
+					<default-value>NO</default-value>
+					<variable-prefix/>
+					<parameter-prefix/>
+					<return-prefix/>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<wrapper>Boolean</wrapper>
+					<default-options>_P1_S0</default-options>
+					<data-type>NUMERIC</data-type>
+					<coredata-type>Boolean</coredata-type>					
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Boolean</uml-type>
+					<language-type>NSNumber</language-type>
+					<init-format>?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P1_S0</default-options>
+					<data-type>NUMERIC</data-type>
+					<coredata-type>Boolean</coredata-type>					
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>[VALUE stringValue]</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+				
+				<type>
+					<uml-type>enumeration</uml-type>
+					<language-type>enumeration</language-type>
+					<init-format>?</init-format>
+					<default-value>ENUMERATIONUPPERCASE_NONE</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<default-options>_P10_S0</default-options>
+					<data-type>ALPHANUMERIC</data-type>
+					<coredata-type>Integer 16</coredata-type>
+					<default-ui-type>RadioGroup</default-ui-type>
+				</type>
+				
+				<type>
+					<uml-type>Object</uml-type>
+					<language-type>NSObject</language-type>
+					<init-format>?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+				
+				<type>
+					<uml-type>List</uml-type>
+					<language-type>NSOrderedSet</language-type>
+					<init-format>?</init-format>
+					<default-value>nil</default-value>
+					<variable-prefix></variable-prefix>
+					<parameter-prefix></parameter-prefix>
+					<return-prefix></return-prefix>
+					<get-accessor-prefix></get-accessor-prefix>
+					<set-accessor-prefix></set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+			</types>
+
+			<null-value>nil</null-value>
+			
+			<non-generated>
+				<start-marker>//\s*@non-generated-start\s*\[([^\]]*)\](.*)</start-marker>
+				<end-marker>//\s*@non-generated-end</end-marker>
+			</non-generated>
+		</language>
+	</languages>
+
+</adjava-project>

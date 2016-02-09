@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sopragroup.com" xmlns="http://www.sopragroup.com" elementFormDefault="qualified">
+	<xs:element name="configuration">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="node" minOccurs="1" maxOccurs="unbounded">
+	      	  <xs:complexType>
+			    <xs:attribute name="name" type="xs:string" use="required"/>
+			    <xs:attribute name="idAttribute" type="xs:string" use="optional"/>
+			    <xs:attribute name="identificationType" type="identificationTypeType" use="required"/>
+			    <xs:attribute name="content" type="contentType" use="optional"/>	      	  
+		      </xs:complexType>
+	      </xs:element>
+	    </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+
+
+<xs:simpleType name="identificationTypeType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="root"/>
+    <xs:enumeration value="name"/>
+    <xs:enumeration value="name+attr"/>
+    <xs:enumeration value="parent+name"/>
+    <xs:enumeration value="parent+name+attr"/>
+    <xs:enumeration value="parent+name+attr|value"/>
+  </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="contentType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="none"/>
+    <xs:enumeration value="children"/>
+    <xs:enumeration value="text"/>
+    <xs:enumeration value="text+children"/>
+  </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

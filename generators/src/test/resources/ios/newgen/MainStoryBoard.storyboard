@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ohz-YO-Bmz">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="w7V-wC-YLZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="ohz-YO-Bmz" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5V-B5-n9u">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="3pO-If-BgU">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="1GI-O8-3Gr" kind="relationship" relationship="rootViewController" id="0fG-et-R5H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhN-dC-2Du" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="104"/>
+        </scene>
+        <!--Main View Controller - Crisper Humidity Guide-->
+        <scene sceneID="4Qz-uu-rjD">
+            <objects>
+                <viewController id="1GI-O8-3Gr" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DQd-6E-T3R">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" id="Jcu-R8-yu9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qwz-4X-DB4">
+                                <rect key="frame" x="50" y="292" width="220" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button3.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInfoLow:" destination="1GI-O8-3Gr" eventType="touchUpInside" id="thz-mK-YOP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ibJ-gY-zoi">
+                                <rect key="frame" x="50" y="108" width="220" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button1.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInfoHigh:" destination="1GI-O8-3Gr" eventType="touchUpInside" id="1cE-fv-fef"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qnQ-8L-F3d">
+                                <rect key="frame" x="50" y="196" width="220" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInfoMedium:" destination="1GI-O8-3Gr" eventType="touchUpInside" id="EC1-pt-ZAA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crisper Guide" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JNy-42-1WK">
+                                <rect key="frame" x="107" y="79" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UDS-i2-9RB">
+                                <rect key="frame" x="99" y="20" width="123" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems>
+                        <barButtonItem title="Connections" id="yy7-2F-hOe">
+                            <connections>
+                                <segue destination="ftX-3r-DNO" kind="push" id="5Lx-Oq-dgF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Info" id="EMi-fe-P5l">
+                            <connections>
+                                <segue destination="eYq-ge-5lo" kind="push" id="EZP-pr-kwE"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Crisper Humidity Guide" id="T9w-i3-m4C"/>
+                    <connections>
+                        <outlet property="humidityValue" destination="UDS-i2-9RB" id="1zs-64-bXj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9i-g1-Zin" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147" y="104"/>
+        </scene>
+        <!--Info View Controller - Info-->
+        <scene sceneID="JMy-so-PBb">
+            <objects>
+                <viewController id="eYq-ge-5lo" customClass="InfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6h-Wq-4q1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="0kS-F9-jJh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eYq-ge-5lo" id="3gf-XB-55s"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Info" id="98I-Wo-h9U"/>
+                    <connections>
+                        <!--  outlet property="infoView" destination="0kS-F9-jJh" id="djX-0Q-d5A"/-->
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHf-VY-crn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627" y="687"/>
+        </scene>
+        <!--Connection View Controller-->
+        <scene sceneID="ni9-Jd-zJb">
+            <objects>
+                <viewController id="ftX-3r-DNO" customClass="ConnectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kse-4W-7QF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jtJ-B7-ePg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ftX-3r-DNO" id="7gR-f2-hMS"/>
+                                    <outlet property="delegate" destination="ftX-3r-DNO" id="ZZu-fS-fon"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems>
+                        <barButtonItem title="Start Scan" id="uOw-f1-vns">
+                            <connections>
+                                <action selector="startScan:" destination="ftX-3r-DNO" id="AmJ-dN-WIo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Stop Scan" id="3mN-RR-vGw">
+                            <connections>
+                                <action selector="stopScan:" destination="ftX-3r-DNO" id="evE-6g-3uC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Disconnect" id="2V4-Hm-ic2">
+                            <connections>
+                                <action selector="disconnect:" destination="ftX-3r-DNO" id="cH7-ne-pEu"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Qod-GF-N2z"/>
+                    <connections>
+                        <outlet property="droneList" destination="jtJ-B7-ePg" id="yaK-e9-7Bx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6a-nE-uzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg.png" width="1376" height="1830"/>
+        <image name="button1.png" width="621" height="205"/>
+        <image name="button2.png" width="621" height="205"/>
+        <image name="button3.png" width="621" height="205"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

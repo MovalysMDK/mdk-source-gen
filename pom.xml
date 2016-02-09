@@ -1,0 +1,203 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.adeuza</groupId>
+	<artifactId>adjava</artifactId>
+	<packaging>pom</packaging>
+	<name>Adjava</name>
+	<version>6.6.0-SNAPSHOT</version>
+	<inceptionYear>2009</inceptionYear>
+	<description>Générateur de code Adjava</description>
+
+	<organization>
+		<name>Sopra Steria Group</name>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>GNU LGPL 3</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<scm>
+		<connection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/branches/6.6/</connection>
+		<developerConnection>scm:svn:http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/adjava/branches/6.6/</developerConnection>
+		<url>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/</url>
+	</scm>
+	<modules>
+		<module>commons</module>
+		<module>xmi</module>
+		<module>uml</module>
+		<module>xmodele</module>
+		<module>uml2xmodele</module>
+		<module>schema</module>
+		<module>xmodele2schema</module>
+		<module>generators</module>
+		<module>maven-plugin</module>
+		<module>java</module>
+		<module>android</module>
+		<module>w8</module>
+		<module>ios</module>
+		<module>html5</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${compileSource}</source>
+					<target>${compileSource}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<!-- 2.2.2 is bugged: http://jira.codehaus.org/browse/MRELEASE-724 -->
+				<version>2.2.1</version>
+				<configuration>
+					<tagNameFormat>@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+			<plugin>
+			   <groupId>com.mycila</groupId>
+			   <artifactId>license-maven-plugin</artifactId>
+			   <version>2.8</version>
+			   <configuration>
+				   <includes>
+			           <include>**/*.java</include>
+			           <include>**/pom.xml</include>
+			           <include>**/*.xml</include>
+			       </includes>
+				   <aggregate>true</aggregate>
+			       <header>licence_template.txt</header>
+			       <properties>
+			            <owner>Sopra Steria Group</owner>
+			            <email>movalys.support@soprasteria.com</email>
+			            <year>2010</year>
+			            <project.name>Movalys MDK</project.name>
+			       </properties>
+			   </configuration>
+			   <executions>
+			      <execution>
+					  <id>format-licence</id>
+					  <phase>verify</phase>
+			          <goals>
+			              <goal>format</goal>
+			          </goals>
+			      </execution>
+			  </executions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>1.6.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-exec</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.6.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>1.6.6</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>2.2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>jaxen</groupId>
+				<artifactId>jaxen</artifactId>
+				<version>1.1.1</version>
+				<exclusions>
+					<exclusion>
+						<groupId>xom</groupId>
+						<artifactId>xom</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>jdom</groupId>
+						<artifactId>jdom</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<distributionManagement>
+		<repository>
+	   		<id>prj-mdk-releases</id>
+    		<url>http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-releases</url>
+  		</repository>
+		<snapshotRepository>
+			<id>prj-mdk-snapshots</id>
+			<url>http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compileSource>1.7</compileSource>
+		<target>1.7</target>
+	</properties>
+</project>

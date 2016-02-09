@@ -1,0 +1,160 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!-- This XML file is to open with the Eclipse plugin "Rinzo"-->
+<configuration xmlns="http://www.sopragroup.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.sopragroup.com ../xmlMerge.xsd">
+	<node name="document"						identificationType="root" 											content="children"	/>
+	<node name="resources" 						identificationType="name"											content="children"	/>
+	<node name="dependencies"					identificationType="name" 											content="children"	/>
+	<node name="plugIn" 						identificationType="name+attr"			idAttribute="identifier"	content="none"		/>
+	<node name="deployment" 					identificationType="name"											content="none"		/>
+	<node name="scenes" 						identificationType="name" 											content="children"	/>
+	<node name="scene" 							identificationType="name+attr"			idAttribute="sceneID"		content="children"	/>
+	<node name="objects"						identificationType="parent+name"									content="children"	/>
+	<node name="viewController" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="view" 							identificationType="parent+name+attr"	idAttribute="id"			content="children"	/>
+	<node name="rect" 							identificationType="parent+name"									content="none"		/>
+	<node name="autoresizingMask" 				identificationType="parent+name"									content="none"		/>
+	<node name="tableView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="color" 							identificationType="parent+name+attr"	idAttribute="key" 			content="none"		/>
+	<node name="prototypes"						identificationType="parent+name"									content="children"	/>
+	<node name="tableViewCell"					identificationType="parent+name+attr"			idAttribute="reuseIdentifier" 			content="children"	/>
+	<node name="subviews" 						identificationType="parent+name"									content="children"	/>
+	<node name="constraints" 					identificationType="parent+name"									content="children"	/>
+	<node name="constraint" 					identificationType="parent+name+attr"	idAttribute="firstItem|secondItem|firstAttribute|secondAttribute|relation"	content="none"		/>
+	<node name="fontDescription" 				identificationType="parent+name"									content="none"		/>
+	<node name="connections" 					identificationType="parent+name"									content="children"	/>
+	<node name="outlet" 						identificationType="parent+name+attr"	idAttribute="property|destination"			content="none"		/>
+	<node name="outletCollection"				identificationType="parent+name+attr"	idAttribute="property|destination"			content="none"		/>
+	<node name="userDefinedRuntimeAttributes" 	identificationType="parent+name"									content="children"	/>
+	<node name="userDefinedRuntimeAttribute"  	identificationType="parent+name+attr"	idAttribute="keyPath" 		content="children"	/>
+	<node name="integer"  						identificationType="parent+name+attr"	idAttribute="key" 			content="none"		/>
+	<node name="real"	  						identificationType="parent+name+attr"	idAttribute="key" 			content="none"		/>
+	<node name="placeholder" 					identificationType="parent+name+attr"	idAttribute="placeholderIdentifier"			content="none"		/>
+	<node name="point" 							identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="freeformSimulatedSizeMetrics" 	identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="simulatedMetricsContainer" 		identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="scrollView" 		 			identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="simulatedStatusBarMetrics" 		identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="simulatedOrientationMetrics" 	identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="simulatedScreenMetrics" 		identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="button" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="pickerView" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="label" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="state" 							identificationType="parent+name+attr"	idAttribute="key" 			content="children"	/>
+	<node name="action" 						identificationType="name+attr"			idAttribute="id"			content="none"		/>
+	<node name="navigationItem" 				identificationType="name+attr"			idAttribute="id"			content="none"		/>
+	<node name="navigationController" 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="navigationBar" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="extendedEdge" 					identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="segue" 							identificationType="name+attr"			idAttribute="id"			content="none"		/>
+	<node name="classes" 						identificationType="name"											content="children"	/>
+	<node name="class" 							identificationType="name+attr"			idAttribute="className"		content="none"		/>
+	<node name="source" 						identificationType="parent+name"									content="none"		/>
+	<node name="relationships" 					identificationType="parent+name"									content="children"	/>
+	<node name="relationship" 					identificationType="parent+name"									content="none"		/>
+	<node name="imageView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="webView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="nil"		 					identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="toolbar"			 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="items"			 				identificationType="parent+name"											content="children"	/>
+	<node name="toolbarItems"		 			identificationType="parent+name"									content="children"	/>
+	<node name="barButtonItem"		 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="image"		 					identificationType="name+attr"			idAttribute="name"			content="none"		/>
+	<node name="layoutGuides"		 			identificationType="parent+name"									content="children"	/>
+	<node name="viewControllerLayoutGuide"		identificationType="name+attr"			idAttribute="id"			content="none"		/>
+	<node name="slider"							identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="textField"						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="textInputTraits"				identificationType="parent+name"									content="none"		/>
+	<node name="activityIndicatorView"			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="size"							identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="inset"							identificationType="parent+name"									content="none"		/>
+	<node name="cells"							identificationType="parent+name"									content="children"	/>
+	<node name="tableViewCellContentView"		identificationType="parent+name"									content="children"	/>
+	<node name="attributedString"				identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="fragment"						identificationType="parent+name"									content="children"	/>
+	<node name="string"							identificationType="parent+name+attr"	idAttribute="key"			content="text"	/>
+	<node name="attributes"						identificationType="parent+name"									content="children"	/>
+	<node name="font"							identificationType="parent+name+attr"	idAttribute="key"			content="none"	/>
+	<node name="paragraphStyle"					identificationType="parent+name+attr"	idAttribute="key"			content="none"	/>
+	<node name="containerView"					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="simulatedNavigationBarMetrics"	identificationType="parent+name"										content="none"	/>
+	<node name="accessibility" 					identificationType="parent+name"									content="children"	/>
+	<node name="textAttributes" 				identificationType="parent+name"									content="children"	/>
+	<node name="offsetWrapper" 					identificationType="parent+name"									content="none"	/>
+	
+	<!-- New components  -->
+	
+	<node name="stepper" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="pageControl" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="progressView" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="segmentedControl" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="segments" 						identificationType="parent+name"									content="children"	/>
+	<node name="segment" 						identificationType="parent+name"									content="none"	/>
+	<node name="switch" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="textView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="datePicker" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="collectionView" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="collectionViewCell"				identificationType="parent+name+attr"	idAttribute="reuseIdentifier" 			content="children"	/>
+	<node name="collectionViewFlowLayout" 		identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="collectionReusableView"			identificationType="parent+name+attr"	idAttribute="reuseIdentifier" 			content="children"	/>
+	<node name="date"							identificationType="parent+name"									content="none"		/>
+	<node name="mapView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="adBannerView" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="glkView" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="sceneKitView" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="visualEffectView" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="blurEffect" 					identificationType="parent+name"									content="none"	/>
+	<node name="vibrancyEffect" 				identificationType="parent+name"									content="children"	/>
+	<node name="gestureRecognizers" 			identificationType="parent+name"									content="none"	/>
+	<node name="tapGestureRecognizer" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="pinchGestureRecognizer" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="rotationGestureRecognizer" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="swipeGestureRecognizer" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="panGestureRecognizer" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="screenEdgePanGestureRecognizer" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	
+	<!-- Oui c'est bien noté "pongPressGestureRecognizer" pour "longPressGestureRecognizer" dans le XML des storyboards -->
+	<node name="pongPressGestureRecognizer" 					identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="searchBar" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="tabBar" 						identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="simulatedToolbarMetrics" 		identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
+	<node name="tabBarItem"		 				identificationType="parent+name"									content="children"	/>
+	<node name="tabBarController" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="splitViewController" 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="tableViewController" 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="pageViewController" 			identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="glkViewController" 				identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="avPlayerViewController" 		identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="collectionViewController" 		identificationType="name+attr"			idAttribute="id"			content="children"	/>
+	<node name="customObject" 					identificationType="name+attr"			idAttribute="id"			content="none"	/>
+	<node name="inferredMetricsTieBreakers" 	identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="mutableData" 					identificationType="parent+name+attr"	idAttribute="key"			content="text"	/>
+	
+	<!-- 	Ajout en 4.3.0 -->
+	<node name="value"							identificationType="parent+name+attr"	idAttribute="key"			content="none" />
+	<node name="capability" 					identificationType="name+attr"			idAttribute="name"			content="none"	/>
+	<node name="keyCommands"					identificationType="parent+name"									content="children" />
+	<node name="keyCommand"						identificationType="parent+name+attr" 	idAttribute="input"			content="none" />
+	<node name="bool"							identificationType="parent+name+attr" 	idAttribute="key"			content="none" />
+	<node name="accessibilityTraits" 			identificationType="parent+name+attr" 	idAttribute="key"			content="none" />
+	<node name="simulatedTabBarMetrics"			identificationType="parent+name"									content="none"      />
+	
+	<!-- 	Ajout en 4.3.1 -->
+	<node name="searchDisplayController"		identificationType="parent+name+attr"	idAttribute="key"			content="children"      />
+	
+</configuration>

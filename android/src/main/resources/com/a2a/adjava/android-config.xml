@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<adjava-project>
+
+	<languages>
+		<language name="android">
+			<typedescription-factory>com.a2a.adjava.languages.java.project.JTypeDescriptionFactory
+			</typedescription-factory>
+			<ui-typedescription-factory>com.a2a.adjava.types.UITypeDescriptionFactory</ui-typedescription-factory>
+
+			<interfaces>
+				<prefix-naming></prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</interfaces>
+
+			<implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Impl</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</implementation>
+
+			<pojo-factory-interfaces>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Factory</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</pojo-factory-interfaces>
+
+			<pojo-factory-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>FactoryImpl</suffix-naming>
+				<sub-package-name>model</sub-package-name>
+			</pojo-factory-implementation>
+
+			<dao>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Dao</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao>
+
+			<dao-implementation>
+				<prefix-naming>Abstract</prefix-naming>
+				<suffix-naming>DaoImpl</suffix-naming>
+				<sub-package-name>dao</sub-package-name>
+			</dao-implementation>
+
+			<viewmodel-interface>
+				<prefix-naming>VM</prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>viewmodel</sub-package-name>
+			</viewmodel-interface>
+
+			<viewmodel-implementation>
+				<prefix-naming>VM</prefix-naming>
+				<suffix-naming>Impl</suffix-naming>
+				<sub-package-name>viewmodel</sub-package-name>
+			</viewmodel-implementation>
+
+			<adapter-implementation>
+				<prefix-naming>Adapter</prefix-naming>
+				<suffix-naming>Impl</suffix-naming>
+				<sub-package-name>viewmodel</sub-package-name>
+			</adapter-implementation>
+
+			<action-implementation>
+				<prefix-naming></prefix-naming>
+				<suffix-naming>Impl</suffix-naming>
+				<sub-package-name>action</sub-package-name>
+			</action-implementation>
+
+			<action-interface>
+				<prefix-naming></prefix-naming>
+				<suffix-naming></suffix-naming>
+				<sub-package-name>action</sub-package-name>
+			</action-interface>
+
+			<screen>
+				<sub-package-name>application</sub-package-name>
+			</screen>
+
+			<types>
+				<type>
+					<uml-type>int</uml-type>
+					<language-type>int</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Integer</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getInt()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindInt(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="double">
+							<formula>new Integer(VALUE).doubleValue()</formula>
+						</type-conversion>
+						<type-conversion to="Double">
+							<formula>new Integer(VALUE).doubleValue()</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Integer</uml-type>
+					<language-type>java.lang.Integer</language-type>
+					<init-format>Integer.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getInteger()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindInt(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>VALUE == null ? null : String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Double">
+							<formula>VALUE == null ? null : new Double(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>String</uml-type>
+					<language-type>java.lang.String</language-type>
+					<init-format>"?"</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_s</parameter-prefix>
+					<return-prefix>r_s</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<hql-bind>setString($1,$2)</hql-bind>
+					<default-options>_L255</default-options>
+					<jdbc-retrieve>RESULTSET.getString()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindString(VALEUR)</jdbc-bind>
+					<jdbc-type>VARCHAR</jdbc-type>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="int">
+							<formula>NumberUtils.parseInt(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.NumberUtils</import>
+						</type-conversion>
+						<type-conversion to="long">
+							<formula>Long.parseLong(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Timestamp">
+							<formula>DurationUtils.convertStringToTimestamp(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DurationUtils</import>
+						</type-conversion>
+						<type-conversion to="double">
+							<formula>Double.parseDouble(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="boolean">
+							<formula>Boolean.parseBoolean(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="enumeration">
+							<formula>ENUMERATION.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Integer">
+							<formula>NumberUtils.parseInteger(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.NumberUtils</import>
+						</type-conversion>
+						<type-conversion to="Double">
+							<formula>NumberUtils.parseDouble(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.NumberUtils</import>
+						</type-conversion>
+						<type-conversion to="Long">
+							<formula>NumberUtils.parseLong(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.NumberUtils</import>
+						</type-conversion>
+						<type-convertion to="com.adeuza.movalysfwk.mf4jcommons.core.beans.I18nMap">
+							<formula>I18nMap.fromString(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mf4jcommons.core.beans.I18nMap</import>
+						</type-convertion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>boolean</uml-type>
+					<language-type>boolean</language-type>
+					<init-format>?</init-format>
+					<default-value>false</default-value>
+					<variable-prefix>b</variable-prefix>
+					<parameter-prefix>p_b</parameter-prefix>
+					<return-prefix>r_b</return-prefix>
+					<get-accessor-prefix>is</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Boolean</wrapper>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getBoolean()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindBoolean(VALEUR)</jdbc-bind>
+					<jdbc-type>BOOLEAN</jdbc-type>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Boolean</uml-type>
+					<language-type>java.lang.Boolean</language-type>
+					<init-format>Boolean.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>b</variable-prefix>
+					<parameter-prefix>p_b</parameter-prefix>
+					<return-prefix>r_b</return-prefix>
+					<get-accessor-prefix>is</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getBooleanObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindBoolean(VALEUR)</jdbc-bind>
+					<jdbc-type>BOOLEAN</jdbc-type>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<default-ui-type>CheckBox</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="boolean">
+							<formula>BooleanUtils.toBoolean(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.BooleanUtils</import>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>char</uml-type>
+					<language-type>char</language-type>
+					<init-format>'?'</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>c</variable-prefix>
+					<parameter-prefix>p_c</parameter-prefix>
+					<return-prefix>r_c</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Character</wrapper>
+					<default-options>_L1</default-options>
+					<jdbc-retrieve>RESULTSET.getChar()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindChar(VALEUR)</jdbc-bind>
+					<jdbc-type>CHAR</jdbc-type>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<edit-type>text</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Character</uml-type>
+					<language-type>java.lang.Character</language-type>
+					<init-format>Character.valueOf('?')</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>c</variable-prefix>
+					<parameter-prefix>p_c</parameter-prefix>
+					<return-prefix>r_c</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_L1</default-options>
+					<jdbc-retrieve>RESULTSET.getCharacter()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindChar(VALEUR)</jdbc-bind>
+					<jdbc-type>CHAR</jdbc-type>
+					<sql-type>TEXT</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<edit-type>text</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>short</uml-type>
+					<language-type>short</language-type>
+					<init-format>?</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Short</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<jdbc-retrieve>RESULTSET.getShort()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindShort(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Short</uml-type>
+					<language-type>java.lang.Short</language-type>
+					<init-format>java.lang.Short.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>s</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<jdbc-retrieve>RESULTSET.getShortObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindShort(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>long</uml-type>
+					<language-type>long</language-type>
+					<init-format>?</init-format>
+					<default-value>0</default-value>
+					<variable-prefix>l</variable-prefix>
+					<parameter-prefix>p_l</parameter-prefix>
+					<return-prefix>r_l</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Long</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P20_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getLong()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindLong(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="Long">
+							<formula>Long.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Timestamp">
+							<formula>DateUtils.getTime(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
+						</type-conversion>
+						<type-conversion to="Double">
+							<formula>(double) VALUE</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Long</uml-type>
+					<language-type>java.lang.Long</language-type>
+					<init-format>Long.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>l</variable-prefix>
+					<parameter-prefix>p_l</parameter-prefix>
+					<return-prefix>r_l</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1L</unsaved-value>
+					<default-options>_P20_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getLongObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindLong(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Timestamp">
+							<formula>DateUtils.getTime(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>byte</uml-type>
+					<language-type>byte</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Byte</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getByte()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindByte(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Byte</uml-type>
+					<language-type>java.lang.Byte</language-type>
+					<init-format>Byte.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>i</variable-prefix>
+					<parameter-prefix>p_i</parameter-prefix>
+					<return-prefix>r_i</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P1_S0</default-options>
+					<jdbc-retrieve>RESULTSET.getByteObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindByte(VALEUR.byteValue())</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>INTEGER</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>number</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>double</uml-type>
+					<language-type>double</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>d</variable-prefix>
+					<parameter-prefix>p_d</parameter-prefix>
+					<return-prefix>r_d</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Double</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getDouble()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindDouble(VALEUR)</jdbc-bind>
+					<jdbc-type>DOUBLE</jdbc-type>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="Double">
+							<formula>Double.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="int">
+							<formula>(int)Math.round(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="long">
+							<formula>Math.round(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Double</uml-type>
+					<language-type>java.lang.Double</language-type>
+					<init-format>Double.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>d</variable-prefix>
+					<parameter-prefix>p_d</parameter-prefix>
+					<return-prefix>r_d</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getDoubleObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindDouble(VALEUR)</jdbc-bind>
+					<jdbc-type>DOUBLE</jdbc-type>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>VALUE == null ? null : VALUE.toString()</formula>
+						</type-conversion>
+						<type-conversion to="int">
+							<formula>(int)Math.round(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="long">
+							<formula>Math.round(VALUE)</formula>
+						</type-conversion>
+						<type-conversion to="Integer">
+							<formula>VALUE == null ? null : new Integer((int)Math.round(VALUE))</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>float</uml-type>
+					<language-type>float</language-type>
+					<init-format>?</init-format>
+					<default-value>-1</default-value>
+					<variable-prefix>f</variable-prefix>
+					<parameter-prefix>p_f</parameter-prefix>
+					<return-prefix>r_f</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<wrapper>Float</wrapper>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getFloat()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindFloat(VALEUR)</jdbc-bind>
+					<jdbc-type>FLOAT</jdbc-type>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Float</uml-type>
+					<language-type>java.lang.Float</language-type>
+					<init-format>Float.valueOf(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>f</variable-prefix>
+					<parameter-prefix>p_f</parameter-prefix>
+					<return-prefix>r_f</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<unsaved-value>-1</unsaved-value>
+					<default-options>_P14_S5</default-options>
+					<jdbc-retrieve>RESULTSET.getFloatObject()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindFloat(VALEUR)</jdbc-bind>
+					<jdbc-type>FLOAT</jdbc-type>
+					<sql-type>REAL</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>NUMERIC</data-type>
+					<edit-type>numberDecimal</edit-type>
+					<default-ui-type>Text</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>String.valueOf(VALUE)</formula>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>Timestamp</uml-type>
+					<language-type>java.sql.Timestamp</language-type>
+					<init-format>new Timestamp(?)</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve>RESULTSET.getTimestamp()</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindTimestamp(VALEUR)</jdbc-bind>
+					<jdbc-type>DATE</jdbc-type>
+					<sql-type>NUMERIC</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>DATE</data-type>
+					<default-ui-type>DateTime</default-ui-type>
+					<type-conversions>
+						<type-conversion to="Long">
+							<formula>DateUtils.getTime(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
+						</type-conversion>
+					</type-conversions>
+				</type>
+
+				<type>
+					<uml-type>List</uml-type>
+					<language-type>java.util.List</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>list</variable-prefix>
+					<parameter-prefix>p_list</parameter-prefix>
+					<return-prefix>r_list</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>Object</uml-type>
+					<language-type>java.lang.Object</language-type>
+					<init-format>?</init-format>
+					<default-value>null</default-value>
+					<variable-prefix>o</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<jdbc-retrieve></jdbc-retrieve>
+					<jdbc-bind></jdbc-bind>
+					<jdbc-type></jdbc-type>
+					<sql-type></sql-type>
+					<sql-compare></sql-compare>
+					<data-type>NUMERIC</data-type>
+				</type>
+
+				<type>
+					<uml-type>enumeration</uml-type>
+					<language-type>enumeration</language-type>
+					<init-format>?</init-format>
+					<default-value>ENUMERATION.FWK_NONE</default-value>
+					<variable-prefix>enum</variable-prefix>
+					<parameter-prefix>p_o</parameter-prefix>
+					<return-prefix>r_o</return-prefix>
+					<get-accessor-prefix>get</get-accessor-prefix>
+					<set-accessor-prefix>set</set-accessor-prefix>
+					<default-options>_P10_S0</default-options>
+					<jdbc-retrieve>ENUMERATION.valueOf(RESULTSET.getInt())</jdbc-retrieve>
+					<jdbc-bind>STATEMENT.bindMEnum(VALEUR)</jdbc-bind>
+					<jdbc-type>INTEGER</jdbc-type>
+					<sql-type>NUMBER(10,0)</sql-type>
+					<sql-compare>=</sql-compare>
+					<data-type>ALPHANUMERIC</data-type>
+					<default-ui-type>RadioGroup</default-ui-type>
+					<type-conversions>
+						<type-conversion to="String">
+							<formula>VALUE.name()</formula>
+						</type-conversion>
+					</type-conversions>
+					<enum/>
+				</type>
+			</types>
+
+			<null-value>null</null-value>
+						
+			<include>
+				<start-marker>import </start-marker>
+				<end-marker>;</end-marker>
+			</include>
+
+			<non-generated>
+				<start-marker>//\s*@non-generated-start\s*\[([^\]]*)\](.*)</start-marker>
+				<end-marker>//\s*@non-generated-end</end-marker>
+			</non-generated>
+		</language>
+	</languages>
+
+	<!-- Mobile -->
+	<domains>
+		<domain name="mbandroid" class="com.adeuza.movalysfwk.mf4mdd.mbandroid.xmodele.MF4ADomain">
+			<template>/com/adeuza/adjava/mb/templates</template>
+			<file-encoding>UTF-8</file-encoding>
+			<xmodele-factory>com.adeuza.movalysfwk.mf4mdd.mbandroid.xmodele.MF4AModeleFactory
+			</xmodele-factory>
+			<language-ref>android</language-ref>
+			<extractors>
+			    <extractor class="com.a2a.adjava.uml2xmodele.extractors.CheckExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.PackageExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.EnumExtractor">
+					<property name="stereotypes" value="Mm_enum" />
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.DataTypeExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.PojoExtractor">
+					<property name="stereotypes" value="Mm_model" />
+					<property name="transient-stereotypes" value="Mm_transcient,Mm_transient" />
+					<property name="applicationScope-stereotypes" value="Mm_applicationScope" />
+					<property name="customizable-stereotypes" value="Mm_customizable"/>
+					<configuration>
+						<attribute-option-setters>
+							<option-setter class="com.a2a.adjava.optionsetters.DefaultAttrOptionSetter" />
+						</attribute-option-setters>
+
+						<association-option-setters>
+							<option-setter class="com.a2a.adjava.optionsetters.DefaultAssoOptionSetter" />
+						</association-option-setters>
+					</configuration>
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.PojoFactoryExtractor" />
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.DaoExtractor" />
+				<extractor class="com.a2a.adjava.xmodele2schema.SchemaExtractor">
+					<configuration>
+						<schema-factory>com.a2a.adjava.languages.java.schema.JSchemaFactory
+						</schema-factory>
+						<db-naming-strategy class="com.a2a.adjava.schema.naming.DbNamingStrategyImpl">
+							<option name="tablePrefix" value="T_" />
+							<option name="sequencePrefix" value="SEQ_" />
+							<option name="indexPrefix" value="I_" />
+							<option name="fkPrefix" value="FK_" />
+							<option name="uniquePrefix" value="U_" />
+							<option name="pkPrefix" value="PK_" />
+							<option name="constraintNameMaxLength" value="25" />
+							<option name="identifiantMaxLength" value="30" />
+							<option name="tableNameMaxLength" value="30" />
+						</db-naming-strategy>
+					</configuration>
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.ViewModelExtractor">
+					<property name="stereotypes" value="Mm_panel,Mm_panellist,Mm_panellist2,Mm_panellist3" />
+					<property name="stereotypes-usage-viewmodel2model" value="Mm_model" />
+					<property name="customizable-stereotypes" value="Mm_customizable"/>
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.ViewModelCreatorExtractor">
+					<property name="vmc-name" value="ViewModelCreator" />
+				</extractor>				
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.ScreenExtractor">
+					<property name="stereotypes" value="Mm_screen,Mm_screenroot" />
+					<property name="stereotype-screen" value="Mm_screen" />
+					<property name="stereotype-searchscreen" value="Mm_searchscreen" />
+					<property name="stereotype-screenroot" value="Mm_screenroot" />
+					<property name="stereotype-panellist1" value="Mm_panellist" />
+					<property name="stereotype-panellist2" value="Mm_panellist2" />
+					<property name="stereotype-option-multi-select" value="Mm_optionMultiSelect" />
+					<property name="stereotype-panellist3" value="Mm_panellist3" />
+					<property name="stereotype-aggregation-panel" value="Mm_panel" />
+					<property name="stereotype-usage-display" value="Mm_action_display" />
+					<property name="stereotype-usage-create" value="Mm_action_create" />
+					<property name="stereotype-aggregation-panel-workspace" value="Mm_panelWorkspace" />
+					<property name="stereotype-usage-navigation" value="Mm_navigation" />
+					<property name="stereotype-usage-navigation-detail" value="Mm_navigationdetail" />
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.MenuExtractor">
+					<property name="stereotypes" value="Mm_menu" />
+					<property name="stereotype-usage-navigation-menu" value="Mm_navigationmenu" />
+				</extractor>
+				<extractor class="com.a2a.adjava.uml2xmodele.extractors.SearchDialogExtractor">
+					<property name="stereotypes" value="Mm_panelsearch" />
+					<property name="buttontype" value="ImageButton" />
+				</extractor>
+			</extractors>
+			<m-updaters>
+			</m-updaters>
+			<projects>
+				<project name="model" base-dir="mbandroid/model">
+					<source-dir>src/main/java</source-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<!-- Entity -->
+						<generator class="com.a2a.adjava.generator.impl.PojoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.PojoImplGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.FactoryGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.FactoryInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.EnumGenerator" />
+					</resource-generators>
+				</project>
+				<project name="dao" base-dir="mbandroid/dao">
+					<source-dir>src/main/java</source-dir>
+					<ddl-dir>sql</ddl-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DaoInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DaoGenerator" />
+					</resource-generators>
+				</project>
+				<project name="daoext" base-dir="mbandroid/daoext">
+					<source-dir>src/main/java</source-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+					</resource-generators>
+				</project>
+				<project name="viewmodel" base-dir="mbandroid/viewmodel">
+					<source-dir>src/main/java</source-dir>
+					<assets-dir>assets</assets-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ViewModelGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ViewModelInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ViewModelCreatorGenerator" />
+					</resource-generators>
+				</project>
+				<project name="application" base-dir="mbandroid/application">
+					<source-dir>src/main/java</source-dir>
+					<assets-dir>assets</assets-dir>
+					<layout-dir>res/layout</layout-dir>
+					<string-dir>res/values</string-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ScreenGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.AdapterGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ActionGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ActionInterfaceGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.DialogGenerator" />
+						<generator class="com.a2a.adjava.generator.impl.ApplicationInitGenerator" />
+					</resource-generators>
+				</project>
+				<project name="test" base-dir="mbandroid/test">
+					<source-dir>src/main/java</source-dir>
+					<assets-dir>assets</assets-dir>
+					<resource-generators>
+						<generator class="com.a2a.adjava.generator.impl.ProjectLayoutGenerator" />
+					</resource-generators>
+				</project>
+			</projects>
+			<code-formatters>
+				<code-formatter class="com.a2a.adjava.languages.java.codeformatters.JavaCodeFormatter" />
+				<code-formatter class="com.a2a.adjava.generator.codeformatters.XmlCodeFormatter">
+					<property name="lineWidth" value="40"/>
+				</code-formatter>
+			</code-formatters>
+
+		</domain>
+	</domains>
+
+</adjava-project>

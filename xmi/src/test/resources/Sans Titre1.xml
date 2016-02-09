@@ -1,0 +1,761 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<xmi:XMI xmlns:uml='http://www.omg.org/spec/UML/20110701' xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:StandardProfileL3='http://www.omg.org/spec/UML/20110701/StandardProfileL3' xmlns:Traceability_customization='http://www.magicdraw.com/schemas/Traceability_customization.xmi' xmlns:UML_Movalys_Framework_Profile='http://www.magicdraw.com/schemas/UML_Movalys_Framework_Profile.xmi' xmlns:Validation_Profile='http://www.magicdraw.com/schemas/Validation_Profile.xmi' xmlns:StandardProfileL2='http://www.omg.org/spec/UML/20110701/StandardProfileL2' xmlns:DSL_Customization='http://www.magicdraw.com/schemas/DSL_Customization.xmi' xmlns:MagicDraw_Profile='http://www.omg.org/spec/UML/20110701/MagicDrawProfile' xmlns:Mon_Projet='http://www.magicdraw.com/schemas/Mon_Projet.xmi'>
+	<xmi:Documentation>
+		<xmi:exporter>MagicDraw UML</xmi:exporter>
+		<xmi:exporterVersion>17.0.1</xmi:exporterVersion>
+	</xmi:Documentation>
+	<uml:Model xmi:type='uml:Model' xmi:id='eee_1045467100313_135436_1' name='Mon Projet'>
+		<xmi:Extension extender='MagicDraw UML 17.0.1'>
+			<moduleExtension ignoredInModule='true'/>
+		</xmi:Extension>
+		<ownedComment xmi:type='uml:Comment' xmi:id='_17_0_1_2_16a6041b_1355752036746_878185_1662' body='Author:lmichenaud.&#10;Created:17/12/12 14:47.&#10;Title:.&#10;Comment:.&#10;'>
+			<annotatedElement xmi:idref='eee_1045467100313_135436_1'/>
+		</ownedComment>
+		<xmi:Extension extender='MagicDraw UML 17.0.1'>
+			<modelExtension>
+				<ownedDiagram xmi:type='uml:Diagram' xmi:id='_17_0_1_2_16a6041b_1355752079462_750470_1797' name='First Diagram' visibility='public' ownerOfDiagram='eee_1045467100313_135436_1'>
+					<xmi:Extension extender='MagicDraw UML 17.0.1'>
+						<diagramRepresentation>
+							<diagram:DiagramRepresentationObject ID='_17_0_1_2_16a6041b_1355752079500_989525_1817' initialFrameSizeSet='true' requiredFeature=';UML_Standard_Profile.mdzip^UML_FEATURE' type='Class Diagram' umlType='Class Diagram' xmi:id='_XobD0EhQEeKy3K3Ayu4MJg' xmi:version='2.0' xmlns:binary='http://www.nomagic.com/ns/cameo/client/binary/1.0' xmlns:diagram='http://www.nomagic.com/ns/magicdraw/core/diagram/1.0' xmlns:xmi='http://www.omg.org/XMI' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+								<diagramContents contentHash='52db88d1-4aae-11e2-ae11-03b6181cf6ee' exporterName='MagicDraw UML' exporterVersion='17.0.1' xmi:id='_XobD0UhQEeKy3K3Ayu4MJg'>
+									<binaryObject streamContentID='BINARY-475f712e-e9bb-4296-ac33-82321d9c19c5' xmi:id='_XobD0khQEeKy3K3Ayu4MJg' xsi:type='binary:StreamIdentityBinaryObject'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845519298_699802_1864'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752079462_750470_1797'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355836465621_276399_1820'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753290033_630078_1914'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753435811_827827_1957'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753290034_658700_1916'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752086323_676713_1819'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355836637784_537221_1848'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845568981_815306_1912'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845601928_108638_1917'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845601928_20525_1918'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845733663_696428_1983'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753290034_213736_1915'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752412585_489244_1865'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753632655_154075_1982'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845709423_70681_1981'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355845601930_525746_1919'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355846556926_327247_1994'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355753769252_296855_1993'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355836585248_300817_1844'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752787405_517996_1876'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752792806_72299_1879'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355752167896_138758_1838'/>
+									<usedObjects href='#_17_0_1_2_16a6041b_1355836594136_521360_1846'/>
+									<usedElements>_17_0_1_2_16a6041b_1355845519298_699802_1864</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752079462_750470_1797</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355836465621_276399_1820</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753290033_630078_1914</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753435811_827827_1957</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753290034_658700_1916</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752086323_676713_1819</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355836637784_537221_1848</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845568981_815306_1912</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845601928_108638_1917</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845601928_20525_1918</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845733663_696428_1983</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753290034_213736_1915</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752412585_489244_1865</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753632655_154075_1982</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845709423_70681_1981</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355845601930_525746_1919</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355846556926_327247_1994</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355753769252_296855_1993</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355836585248_300817_1844</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752787405_517996_1876</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752792806_72299_1879</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752304188_339393_1841</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355752167896_138758_1838</usedElements>
+									<usedElements>_17_0_1_2_16a6041b_1355836594136_521360_1846</usedElements>
+								</diagramContents>
+							</diagram:DiagramRepresentationObject>
+						</diagramRepresentation>
+					</xmi:Extension>
+				</ownedDiagram>
+			</modelExtension>
+		</xmi:Extension>
+		<packagedElement xmi:type='uml:Package' xmi:id='_17_0_1_2_16a6041b_1355752322315_243294_1860' name='com'>
+			<packagedElement xmi:type='uml:Package' xmi:id='_17_0_1_2_16a6041b_1355752327619_86396_1861' name='sopragroup'>
+				<packagedElement xmi:type='uml:Package' xmi:id='_17_0_1_2_16a6041b_1355752335523_585257_1862' name='mobility'>
+					<packagedElement xmi:type='uml:Class' xmi:id='_17_0_1_2_16a6041b_1355752304188_339393_1841' name='Note'>
+						<ownedComment xmi:type='uml:Comment' xmi:id='_17_0_1_2_16a6041b_1356010711406_577846_1998' body='Documentation de la classe Toto&#10;&#10;Test&#10;&#10;Test'>
+							<annotatedElement xmi:idref='_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+						</ownedComment>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355752412585_489244_1865' name='id' visibility='private' isID='true'>
+							<type href='UML Movalys Framework Profile.mdzip#_17_0_1_2_16a6041b_1356012299198_184361_2003'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Movalys Framework Profile::datatypes::Long' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+							<ownedComment xmi:type='uml:Comment' xmi:id='_17_0_1_2_16a6041b_1356011859446_898486_2000' body='documentation attribut'>
+								<annotatedElement xmi:idref='_17_0_1_2_16a6041b_1355752412585_489244_1865'/>
+							</ownedComment>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355752787405_517996_1876' name='note' visibility='private'>
+							<type href='UML_Standard_Profile.mdzip#eee_1045467100323_848034_66'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::MagicDraw Profile::datatypes::double' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+							<defaultValue xmi:type='uml:LiteralReal' xmi:id='_17_0_1_2_16a6041b_1355752792796_213148_1878'/>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355752792806_72299_1879' name='matiere' visibility='private' isDerived='true'>
+							<type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::UML2 Metamodel::PrimitiveTypes::String' referentType='PrimitiveType'/>
+								</xmi:Extension>
+							</type>
+							<defaultValue xmi:type='uml:LiteralString' xmi:id='_17_0_1_2_16a6041b_1355905057106_452654_1997' value='AREMPLIR_L30'/>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355836637784_537221_1848' name='materialType' visibility='private' type='_17_0_1_2_16a6041b_1355836465621_276399_1820'/>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355845601928_20525_1918' name='Exos_exo' visibility='private' type='_17_0_1_2_16a6041b_1355845519298_699802_1864' association='_17_0_1_2_16a6041b_1355845601928_108638_1917'>
+							<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_17_0_1_2_16a6041b_1355845676591_829854_1960'/>
+							<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_17_0_1_2_16a6041b_1355845676592_13541_1961' value='*'/>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement xmi:type='uml:Class' xmi:id='_17_0_1_2_16a6041b_1355752086323_676713_1819' name='Simulation'>
+						<ownedComment xmi:type='uml:Comment' xmi:id='_17_0_1_2_16a6041b_1356010853125_861632_1999' body='documentation de la classe simulation&#10;&#10;&lt; &gt; &quot; &#39;'>
+							<annotatedElement xmi:idref='_17_0_1_2_16a6041b_1355752086323_676713_1819'/>
+						</ownedComment>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355752167896_138758_1838' name='id' visibility='private' isID='true'>
+							<type href='UML_Standard_Profile.mdzip#eee_1045467100323_784316_63'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::MagicDraw Profile::datatypes::long' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355753290034_658700_1916' name='note' visibility='private' type='_17_0_1_2_16a6041b_1355752304188_339393_1841' association='_17_0_1_2_16a6041b_1355753290033_630078_1914'>
+							<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_17_0_1_2_16a6041b_1355753323330_310586_1938'/>
+							<xmi:Extension extender='MagicDraw UML 17.0.1'>
+								<modelExtension>
+									<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_17_0_1_2_16a6041b_1355753323330_501260_1939' value='1'/>
+								</modelExtension>
+							</xmi:Extension>
+						</ownedAttribute>
+					</packagedElement>
+					<packagedElement xmi:type='uml:Association' xmi:id='_17_0_1_2_16a6041b_1355753290033_630078_1914' name='SimulationNote'>
+						<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355753290034_213736_1915'/>
+						<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355753290034_658700_1916'/>
+						<ownedEnd xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355753290034_213736_1915' name='responsables' visibility='private' aggregation='shared' isID='true' type='_17_0_1_2_16a6041b_1355752086323_676713_1819' association='_17_0_1_2_16a6041b_1355753290033_630078_1914'>
+							<xmi:Extension extender='MagicDraw UML 17.0.1'>
+								<modelExtension>
+									<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_17_0_1_2_16a6041b_1355932707637_780567_1983' value='1'/>
+								</modelExtension>
+							</xmi:Extension>
+							<xmi:Extension extender='MagicDraw UML 17.0.1'>
+								<modelExtension>
+									<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_17_0_1_2_16a6041b_1355753317154_261136_1933' value='1'/>
+								</modelExtension>
+							</xmi:Extension>
+						</ownedEnd>
+					</packagedElement>
+					<packagedElement xmi:type='uml:Package' xmi:id='_17_0_1_2_16a6041b_1355757260136_564648_1996' name='ui'>
+						<packagedElement xmi:type='uml:Class' xmi:id='_17_0_1_2_16a6041b_1355753435811_827827_1957' name='Annee1Panel'>
+							<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355753769252_296855_1993' name='note.matiere' visibility='private'>
+								<type href='UML Movalys Framework Profile.mdzip#_17_0_1_2_16a6041b_1355909143540_935505_1691'>
+									<xmi:Extension extender='MagicDraw UML 17.0.1'>
+										<referenceExtension referentPath='UML Movalys Framework Profile::ui::EditText' referentType='DataType'/>
+									</xmi:Extension>
+								</type>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type='uml:Usage' xmi:id='_17_0_1_2_16a6041b_1355753632655_154075_1982' name='note'>
+							<client xmi:idref='_17_0_1_2_16a6041b_1355753435811_827827_1957'/>
+							<supplier xmi:idref='_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+						</packagedElement>
+					</packagedElement>
+					<packagedElement xmi:type='uml:AssociationClass' xmi:id='_17_0_1_2_16a6041b_1355845601928_108638_1917' name='ExoNote'>
+						<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355845601928_20525_1918'/>
+						<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355845601930_525746_1919'/>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355845709423_70681_1981' name='id' visibility='private' isID='true'>
+							<type href='UML_Standard_Profile.mdzip#eee_1045467100323_784316_63'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::MagicDraw Profile::datatypes::long' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355845733663_696428_1983' name='note' visibility='private'>
+							<type href='UML_Standard_Profile.mdzip#eee_1045467100323_848034_66'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::MagicDraw Profile::datatypes::double' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+						</ownedAttribute>
+						<ownedOperation xmi:type='uml:Operation' xmi:id='_17_0_1_2_16a6041b_1355846556926_327247_1994' name='getListExoNote_By_exo' visibility='public'/>
+					</packagedElement>
+					<packagedElement xmi:type='uml:Enumeration' xmi:id='_17_0_1_2_16a6041b_1355836465621_276399_1820' name='MATERIALTYPE'>
+						<ownedLiteral xmi:type='uml:EnumerationLiteral' xmi:id='_17_0_1_2_16a6041b_1355836585248_300817_1844' name='CONSUMED'/>
+						<ownedLiteral xmi:type='uml:EnumerationLiteral' xmi:id='_17_0_1_2_16a6041b_1355836594136_521360_1846' name='INSTALLED'/>
+					</packagedElement>
+					<packagedElement xmi:type='uml:Class' xmi:id='_17_0_1_2_16a6041b_1355845519298_699802_1864' name='Exercice'>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355845568981_815306_1912' name='id' visibility='private' isID='true'>
+							<type href='UML_Standard_Profile.mdzip#eee_1045467100323_784316_63'>
+								<xmi:Extension extender='MagicDraw UML 17.0.1'>
+									<referenceExtension referentPath='UML Standard Profile::MagicDraw Profile::datatypes::long' referentType='DataType'/>
+								</xmi:Extension>
+							</type>
+						</ownedAttribute>
+						<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355845601930_525746_1919' name='Notes_note' visibility='private' type='_17_0_1_2_16a6041b_1355752304188_339393_1841' association='_17_0_1_2_16a6041b_1355845601928_108638_1917'>
+							<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_17_0_1_2_16a6041b_1355845673592_95428_1954'/>
+							<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_17_0_1_2_16a6041b_1355845673592_995896_1955' value='*'/>
+						</ownedAttribute>
+					</packagedElement>
+				</packagedElement>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:type='uml:Duration' xmi:id='_17_0_1_2_16a6041b_1355753040317_57249_1883'/>
+		<packagedElement xmi:type='uml:Stereotype' xmi:id='_17_0_1_2_16a6041b_1355913114606_852106_1956' name='Mm_customStereotype'>
+			<ownedAttribute xmi:type='uml:Property' xmi:id='_17_0_1_2_16a6041b_1355913114613_467910_1958' name='base_Element' visibility='private' association='_17_0_1_2_16a6041b_1355913114612_402214_1957'>
+				<type href='http://www.omg.org/spec/UML/20110701/UML.xmi#Element'>
+					<xmi:Extension extender='MagicDraw UML 17.0.1'>
+						<referenceExtension referentPath='UML Standard Profile::UML2 Metamodel::Element' referentType='Class'/>
+					</xmi:Extension>
+				</type>
+			</ownedAttribute>
+		</packagedElement>
+		<packagedElement xmi:type='uml:Extension' xmi:id='_17_0_1_2_16a6041b_1355913114612_402214_1957'>
+			<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355913114613_467910_1958'/>
+			<memberEnd xmi:idref='_17_0_1_2_16a6041b_1355913114613_786694_1959'/>
+			<navigableOwnedEnd xmi:idref='_17_0_1_2_16a6041b_1355913114613_786694_1959'/>
+			<ownedEnd xmi:type='uml:ExtensionEnd' xmi:id='_17_0_1_2_16a6041b_1355913114613_786694_1959' name='extension_sans nom1' visibility='private' aggregation='composite' type='_17_0_1_2_16a6041b_1355913114606_852106_1956' association='_17_0_1_2_16a6041b_1355913114612_402214_1957'>
+				<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_17_0_1_2_16a6041b_1355913114613_477489_1960'/>
+				<xmi:Extension extender='MagicDraw UML 17.0.1'>
+					<modelExtension>
+						<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_17_0_1_2_16a6041b_1355913114614_850632_1961' value='1'/>
+					</modelExtension>
+				</xmi:Extension>
+			</ownedEnd>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<stereotypeApplicationForProxies/>
+		<stereotypesHREFS>
+			<stereotype name='UML_Movalys_Framework_Profile:Mm_panellist' stereotypeHREF='local:/PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355753737101_593146_1986'/>
+			<stereotype name='UML_Movalys_Framework_Profile:Mm_model' stereotypeHREF='local:/PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355909002171_315495_1678'/>
+			<stereotype name='UML_Movalys_Framework_Profile:Mm_transient' stereotypeHREF='local:/PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355924683335_191616_1974'/>
+			<stereotype name='MagicDraw_Profile:DiagramInfo' stereotypeHREF='local:/PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_9_0_be00301_1108044380615_150487_0'/>
+			<tag name='MagicDraw_Profile:DiagramInfo:Creation_date' tagID='_be00301_1073306188629_537791_2'/>
+			<tag name='MagicDraw_Profile:DiagramInfo:Author' tagID='_be00301_1077726770128_871366_1'/>
+			<tag name='MagicDraw_Profile:DiagramInfo:Modification_date' tagID='_be00301_1073394345322_922552_1'/>
+			<tag name='MagicDraw_Profile:DiagramInfo:Last_modified_by' tagID='_16_8beta_8ca0285_1257244649124_794756_344'/>
+			<stereotype name='Mon_Projet:Mm_customStereotype' stereotypeHREF='local:/PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600?resource=com.nomagic.magicdraw.uml_umodel.model#_17_0_1_2_16a6041b_1355913114606_852106_1956'/>
+			<stereotype name='UML_Movalys_Framework_Profile:Mm_enum' stereotypeHREF='local:/PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355838152659_521913_1851'/>
+		</stereotypesHREFS>
+		<favoriteElements xmi:value=''/>
+	</xmi:Extension>
+	<UML_Movalys_Framework_Profile:Mm_panellist xmi:id='_17_0_1_2_16a6041b_1355753760611_768017_1992' base_Element='_17_0_1_2_16a6041b_1355753435811_827827_1957'/>
+	<UML_Movalys_Framework_Profile:Mm_model xmi:id='_17_0_1_2_16a6041b_1355753642795_143461_1983' base_Element='_17_0_1_2_16a6041b_1355753632655_154075_1982'/>
+	<UML_Movalys_Framework_Profile:Mm_transient xmi:id='_17_0_1_2_16a6041b_1355924753797_425424_1980' base_Element='_17_0_1_2_16a6041b_1355752792806_72299_1879'/>
+	<UML_Movalys_Framework_Profile:Mm_transient xmi:id='_17_0_1_2_16a6041b_1355928069504_82783_1981' base_Element='_17_0_1_2_16a6041b_1355846556926_327247_1994'/>
+	<UML_Movalys_Framework_Profile:Mm_model xmi:id='_17_0_1_2_16a6041b_1355752766044_701043_1875' base_Element='_17_0_1_2_16a6041b_1355752086323_676713_1819'/>
+	<MagicDraw_Profile:DiagramInfo xmi:id='_17_0_1_2_16a6041b_1355752079478_363481_1808' base_Diagram='_17_0_1_2_16a6041b_1355752079462_750470_1797' Last_modified_by='lmichenaud' Author='lmichenaud' Modification_date='17/12/12 14:47' Creation_date='17/12/12 14:47'/>
+	<UML_Movalys_Framework_Profile:Mm_model xmi:id='_17_0_1_2_16a6041b_1355752741852_498146_1874' base_Element='_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+	<Mon_Projet:Mm_customStereotype xmi:id='_17_0_1_2_16a6041b_1355752741852_498146_1874application1' base_Element='_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+	<UML_Movalys_Framework_Profile:Mm_enum xmi:id='_17_0_1_2_16a6041b_1355838222546_934405_1862' base_Enumeration='_17_0_1_2_16a6041b_1355836465621_276399_1820'/>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='personal-Binaries.properties' type='XML'>#
+#Thu Dec 20 15:05:35 CET 2012
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='BINARY-475f712e-e9bb-4296-ac33-82321d9c19c5' type='XML' header='&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;'>
+
+<mdOwnedViews>
+	<mdElement elementClass='DiagramFrame' xmi:id='_17_0_1_2_16a6041b_1355752350002_435506_1863'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355752079462_750470_1797'/>
+		<geometry>5, 5, 1095, 974</geometry>
+		<compartment compartmentID='TAGGED_VALUES'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='Class' xmi:id='_17_0_1_2_16a6041b_1355752086328_292420_1820'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355752086323_676713_1819'/>
+		<geometry>659, 533, 182, 161</geometry>
+		<compartment compartmentID='TAGGED_VALUES2'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='Class' xmi:id='_17_0_1_2_16a6041b_1355752304190_559060_1842'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355752304188_339393_1841'/>
+		<geometry>126, 567, 248, 154</geometry>
+		<compartment compartmentID='TAGGED_VALUES2'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='Association' xmi:id='_17_0_1_2_16a6041b_1355753290040_492404_1917'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355753290033_630078_1914'/>
+		<linkFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355752086328_292420_1820'/>
+		<linkSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355752304190_559060_1842'/>
+		<geometry>659, 644; 374, 644; </geometry>
+		<compartment compartmentID='TAGGED_VALUES'/>
+		<linkNameID xmi:idref='_17_0_1_2_16a6041b_1355992964796_784258_1986'/>
+		<nameVisible xmi:value='true'/>
+		<mdOwnedViews>
+			<mdElement elementClass='Role' xmi:id='_17_0_1_2_16a6041b_1355753290040_464044_1918'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355753290034_213736_1915'/>
+				<geometry>649, 639, 10, 10</geometry>
+				<compartment compartmentID='TAGGED_VALUES'/>
+				<mdOwnedViews>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355753317160_823873_1934'>
+						<geometry>632, 647, 24, 12</geometry>
+						<mdOwnedViews/>
+						<text>1</text>
+					</mdElement>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355753342780_244087_1944'>
+						<geometry>585, 629, 71, 12</geometry>
+						<mdOwnedViews/>
+						<text>-responsables</text>
+					</mdElement>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355818326998_486484_1817'>
+						<geometry>632, 662, 24, 13</geometry>
+						<mdOwnedViews/>
+						<text>&lt;html&gt;&lt;body&gt;&lt;p style=&quot;font : 11pt Arial  ; &quot;&gt;{id}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</text>
+					</mdElement>
+				</mdOwnedViews>
+				<roleNameID xmi:idref='_17_0_1_2_16a6041b_1355753342780_244087_1944'/>
+				<roleMultiplicityID xmi:idref='_17_0_1_2_16a6041b_1355753317160_823873_1934'/>
+				<rolePropertyStringID xmi:idref='_17_0_1_2_16a6041b_1355818326998_486484_1817'/>
+			</mdElement>
+			<mdElement elementClass='Role' xmi:id='_17_0_1_2_16a6041b_1355753290040_256485_1921'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355753290034_658700_1916'/>
+				<geometry>374, 639, 10, 10</geometry>
+				<compartment compartmentID='TAGGED_VALUES'/>
+				<mdOwnedViews>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355753323336_928014_1940'>
+						<geometry>389, 647, 24, 12</geometry>
+						<mdOwnedViews/>
+						<text>0..1</text>
+					</mdElement>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355753354300_424702_1950'>
+						<geometry>389, 629, 26, 12</geometry>
+						<mdOwnedViews/>
+						<text>-note</text>
+					</mdElement>
+				</mdOwnedViews>
+				<roleNameID xmi:idref='_17_0_1_2_16a6041b_1355753354300_424702_1950'/>
+				<roleMultiplicityID xmi:idref='_17_0_1_2_16a6041b_1355753323336_928014_1940'/>
+			</mdElement>
+			<mdElement elementClass='AssociationTextBox' xmi:id='_17_0_1_2_16a6041b_1355992964796_784258_1986'>
+				<geometry>481, 629, 71, 12</geometry>
+				<mdOwnedViews/>
+				<text>SimulationNote</text>
+				<reverseIcon xmi:value='true'/>
+			</mdElement>
+		</mdOwnedViews>
+		<associationFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355753290040_464044_1918'/>
+		<associationSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355753290040_256485_1921'/>
+	</mdElement>
+	<mdElement elementClass='Class' xmi:id='_17_0_1_2_16a6041b_1355753435813_28534_1958'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355753435811_827827_1957'/>
+		<properties>
+			<mdElement elementClass='ColorProperty'>
+				<propertyID>FILL_COLOR</propertyID>
+				<propertyDescriptionID>FILL_COLOR_DESCRIPTION</propertyDescriptionID>
+				<value xmi:value='-6234956'/>
+			</mdElement>
+		</properties>
+		<geometry>217, 196, 189, 140</geometry>
+		<compartment compartmentID='TAGGED_VALUES2'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='Usage' xmi:id='_17_0_1_2_16a6041b_1355753611494_850821_1978'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355753632655_154075_1982'/>
+		<linkFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355752304190_559060_1842'/>
+		<linkSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355753435813_28534_1958'/>
+		<geometry>262, 567; 300, 336; </geometry>
+		<compartment compartmentID='TAGGED_VALUES'/>
+		<linkNameID xmi:idref='_17_0_1_2_16a6041b_1355753650770_920221_1984'/>
+		<nameVisible xmi:value='true'/>
+		<mdOwnedViews>
+			<mdElement elementClass='TextBoxWithIcon' xmi:id='_17_0_1_2_16a6041b_1355753611494_975674_1979'>
+				<geometry>217, 421, 63, 12</geometry>
+				<mdOwnedViews/>
+				<text>«Mm_model»</text>
+			</mdElement>
+			<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355753650770_920221_1984'>
+				<geometry>254, 436, 24, 12</geometry>
+				<mdOwnedViews/>
+				<text>note</text>
+			</mdElement>
+		</mdOwnedViews>
+		<linkStereotypeID xmi:idref='_17_0_1_2_16a6041b_1355753611494_975674_1979'/>
+	</mdElement>
+	<mdElement elementClass='Enumeration' xmi:id='_17_0_1_2_16a6041b_1355836465628_317621_1821'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355836465621_276399_1820'/>
+		<geometry>539, 329, 140, 112</geometry>
+		<compartment compartmentID='TAGGED_VALUES2'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='Class' xmi:id='_17_0_1_2_16a6041b_1355845519303_688175_1865'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355845519298_699802_1864'/>
+		<geometry>672, 798, 168, 161</geometry>
+		<compartment compartmentID='TAGGED_VALUES2'/>
+		<mdOwnedViews/>
+	</mdElement>
+	<mdElement elementClass='AssociationClass' xmi:id='_17_0_1_2_16a6041b_1355845601938_521873_1920'>
+		<elementID xmi:idref='_17_0_1_2_16a6041b_1355845601928_108638_1917'/>
+		<linkFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355845519303_688175_1865'/>
+		<linkSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355752304190_559060_1842'/>
+		<geometry>672, 826; 256, 826; 256, 721; </geometry>
+		<compartment compartmentID='TAGGED_VALUES'/>
+		<linkNameID xmi:idref='_17_0_1_2_16a6041b_1355845684359_306751_1970'/>
+		<nameVisible xmi:value='true'/>
+		<mdOwnedViews>
+			<mdElement elementClass='Role' xmi:id='_17_0_1_2_16a6041b_1355845601938_973297_1921'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355845601928_20525_1918'/>
+				<geometry>662, 821, 10, 10</geometry>
+				<compartment compartmentID='TAGGED_VALUES'/>
+				<mdOwnedViews>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355845676597_392005_1962'>
+						<geometry>645, 829, 24, 12</geometry>
+						<mdOwnedViews/>
+						<text>0..*</text>
+					</mdElement>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355845690636_54846_1973'>
+						<geometry>616, 811, 53, 12</geometry>
+						<mdOwnedViews/>
+						<text>-Exos_exo</text>
+					</mdElement>
+				</mdOwnedViews>
+				<roleNameID xmi:idref='_17_0_1_2_16a6041b_1355845690636_54846_1973'/>
+				<roleMultiplicityID xmi:idref='_17_0_1_2_16a6041b_1355845676597_392005_1962'/>
+			</mdElement>
+			<mdElement elementClass='Role' xmi:id='_17_0_1_2_16a6041b_1355845601938_845284_1924'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355845601930_525746_1919'/>
+				<geometry>251, 721, 10, 10</geometry>
+				<compartment compartmentID='TAGGED_VALUES'/>
+				<mdOwnedViews>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355845673597_831645_1956'>
+						<geometry>259, 724, 24, 12</geometry>
+						<mdOwnedViews/>
+						<text>0..*</text>
+					</mdElement>
+					<mdElement elementClass='TextBox' xmi:id='_17_0_1_2_16a6041b_1355845695361_265063_1977'>
+						<geometry>193, 724, 60, 12</geometry>
+						<mdOwnedViews/>
+						<text>-Notes_note</text>
+					</mdElement>
+				</mdOwnedViews>
+				<roleNameID xmi:idref='_17_0_1_2_16a6041b_1355845695361_265063_1977'/>
+				<roleMultiplicityID xmi:idref='_17_0_1_2_16a6041b_1355845673597_831645_1956'/>
+			</mdElement>
+			<mdElement elementClass='Class' xmi:id='_17_0_1_2_16a6041b_1355845601938_838124_1927'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355845601928_108638_1917'/>
+				<geometry>217, 868, 212, 91</geometry>
+				<compartment compartmentID='TAGGED_VALUES2'/>
+				<mdOwnedViews/>
+			</mdElement>
+			<mdElement elementClass='LinkAttribute' xmi:id='_17_0_1_2_16a6041b_1355845601938_866792_1945'>
+				<elementID xmi:idref='_17_0_1_2_16a6041b_1355845601928_108638_1917'/>
+				<linkFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355845601938_521873_1920'/>
+				<linkSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355845601938_838124_1927'/>
+				<geometry>412, 826; 412, 868; </geometry>
+			</mdElement>
+			<mdElement elementClass='AssociationTextBox' xmi:id='_17_0_1_2_16a6041b_1355845684359_306751_1970'>
+				<geometry>392, 811, 41, 12</geometry>
+				<mdOwnedViews/>
+				<text>ExoNote</text>
+				<reverseIcon xmi:value='true'/>
+			</mdElement>
+		</mdOwnedViews>
+		<associationFirstEndID xmi:idref='_17_0_1_2_16a6041b_1355845601938_973297_1921'/>
+		<associationSecondEndID xmi:idref='_17_0_1_2_16a6041b_1355845601938_845284_1924'/>
+	</mdElement>
+</mdOwnedViews></filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='com.nomagic.magicdraw.core.project.options.commonprojectoptions' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<project.options:CommonProjectOptions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project.options="http://www.nomagic.com/ns/magicdraw/core/project/options/1.0" xmi:id="_HB4Y4FYDEeCyhsLctII43A" optionsString="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" modelElementStyleString="UEsDBBQACAAIALF4lEEAAAAAAAAAAAAAAAAAAAAAdY5BC4IwGEDP+iu87VTWLWJTJOdJK3AGnWToZwy2KdsU/fdpQbdO7/LgPRzPSgYTGCt6TdBxf0AB6KZvhX4RVLFsd0Jx5Pv4bvoBjFsewgrXm6RpYFgZ+R5WLZWgQLsAvrxIbi1BpVCDhNItEtDqeVhzBVHJnjmti1tK85rmtKBXVqc0S6qclTj8KJvbQsdH6YJZifPE5QgEdVxaQOGWDH/NyMfhv7c3UEsHCKB+0BCoAAAA3QAAAFBLAQIUABQACAAIALF4lEGgftAQqAAAAN0AAAAAAAAAAAAAAAAAAAAAAAAAAABQSwUGAAAAAAEAAQAuAAAA1gAAAAAA" symbolStylesString="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"/>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='proxy.local__PROJECT$h1bc81bf1$hfd14$h4cd1$h9aed$h448daf794ec6_resource_com$dnomagic$dmagicdraw$duml_umodel$dshared_umodel$dsnapshot' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<uml:Profile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.nomagic.com/magicdraw/UML/2.4.1" xmi:id="_17_0_1_2_16a6041b_1355908910794_754984_1676" ID="_17_0_1_2_16a6041b_1355908910794_754984_1676" name="UML Movalys Framework Profile">
+  <packagedElement xsi:type="uml:Stereotype" xmi:id="_17_0_1_2_16a6041b_1355909002171_315495_1678" ID="_17_0_1_2_16a6041b_1355909002171_315495_1678" name="Mm_model">
+    <ownedAttribute xmi:id="_17_0_1_2_16a6041b_1355909002176_524747_1680" ID="_17_0_1_2_16a6041b_1355909002176_524747_1680" name="base_Element" visibility="private">
+      <type xsi:type="uml:Class" href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_9_0_62a020a_1105704884807_371561_7741"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Extension" xmi:id="_17_0_1_2_16a6041b_1355909002176_566591_1679" ID="_17_0_1_2_16a6041b_1355909002176_566591_1679" memberEnd="_17_0_1_2_16a6041b_1355909002176_524747_1680 _17_0_1_2_16a6041b_1355909002176_788368_1681">
+    <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_17_0_1_2_16a6041b_1355909002176_788368_1681" ID="_17_0_1_2_16a6041b_1355909002176_788368_1681" name="extension_sans nom1" visibility="private" type="_17_0_1_2_16a6041b_1355909002171_315495_1678" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Package" xmi:id="_17_0_1_2_16a6041b_1355909115036_538430_1690" ID="_17_0_1_2_16a6041b_1355909115036_538430_1690" name="datatypes">
+    <packagedElement xsi:type="uml:DataType" xmi:id="_17_0_1_2_16a6041b_1356012299198_184361_2003" ID="_17_0_1_2_16a6041b_1356012299198_184361_2003" name="Long" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Stereotype" xmi:id="_17_0_1_2_16a6041b_1355753737101_593146_1986" ID="_17_0_1_2_16a6041b_1355753737101_593146_1986" name="Mm_panellist">
+    <ownedAttribute xmi:id="_17_0_1_2_16a6041b_1355753737103_552445_1988" ID="_17_0_1_2_16a6041b_1355753737103_552445_1988" name="base_Element" visibility="private">
+      <type xsi:type="uml:Class" href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_9_0_62a020a_1105704884807_371561_7741"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Extension" xmi:id="_17_0_1_2_16a6041b_1355753737103_859148_1987" ID="_17_0_1_2_16a6041b_1355753737103_859148_1987" memberEnd="_17_0_1_2_16a6041b_1355753737103_552445_1988 _17_0_1_2_16a6041b_1355753737103_894166_1989">
+    <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_17_0_1_2_16a6041b_1355753737103_894166_1989" ID="_17_0_1_2_16a6041b_1355753737103_894166_1989" name="extension_sans nom1" visibility="private" type="_17_0_1_2_16a6041b_1355753737101_593146_1986" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Stereotype" xmi:id="_17_0_1_2_16a6041b_1355838152659_521913_1851" ID="_17_0_1_2_16a6041b_1355838152659_521913_1851" name="Mm_enum">
+    <ownedAttribute xmi:id="_17_0_1_2_16a6041b_1355838183318_475413_1858" ID="_17_0_1_2_16a6041b_1355838183318_475413_1858" name="base_Enumeration" visibility="private">
+      <type xsi:type="uml:Class" href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_9_0_62a020a_1105704885400_895774_7947"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Extension" xmi:id="_17_0_1_2_16a6041b_1355838183318_752770_1857" ID="_17_0_1_2_16a6041b_1355838183318_752770_1857" memberEnd="_17_0_1_2_16a6041b_1355838183318_475413_1858 _17_0_1_2_16a6041b_1355838183318_918866_1859">
+    <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_17_0_1_2_16a6041b_1355838183318_918866_1859" ID="_17_0_1_2_16a6041b_1355838183318_918866_1859" name="extension_Mm_enum" visibility="private" type="_17_0_1_2_16a6041b_1355838152659_521913_1851" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Stereotype" xmi:id="_17_0_1_2_16a6041b_1355924683335_191616_1974" ID="_17_0_1_2_16a6041b_1355924683335_191616_1974" name="Mm_transient" visibility="public">
+    <ownedAttribute xmi:id="_17_0_1_2_16a6041b_1355924683338_918575_1976" ID="_17_0_1_2_16a6041b_1355924683338_918575_1976" name="base_Element" visibility="private">
+      <type xsi:type="uml:Class" href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_9_0_62a020a_1105704884807_371561_7741"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Extension" xmi:id="_17_0_1_2_16a6041b_1355924683338_433299_1975" ID="_17_0_1_2_16a6041b_1355924683338_433299_1975" visibility="public" memberEnd="_17_0_1_2_16a6041b_1355924683338_918575_1976 _17_0_1_2_16a6041b_1355924683338_212283_1977">
+    <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_17_0_1_2_16a6041b_1355924683338_212283_1977" ID="_17_0_1_2_16a6041b_1355924683338_212283_1977" name="extension_sans nom1" visibility="private" type="_17_0_1_2_16a6041b_1355924683335_191616_1974" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Package" xmi:id="_17_0_1_2_16a6041b_1356011999516_857252_2001" ID="_17_0_1_2_16a6041b_1356011999516_857252_2001" name="ui" visibility="public">
+    <packagedElement xsi:type="uml:DataType" xmi:id="_17_0_1_2_16a6041b_1355909143540_935505_1691" ID="_17_0_1_2_16a6041b_1355909143540_935505_1691" name="EditText"/>
+  </packagedElement>
+</uml:Profile>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='proxy.local__PROJECT$h6c93b532$hcafb$h43c8$h9d6a$hbfd8fcfbf600_resource_com$dnomagic$dmagicdraw$duml_umodel$dmodel$dsnapshot' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.nomagic.com/magicdraw/UML/2.4.1" xmi:id="eee_1045467100313_135436_1" ID="eee_1045467100313_135436_1" name="Mon Projet" visibility="public"/>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='proxy.local__PROJECT$h1bc81bf1$hfd14$h4cd1$h9aed$h448daf794ec6_resource_com$dnomagic$dci$dmetamodel$dproject$dsnapshot' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<project:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project="http://www.nomagic.com/ns/cameo/client/project/1.0" xmi:id="_GLT9QFYDEeCyhsLctII43A" description="" id="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6">
+  <ownedSections xmi:id="_GOUN8FYDEeCyhsLctII43A" name="model" featuredBy="_GOS_0FYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_HB1VkFYDEeCyhsLctII43A" name="commonprojectoptions" shared="true" featuredBy="_HB0ugFYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_HB4_8FYDEeCyhsLctII43A" name="personalprojectoptions" shared="true" belongsTo="_HB4_8VYDEeCyhsLctII43A" featuredBy="_HB0ugFYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_1OlPIJjZEeCrL4EC3xSIEw" name="commoncodeengineering" featuredBy="_1ObeIZjZEeCrL4EC3xSIEw"/>
+  <ownedSections xmi:id="_LvXw4Em-EeKi0smEaqrkOg" name="shared_model" shared="true" featuredBy="_GOS_0FYDEeCyhsLctII43A">
+    <sharePoints xmi:id="_LvcpYEm-EeKi0smEaqrkOg" ID="25459f3e-fd52-41ae-9830-068fa2bcd24f">
+      <object href="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355908910794_754984_1676"/>
+      <options xmi:id="_LvcpYUm-EeKi0smEaqrkOg" key="preferredPath" value=""/>
+    </sharePoints>
+  </ownedSections>
+  <userParts xmi:id="_HB4_8VYDEeCyhsLctII43A" user="_zRtSwZjZEeCrL4EC3xSIEw" sections="_HB4_8FYDEeCyhsLctII43A"/>
+  <projectUsages xmi:id="_GPTscFYDEeCyhsLctII43A" usedProjectURI="file:/home/ADEUZA/lmichenaud/progs/MagicDraw_UML/profiles/UML_Standard_Profile.mdzip" reshared="true" readonly="true" alternateLocation="file:/home/donce/md17/git-17-copy/md/core/profiles/UML_Standard_Profile.mdzip" preferredProjectRepositoryType="" loadedAutomatically="true">
+    <usedProject href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.ci.metamodel.project#_VWTUgU_TEeCNOP_jel_PNg"/>
+    <mountPoints xmi:id="_HBun4FYDEeCyhsLctII43A" sharePointID="magicdraw_uml_standard_profile_v_0001" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#magicdraw_uml_standard_profile_v_0001"/>
+      <mountedOn href="PROJECT-5d6756d4ab7fcc1b9be2b6b7ce3f4f23?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+      <options xmi:id="_HBun4VYDEeCyhsLctII43A" key="preferredPath" value=""/>
+    </mountPoints>
+    <properties xmi:id="_HBzgYFYDEeCyhsLctII43A" key="usedVersion" value="17.0.1"/>
+    <properties xmi:id="_I2i0cFYDEeCyhsLctII43A" key="LOCAL_PROJECT_ID" value="PROJECT-877558e9224f114d50dea1f39a1c119"/>
+  </projectUsages>
+  <features xmi:id="_GOS_0FYDEeCyhsLctII43A" name="UML Model" namespace="com.nomagic.magicdraw.uml_model" version="17.0" sections="_GOUN8FYDEeCyhsLctII43A _LvXw4Em-EeKi0smEaqrkOg" internalVersion="1"/>
+  <features xmi:id="_HB0ugFYDEeCyhsLctII43A" name="Project Options" namespace="com.nomagic.magicdraw.core.project.options" version="1.0" sections="_HB1VkFYDEeCyhsLctII43A _HB4_8FYDEeCyhsLctII43A" internalVersion="1"/>
+  <features xmi:id="_1ObeIJjZEeCrL4EC3xSIEw" name="Language Properties" namespace="com.nomagic.magicdraw.ce.languageproperties" version="1.0" internalVersion="1"/>
+  <features xmi:id="_1ObeIZjZEeCrL4EC3xSIEw" name="Code Engineering" namespace="com.nomagic.magicdraw.ce" version="1.0" sections="_1OlPIJjZEeCrL4EC3xSIEw" internalVersion="1"/>
+  <properties xmi:id="_GPLwoFYDEeCyhsLctII43A" key="standardProfile" value="false"/>
+  <properties xmi:id="_GPLwoVYDEeCyhsLctII43A" key="internalVersion" value="-1"/>
+  <properties xmi:id="_I3t5IFYDEeCyhsLctII43A" key="MODULES_DIRS" value="&lt;project.dir>&lt;>&lt;install.root>/profiles&lt;>&lt;install.root>/modelLibraries"/>
+  <properties xmi:id="_4iLt4JjZEeCrL4EC3xSIEw" key="fileVersion" value="10"/>
+  <properties xmi:id="_4ieo0JjZEeCrL4EC3xSIEw" key="exporterDescription" value="ac ed 0 5 73 72 0 2e 63 6f 6d 2e 6e 6f 6d 61 67 69 63 2e 70 65 72 73 69 73 74 65 6e 63 65 2e 58 6d 69 45 78 70 6f 72 74 65 72 44 65 73 63 72 69 70 74 69 6f 6e f5 3e fd c8 e7 3c 3b d7 2 0 5 4c 0 5 6d 4e 61 6d 65 74 0 12 4c 6a 61 76 61 2f 6c 61 6e 67 2f 53 74 72 69 6e 67 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 50 6c 75 67 69 6e 4d 61 70 74 0 f 4c 6a 61 76 61 2f 75 74 69 6c 2f 4d 61 70 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 52 65 73 6f 75 72 63 65 73 74 0 10 4c 6a 61 76 61 2f 75 74 69 6c 2f 4c 69 73 74 3b 4c 0 10 6d 55 4d 4c 4e 61 6d 65 73 70 61 63 65 55 52 49 71 0 7e 0 1 4c 0 8 6d 56 65 72 73 69 6f 6e 71 0 7e 0 1 78 70 74 0 d 4d 61 67 69 63 44 72 61 77 20 55 4d 4c 73 72 0 11 6a 61 76 61 2e 75 74 69 6c 2e 48 61 73 68 4d 61 70 5 7 da c1 c3 16 60 d1 3 0 2 46 0 a 6c 6f 61 64 46 61 63 74 6f 72 49 0 9 74 68 72 65 73 68 6f 6c 64 78 70 3f 40 0 0 0 0 0 c 77 8 0 0 0 10 0 0 0 0 78 73 72 0 13 6a 61 76 61 2e 75 74 69 6c 2e 41 72 72 61 79 4c 69 73 74 78 81 d2 1d 99 c7 61 9d 3 0 1 49 0 4 73 69 7a 65 78 70 0 0 0 0 77 4 0 0 0 0 78 70 74 0 6 31 37 2e 30 2e 31 "/>
+  <properties xmi:id="_4ieo0ZjZEeCrL4EC3xSIEw" key="MODEL_ROOT_HREF" value="local:/PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+  <projectUsers xmi:id="_zRtSwZjZEeCrL4EC3xSIEw" userId="default"/>
+</project:Project>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='com.nomagic.ci.metamodel.project' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;'>
+<project:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project="http://www.nomagic.com/ns/cameo/client/project/1.0" xmi:id="_GLT9QFYDEeCyhsLctII43A" id="PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600">
+  <ownedSections xmi:id="_GOUN8FYDEeCyhsLctII43A" name="model" featuredBy="_GOS_0FYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_HB1VkFYDEeCyhsLctII43A" name="commonprojectoptions" shared="true" featuredBy="_HB0ugFYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_HB4_8FYDEeCyhsLctII43A" name="personalprojectoptions" shared="true" belongsTo="_HB4_8VYDEeCyhsLctII43A" featuredBy="_HB0ugFYDEeCyhsLctII43A"/>
+  <ownedSections xmi:id="_1OlPIJjZEeCrL4EC3xSIEw" name="commoncodeengineering" featuredBy="_1ObeIZjZEeCrL4EC3xSIEw"/>
+  <userParts xmi:id="_HB4_8VYDEeCyhsLctII43A" user="_zRtSwZjZEeCrL4EC3xSIEw" sections="_HB4_8FYDEeCyhsLctII43A"/>
+  <projectUsages xmi:id="_GPTscFYDEeCyhsLctII43A" usedProjectURI="file:/home/ADEUZA/lmichenaud/progs/MagicDraw_UML/profiles/UML_Standard_Profile.mdzip" readonly="true" alternateLocation="file:/home/donce/md17/git-17-copy/md/core/profiles/UML_Standard_Profile.mdzip" preferredProjectRepositoryType="" loadedAutomatically="true">
+    <usedProject href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.ci.metamodel.project#_VWTUgU_TEeCNOP_jel_PNg"/>
+    <mountPoints xmi:id="_HBun4FYDEeCyhsLctII43A" sharePointID="magicdraw_uml_standard_profile_v_0001" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#magicdraw_uml_standard_profile_v_0001"/>
+      <mountedOn href="PROJECT-5d6756d4ab7fcc1b9be2b6b7ce3f4f23?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+      <options xmi:id="_HBun4VYDEeCyhsLctII43A" key="preferredPath" value=""/>
+    </mountPoints>
+    <properties xmi:id="_HBzgYFYDEeCyhsLctII43A" key="usedVersion" value="17.0.1"/>
+    <properties xmi:id="_I2i0cFYDEeCyhsLctII43A" key="LOCAL_PROJECT_ID" value="PROJECT-877558e9224f114d50dea1f39a1c119"/>
+  </projectUsages>
+  <projectUsages xmi:id="_hZ4OIEnBEeKyV_55mBc2pA" usedProjectURI="file:/home/ADEUZA/lmichenaud/Bureau/MFProfileForMagicDraw/UML%20Movalys%20Framework%20Profile/UML%20Movalys%20Framework%20Profile.mdzip" loadedAutomatically="true">
+    <usedProject href="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.ci.metamodel.project#_GLT9QFYDEeCyhsLctII43A"/>
+    <mountPoints xmi:id="_haHesEnBEeKyV_55mBc2pA" sharePointID="25459f3e-fd52-41ae-9830-068fa2bcd24f" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_17_0_1_2_16a6041b_1355908910794_754984_1676"/>
+      <mountedOn href="PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+      <options xmi:id="_lDrmYEnBEeKyV_55mBc2pA" key="preferredPath" value=""/>
+      <mountedSharePoint href="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6?resource=com.nomagic.ci.metamodel.project#_LvcpYEm-EeKi0smEaqrkOg"/>
+    </mountPoints>
+    <properties xmi:id="_hZ4OIUnBEeKyV_55mBc2pA" key="loadIndex" value="true"/>
+    <properties xmi:id="_vuOdgEnBEeKyV_55mBc2pA" key="LOCAL_PROJECT_ID" value="PROJECT-1bc81bf1-fd14-4cd1-9aed-448daf794ec6"/>
+  </projectUsages>
+  <features xmi:id="_GOS_0FYDEeCyhsLctII43A" name="UML Model" namespace="com.nomagic.magicdraw.uml_model" version="17.0" sections="_GOUN8FYDEeCyhsLctII43A" internalVersion="1"/>
+  <features xmi:id="_HB0ugFYDEeCyhsLctII43A" name="Project Options" namespace="com.nomagic.magicdraw.core.project.options" version="1.0" sections="_HB1VkFYDEeCyhsLctII43A _HB4_8FYDEeCyhsLctII43A" internalVersion="1"/>
+  <features xmi:id="_1ObeIJjZEeCrL4EC3xSIEw" name="Language Properties" namespace="com.nomagic.magicdraw.ce.languageproperties" version="1.0" internalVersion="1"/>
+  <features xmi:id="_1ObeIZjZEeCrL4EC3xSIEw" name="Code Engineering" namespace="com.nomagic.magicdraw.ce" version="1.0" sections="_1OlPIJjZEeCrL4EC3xSIEw" internalVersion="1"/>
+  <properties xmi:id="_GPLwoFYDEeCyhsLctII43A" key="standardProfile" value="false"/>
+  <properties xmi:id="_GPLwoVYDEeCyhsLctII43A" key="internalVersion" value="-1"/>
+  <properties xmi:id="_I3t5IFYDEeCyhsLctII43A" key="MODULES_DIRS" value="&lt;project.dir>&lt;>&lt;install.root>/profiles&lt;>&lt;install.root>/modelLibraries&lt;>/&lt;install.root>/profiles&lt;>/&lt;project.dir>/MFProfileForMagicDraw/UML Movalys Framework Profile"/>
+  <properties xmi:id="_4iLt4JjZEeCrL4EC3xSIEw" key="fileVersion" value="62"/>
+  <properties xmi:id="_4ieo0JjZEeCrL4EC3xSIEw" key="exporterDescription" value="ac ed 0 5 73 72 0 2e 63 6f 6d 2e 6e 6f 6d 61 67 69 63 2e 70 65 72 73 69 73 74 65 6e 63 65 2e 58 6d 69 45 78 70 6f 72 74 65 72 44 65 73 63 72 69 70 74 69 6f 6e f5 3e fd c8 e7 3c 3b d7 2 0 5 4c 0 5 6d 4e 61 6d 65 74 0 12 4c 6a 61 76 61 2f 6c 61 6e 67 2f 53 74 72 69 6e 67 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 50 6c 75 67 69 6e 4d 61 70 74 0 f 4c 6a 61 76 61 2f 75 74 69 6c 2f 4d 61 70 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 52 65 73 6f 75 72 63 65 73 74 0 10 4c 6a 61 76 61 2f 75 74 69 6c 2f 4c 69 73 74 3b 4c 0 10 6d 55 4d 4c 4e 61 6d 65 73 70 61 63 65 55 52 49 71 0 7e 0 1 4c 0 8 6d 56 65 72 73 69 6f 6e 71 0 7e 0 1 78 70 74 0 d 4d 61 67 69 63 44 72 61 77 20 55 4d 4c 73 72 0 11 6a 61 76 61 2e 75 74 69 6c 2e 48 61 73 68 4d 61 70 5 7 da c1 c3 16 60 d1 3 0 2 46 0 a 6c 6f 61 64 46 61 63 74 6f 72 49 0 9 74 68 72 65 73 68 6f 6c 64 78 70 3f 40 0 0 0 0 0 c 77 8 0 0 0 10 0 0 0 0 78 73 72 0 13 6a 61 76 61 2e 75 74 69 6c 2e 41 72 72 61 79 4c 69 73 74 78 81 d2 1d 99 c7 61 9d 3 0 1 49 0 4 73 69 7a 65 78 70 0 0 0 0 77 4 0 0 0 0 78 70 74 0 6 31 37 2e 30 2e 31 "/>
+  <properties xmi:id="_4ieo0ZjZEeCrL4EC3xSIEw" key="MODEL_ROOT_HREF" value="local:/PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+  <projectUsers xmi:id="_zRtSwZjZEeCrL4EC3xSIEw" userId="default"/>
+</project:Project>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='proxy.local__PROJECT$h877558e9224f114d50dea1f39a1c119_resource_com$dnomagic$dci$dmetamodel$dproject$dsnapshot' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<project:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project="http://www.nomagic.com/ns/cameo/client/project/1.0" xmi:id="_VWTUgU_TEeCNOP_jel_PNg" description="" id="PROJECT-877558e9224f114d50dea1f39a1c119">
+  <ownedSections xmi:id="_VWY0EU_TEeCNOP_jel_PNg" name="model" featuredBy="_VWY0EE_TEeCNOP_jel_PNg"/>
+  <ownedSections xmi:id="_VabmkU_TEeCNOP_jel_PNg" name="commonprojectoptions" shared="true" featuredBy="_VabmkE_TEeCNOP_jel_PNg"/>
+  <ownedSections xmi:id="_VacNoU_TEeCNOP_jel_PNg" name="personalprojectoptions" shared="true" belongsTo="_VacNok_TEeCNOP_jel_PNg" featuredBy="_VabmkE_TEeCNOP_jel_PNg"/>
+  <ownedSections xmi:id="_VbQF8E_TEeCNOP_jel_PNg" name="shared_model" shared="true" featuredBy="_VWY0EE_TEeCNOP_jel_PNg">
+    <sharePoints xmi:id="_VbhywE_TEeCNOP_jel_PNg" ID="magicdraw_uml_standard_profile_v_0001">
+      <object href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#magicdraw_uml_standard_profile_v_0001"/>
+      <options xmi:id="_Bnb0gH02EeCAfIowCLYtPA" key="preferredPath" value=""/>
+    </sharePoints>
+  </ownedSections>
+  <ownedSections xmi:id="_VfpdwU_TEeCNOP_jel_PNg" name="commoncodeengineering" featuredBy="_VfpdwE_TEeCNOP_jel_PNg"/>
+  <ownedSections xmi:id="_OPAywM-5EeCfmLtDUbwkxg" name="commondmncodeengineering" featuredBy="_thxqMIdvEeCCFcjNzthGow"/>
+  <userParts xmi:id="_VacNok_TEeCNOP_jel_PNg" user="_kpyFAVxdEeC_ZNJv4YLpoQ" sections="_VacNoU_TEeCNOP_jel_PNg"/>
+  <projectUsages xmi:id="_Vbk2EE_TEeCNOP_jel_PNg" usedProjectURI="file:/L:/md/core/profiles/UML%20completeness%20constraints.mdzip" reshared="true" readonly="true" alternateLocation="file:/Users/minde/md/md/core/profiles/UML%20completeness%20constraints.mdzip" preferredProjectRepositoryType="" loadedAutomatically="true">
+    <usedProject href="PROJECT-38e322bfe6abfc5fa7bfd541d41ea7?resource=com.nomagic.ci.metamodel.project#_j78IMU_TEeCNOP_jel_PNg"/>
+    <mountPoints xmi:id="_VbrjwE_TEeCNOP_jel_PNg" sharePointID="_12_0_8f90291_1163453727562_955061_538" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-38e322bfe6abfc5fa7bfd541d41ea7?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_12_0_8f90291_1163453727562_955061_538"/>
+      <mountedOn href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_11_5_f720368_1159529670215_231387_1"/>
+      <options xmi:id="_r6YAwFnLEeCNG86yLj6xYg" key="preferredPath" value="UML Standard Profile::Validation Profile"/>
+    </mountPoints>
+    <properties xmi:id="_Vbrjwk_TEeCNOP_jel_PNg" key="autoLoadKind"/>
+    <properties xmi:id="_Vbrjw0_TEeCNOP_jel_PNg" key="usedVersion" value="17.0.1"/>
+    <properties xmi:id="_e4SoIE_TEeCNOP_jel_PNg" key="LOCAL_PROJECT_ID" value="PROJECT-38e322bfe6abfc5fa7bfd541d41ea7"/>
+  </projectUsages>
+  <projectUsages xmi:id="_VbuAAE_TEeCNOP_jel_PNg" usedProjectURI="file:/L:/md/core/profiles/UML%20correctness%20constraints.mdzip" reshared="true" readonly="true" alternateLocation="file:/Users/minde/md/md/core/profiles/UML%20correctness%20constraints.mdzip" preferredProjectRepositoryType="" loadedAutomatically="true">
+    <usedProject href="PROJECT-b22019f0d0c8fd31d4e5d5e3781df1ad?resource=com.nomagic.ci.metamodel.project#_m_6PgU_TEeCNOP_jel_PNg"/>
+    <mountPoints xmi:id="_Vb0GpU_TEeCNOP_jel_PNg" sharePointID="_12_0_8f90291_1163446670265_941740_378" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-b22019f0d0c8fd31d4e5d5e3781df1ad?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_12_0_8f90291_1163446670265_941740_378"/>
+      <mountedOn href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_11_5_f720368_1159529670215_231387_1"/>
+      <options xmi:id="_p_focFnLEeCNG86yLj6xYg" key="preferredPath" value="UML Standard Profile::Validation Profile"/>
+    </mountPoints>
+    <properties xmi:id="_Vb0tsE_TEeCNOP_jel_PNg" key="autoLoadKind"/>
+    <properties xmi:id="_Vb0tsU_TEeCNOP_jel_PNg" key="usedVersion" value="17.0.1"/>
+    <properties xmi:id="_e4SoIk_TEeCNOP_jel_PNg" key="LOCAL_PROJECT_ID" value="PROJECT-b22019f0d0c8fd31d4e5d5e3781df1ad"/>
+  </projectUsages>
+  <projectUsages xmi:id="_Vb3J8E_TEeCNOP_jel_PNg" usedProjectURI="file:/L:/md/core/profiles/Traceability%20Customization.mdzip" reshared="true" readonly="true" alternateLocation="file:/Users/minde/md/md/core/profiles/Traceability%20Customization.mdzip" preferredProjectRepositoryType="" loadedAutomatically="true">
+    <usedProject href="PROJECT-13a6649c8984aaf82df7aa5511335753?resource=com.nomagic.ci.metamodel.project#_j4C4gVoMEeCgoqXAD1kEmg"/>
+    <mountPoints xmi:id="_VeKQAE_TEeCNOP_jel_PNg" sharePointID="_16_6_8f90291_1254846042821_86742_517" containmentFeatureID="59" featureName="UML Model" containmentIndex="-1" containmentFeatureName="packagedElement">
+      <mountedPoint href="PROJECT-13a6649c8984aaf82df7aa5511335753?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_16_6_8f90291_1254846042821_86742_517"/>
+      <mountedOn href="PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_be00301_1073394351331_445580_2"/>
+      <options xmi:id="_VeKQAU_TEeCNOP_jel_PNg" key="preferredPath" value="UML Standard Profile::MagicDraw Profile::"/>
+    </mountPoints>
+    <properties xmi:id="_VeKQAk_TEeCNOP_jel_PNg" key="usedVersion" value="17.0.1"/>
+    <properties xmi:id="_e4SoIU_TEeCNOP_jel_PNg" key="LOCAL_PROJECT_ID" value="PROJECT-13a6649c8984aaf82df7aa5511335753"/>
+  </projectUsages>
+  <features xmi:id="_VWY0EE_TEeCNOP_jel_PNg" name="UML Model" namespace="com.nomagic.magicdraw.uml_model" version="17.0" sections="_VWY0EU_TEeCNOP_jel_PNg _VbQF8E_TEeCNOP_jel_PNg" internalVersion="1"/>
+  <features xmi:id="_VabmkE_TEeCNOP_jel_PNg" name="Project Options" namespace="com.nomagic.magicdraw.core.project.options" version="1.0" sections="_VabmkU_TEeCNOP_jel_PNg _VacNoU_TEeCNOP_jel_PNg" internalVersion="1"/>
+  <features xmi:id="_Vfo2sE_TEeCNOP_jel_PNg" name="Language Properties" namespace="com.nomagic.magicdraw.ce.languageproperties" version="1.0" internalVersion="1"/>
+  <features xmi:id="_VfpdwE_TEeCNOP_jel_PNg" name="Code Engineering" namespace="com.nomagic.magicdraw.ce" version="1.0" sections="_VfpdwU_TEeCNOP_jel_PNg" internalVersion="1"/>
+  <features xmi:id="_thxqMIdvEeCCFcjNzthGow" name="DMN Code Engineering" namespace="com.nomagic.magicdraw.ce.dmn" version="1.0" sections="_OPAywM-5EeCfmLtDUbwkxg" internalVersion="1"/>
+  <properties xmi:id="_Vbhywk_TEeCNOP_jel_PNg" key="standardProfile" value="true"/>
+  <properties xmi:id="_VbiZ0E_TEeCNOP_jel_PNg" key="internalVersion" value="17.0.1"/>
+  <properties xmi:id="_srSgUFnLEeCNG86yLj6xYg" key="MODULES_DIRS" value="&lt;install.root>\templates&lt;>&lt;install.root>\profiles&lt;>&lt;project.dir>\&lt;>&lt;install.root>\modelLibraries"/>
+  <properties xmi:id="_94jvAH01EeCAfIowCLYtPA" key="exporterDescription" value="ac ed 0 5 73 72 0 2e 63 6f 6d 2e 6e 6f 6d 61 67 69 63 2e 70 65 72 73 69 73 74 65 6e 63 65 2e 58 6d 69 45 78 70 6f 72 74 65 72 44 65 73 63 72 69 70 74 69 6f 6e f5 3e fd c8 e7 3c 3b d7 2 0 5 4c 0 5 6d 4e 61 6d 65 74 0 12 4c 6a 61 76 61 2f 6c 61 6e 67 2f 53 74 72 69 6e 67 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 50 6c 75 67 69 6e 4d 61 70 74 0 f 4c 6a 61 76 61 2f 75 74 69 6c 2f 4d 61 70 3b 4c 0 12 6d 52 65 71 75 69 72 65 64 52 65 73 6f 75 72 63 65 73 74 0 10 4c 6a 61 76 61 2f 75 74 69 6c 2f 4c 69 73 74 3b 4c 0 10 6d 55 4d 4c 4e 61 6d 65 73 70 61 63 65 55 52 49 71 0 7e 0 1 4c 0 8 6d 56 65 72 73 69 6f 6e 71 0 7e 0 1 78 70 74 0 d 4d 61 67 69 63 44 72 61 77 20 55 4d 4c 73 72 0 11 6a 61 76 61 2e 75 74 69 6c 2e 48 61 73 68 4d 61 70 5 7 da c1 c3 16 60 d1 3 0 2 46 0 a 6c 6f 61 64 46 61 63 74 6f 72 49 0 9 74 68 72 65 73 68 6f 6c 64 78 70 3f 40 0 0 0 0 0 c 77 8 0 0 0 10 0 0 0 0 78 73 72 0 13 6a 61 76 61 2e 75 74 69 6c 2e 41 72 72 61 79 4c 69 73 74 78 81 d2 1d 99 c7 61 9d 3 0 1 49 0 4 73 69 7a 65 78 70 0 0 0 0 77 4 0 0 0 0 78 70 74 0 6 31 37 2e 30 2e 31 "/>
+  <properties xmi:id="_DnjcsMQEEeCVy5mnlxX55w" key="fileVersion" value="24"/>
+  <properties xmi:id="_Doc0kMQEEeCVy5mnlxX55w" key="MODEL_ROOT_HREF" value="local:/PROJECT-877558e9224f114d50dea1f39a1c119?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+  <projectUsers xmi:id="_kpyFAVxdEeC_ZNJv4YLpoQ" userId="default"/>
+</project:Project>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='proxy.local__PROJECT$h877558e9224f114d50dea1f39a1c119_resource_com$dnomagic$dmagicdraw$duml_umodel$dshared_umodel$dsnapshot' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.nomagic.com/magicdraw/UML/2.4.1" xmi:id="magicdraw_uml_standard_profile_v_0001" ID="magicdraw_uml_standard_profile_v_0001" name="UML Standard Profile">
+  <appliedStereotypeInstance xmi:id="_12_1_8f90291_1174411598625_504587_98" ID="_12_1_8f90291_1174411598625_504587_98" visibility="public" classifier="_12_1_8f90291_1173963323875_662612_98"/>
+  <packagedElement xsi:type="uml:Profile" xmi:id="_be00301_1073394351331_445580_2" ID="_be00301_1073394351331_445580_2" name="MagicDraw Profile">
+    <packagedElement xsi:type="uml:Stereotype" xmi:id="_12_1_8f90291_1173963323875_662612_98" ID="_12_1_8f90291_1173963323875_662612_98" name="auxiliaryResource">
+      <generalization xmi:id="_15_0_8f90291_1196866634537_680603_98" ID="_15_0_8f90291_1196866634537_680603_98" general="_9_0_be00301_1108044721245_236588_411"/>
+      <ownedAttribute xmi:id="_12_1_8f90291_1173963939937_52316_99" ID="_12_1_8f90291_1173963939937_52316_99" name="base_Package" visibility="private" type="_9_0_62a020a_1105704885298_713292_7913"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Extension" xmi:id="_10_0EAPbeta_be00301_1123081772098_323897_274" ID="_10_0EAPbeta_be00301_1123081772098_323897_274" memberEnd="_10_0EAPbeta_be00301_1123081772108_624594_276 _10_0EAPbeta_be00301_1123081772098_411862_275">
+      <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_10_0EAPbeta_be00301_1123081772108_624594_276" ID="_10_0EAPbeta_be00301_1123081772108_624594_276" name="extension_InvisibleStereotype" visibility="private" type="_9_0_be00301_1108044721245_236588_411" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Extension" xmi:id="_12_1_8f90291_1173963939937_323574_98" ID="_12_1_8f90291_1173963939937_323574_98" memberEnd="_12_1_8f90291_1173963939937_399630_100 _12_1_8f90291_1173963939937_52316_99">
+      <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_12_1_8f90291_1173963939937_399630_100" ID="_12_1_8f90291_1173963939937_399630_100" name="extension_auxiliaryResource" visibility="private" type="_12_1_8f90291_1173963323875_662612_98" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Stereotype" xmi:id="_9_0_be00301_1108044721245_236588_411" ID="_9_0_be00301_1108044721245_236588_411" name="InvisibleStereotype">
+      <ownedAttribute xmi:id="_10_0EAPbeta_be00301_1123081772098_411862_275" ID="_10_0EAPbeta_be00301_1123081772098_411862_275" name="base_Element" visibility="private" type="_9_0_62a020a_1105704884807_371561_7741"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Stereotype" xmi:id="_9_0_be00301_1108044380615_150487_0" ID="_9_0_be00301_1108044380615_150487_0" name="DiagramInfo">
+      <generalization xmi:id="_9_0_be00301_1108044989070_469307_436" ID="_9_0_be00301_1108044989070_469307_436" general="_9_0_be00301_1108044721245_236588_411"/>
+      <ownedAttribute xmi:id="_be00301_1073306188629_537791_2" ID="_be00301_1073306188629_537791_2" name="Creation date" visibility="private" type="_be00301_1073305590699_364818_1"/>
+      <ownedAttribute xmi:id="_be00301_1077726770128_871366_1" ID="_be00301_1077726770128_871366_1" name="Author" visibility="private" type="_9_0_2_91a0295_1110274713995_297054_0"/>
+      <ownedAttribute xmi:id="_be00301_1073394345322_922552_1" ID="_be00301_1073394345322_922552_1" name="Modification date" visibility="private" type="_be00301_1073305590699_364818_1"/>
+      <ownedAttribute xmi:id="_10_0EAPbeta_be00301_1123081772498_901864_356" ID="_10_0EAPbeta_be00301_1123081772498_901864_356" name="base_Diagram" visibility="private" type="_9_0_62a020a_1106296071977_61607_0"/>
+      <ownedAttribute xmi:id="_16_8beta_8ca0285_1257244649124_794756_344" ID="_16_8beta_8ca0285_1257244649124_794756_344" name="Last modified by" visibility="private" type="_9_0_2_91a0295_1110274713995_297054_0"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" xmi:id="_9_0_2_be00301_1111670217596_336168_627" ID="_9_0_2_be00301_1111670217596_336168_627" name="datatypes">
+      <packagedElement xsi:type="uml:DataType" xmi:id="eee_1045467100323_784316_63" ID="eee_1045467100323_784316_63" name="long"/>
+      <packagedElement xsi:type="uml:DataType" xmi:id="_be00301_1073305590699_364818_1" ID="_be00301_1073305590699_364818_1" name="date"/>
+      <packagedElement xsi:type="uml:DataType" xmi:id="eee_1045467100323_848034_66" ID="eee_1045467100323_848034_66" name="double"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Extension" xmi:id="_10_0EAPbeta_be00301_1123081772498_531863_355" ID="_10_0EAPbeta_be00301_1123081772498_531863_355" memberEnd="_10_0EAPbeta_be00301_1123081772498_435993_357 _10_0EAPbeta_be00301_1123081772498_901864_356">
+      <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_10_0EAPbeta_be00301_1123081772498_435993_357" ID="_10_0EAPbeta_be00301_1123081772498_435993_357" name="extension_DiagramInfo" visibility="private" type="_9_0_be00301_1108044380615_150487_0" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Profile" href="PROJECT-13a6649c8984aaf82df7aa5511335753?resource=com.nomagic.magicdraw.uml_umodel.shared_umodel#_16_6_8f90291_1254846042821_86742_517"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" xmi:id="_9_0_be00301_1108053761194_467635_11463" ID="_9_0_be00301_1108053761194_467635_11463" name="UML2 Metamodel">
+    <appliedStereotypeInstance xmi:id="_10_0EAPbeta_be00301_1123081771126_233373_95" ID="_10_0EAPbeta_be00301_1123081771126_233373_95" visibility="public" classifier="magicdraw_1046861421236_601240_36"/>
+    <packagedElement xsi:type="uml:Class" xmi:id="_9_0_62a020a_1105704920340_825592_9329" ID="_9_0_62a020a_1105704920340_825592_9329" name="Model"/>
+    <packagedElement xsi:type="uml:Class" xmi:id="_9_0_62a020a_1105704885298_713292_7913" ID="_9_0_62a020a_1105704885298_713292_7913" name="Package"/>
+    <packagedElement xsi:type="uml:Class" xmi:id="_9_0_62a020a_1105704884807_371561_7741" ID="_9_0_62a020a_1105704884807_371561_7741" name="Element"/>
+    <packagedElement xsi:type="uml:Package" xmi:id="_12_0EAPbeta_be00301_1157529392394_202602_1" ID="_12_0EAPbeta_be00301_1157529392394_202602_1" name="PrimitiveTypes">
+      <packagedElement xsi:type="uml:PrimitiveType" xmi:id="_9_0_2_91a0295_1110274713995_297054_0" ID="_9_0_2_91a0295_1110274713995_297054_0" name="String"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" xmi:id="_9_0_62a020a_1106296071977_61607_0" ID="_9_0_62a020a_1106296071977_61607_0" name="Diagram"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Profile" xmi:id="_16_8beta_62a020a_1256807755193_508228_378" ID="_16_8beta_62a020a_1256807755193_508228_378" name="StandardProfileL3">
+    <packagedElement xsi:type="uml:Stereotype" xmi:id="magicdraw_1046861421236_601240_36" ID="magicdraw_1046861421236_601240_36" name="Metamodel">
+      <ownedAttribute xmi:id="_10_0EAPbeta_be00301_1123081771136_271406_98" ID="_10_0EAPbeta_be00301_1123081771136_271406_98" name="base_Model" visibility="private" type="_9_0_62a020a_1105704920340_825592_9329"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Extension" xmi:id="_10_0EAPbeta_be00301_1123081771136_824883_97" ID="_10_0EAPbeta_be00301_1123081771136_824883_97" memberEnd="_10_0EAPbeta_be00301_1123081771136_580423_99 _10_0EAPbeta_be00301_1123081771136_271406_98">
+      <ownedEnd xsi:type="uml:ExtensionEnd" xmi:id="_10_0EAPbeta_be00301_1123081771136_580423_99" ID="_10_0EAPbeta_be00301_1123081771136_580423_99" name="extension_metamodel" visibility="private" type="magicdraw_1046861421236_601240_36" aggregation="composite"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Package>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600' type='BINARY'>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='Binaries.properties' type='XML'>#
+#Thu Dec 20 15:05:35 CET 2012
+com.nomagic.magicdraw.uml_model.model=BINARY-475f712e-e9bb-4296-ac33-82321d9c19c5
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='com.nomagic.magicdraw.ce.commoncodeengineering' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<md.ce.rt.options:Options xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:md.ce.rt.options="http://www.nomagic.com/magicdraw/ce/rt/options/1" xmi:id="_1OlPIZjZEeCrL4EC3xSIEw" tempDirectory="Active Directory" defaultWorkingDirectory="&lt;install.root>" defaultLanguage="Java" visualizationOption="1" codeGenerationReverseOption="2">
+  <defaultWorkingPackage href="PROJECT-6c93b532-cafb-43c8-9d6a-bfd8fcfbf600?resource=com.nomagic.magicdraw.uml_umodel.model#eee_1045467100313_135436_1"/>
+</md.ce.rt.options:Options>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='personal-com.nomagic.magicdraw.core.project.options.personalprojectoptions' type='XML' header='&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;'>
+<project.options:UserProjectOptions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project.options="http://www.nomagic.com/ns/magicdraw/core/project/options/1.0" xmi:id="_HB5nAFYDEeCyhsLctII43A" optionsString="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" diagramViewStyleString="UEsDBBQACAAIALF4lEEAAAAAAAAAAAAAAAAAAAAAvZZdb6owGMev56fwjiuVlhbKCbo4ZScmZ9OI58UbSQedNimUADrdpz894HRs0Wnc2VVTnuf/vPzaPsG5XkeivmJpxmXc1kBT1+osDmTI43lb+zm5bRDtulOrOaNUJizNN794xnOZdoOAJWrt1K6cKHQFi1ic11m59gTNsrbm8SgRzMs3gmnK78qJacQ63mT6w/X7g+73cffOH42HI3c8Gbie0yrM//xC9kiXIq+vI/5tRcWStbVHKjKmtQrzoXwvJd7RmM5ZWuTcJvWB5es+8KEPTGrqCDz4wMDYwlC3bKzrvk1sDLEPCLD2hVw5STXkoH8kkqHiWLZvAmJYlopkIqf1Xl+EPdTB/TJ6YOlLH2UD+yKU+lnK6JYGCvw+9jbo3q/PsiDlSa5OtCLx+67XGw9Gk8Hwfi+vepeRCuiv8etNG2OCEDANYiMTG0Z5Fso33yQVV7izCPk0pvG8YgVNpANoE2QiAyJF220gvFMs+HzxTmIoCSTQQKZKjiEhpmuQrcRp7VAeJ3sjpWA0PoJWIeIrdjLW0v0CpHm6ZJ/fRcjpPKXRMGExC09upqL64p4+vPPb4rwglUKMpBo/qoY/5/b2Rn7RW9CPXvEGbAJkIWKYiLj21+CYXoZjegEO9Z7/K5DeQvKAfQzkN49D+XQjl3GYnUvjtfZMFB2nVa7lt6CotjIPZxDNAETmDBN7x0klZOsKJPD5wyCiax7x5zMGwU5xKoU31Va3lZ3TOvQL8RdQSwcI1uVX0jACAACECAAAUEsBAhQAFAAIAAgAsXiUQdblV9IwAgAAhAgAAAAAAAAAAAAAAAAAAAAAAAAAAFBLBQYAAAAAAQABAC4AAABeAgAAAAA="/>
+</filePart>
+	</xmi:Extension>
+	<xmi:Extension extender='MagicDraw UML 17.0.1'>
+		<filePart name='Records.properties' type='BINARY'>H4sIAAAAAAAAAL2UTW+cMBCG7/wKpPhqtObbkTg02xzaQ1tFe+kJmfF4cQU2Albt/vuahE2iKLRF3d2LPTYzfsz7ynOztW0nRl3pRo9HH83YH72bXX3wPyL44cZnye0muY0Sf3u/c2sWeh32gzWioWDbwNhW7DUEj6Psxc8AbI9B19sfCGNgu1FbMwSnmnl/3i7Od5T3+gTQQYujaK3E5lRf/C3Bc/OvY9BYEE1Zfnv4+vl+uyN1nmVJkiMPw1gxFstkI1EwFXHBgDFe9jjYQw9YuvOJnAFEgibyGUHkzCByMKIbajsWV6W9eHanjeg1DtNfu83RhcWfPnoLzqAzp22tAUdEs9cGsddmX6xLP6/mzzwiD21THmY1hlr0KF+WF3FgHdt7z4YV6r/3Lp4EfvPA/rN+wZ8UeFQlUUhqEKoidRxBTmouU0HqSslcgapUutmsFOvfDLoO3Jt59ISjE41OMDqx6GtUsSZ5wdPpLk/96HFccO5N1oI/rIKcVYqRWkkWO4lAupgLlC6OcylUxmOE9MzN69JY7+7Tlw8P32mcJSpjIVLklVM55CkVEEU0D6OQSQ6MQ1KsyL2QimdpR9e9hPcbAC78kw8IAAA=</filePart>
+	</xmi:Extension>
+</xmi:XMI>
