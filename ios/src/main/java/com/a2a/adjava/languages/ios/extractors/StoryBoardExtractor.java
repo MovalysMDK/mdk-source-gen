@@ -702,16 +702,15 @@ public class StoryBoardExtractor extends AbstractExtractor<MIOSDomain<MIOSDictio
 		MIOSLabelView r_oLabelView = new MIOSLabelView();
 		IOSUITypeDescription oUITypeDesc = (IOSUITypeDescription) this.getLngConfiguration().getUiTypeDescriptionByComponentType("MDKLabel");
 		if (oUITypeDesc!= null) {
-			if (oUITypeDesc.getRwComponentWidth() > 0 ) {
-				r_oLabelView.setWidth( oUITypeDesc.getRwComponentWidth());
+			if (oUITypeDesc.getRwComponentWidth() > 0) {
+				r_oLabelView.setWidth(oUITypeDesc.getRwComponentWidth());
 			}
-			if (oUITypeDesc.getRwComponentHeight() > 0 ) {
+			if (oUITypeDesc.getRwComponentHeight() > 0) {
 				r_oLabelView.setHeight(oUITypeDesc.getRwComponentHeight());
 			}
 		}
-		String sViewId = this.computeViewId(p_oVisualField.getLabel().getKey(), p_oSection.getName());
-
-		r_oLabelView.setId(sViewId);
+		
+		r_oLabelView.setId(p_oVisualField.getLabel().getKey());
 		r_oLabelView.setCustomClass(this.getLabelType());
 		r_oLabelView.setValue(p_oVisualField.getLabel().getKey());
 		r_oLabelView.setPropertyName( this.computePropertyName(p_oVisualField.getLabel().getKey()));
