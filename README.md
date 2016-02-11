@@ -1,4 +1,4 @@
-# mdk-source-gen
+# MDK Source Gen
 **Movalys MDK Framework source code**
 
 ## What is mdk-source-gen?
