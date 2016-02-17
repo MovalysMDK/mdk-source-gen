@@ -35,245 +35,226 @@ import com.a2a.adjava.xmodele.MDaoImpl;
 import com.a2a.adjava.xmodele.XProject;
 
 /**
- * 
  * <p>
  * Generates the implementations of the beans for DaoMapping, DaoProxy and DaoSql.
  * </p>
- * 
- * <p>
+ * <p/>
+ * <p/>
  * Copyright (c) 2009
- * <p>
+ * <p/>
  * Company: Adeuza
- * 
  */
-public class DaoGenerator extends AbstractIncrementalGenerator<IDomain<MH5Dictionary,MH5ModeleFactory>> {
-	
-	/**
-	 * Logger for this class
-	 */
-	private static final Logger log = LoggerFactory.getLogger(DaoGenerator.class);
-	
-	private static final String docPathDaoMapping = "webapp/src/app/data/dao/mappings";
-	private static final String docPathDaoProxy   = "webapp/src/app/data/dao";
-	private static final String docPathDaoSql     = "webapp/src/app/data/dao/sql";
-	private static final String docPathDaoNoSql     = "webapp/src/app/data/dao/nosql";
-	
-	private static final String docSuffixMapping = "Mapping";
-	private static final String docSuffixProxy   = "Proxy";
-	private static final String docSuffixSql     = "Sql";
-	private static final String docSuffixNoSql     = "NoSql";
+public class DaoGenerator extends AbstractIncrementalGenerator<IDomain<MH5Dictionary, MH5ModeleFactory>> {
+
+    /**
+     * Logger for this class
+     */
+    private static final Logger log = LoggerFactory.getLogger(DaoGenerator.class);
+
+    private static final String docPathDaoMapping = "webapp/src/app/data/dao/mappings";
+    private static final String docPathDaoProxy = "webapp/src/app/data/dao";
+    private static final String docPathDaoSql = "webapp/src/app/data/dao/sql";
+    private static final String docPathDaoNoSql = "webapp/src/app/data/dao/nosql";
+
+    private static final String docSuffixMapping = "Mapping";
+    private static final String docSuffixProxy = "Proxy";
+    private static final String docSuffixSql = "Sql";
+    private static final String docSuffixNoSql = "NoSql";
 
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void genere(
-			XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oGeneratorContext) throws Exception {
-		
-		log.debug("> DaoGenerator.genere");
-		Chrono oChrono = new Chrono(true);
-		IModelDictionary oDictionnary = p_oMProject.getDomain().getDictionnary();
-		
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void genere(
+            XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+            DomainGeneratorContext p_oGeneratorContext) throws Exception {
+
+        log.debug("> DaoGenerator.genere");
+        Chrono oChrono = new Chrono(true);
+        IModelDictionary oDictionnary = p_oMProject.getDomain().getDictionnary();
+
 		
 		/* DaoMapping */
-		for (MDaoImpl oClass : oDictionnary.getAllDaos()) {			
-			
-			String sNameBefore = oClass.getName();
-			//set the first letter of the class in uppercase.
-			sNameBefore = sNameBefore.substring(0,1).toUpperCase() + sNameBefore.substring(1);
-			
-			oClass.setName(sNameBefore+docSuffixMapping);
-			
-			createDaoMapping(oClass, p_oMProject, p_oGeneratorContext);
-			
-			oClass.setName(sNameBefore);
-		}
-		
+        for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
+
+            String sNameBefore = oClass.getName();
+            //set the first letter of the class in uppercase.
+            sNameBefore = sNameBefore.substring(0, 1).toUpperCase() + sNameBefore.substring(1);
+
+            oClass.setName(sNameBefore + docSuffixMapping);
+
+            createDaoMapping(oClass, p_oMProject, p_oGeneratorContext);
+
+            oClass.setName(sNameBefore);
+        }
+
 		
 		/* DaoProxy */
-		for (MDaoImpl oClass : oDictionnary.getAllDaos()) {			
-			
-			String sNameBefore = oClass.getName();
-			oClass.setName(sNameBefore+docSuffixProxy);
-			
-			createDaoProxy(oClass, p_oMProject, p_oGeneratorContext);
-			
-			oClass.setName(sNameBefore);
-		}
-		
+        for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
+
+            String sNameBefore = oClass.getName();
+            oClass.setName(sNameBefore + docSuffixProxy);
+
+            createDaoProxy(oClass, p_oMProject, p_oGeneratorContext);
+
+            oClass.setName(sNameBefore);
+        }
+
 		
 		/* DaoSql */
-		for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
-			
-			String sNameBefore = oClass.getName();
-			oClass.setName(sNameBefore+docSuffixSql);
-			
-			createDaoSql(oClass, p_oMProject, p_oGeneratorContext);
-			
-			oClass.setName(sNameBefore);
-		}
-		
+        for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
+
+            String sNameBefore = oClass.getName();
+            oClass.setName(sNameBefore + docSuffixSql);
+
+            createDaoSql(oClass, p_oMProject, p_oGeneratorContext, sNameBefore);
+
+            oClass.setName(sNameBefore);
+        }
+
 		
 		/* DaoNoSql */
-		for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
-			
-			String sNameBefore = oClass.getName();
-			oClass.setName(sNameBefore+docSuffixNoSql);
-			
-			createDaoNoSql(oClass, p_oMProject, p_oGeneratorContext);
-			
-			oClass.setName(sNameBefore);
-		}
-		
-		
-		log.debug("< DaoGenerator.genere: {}", oChrono.stopAndDisplay());
-	}
-	
-	
+        for (MDaoImpl oClass : oDictionnary.getAllDaos()) {
 
-	/**
-	 * Generates the implementation of the bean for DaoMapping
-	 * 
-	 * @param p_oClass
-	 *            the implementation class of the bean
-	 * @param p_oNonGeneratedBlocExtractor
-	 *            the non generated blocks
-	 * @param p_oProjectConfig
-	 *            config adjava
-	 * @param p_oXslPojoTransformer
-	 *            transformer xsl
-	 * @throws Exception
-	 *             for generation failures
-	 */
-	private void createDaoMapping(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oContext) throws Exception {
+            String sNameBefore = oClass.getName();
+            oClass.setName(sNameBefore + docSuffixNoSql);
 
-		Document xClass = DocumentHelper.createDocument(p_oClass.toXml());
+            createDaoNoSql(oClass, p_oMProject, p_oGeneratorContext, sNameBefore);
 
-		String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoMapping, p_oClass.getName());
-		
-		log.debug("  generation of file: {}", sPojoFile);
-		this.doIncrementalTransform("dao/dao-mapping.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
-	}
-	
-	
-	/**
-	 * Generates the implementation of the bean for DaoProxy
-	 * 
-	 * @param p_oClass
-	 *            the implementation class of the bean
-	 * @param p_oNonGeneratedBlocExtractor
-	 *            the non generated blocks
-	 * @param p_oProjectConfig
-	 *            config adjava
-	 * @param p_oXslPojoTransformer
-	 *            transformer xsl
-	 * @throws Exception
-	 *             for generation failures
-	 */
-	private void createDaoProxy(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oContext) throws Exception {
+            oClass.setName(sNameBefore);
+        }
 
-		Document xClass = DocumentHelper.createDocument(p_oClass.toXml());
 
-		String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoProxy, p_oClass.getName());
-		
-		log.debug("  generation of file: {}", sPojoFile);
-		this.doIncrementalTransform("dao/dao-proxy.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
-	}
-	
-	
-	/**
-	 * Generates the implementation of the bean for DaoSql
-	 * 
-	 * @param p_oClass
-	 *            the implementation class of the bean
-	 * @param p_oNonGeneratedBlocExtractor
-	 *            the non generated blocks
-	 * @param p_oProjectConfig
-	 *            config adjava
-	 * @param p_oXslPojoTransformer
-	 *            transformer xsl
-	 * @throws Exception
-	 *             for generation failures
-	 */
-	private void createDaoSql(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oContext) throws Exception {
+        log.debug("< DaoGenerator.genere: {}", oChrono.stopAndDisplay());
+    }
 
-		Element r_xFile = p_oClass.toXml();
-		
-		MH5ImportDelegate oMH5ImportDelegate = p_oMProject.getDomain().getXModeleFactory().createImportDelegate(this);
-		this.computeImportForDaoSql(oMH5ImportDelegate, p_oClass, p_oMProject, p_oContext);
-		r_xFile.add(oMH5ImportDelegate.toXml());
-		
-		Document xClass = DocumentHelper.createDocument(r_xFile);
 
-		String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoSql, p_oClass.getName());
-		
-		log.debug("  generation of file: {}", sPojoFile);
-		this.doIncrementalTransform("dao/dao-sql.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
-	}
-	
-	
-	/**
-	 * Generates the implementation of the bean for DaoNoSql
-	 * 
-	 * @param p_oClass
-	 *            the implementation class of the bean
-	 * @param p_oNonGeneratedBlocExtractor
-	 *            the non generated blocks
-	 * @param p_oProjectConfig
-	 *            config adjava
-	 * @param p_oXslPojoTransformer
-	 *            transformer xsl
-	 * @throws Exception
-	 *             for generation failures
-	 */
-	private void createDaoNoSql(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oContext) throws Exception {
+    /**
+     * Generates the implementation of the bean for DaoMapping
+     *
+     * @param p_oClass                     the implementation class of the bean
+     * @param p_oNonGeneratedBlocExtractor the non generated blocks
+     * @param p_oProjectConfig             config adjava
+     * @param p_oXslPojoTransformer        transformer xsl
+     * @throws Exception for generation failures
+     */
+    private void createDaoMapping(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+                                  DomainGeneratorContext p_oContext) throws Exception {
 
-		Element r_xFile = p_oClass.toXml();
-		
-		
-		//		For now we need the same import than the DaoSql classes, may come to change
-		MH5ImportDelegate oMH5ImportDelegate = p_oMProject.getDomain().getXModeleFactory().createImportDelegate(this);
-		this.computeImportForDaoSql(oMH5ImportDelegate, p_oClass, p_oMProject, p_oContext);
-		r_xFile.add(oMH5ImportDelegate.toXml());
-		
-		Document xClass = DocumentHelper.createDocument(r_xFile);
+        Document xClass = DocumentHelper.createDocument(p_oClass.toXml());
 
-		String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoNoSql, p_oClass.getName());
-		
-		log.debug("  generation of file: {}", sPojoFile);
-		this.doIncrementalTransform("dao/dao-no-sql.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
-	}
-	
-	
-	
-	
-	
-	/**
-	 * Compute imports for Dao sql implementation
-	 * @param p_oClass Dao Impl
-	 * @param p_oMProject project
-	 * @param p_oContext context
-	 * @throws Exception
-	 */
-	protected void computeImportForDaoSql( MH5ImportDelegate p_oMH5ImportDelegate,
-			MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary,MH5ModeleFactory>> p_oMProject,
-			DomainGeneratorContext p_oContext) throws Exception {
+        String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoMapping, p_oClass.getName());
 
-			p_oMH5ImportDelegate.addImport(p_oClass.getMasterInterface().getName()+"Mapping");
-			
-			for(MAssociation assos : p_oClass.getMEntityImpl().getAssociations()){
-				if(!assos.isTransient() &&
-					assos.getRefClass()!=null &&
-					assos.getRefClass().getDao()!=null){
-					p_oMH5ImportDelegate.addImport(assos.getRefClass().getDao().getName() + "Proxy");
-				}
-			}	
-	}
+        log.debug("  generation of file: {}", sPojoFile);
+        this.doIncrementalTransform("dao/dao-mapping.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
+    }
+
+
+    /**
+     * Generates the implementation of the bean for DaoProxy
+     *
+     * @param p_oClass                     the implementation class of the bean
+     * @param p_oNonGeneratedBlocExtractor the non generated blocks
+     * @param p_oProjectConfig             config adjava
+     * @param p_oXslPojoTransformer        transformer xsl
+     * @throws Exception for generation failures
+     */
+    private void createDaoProxy(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+                                DomainGeneratorContext p_oContext) throws Exception {
+
+        Document xClass = DocumentHelper.createDocument(p_oClass.toXml());
+
+        String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoProxy, p_oClass.getName());
+
+        log.debug("  generation of file: {}", sPojoFile);
+        this.doIncrementalTransform("dao/dao-proxy.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
+    }
+
+
+    /**
+     * Generates the implementation of the bean for DaoSql
+     *
+     * @param p_oClass                     the implementation class of the bean
+     * @param p_oNonGeneratedBlocExtractor the non generated blocks
+     * @param p_oProjectConfig             config adjava
+     * @param p_oXslPojoTransformer        transformer xsl
+     * @param p_sProxyName                 Original name of the p_oClass
+     * @throws Exception for generation failures
+     */
+    private void createDaoSql(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+                              DomainGeneratorContext p_oContext, String p_sProxyName) throws Exception {
+        Element r_xFile = p_oClass.toXml();
+        MH5ImportDelegate oMH5ImportDelegate = p_oMProject.getDomain().getXModeleFactory().createImportDelegate(this);
+        this.computeImportForDaoSql(oMH5ImportDelegate, p_oClass, p_oMProject, p_oContext, p_sProxyName);
+        r_xFile.add(oMH5ImportDelegate.toXml());
+
+        Document xClass = DocumentHelper.createDocument(r_xFile);
+
+        String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoSql, p_oClass.getName());
+
+        log.debug("  generation of file: {}", sPojoFile);
+        this.doIncrementalTransform("dao/dao-sql.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
+    }
+
+
+    /**
+     * Generates the implementation of the bean for DaoNoSql
+     *
+     * @param p_oClass                     the implementation class of the bean
+     * @param p_oNonGeneratedBlocExtractor the non generated blocks
+     * @param p_oProjectConfig             config adjava
+     * @param p_oXslPojoTransformer        transformer xsl
+     * @param p_sProxyName                 Original name of the p_oClass
+     * @throws Exception for generation failures
+     */
+    private void createDaoNoSql(MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+                                DomainGeneratorContext p_oContext, String p_sProxyName) throws Exception {
+
+        Element r_xFile = p_oClass.toXml();
+
+
+        //		For now we need the same import than the DaoSql classes, may come to change
+        MH5ImportDelegate oMH5ImportDelegate = p_oMProject.getDomain().getXModeleFactory().createImportDelegate(this);
+        this.computeImportForDaoSql(oMH5ImportDelegate, p_oClass, p_oMProject, p_oContext, p_sProxyName);
+        r_xFile.add(oMH5ImportDelegate.toXml());
+
+        Document xClass = DocumentHelper.createDocument(r_xFile);
+
+        String sPojoFile = FileTypeUtils.computeFilenameForJS(docPathDaoNoSql, p_oClass.getName());
+
+        log.debug("  generation of file: {}", sPojoFile);
+        this.doIncrementalTransform("dao/dao-no-sql.xsl", sPojoFile, xClass, p_oMProject, p_oContext);
+    }
+
+
+    /**
+     * Compute imports for Dao sql implementation
+     *
+     * @param p_oClass     Dao Impl
+     * @param p_oMProject  project
+     * @param p_oContext   context
+     * @param p_sProxyName Original name of the p_oClass
+     * @throws Exception
+     */
+    protected void computeImportForDaoSql(MH5ImportDelegate p_oMH5ImportDelegate,
+                                          MDaoImpl p_oClass, XProject<IDomain<MH5Dictionary, MH5ModeleFactory>> p_oMProject,
+                                          DomainGeneratorContext p_oContext, String p_sProxyName) throws Exception {
+
+        // To prevent self-Ref problems
+        String sNameBeforeSuffix = p_oClass.getName();
+        p_oClass.setName(p_sProxyName);
+        //
+        p_oMH5ImportDelegate.addImport(p_oClass.getMasterInterface().getName() + "Mapping");
+
+        for (MAssociation assos : p_oClass.getMEntityImpl().getAssociations()) {
+            if (!assos.isTransient() &&
+                    assos.getRefClass() != null &&
+                    assos.getRefClass().getDao() != null) {
+                p_oMH5ImportDelegate.addImport(assos.getRefClass().getDao().getName() + "Proxy");
+            }
+        }
+        p_oClass.setName(sNameBeforeSuffix);
+    }
 
 }
