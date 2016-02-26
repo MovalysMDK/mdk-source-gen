@@ -3,13 +3,14 @@
 
 ## What is mdk-source-gen?
 
-The mdk-source-gen is part of the Movalys MDK Framework.
+Mdk-source-gen is a source code generator from UML Diagrams. It is highly configurable and extendable to produce all kinds of sources. It is part of the Movalys MDK Framework and is used to generate the source code for the different mobile platforms.
 
-It provides all classes dedicated to the UML model processing. It deals with:
-* Code format definition according the targeted language (C#, java...)
-* Data conversion and description (attributes, types, panels, screens...)
-* ViewModel extraction for Fixedlists and spinners
-* Generation of all beans with their implementations (dao, enumerate, entity...)
+It provides all classes dedicated to the UML model processing chain. It deals with:
+* XMI Readers.
+* Model transformations.
+* Code generation using xsl templates.
+* Code format definition according the targeted language (java, C#, ...).
+* Incremental generation.
 
 ## Documentation
 
