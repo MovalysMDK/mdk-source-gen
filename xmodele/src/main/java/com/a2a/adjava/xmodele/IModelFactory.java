@@ -20,6 +20,7 @@ import java.util.Map;
 
 import com.a2a.adjava.types.ITypeDescription;
 import com.a2a.adjava.types.IUITypeDescription;
+import com.a2a.adjava.uml.UmlAssociationEnd;
 import com.a2a.adjava.uml.UmlClass;
 import com.a2a.adjava.xmodele.ui.component.MActionButton;
 import com.a2a.adjava.xmodele.ui.component.MMultiPanelConfig;
@@ -461,4 +462,16 @@ public interface IModelFactory {
 
 	public MLabel createLabelForFixedList(String sFixedListName,
 			String umlName, MViewModelImpl oParentVm);
+
+	public MAssociationOneToOne createAssociationOneToOne(String p_sName, MEntityImpl p_oRefClass, MEntityImpl p_oOppositeClass,
+														  String p_sVariableName,
+														  String p_sVariableListName,
+														  String p_sParameterName,
+														  ITypeDescription p_oTypeDescription,
+														  String p_sVisibility,
+														  boolean p_bRelationOwner, boolean p_bIsNotNull,
+														  String p_sOppositeName,
+														  UmlAssociationEnd.AggregateType p_oAggregateType,
+														  UmlAssociationEnd.AggregateType p_oOppositeAggregateType,
+														  boolean p_bOppositeNavigable );
 }

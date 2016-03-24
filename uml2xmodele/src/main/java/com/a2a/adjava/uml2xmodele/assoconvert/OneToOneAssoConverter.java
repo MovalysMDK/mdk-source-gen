@@ -95,7 +95,8 @@ public class OneToOneAssoConverter extends AbstractMAssociationConverter {
 
 			boolean bNotNull = p_oEnd.getMultiplicityLower() == 1;
 
-			oMAssociationOneToOne = new MAssociationOneToOne(sName, p_oRefClass, p_oOppositeRefClass, p_sVariableName, p_sVariableListName,
+			oMAssociationOneToOne = p_oDomain.getXModeleFactory().createAssociationOneToOne(sName, p_oRefClass,
+					p_oOppositeRefClass, p_sVariableName, p_sVariableListName,
 					p_sParameterName, p_oTypeDescription, p_sVisibility, true, bNotNull, p_sOppositeName, p_oEnd.getAggregateType(),
 					p_oOppositeEnd.getAggregateType(), false);
 		}
@@ -103,7 +104,8 @@ public class OneToOneAssoConverter extends AbstractMAssociationConverter {
 		else {
 			boolean bNotNull = p_oEnd.getMultiplicityLower() == 1;
 
-			oMAssociationOneToOne = new MAssociationOneToOne(sName, p_oRefClass, p_oOppositeRefClass, p_sVariableName, p_sVariableListName,
+			oMAssociationOneToOne = p_oDomain.getXModeleFactory().createAssociationOneToOne(sName, p_oRefClass, p_oOppositeRefClass,
+					p_sVariableName, p_sVariableListName,
 					p_sParameterName, p_oTypeDescription, p_sVisibility, p_bRelationOwner, bNotNull, p_sOppositeName, 
 					p_oEnd.getAggregateType(), p_oOppositeEnd.getAggregateType(), true );
 		}
