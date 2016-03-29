@@ -652,8 +652,8 @@
 							<formula>VALUE.getTime()</formula>
 						</type-conversion>
 						<type-conversion to="Timestamp">
-							<formula>new Timestamp(VALUE.getTime())</formula>
-							<import>java.sql.Timestamp</import>
+							<formula>DateUtils.getTime(VALUE)</formula>
+							<import>com.adeuza.movalysfwk.mobile.mf4mjcommons.utils.DateUtils</import>
 						</type-conversion>
 					</type-conversions>
 				</type>
