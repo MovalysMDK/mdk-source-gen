@@ -469,6 +469,7 @@ public class MIOSFixedListDelegate {
 			p_oFieldView.addOption("canMove", "NO");
 			p_oFieldView.addOption("canSelect", "YES");
 			p_oFieldView.addOption("canDelete", "YES");
+			p_oFieldView.addOption("title", p_oVisualField.getLabel().getKey());
 			p_oFieldView.setStoryboardType("view");
 			String sVmName = p_oVisualField.getParameterValue("fixedListVm");
 			MViewModelImpl oVm = this.delegator.getDomain().getDictionnary().getViewModel(sVmName);
