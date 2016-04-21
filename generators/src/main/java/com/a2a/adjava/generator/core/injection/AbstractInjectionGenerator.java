@@ -162,8 +162,10 @@ public abstract class AbstractInjectionGenerator<D extends IDomain<?, ?>> extend
 	 */
 	private String getStartCommentTag(File p_oFile) {
 		String r_sStartTag = null;
-		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)){
+		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)){
 			r_sStartTag = "//commented-generation-start";
+		} else if ( FileTypeUtils.isJavascriptFile(p_oFile)) {
+			r_sStartTag = "/* commented-generation-start";
 		} else if ( FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {
 			r_sStartTag = "<!--commented-generation-start";
 		} else if ( FileTypeUtils.isPropertiesFile(p_oFile)) {
@@ -181,9 +183,11 @@ public abstract class AbstractInjectionGenerator<D extends IDomain<?, ?>> extend
 	 */
 	private String getEndCommentTag(File p_oFile) {
 		String r_sStartTag = null;
-		if (FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)) {
+		if (FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)) {
 			r_sStartTag = "//commented-generation-end";
-		} else if (FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {
+		} else if (FileTypeUtils.isJavascriptFile(p_oFile)) {
+			r_sStartTag = "commented-generation-start */";
+		} else if (FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile)) {
 			r_sStartTag = "commented-generation-start-->";
 		} else if (FileTypeUtils.isPropertiesFile(p_oFile)) {
 			r_sStartTag = "#commented-generation-end";
