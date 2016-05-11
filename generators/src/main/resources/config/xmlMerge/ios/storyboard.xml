@@ -35,7 +35,7 @@
 	<node name="tableViewCell"					identificationType="parent+name+attr"			idAttribute="reuseIdentifier" 			content="children"	/>
 	<node name="subviews" 						identificationType="parent+name"									content="children"	/>
 	<node name="constraints" 					identificationType="parent+name"									content="children"	/>
-	<node name="constraint" 					identificationType="parent+name+attr"	idAttribute="firstItem|secondItem|firstAttribute|secondAttribute|relation"	content="none"		/>
+	<node name="constraint" 					identificationType="parent+name+attr"	idAttribute="firstItem|secondItem|firstAttribute|secondAttribute|id|relation"	content="none"		/>
 	<node name="fontDescription" 				identificationType="parent+name"									content="none"		/>
 	<node name="connections" 					identificationType="parent+name"									content="children"	/>
 	<node name="outlet" 						identificationType="parent+name+attr"	idAttribute="property|destination"			content="none"		/>
