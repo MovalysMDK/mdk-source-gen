@@ -481,6 +481,7 @@ public class MAssociation implements SAnnotable {
 				Element xCascade = xElem.addElement("cascade");
 				xCascade.addAttribute("name", oDeleteCascade.getName().toUpperCase());
 				xCascade.addElement("entity-interface").setText(oDeleteCascade.getOppositeClass().getMasterInterface().getName());
+				xCascade.addElement("entity-name").setText(oDeleteCascade.getOppositeClass().getEntityName());
 			}
 		}
 
