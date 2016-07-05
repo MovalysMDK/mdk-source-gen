@@ -145,11 +145,9 @@ public class ViewExtractor extends AbstractExtractor<MH5Domain<MH5Dictionary, MH
         r_oNewView.setIsWorkspace(p_oScreen.isWorkspace());
         r_oNewView.setMainScreenName(oMH5Dictionary.getMainScreen().getName());
 
-        if (p_oScreen.isWorkspace()) {
-            MPage oPage = this.getFirstSaveDetail(p_oScreen);
-            if (oPage != null) {
-                r_oNewView.setHasSaveAction(true);
-            }
+        MPage oMasterPage = this.getFirstSaveDetail(p_oScreen);
+        if (oMasterPage != null) {
+            r_oNewView.setHasSaveAction(true);
         }
 
         r_oNewView.setNavigationFromScreenList(oMH5Dictionary.getNavigationsFromScreen(p_oScreen));
