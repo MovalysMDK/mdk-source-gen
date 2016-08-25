@@ -24,7 +24,6 @@ commons-digester
 commons-beanutils
 bsh
 classworlds
-com
 antlr
 backport-util-concurrent
 .idea

@@ -96,7 +96,7 @@ public abstract class AbstractGenerator<D extends IDomain<? extends IModelDictio
 	protected String getGeneratedStartTag( String p_sKey, File p_oFile ) {
 		String r_sStartTag = null ;
 		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)
-				|| FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isIosStringFile(p_oFile)
+				|| FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isTypescriptFile(p_oFile) || FileTypeUtils.isIosStringFile(p_oFile)
 				|| FileTypeUtils.isScssFile(p_oFile) || FileTypeUtils.isCSharpFile(p_oFile)) {
 			r_sStartTag = "//@generated-start[" + p_sKey + "]";
 		}

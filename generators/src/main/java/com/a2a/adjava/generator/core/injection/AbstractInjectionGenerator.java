@@ -164,7 +164,7 @@ public abstract class AbstractInjectionGenerator<D extends IDomain<?, ?>> extend
 		String r_sStartTag = null;
 		if ( FileTypeUtils.isJavaFile(p_oFile) || FileTypeUtils.isIosFile(p_oFile) || FileTypeUtils.isJsonFile(p_oFile)){
 			r_sStartTag = "//commented-generation-start";
-		} else if ( FileTypeUtils.isJavascriptFile(p_oFile)) {
+		} else if ( FileTypeUtils.isJavascriptFile(p_oFile) || FileTypeUtils.isTypescriptFile(p_oFile)) {
 			r_sStartTag = "/* commented-generation-start";
 		} else if ( FileTypeUtils.isXmlFile(p_oFile) || FileTypeUtils.isHtmlFile(p_oFile)) {
 			r_sStartTag = "<!--commented-generation-start";
