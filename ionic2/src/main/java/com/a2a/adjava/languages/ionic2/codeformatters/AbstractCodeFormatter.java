@@ -36,14 +36,14 @@ public abstract class AbstractCodeFormatter implements CodeFormatter {
      * Logger
      */
     private static final Logger log = LoggerFactory
-            .getLogger(AbstractJSBeautifyCodeFormatter.class);
+            .getLogger(AbstractCodeFormatter.class);
 
     /**
      * Time out of formatting process
      */
     private static final int WATCHDOG_TIMEOUT = 60000;
 
-    private abstract String getFormatter();
+    protected abstract String getFormatter();
 
     protected abstract String[] getArguments();
 
