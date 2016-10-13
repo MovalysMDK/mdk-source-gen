@@ -49,7 +49,7 @@ public class EntityGenerator extends AbstractIncrementalGenerator<IDomain<IModel
 	 */
 	private static final Logger log = LoggerFactory.getLogger(EntityGenerator.class);
 	
-	private static final String docPath = "app/data/model";
+	private static final String docPath = "src/data/model";
 	
 	
 	

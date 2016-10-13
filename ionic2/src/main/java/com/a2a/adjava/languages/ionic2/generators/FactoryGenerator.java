@@ -54,11 +54,12 @@ public class FactoryGenerator extends
 	 */
 	private static final Logger log = LoggerFactory.getLogger(FactoryGenerator.class);
 	
-	private static final String docPath = "app/data/model/factories";
+	private static final String docPath = "src/data/model/factories";
 
 	
 	
 	/**
+	 *
 	 * @see com.a2a.adjava.generator.ResourceGenerator#genere(com.a2a.adjava.project.ProjectConfig,
 	 *      com.a2a.adjava.xmodele.MModele, com.a2a.adjava.schema.Schema,
 	 *      java.util.Map)
