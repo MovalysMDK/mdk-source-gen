@@ -163,5 +163,7 @@
 	<!-- Ajout en 6.0.1 -->
 	<node name="textfield" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
 	
-	
+	<!-- Ajout en 6.7.0 -->
+	<node name="stackView" 		 			identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+
 </configuration>
