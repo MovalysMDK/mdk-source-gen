@@ -48,7 +48,7 @@
 	<node name="point" 							identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
 	<node name="freeformSimulatedSizeMetrics" 	identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
 	<node name="simulatedMetricsContainer" 		identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
-	<node name="scrollView" 		 			identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="scrollView" 		 			identificationType="parent+name+attr"	idAttribute="id"			content="children"	/>
 	<node name="simulatedStatusBarMetrics" 		identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
 	<node name="simulatedOrientationMetrics" 	identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
 	<node name="simulatedScreenMetrics" 		identificationType="parent+name+attr"	idAttribute="key"			content="none"		/>
@@ -164,6 +164,6 @@
 	<node name="textfield" 							identificationType="name+attr"			idAttribute="id"			content="children"	/>
 	
 	<!-- Ajout en 6.7.0 -->
-	<node name="stackView" 		 			identificationType="parent+name+attr"	idAttribute="key"			content="children"	/>
+	<node name="stackView" 		 			identificationType="parent+name+attr"	idAttribute="id"			content="children"	/>
 
 </configuration>
