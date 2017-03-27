@@ -392,7 +392,6 @@ public class FileTypeUtils {
 	 * Compute File for java class
 	 * @param p_sPackage package name
 	 * @param p_sFilebasename base filename (without extension)
-	 * @param p_sExtension file extension
 	 * @return file name
 	 */
 	public static String computeFilenameForJavaProperties( String p_sPackage, String p_sFilebasename) {

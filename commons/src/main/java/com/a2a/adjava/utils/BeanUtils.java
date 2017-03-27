@@ -102,7 +102,7 @@ public class BeanUtils {
 	 * @param p_oObject
 	 * @param p_sPropertyName
 	 * @param p_sValue
-	 * @param p_oEnumClass
+	 * @param p_oValue
 	 * @throws IllegalAccessException
 	 * @throws InvocationTargetException
 	 * @throws NoSuchMethodException

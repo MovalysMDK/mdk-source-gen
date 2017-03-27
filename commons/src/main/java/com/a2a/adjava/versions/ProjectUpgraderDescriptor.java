@@ -124,7 +124,7 @@ public class ProjectUpgraderDescriptor {
 	
 	/**
 	 * Permet de définir les 3 paramètres principaux (majorVersion, minorVersio, revisionNumber) depuis la
-	 * Map des paramètres issues d'un {@link ProjectUpgrader}
+	 * Map des paramètres issues d'un ProjectUpgrader
 	 * @param p_oVersionParameters
 	 */
 	public void setParametersFromMap(Map<String,?> p_oVersionParameters) {

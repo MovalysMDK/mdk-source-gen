@@ -115,7 +115,7 @@ public class VersionHandler {
 
 	/**
 	 * Set the version of MDK assiociated to the current generation
-	 * @param lastMDKGenerationVersion The version of MDK assiociated to the current generation
+	 * @param currentMDKGenerationVersion The version of MDK assiociated to the current generation
 	 */
 	public static void setCurrentMDKGenerationVersion(
 			String currentMDKGenerationVersion) {
